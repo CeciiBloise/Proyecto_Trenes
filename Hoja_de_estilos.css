@@ -1,0 +1,28 @@
+/** Hoja de estilos **/
+
+/*Selector universal*/
+*{
+    margin: 0;/*el margen para los cuatro lados*/
+    padding: 0;/*el espacio de relleno*/
+    box-sizing: border-box;
+    font-family: 'Audiowide', cursive; /*establece una lista de fuentes */
+}
+
+/* Titulo, seccion 1 */
+.titulo {
+    color:black;
+    text-align: center;/*me centra el titulo*/
+    font-size: 4em; /*tamaño*/
+    text-shadow:-4px 3px 0 #333232; /*sombra del texto*/
+    font-weight: arial; /*especifica el ancho de la fuente */
+}
+/*Pie de pagina*/
+footer{
+    border-top: 0.125em solid #4cb0c9;/* #0d1259;*/
+    background-color:#04052b;
+    color:whitesmoke;
+  
+    text-align: center;
+    text-decoration: none;
+    padding: 1em 0;
+}
