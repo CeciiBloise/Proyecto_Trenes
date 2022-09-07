@@ -18,9 +18,9 @@
 }
 /*Pie de pagina*/
 footer{
-    border-top: 0.125em solid #4cb0c9;/* #0d1259;*/
-    background-color:#04052b;
-    color:whitesmoke;
+    border-top: 0.125em ;/* #0d1259;*/
+    background-color:#efeff2;
+    color:black;
   
     text-align: center;
     text-decoration: none;
