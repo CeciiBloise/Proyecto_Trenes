@@ -5,17 +5,63 @@
     margin: 0;/*el margen para los cuatro lados*/
     padding: 0;/*el espacio de relleno*/
     box-sizing: border-box;
-    font-family: 'Audiowide', cursive; /*establece una lista de fuentes */
+    font-family: 'Audiowide', Arial, Helvetica, sans-serif; /*establece una lista de fuentes */
 }
+
+
 
 /* Titulo, seccion 1 */
 .titulo {
+    /*texto*/
     color:black;
     text-align: center;/*me centra el titulo*/
     font-size: 4em; /*tamaño*/
     text-shadow:-4px 3px 0 #333232; /*sombra del texto*/
-    font-weight: arial; /*especifica el ancho de la fuente */
+    
+    /*caja*/
+    width: auto;
+    margin: auto;
+    padding: 0;
+    background-color: gray;
 }
+
+/*Menu, seccion 2*/
+.menu {
+    /*Texto*/
+    color: black;
+    text-align: center;
+    font-size: 33px;
+
+    /*caja*/
+    margin: auto;
+    padding: auto;
+    background-color: lightslategray;
+    position: absolute;
+    left: 0px;
+    width: 25%;
+    height: 100%;
+
+    z-index:0; /*indica el orden de un elemento posicionado y sus descendientes*/
+}
+
+/*Informacion, seccion 3*/
+.info {
+    /*texto*/
+    color: black;
+    text-align: center;
+    font-size: large;
+
+    /*caja*/
+    margin-left: 246px;
+    margin-right: 0;
+
+    background-color: darkgrey;
+    position: absolute;
+    width: 75%;
+    height: 100%;
+    overflow: scroll;
+}
+
 /*Pie de pagina*/
 footer{
     border-top: 0.125em ;/* #0d1259;*/
