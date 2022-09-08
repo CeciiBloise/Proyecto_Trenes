@@ -60,9 +60,10 @@
     width: 75%;
     height: 100%;
     overflow: scroll;
+    overflow:auto;
 }
 
-/*Pie de pagina*/
+/*Pie de pagina lo saco?*/
 footer{
     border-top: 0.125em ;/* #0d1259;*/
     background-color:#efeff2;
