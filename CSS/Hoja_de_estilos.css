@@ -21,7 +21,7 @@
     padding: auto;
     width: 100%; 
     height: 100%
-    background-size: cover;/*para que el contenido se adapte*/
+    /*background-size: cover;/*para que el contenido se adapte*/
 }
 
     .header {
@@ -35,6 +35,9 @@
         /*Tamaño de caja*/
         margin: 10px;
         padding: 10px;
+
+        /*Titulo*/
+        text-align: center;
 
     }
 
@@ -51,7 +54,7 @@
         padding: 10px;
 
     }
-        .menu{
+        .menu {
          background: violet;
          /*Flexbox*/
          display: flex;
