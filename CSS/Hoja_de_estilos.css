@@ -2,73 +2,39 @@
 
 /*Selector universal*/
 *{
-    margin: 0;/*el margen para los cuatro lados*/
-    padding: 0;/*el espacio de relleno*/
-    box-sizing: border-box;
+    margin: 10px;/*el margen de la hoja*/
+    padding: 100px;/*el espacio de relleno*/
+    box-sizing: border-box; /*para que no se desborden las cajas unas con otras*/
     font-family: 'Audiowide', Arial, Helvetica, sans-serif; /*establece una lista de fuentes */
 }
 
-
-
-/* Titulo, seccion 1 */
-.titulo {
-    /*texto*/
-    color:black;
-    text-align: center;/*me centra el titulo*/
-    font-size: 4em; /*tamaño*/
-    text-shadow:-4px 3px 0 #333232; /*sombra del texto*/
-    
-    /*caja*/
-    width: auto;
-    margin: auto;
-    padding: 0;
-    background-color: gray;
+.flex-contenedor {
+    background: white;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: stretch;
+    /*align-content: center;*/
 }
+    .header {
+        background: lightseagreen;
+        align-self: flex-start;
+    }
 
-/*Menu, seccion 2*/
-.menu {
-    /*Texto*/
-    color: black;
-    text-align: center;
-    font-size: 33px;
+    .contenedor1 {
+        background: violet;
+        align-self: center;
+        
 
-    /*caja*/
-    margin: auto;
-    padding: auto;
-    background-color: lightslategray;
-    position: absolute;
-    left: 0px;
-    width: 25%;
-    height: 100%;
+    }
 
-    z-index:0; /*indica el orden de un elemento posicionado y sus descendientes*/
-}
+    .contenedor2 {
+        background: green;
+        align-self: center;
+        margin-left: auto;
+    }
 
-/*Informacion, seccion 3*/
-.info {
-    /*texto*/
-    color: black;
-    text-align: center;
-    font-size: large;
+    .footer {
+        background: orange;
+        align-self: flex-end;
 
-    /*caja*/
-    margin-left: 246px;
-    margin-right: 0;
-
-    background-color: darkgrey;
-    position: absolute;
-    width: 75%;
-    height: 100%;
-    overflow: scroll;
-}
-
-/*Pie de pagina lo saco?*/
-footer{
-    border-top: 0.125em ;/* #0d1259;*/
-    background-color:#efeff2;
-    color:black;
-  
-    text-align: center;
-    text-decoration: none;
-    padding: 1em 0;
-}
+    }

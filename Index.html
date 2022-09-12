@@ -3,9 +3,12 @@
 
     <head>
         <meta charset="utf-8" /> <!-- tipos de caracter -->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
         
         <!-- Estilos -->
-        <link rel="stylesheet" href="C:\Users\Albert\Documents\Proyecto_Trenes\CSS\Hoja_de_estilos.css"> <!--Aca llamo a la hoja de estilos-->
+        <link rel="stylesheet" href="C:\Users\PC\Documents\Proyecto_Trenes\CSS\Hoja_de_estilos.css"/> <!--Aca llamo a la hoja de estilos-->
+        
+        <link rel="stylesheet" href="C:\Users\PC\Documents\Proyecto_Trenes\CSS\normalize.css" /> 
 
         <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
     
@@ -14,57 +17,41 @@
     <body>
 
         <!-- contenido principal del cuerpo -->
-        <main>
-
-            <!-- Voy a dividir la pagina en tres secciones -->
-
+        <div class="flex-contenedor">
+        <!-- Voy a dividir la pagina en tres secciones -->
             <!-- 1 -->
-            <section>
-               <article> <!-- Saco los articulos ? -->
-                 <!-- esta seccion va a ser la del titulo, seria el header -->
-                 <div class="titulo">
-                    <h1>Estacion Quilmes</h1>  
-                 </div>  
-               </article>
-            </section>
+            <!-- esta seccion va a ser la del titulo, seria el header -->
+            <header class="header">
+               <div class="titulo">
+                  <h1>Estacion Quilmes</h1>  
+               </div>
+               <div class="logo"></div>
+            </header>     
 
             <!-- 2 -->
-            <section>
-               <article> 
-                 <!-- esta seccion va ser del menu -->
-                 <div class="menu">
-                    <h1>Menu</h1>
-                 </div>
-               </article>
+            <!-- esta seccion va ser del menu -->
+            <section class="contenedor1">
+               <div class="menu">
+                  <div class="titulo">
+                     <h1>Menu</h1>
+                  </div>
+                  <div class="navegacion" ></div>
+               </div>
             </section>
-
             <!-- 3 -->
-            <section>
-              <article> 
-                 <!-- Esta seccion va a ser donde muestro la info -->
-                 <div class="info">
+            <!-- Esta seccion va a ser donde muestro la info -->
+            <section class="contenedor2">   
+               <div class="info">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
                     </p>
-                 </div>
-              </article>
+               </div>
             </section>
-
-        </main>
-
-        <!-- pie de pagina -->
-        <footer> 
-            <p> © 2022 Estacion de Trenes Quilmes </p>
-        </footer>
-
-    </body>
+            <!-- pie de pagina -->
+            <footer class="footer"> 
+               <p> © 2022 Estacion de Trenes Quilmes </p>
+            </footer>
+        </div>
+      </body>
 </html>
