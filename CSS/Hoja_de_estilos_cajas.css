@@ -2,6 +2,8 @@
 
 /*Estilos del titulo*/
 
-.itulo_menu {
+.contenedor .menu .titulo_menu {   
     text-align: center;
+    background-color: red;
+    
 }

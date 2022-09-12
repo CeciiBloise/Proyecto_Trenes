@@ -23,6 +23,9 @@
     height: 100%
     /*background-size: cover;/*para que el contenido se adapte*/
 }
+.titulo_menu {
+    text-align: center;
+}
 
     .header {
         background: lightseagreen;
