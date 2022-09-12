@@ -1,47 +1,87 @@
-/** Hoja de estilos **/
+/** Hoja de estilos - maquetado **/
 
 /*Selector universal*/
 *{
-    margin: 10px;/*el margen de la hoja*/
-    padding: 10px;/*el espacio de relleno*/
+    margin: auto;/*el margen de la hoja*/
+    padding: auto;/*el espacio de relleno*/
     box-sizing: border-box; /*para que no se desborden las cajas unas con otras*/
     font-family: 'Audiowide', Arial, Helvetica, sans-serif; /*establece una lista de fuentes */
 }
 
 .flex-contenedor {
-    background: white;
+    background: lightcoral;
+    /*Flexbox*/
     display: flex;
     flex-flow: column wrap;
-    justify-content: stretch;
-    /*align-content: center;*/
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: stretch; /*dudoso*/
+    align-content: stretch;/*dudoso*/
+    margin: auto;
+    padding: auto;
+    width: 100%; 
+    height: 100%
 }
+
     .header {
         background: lightseagreen;
-        align-self: flex-start;
+        /*Flexbox*/
+        display: flex;
+        flex: 1 1 auto;
+        align-items: stretch;
+        align-content: center;
+
+        /*Tamaño de caja*/
+        margin: 10px;
+        padding: 10px;
+
     }
 
     .contenedor {
         background: black;
-        justify-content: center;
-        
+        /*Flexbox*/
         display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: stretch;
+        /*Tamaño de caja*/
+        margin: 10px;
+        padding: 10px;
 
     }
         .menu{
          background: violet;
+         /*Flexbox*/
          display: flex;
-         align-self: center;
+         align-self: flex-start;
+         flex: 1 1 auto;
+         align-items: stretch;
+         /*Tamaño de caja*/
+         margin: 10px;
+        padding: 10px;
         }
 
         .info {
          background: green;
+         /*Flexbox*/
          display: flex;
-         align-self: center;
+         align-self: flex-end;
          margin-left: auto;
+         flex: 1 1 auto;
+         align-items: stretch;
+         /*Tamaño de caja*/
+         margin: 10px;
+        padding: 10px;
         }
 
     .footer {
         background: orange;
-        align-self: flex-end;
-
+        /*Flexbox*/
+        align-self: space-evenly;
+        flex: 1 1 auto;
+        align-items: stretch;
+        /*Tamaño de caja*/
+        margin: 10px;
+        padding: 10px;
     }
