@@ -3,7 +3,7 @@
 /*Selector universal*/
 *{
     margin: 10px;/*el margen de la hoja*/
-    padding: 100px;/*el espacio de relleno*/
+    padding: 10px;/*el espacio de relleno*/
     box-sizing: border-box; /*para que no se desborden las cajas unas con otras*/
     font-family: 'Audiowide', Arial, Helvetica, sans-serif; /*establece una lista de fuentes */
 }
@@ -20,18 +20,25 @@
         align-self: flex-start;
     }
 
-    .contenedor1 {
-        background: violet;
-        align-self: center;
+    .contenedor {
+        background: black;
+        justify-content: center;
         
+        display: flex;
 
     }
+        .menu{
+         background: violet;
+         display: flex;
+         align-self: center;
+        }
 
-    .contenedor2 {
-        background: green;
-        align-self: center;
-        margin-left: auto;
-    }
+        .info {
+         background: green;
+         display: flex;
+         align-self: center;
+         margin-left: auto;
+        }
 
     .footer {
         background: orange;
