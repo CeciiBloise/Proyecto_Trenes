@@ -15,90 +15,110 @@ body{
     background: lightcoral;
     /*Flexbox*/
     display: flex;
-    flex-flow: column wrap;
+    /*flex-flow: column wrap;
     flex: 1 1 auto;
     justify-content: center;
     align-items: stretch; /*dudoso*/
-    align-content: stretch;/*dudoso*/
-    margin: auto;
-    padding: auto;
+   /* align-content: stretch;/*dudoso*/
+    margin: 0 auto;
+    /*padding: auto;*/
+    max-width: 1200px;
     width: 100%; 
     height: 100%
     /*background-size: cover;/*para que el contenido se adapte*/
-    
+    }
 
-}
-.titulo_menu {
-    text-align: center;
-}
+    .menu {
+        background: violet;
 
-    .header {
-        background: lightseagreen;
         /*Flexbox*/
         display: flex;
         flex: 1 1 auto;
-        align-items: stretch;
-        align-content: center;
 
         /*Tamaño de caja*/
-        margin: 10px;
-        padding: 10px;
-
-        /*Titulo*/
-        text-align: center;
-
+        height: 100%;
+        width: 30%;
+        padding: 10px; 
     }
 
     .contenedor {
         background: black;
+
         /*Flexbox*/
         display: flex;
-        /*Creo que voy a sacar todo esto*/
-        /*flex-flow: column wrap;
-        /*justify-content: center;*/
-        /*align-items: center;
-        align-content: space-around;
-        /*Tamaño de caja*/
-        margin: 10px;
-        padding: 10px;
+        flex: 1 1 auto;
+        flex-flow: column wrap;
+        align-items: center; 
+        align-content: stretch;
 
+        /*Tamaño de caja*/
+        margin: 0;
+        height: 100%;
+        width: 70%;
+
+        
     }
-        .menu {
-         background: violet;
-         /*Flexbox*/
-         display: flex;
-         align-self: flex-start;
-         flex: 1 1 auto;
-         align-items: stretch;
-         /*Tamaño de caja*/
-         margin: 10px;
-        padding: 10px;
-        width: 99%;
+        
+        .header {
+            background: lightseagreen;
+            box-shadow: 0 4px 5px lightgray;
+            /*Flexbox*/
+            display: flex;
+            justify-content: center;/*me centra el contenido del la caja*/
+            align-items: center; /*Alineacion vertical*/
+            flex: 1 1 auto;
+
+            /*Tamaño de caja*/
+            height: 15%;
+            width: 100%;
+
+            /*Titulo*/
+            text-align: center;
+            font-size: 18px;
         }
 
         .info {
-         background: green;
-         /*Flexbox*/
-         display: flex;
-         align-self: flex-end;
-         margin-left: auto;
-         flex: 1 1 auto;
-         align-items: stretch;
-         /*Tamaño de caja*/
-         margin: 10px;
-         padding: 10px;
-         width: 99%;
-        /*Desbordamiento*/
-        overflow: scroll;
+           background: green;
+           /*Flexbox*/
+           display: flex;
+           flex: 1 1 auto;
+           
+           align-items: stretch;
+           align-content: center;
+         
+           /*Tamaño de caja*/
+           height: 85%;
+           padding: 10px;
+
+           /*Desbordamiento*/
+           overflow: scroll;
+
+           /*Texto*/
+           font-size: 16px;
+
         }
 
     .footer {
         background: orange;
         /*Flexbox*/
-        align-self: space-evenly;
         flex: 1 1 auto;
-        align-items: stretch;
+
         /*Tamaño de caja*/
-        margin: 10px;
-        padding: 10px;
+        padding: 2%;
+
+        /*Titulo*/
+        text-align: center;
+        font-size: 16px;
+
+    }
+
+
+    /*Fijo tamaño*/
+    html {
+        font-size: 70%;
+    }
+    @media (min-width: 600px) {
+        html{ 
+            font-size: 100%;
+        }
     }
