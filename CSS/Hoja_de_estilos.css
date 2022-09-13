@@ -38,7 +38,9 @@ body{
         /*Tamaño de caja*/
         height: 100%;
         width: 30%;
-        padding: 10px; 
+        padding: 10px;
+        
+        /*Titulo*/
     }
 
     .contenedor {
@@ -106,10 +108,10 @@ body{
         /*Tamaño de caja*/
         padding: 2%;
 
+        /*Texto*/
         /*Titulo*/
         text-align: center;
         font-size: 16px;
-
     }
 
 
