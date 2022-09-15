@@ -1,1 +1,28 @@
 /*Hoja de estilos - contenido de cajas*/
+
+.info1{
+    background: white;
+    /*Flexbox*/
+    display: flex;
+    flex: 1 1 auto;
+    
+    align-items: stretch;
+    align-content: center;
+  
+    /*Tamaño de caja*/
+    height: 85%;
+    padding: 0;
+    width: 100%;
+
+    /*Desbordamiento*/
+    overflow: scroll;
+
+    /*Texto*/
+    font-size: 16px;
+}
+.info1 .pdf{
+    margin: auto;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}

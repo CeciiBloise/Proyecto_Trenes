@@ -74,6 +74,7 @@ body{
             /*Tamaño de caja*/
             height: 15%;
             width: 100%;
+            margin: auto;
 
             /*Titulo*/
             text-align: center;
