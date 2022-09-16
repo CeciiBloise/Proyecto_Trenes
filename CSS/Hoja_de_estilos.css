@@ -106,9 +106,10 @@ body{
         background: grey;
         /*Flexbox*/
         flex: 1 1 auto;
+        align-content: flex-end;
 
         /*Tamaño de caja*/
-        padding: 2%;
+        padding: 2% 0;
 
         /*Texto*/
         /*Titulo*/
