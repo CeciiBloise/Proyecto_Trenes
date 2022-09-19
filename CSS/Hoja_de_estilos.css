@@ -134,6 +134,10 @@ body{
     background-color:#000;
     }
     
+p{
+    color: #000;
+}
+
     /*Fijo tamaño*/
     html {
         font-size: 70%;
