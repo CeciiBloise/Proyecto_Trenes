@@ -2,6 +2,7 @@
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->
 
+
     <head>
         <meta charset="utf-8" /> <!-- tipos de caracter -->
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
@@ -18,21 +19,23 @@
     </head>
 
     <body>
+      <form action="validacion.php" method="post"></form>
           <!--<form action="gracias.html" method="POST" id="form">--> <!--aca tengo que enviarlo a otra pagina que diga gracias-->
           <main>
             <div class="form">
               <h1> INGRESO AL SISTEMA </h1>
               <br>
               <div class="grupo">
-                <input type="text" name="" id="name" required>
+                <input type="text" name="ingrese su legajo" id="name" required>
                 <label class="tt" for="">LEGAJO</label>
              </div>
              <div class="grupo">
-                <input type="text" name="" id="name" required>
+                <input type="password" name="ingrese su contraseña" id="name" required>
                 <label class="tt" for="">CONTRASEÑA</label>
              </div>
 
-             <button type="submit">ENVIAR</button>
+             <button type="submit">INGRESAR</button>
+             
              </div>
           </main>
 
@@ -41,5 +44,8 @@
          <p> © 2022 Estacion de Trenes Quilmes </p>
          </footer>
 
+    
+      </form>
     </body>
+
 </html>
