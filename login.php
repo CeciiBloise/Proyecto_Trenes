@@ -12,18 +12,25 @@ include('bd.php');
 $consulta="SELECT*FROM usuarios where usuario='$usuario' and contraseña='$contraseña'";
 $resultado=mysqli_query($conexion,$consulta);
 
-$filas=mysqli_nun_rows($resultado);
+$filas=mysqli_fetch_array($resultado);
 
-if($fila){
-    header("location:home.php");
+if($fila['id_rol']==1){//admi_general
+    header("location: Index.html");
+}
+if($fila['id_rol']==2){//admi_personal
+    header("location: Paginas/Servicio_medico/Servicio_medico.html");
+}
+if($fila['id_rol']==3){//mecanico
+    header("location: Paginas_de_servicio_medico/1.html");
 }
 else {
     ?>
     <?php
     include("Login.html");
     ?>
-    <h1>Hay un error en la autotentificacion</h1>}
-<?php
+    <h1>Hay un error en la autotentificacion</h1>
+}
+    <?php
+
 mysqli_free_result($resultado);
 mysqli_close($conexion);
-?>
