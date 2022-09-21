@@ -16,13 +16,14 @@ $filas=mysqli_nun_rows($resultado);
 
 if($fila){
     header("location:home.php");
-}else{
+}
+else {
     ?>
     <?php
-    include("index.php");
+    include("Login.html");
     ?>
-    <h1>Hay un error en la autotentificacion</h1>
-}
-
+    <h1>Hay un error en la autotentificacion</h1>}
+<?php
 mysqli_free_result($resultado);
 mysqli_close($conexion);
+?>
