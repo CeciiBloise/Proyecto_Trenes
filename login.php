@@ -7,7 +7,8 @@ session_start();
 
 $_SESSION  ['usuario']-$usuario;
 
-include('bd.php');
+include('basededatos.php');
+$conexion=conectar();
 
 $consulta="SELECT*FROM usuarios where usuario='$usuario' and contraseña='$contraseña'";
 $resultado=mysqli_query($conexion,$consulta);
