@@ -5,7 +5,7 @@ $contraseña-$_POST['contraseña'];
 
 session_start();
 
-$_SESSION  ['usuario']-$usuario;
+$_SESSION  ['usuario']=$usuario;
 
 include('basededatos.php');
 $conexion=conectar();
