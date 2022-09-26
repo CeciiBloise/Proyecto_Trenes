@@ -37,7 +37,7 @@ if($nro['id_cargo'] == 2) //administrador personal
 
 if($nro['id_cargo'] == 3) //mecanico
 {
- header("Location: Paginas\Servicio_medico\Paginas_de_servicio_medico\1.html");
+ header("Location: Paginas\Servicio_medico\Paginas_de_servicio_medico\xvx.html");
  //echo "Bienvenido:" .$usuario;
 }
 
