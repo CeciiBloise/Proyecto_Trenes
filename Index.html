@@ -19,33 +19,30 @@
     </head>
 
     <body>
-      <form action="validacion.php" method="post"></form>
-          <!--<form action="gracias.html" method="POST" id="form">--> <!--aca tengo que enviarlo a otra pagina que diga gracias-->
+      <form method="post" action="login.php" >
           <main>
             <div class="form">
               <h1> INGRESO AL SISTEMA </h1>
               <br>
               <div class="grupo">
+                <label class="tt" for=""> LEGAJO </label>
                 <input type="number" name="legajo" id="" required>
-                <label class="tt" for="">LEGAJO</label>
              </div>
              <div class="grupo">
-                <input type="password" name="contraseña" id="" required>
-                <label class="tt" for="">CONTRASEÑA</label>
+
+                <label class="tt" for=""> CONTRASEÑA </label>
+                <input type="password" name="contraseñaa" id="" required>
              </div>
 
-             <button type="submit">INGRESAR</button>
+             <button type="submit"> INGRESAR </button>
              
              </div>
           </main>
-
+       </form>  
          <!-- pie de pagina -->
          <footer class="footer"> 
          <p> © 2022 Estacion de Trenes Quilmes </p>
          </footer>
-
-    
-      </form>
     </body>
 
 </html>

@@ -1,37 +1,35 @@
 <?php
+
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname = "test"; //nombre de la base de datos
+
+$conexion = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+//Condicional por si no hay conexion que muestre el error
+if(!$conexion){
+    die("No hay conexion" .mysqli_connect_error());
+}
+
 //variables que van a recibir valor por teclado para la validacion
-$usuario-$_POST['usuario'];
-$contraseña-$_POST['contraseña'];
+$usuario = $_POST["legajo"];
+$contraseña = $_POST["contraseñaa"];
 
-session_start();
+//Consulta que le va hacer al SQL, selecciona todo de la tabla login
+//y buscara coincidencia entre el usuario y la contrasena ingresados con la tabla del SQL
+$query =mysqli_query($conexion, "SELECT * FROM login WHERE usuario = '".$usuario."' and contraseña ='".$contraseña."'" );
+//Una vez encontra la coincidencia nos da como resultado una fila, un numero
+$nro = mysqli_num_rows($query);
 
-$_SESSION  ['usuario']=$usuario;
-
-include('basededatos.php');
-$conexion=conectar();
-
-$consulta="SELECT*FROM usuarios where usuario='$usuario' and contraseña='$contraseña'";
-$resultado=mysqli_query($conexion,$consulta);
-
-$filas=mysqli_fetch_array($resultado);
-
-if($fila['id_rol']==1){//admi_general
-    header("location: Index.html");
+//Permite el ingreso o la redirecciona al login
+if($nro == 1)
+{
+ header("Location: Paginas\Inicio.html");
+ //echo "Bienvenido:" .$usuario;
 }
-if($fila['id_rol']==2){//admi_personal
-    header("location: Paginas/Servicio_medico/Servicio_medico.html");
+else if ($nro == 0)
+{
+    //header("Location: Index.html");
+    echo "No ingreso";
 }
-if($fila['id_rol']==3){//mecanico
-    header("location: Paginas_de_servicio_medico/1.html");
-}
-else {
-    ?>
-    <?php
-    include("Login.html");
-    ?>
-    <h1>Hay un error en la autotentificacion</h1>
-}
-    <?php
-
-mysqli_free_result($resultado);
-mysqli_close($conexion);
+?>
