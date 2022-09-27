@@ -8,7 +8,7 @@ $dbname = "proyecto_trenes"; //nombre de la base de datos
 $conexion = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 //Condicional por si no hay conexion que muestre el error
 if(!$conexion){
-    die("No hay conexion" .mysqli_connect_error());
+    die("NO HAY CONEXION" .mysqli_connect_error());
 }
 
 //variables que van a recibir valor por teclado para la validacion
@@ -44,6 +44,6 @@ if($nro['id_cargo'] == 3) //mecanico
 else
 {
     //header("Location: Index.html");
-    echo "No ingreso";
+    echo "NO INGRESO";
 }
 ?>

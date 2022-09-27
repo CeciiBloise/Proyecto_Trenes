@@ -1,0 +1,18 @@
+Cosas para hacer:
+- Agregar un salir
+- Agregar un buscador ¿?
+- Seguridad de retroceso, agregar algo que me destruya la sesion cuando quiera dirigirme a esa pagina
+- Validacion de error de ingreso 
+- 
+
+Cosas que le faltan para administrador general:
+Con crud:
+- pestaña para subir y actualizar usuarios 
+- pestaña para subir y actualizar archivos
+
+Cosas generales:
+- Seguridad de base de datos
+- Seguridad de localhost
+- 
+
+
