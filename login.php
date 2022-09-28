@@ -1,5 +1,4 @@
 <?php
-
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
@@ -23,27 +22,19 @@ $query =mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '".$usua
 $nro = mysqli_fetch_array($query); 
 
 //Permite el ingreso o la redirecciona al login
-if($nro['id_cargo'] == 1) //administrador general
-{
- header("Location: Paginas\Inicio.html");
- //echo "Bienvenido:" .$usuario;
-}
-
-if($nro['id_cargo'] == 2) //administrador personal
-{
- header("Location: Paginas\Servicio_medico\Servicio_medico.html");
- //echo "Bienvenido:" .$usuario;
-}
-
-if($nro['id_cargo'] == 3) //mecanico
-{
- header("Location: Paginas\Servicio_medico\Paginas_de_servicio_medico\xvx.html");
- //echo "Bienvenido:" .$usuario;
-}
-
-else
-{
-    //header("Location: Index.html");
-    echo "NO INGRESO";
+switch($nro){
+    case 0:
+        //header("Location: login.php");
+        echo "NO INGRESO";
+        break;
+    case 1:
+        header("Location: Paginas\Inicio.html");
+        break;
+    case 2:
+        header("Location: Paginas\Servicio_medico\Servicio_medico.html");
+        break;
+    case 3:
+        header("Location: Paginas\Servicio_medico\Paginas_de_servicio_medico\xvx.html");
+        break;
 }
 ?>
