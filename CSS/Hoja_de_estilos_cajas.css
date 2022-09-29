@@ -101,6 +101,9 @@ body{
         font-size: 16px;
         cursor: pointer;
     }
+    .boton_cerrar_sesion{
+        align-self: flex-end;
+    }
 
 
     @media screen and (max-width: 600px){

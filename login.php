@@ -1,4 +1,5 @@
 <?php
+session_start();
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
@@ -22,19 +23,22 @@ $query =mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '".$usua
 $nro = mysqli_fetch_array($query); 
 
 //Permite el ingreso o la redirecciona al login
-switch($nro){
+switch ($nro) {
     case 0:
         //header("Location: login.php");
-        echo "NO INGRESO";
+        echo "NO TIENE REGISTRO";
         break;
     case 1:
-        header("Location: Paginas\Inicio.html");
+        //header("Location: Paginas\Inicio.html");
+        echo "BIENVENIDO" .$usuario;
         break;
     case 2:
-        header("Location: Paginas\Servicio_medico\Servicio_medico.html");
+        //header("Location: Paginas\Servicio_medico\Servicio_medico.html");
+        echo "BIENVENIDO" .$usuario;
         break;
     case 3:
-        header("Location: Paginas\Servicio_medico\Paginas_de_servicio_medico\xvx.html");
+        //header("Location: Paginas\Servicio_medico\Paginas_de_servicio_medico\xvx.html");
+        echo "BIENVENIDO" .$usuario;
         break;
 }
 ?>
