@@ -1,5 +1,4 @@
 <?php
-session_start();
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
@@ -23,22 +22,35 @@ $query =mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '".$usua
 $nro = mysqli_fetch_array($query); 
 
 //Permite el ingreso o la redirecciona al login
-switch ($nro) {
+
+if($nro['id_cargo']==1){
+    header("location: Paginas/Inicio.html");
+}
+elseif($nro['id_cargo']==2){
+    header("location: Paginas/Servicio_medico/Servicio_medico.html");
+}
+else{
+    echo "LA CONTRASEÑA O USUARIO ES INCORRECTO";
+}
+/*switch ($nro) {
     case 0:
         //header("Location: login.php");
-        echo "NO TIENE REGISTRO";
+        echo "LA CONTRASEÑA O USUARIO ES INCORRECTO";
         break;
     case 1:
-        //header("Location: Paginas\Inicio.html");
-        echo "BIENVENIDO" .$usuario;
+        header("Location: Paginas\Inicio.html");
+        //echo "BIENVENIDO" .$usuario;
         break;
     case 2:
-        //header("Location: Paginas\Servicio_medico\Servicio_medico.html");
-        echo "BIENVENIDO" .$usuario;
+        header("Location: Paginas\Servicio_medico\Servicio_medico.html");
+        //echo "BIENVENIDO" .$usuario;
         break;
     case 3:
-        //header("Location: Paginas\Servicio_medico\Paginas_de_servicio_medico\xvx.html");
-        echo "BIENVENIDO" .$usuario;
+        header("Location: Paginas\Servicio_medico\Paginas_de_servicio_medico\xvx.html");
+        //echo "BIENVENIDO" .$usuario;
         break;
 }
+*/
+mysqli_free_result($query);
+mysqli_close($conexion);
 ?>

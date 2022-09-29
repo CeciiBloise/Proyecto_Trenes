@@ -6,9 +6,9 @@ if(isset($_GET['cerrar'])) {
     $_POST['usuario'] = NULL;
     $_POST['contraseña'] = NULL;
     unset($_SESSION['usuario']);
-    unset($_SESSION['nombreuser']);
+    unset($_SESSION['contraseña']);
   
     //Redireccionamos a la pagina index.php
-    header('Location: index.php');
+    header('Location: Index.html');
   }
 ?>
