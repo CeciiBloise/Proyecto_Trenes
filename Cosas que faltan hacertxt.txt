@@ -1,5 +1,5 @@
 Cosas para hacer:
-- Agregar un salir
+- Agregar un salir //lo agrege ahora hay que hacer que funcione el boton
 - Agregar un buscador ¿?
 - Seguridad de retroceso, agregar algo que me destruya la sesion cuando quiera dirigirme a esa pagina
 - Validacion de error de ingreso 
@@ -13,6 +13,6 @@ Con crud:
 Cosas generales:
 - Seguridad de base de datos
 - Seguridad de localhost
-- 
+- un codigo que me elimine las cookis //https://www.um.es/docencia/barzana/DAWEB/2017-18/daweb-tema-17-sesiones-PHP.html#:~:text=Puede%20terminar%20una%20sesi%C3%B3n%20completa,session_destroy%20()%3B
 
 
