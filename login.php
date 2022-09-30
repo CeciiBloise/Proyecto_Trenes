@@ -11,7 +11,7 @@ if(!$conexion){
 }
 
 
-session_start();
+//session_start();
 
 //variables que van a recibir valor por teclado para la validacion
 $usuario = $_POST["legajo"];
