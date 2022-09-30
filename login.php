@@ -10,9 +10,15 @@ if(!$conexion){
     die("NO HAY CONEXION" .mysqli_connect_error());
 }
 
+
+session_start();
+
 //variables que van a recibir valor por teclado para la validacion
 $usuario = $_POST["legajo"];
 $contraseña = $_POST["contraseñaa"];
+
+/*$usuario = $_SESSION["legajo"];
+$contraseña = $_SESSION["contraseña"];*/
 
 //Consulta que le va hacer al SQL, selecciona todo de la tabla login
 //y buscara coincidencia entre el usuario y la contrasena ingresados con la tabla del SQL
@@ -23,7 +29,7 @@ $nro = mysqli_fetch_array($query);
 
 //Permite el ingreso o la redirecciona al login
 
-if($nro['id_cargo']==1){
+/*if($nro['id_cargo']==1){
     header("location: Paginas/Inicio.html");
 }
 elseif($nro['id_cargo']==2){
@@ -31,8 +37,9 @@ elseif($nro['id_cargo']==2){
 }
 else{
     echo "LA CONTRASEÑA O USUARIO ES INCORRECTO";
-}
-/*switch ($nro) {
+}*/
+
+switch ($nro['id_cargo']) {
     case 0:
         //header("Location: login.php");
         echo "LA CONTRASEÑA O USUARIO ES INCORRECTO";
@@ -50,7 +57,7 @@ else{
         //echo "BIENVENIDO" .$usuario;
         break;
 }
-*/
+
 mysqli_free_result($query);
 mysqli_close($conexion);
 ?>
