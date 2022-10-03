@@ -13,6 +13,9 @@ Con crud:
 Cosas generales:
 - Seguridad de base de datos
 - Seguridad de localhost
-- un codigo que me elimine las cookis //https://www.um.es/docencia/barzana/DAWEB/2017-18/daweb-tema-17-sesiones-PHP.html#:~:text=Puede%20terminar%20una%20sesi%C3%B3n%20completa,session_destroy%20()%3B
-- eleminar cookies //https://programadorwebvalencia.com/cursos/php/cookies/
+- Un codigo que me elimine las cookis //https://www.um.es/docencia/barzana/DAWEB/2017-18/daweb-tema-17-sesiones-PHP.html#:~:text=Puede%20terminar%20una%20sesi%C3%B3n%20completa,session_destroy%20()%3B
+   - Eleminar cookies //https://programadorwebvalencia.com/cursos/php/cookies/
+- Formulario para la carga de usuarios
+- Formulario para la carga de archivos
+
 
