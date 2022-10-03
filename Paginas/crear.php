@@ -13,38 +13,47 @@ include "templates/header.php"; ?>
           <label for="edad">Imagen del usuario</label>
           <input type="text" name="edad" id="edad" class="form-control">
         </div>
+        <br>
         <div class="form-group">
           <label for="nombre">Nombre</label>
           <input type="text" name="nombre" id="nombre" class="form-control">
         </div>
+        <br>
         <div class="form-group">
           <label for="apellido">Apellido</label>
           <input type="text" name="apellido" id="apellido" class="form-control">
         </div>
+        <br>
         <div class="form-group">
           <label for="edad">Legajo</label>
           <input type="text" name="edad" id="edad" class="form-control">
         </div>
+        <br>
         <div class="form-group">
           <label for="edad">Nivel de Jerarquia</label>
           <input type="text" name="edad" id="edad" class="form-control">
         </div>
+        <br>
         <div class="form-group">
           <label for="edad">Puesto</label>
           <input type="text" name="edad" id="edad" class="form-control">
         </div>
+        <br>
         <div class="form-group">
           <label for="email">Email</label>
           <input type="email" name="email" id="email" class="form-control">
         </div>
+        <br>
         <div class="form-group">
           <label for="email">Domicilio</label>
           <input type="email" name="email" id="email" class="form-control">
         </div>
+        <br>
         <div class="form-group">
           <label for="edad">Edad</label>
           <input type="text" name="edad" id="edad" class="form-control">
         </div>
+        <br>
         <div class="form-group">
           <label for="edad">Celular</label>
           <input type="text" name="edad" id="edad" class="form-control">
@@ -60,4 +69,5 @@ include "templates/header.php"; ?>
   </div>
 </div>
 
-<?php include "templates/footer.php"; ?>
+<?php include "templates/footer.php"; 
+?>
