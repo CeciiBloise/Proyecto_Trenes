@@ -1,3 +1,4 @@
+
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->
 
@@ -59,8 +60,14 @@
                <!-- Esta seccion va a ser donde muestro la info -->  
                <div class="info1">
                   <!--en data va la direccion del pdf -->
-                    <object class="pdf" type="application/pdf" data="C:\xampp\htdocs\Proyecto_Trenes\Paginas\Servicio_medico\PDFs_de_servicio_medico\Tp_4"></object> 
-               </div>
+                    <!--<object class="pdf" type="application/pdf" data="C:\xampp\htdocs\Proyecto_Trenes\Paginas\Servicio_medico\PDFs_de_servicio_medico\Vue1"></object> -->
+                    <?php
+                        header("Content-type: application/pdf");
+                        header("Content-Disposition: inline; filename=documento.pdf");
+                        readfile("Proyecto_Trenes\Paginas\PDFs_de_servicio_medico\Vue1.pdf");
+                    ?>     
+               
+                </div>
 
             </section>
 

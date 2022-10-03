@@ -53,7 +53,7 @@ switch ($nro['id_cargo']) {
         //echo "BIENVENIDO" .$usuario;
         break;
     case 3:
-        header("Location: Paginas\Servicio_medico\Paginas_de_servicio_medico\xvx.html");
+        header("Location: Paginas\Servicio_medico\Paginas_de_servicio_medico\xvx.php");
         //echo "BIENVENIDO" .$usuario;
         break;
 }
