@@ -29,11 +29,7 @@ include "templates/header.php"; ?>
           <input type="text" name="edad" id="edad" class="form-control">
         </div>
         <br>
-        <div class="form-group">
-          <label for="edad">Nivel de Jerarquia</label>
-          <input type="text" name="edad" id="edad" class="form-control">
-        </div>
-        <br>
+        
         <div class="form-group">
           <label for="edad">Puesto</label>
           <input type="text" name="edad" id="edad" class="form-control">
