@@ -72,12 +72,12 @@ if($varsesion== null || $varsesion=''){
 
                <!-- 3 -->
                <!-- Esta seccion va a ser donde muestro la info -->  
-              <!-- <div class="info">
+               <div class="info">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
                     </p>
-               </div>-->
+               </div>
 
             </section>
 
