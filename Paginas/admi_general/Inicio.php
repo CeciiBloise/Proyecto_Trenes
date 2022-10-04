@@ -4,7 +4,7 @@ session_start();
 error_reporting(0);
 $varsesion=$_SESSION['legajo'];
 if($varsesion== null || $varsesion=''){
-   //echo "NO PUEDES INGRESAR, NO TIENES AUTORIXACION";
+   //echo "NO PUEDES INGRESAR, NO TIENES AUTORIzACION";
    header("location: ../../Index.html");
    die();
 }

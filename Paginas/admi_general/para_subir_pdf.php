@@ -10,7 +10,7 @@ include("conexion.php");
  
 //establece una conexión con la base de datos.
 if ($conexion->connect_error) {
-die("La conexion falló: " . $conexion->connect_error);
+die("La conexion falló: " .$conexion->connect_error);
 }
  
 // archivo temporal (ruta y nombre).
