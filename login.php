@@ -36,15 +36,15 @@ switch ($nro['id_cargo']) {
         echo "LA CONTRASEÑA O USUARIO ES INCORRECTO";
         break;
     case 1:
-        header("Location: Paginas\Inicio.php");
+        header("Location: Paginas\admi_general\Inicio.php");
         //echo "BIENVENIDO" .$usuario;
         break;
     case 2:
-        header("Location: Paginas\Servicio_medico\Servicio_medico.php");
+        header("Location: Paginas\admi_personal\Servicio_medico.php");
         //echo "BIENVENIDO" .$usuario;
         break;
     case 3:
-        header("Location: Paginas\Servicio_medico\Paginas_de_servicio_medico\xvx.php");
+        header("Location: Paginas\mecanico\xvx.php");
         //echo "BIENVENIDO" .$usuario;
         break;
 }

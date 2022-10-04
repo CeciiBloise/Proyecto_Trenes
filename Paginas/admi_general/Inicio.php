@@ -1,3 +1,15 @@
+<?php
+//seguridad de session paginacion 
+session_start();
+error_reporting(0);
+$varsesion=$_SESSION['legajo'];
+if($varsesion== null || $varsesion=''){
+   //echo "NO PUEDES INGRESAR, NO TIENES AUTORIXACION";
+   header("location: ../../Index.html");
+   die();
+}
+?>
+
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->
 
@@ -30,9 +42,9 @@
                      <ul>
                         <!--li><a href="Inicio.html">Menu</a><li-->
                         <br>
-                        <li><a href="Servicio_medico\Servicio_medico.html">Servicio medico</a></li>
+                        <li><a href="../Paginas/Servicio_medico/Servicio_medico.php">Servicio medico</a></li>
                         <br>
-                        <li><a href="">Mecanico</a></li>
+                        <li><a href="../mecanico/xvx.php">Mecanico</a></li>
                         <br>
                         <li><a href="crear.php">Registrar usuarios</a></li>
                         <br>
@@ -51,7 +63,7 @@
                     <nav>
                      <ul>
                         <li>
-                           <a href="../Index.html" class="boton_cerrar_sesion">Cerrar Sesion</a>
+                           <a href="../../logout.php" class="boton_cerrar_sesion">Cerrar Sesion</a>
                         </li>
                      </ul>
                     </nav>

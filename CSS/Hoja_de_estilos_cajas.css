@@ -29,8 +29,8 @@
 
 /*PRUEBAAAAAA*/
 body{
-    color: whitesmoke;
-    background-color: #3f393b;
+    color: white;
+    background-color: white;
     }
     :root{
         --colorTextos: rgb(22, 22, 22);
@@ -48,18 +48,18 @@ body{
         
     }
     h1{
-        font-size: 30px;
+        font-size: 20px;
         text-align: center;
     }
     
     .form{
         color:black;
-        background-color: grey;
-        padding: 40px 0;
-        box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+        background-color: white;
+        padding: 30px 0;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
         border-radius: 10px;
 
-        width: 60%;
+        width: 30%;
         margin: auto;
     }
 
@@ -69,7 +69,7 @@ body{
     }
     input{
         background: none;
-        font-size: 16px;
+        font-size: 14px;
         padding: 10px 10px 10px 5px;
         display: block;
         width: 100%;
@@ -78,28 +78,30 @@ body{
     }
     input:focus{
         outline: none;
-        color: #302f2f;
+        color: black;
         font-family: Arial, Helvetica, sans-serif;
 
     }
     
     input:focus~label, input:valid~label{
         top: -15px;
-        font-size: 14px; 
+        font-size: 10px; 
         color: white;
     }
     label .tt{
+        font-size: 10px;
         margin-top: 100px;
     }
     button{
         display: block;
-        width: 30%;
+        width: 50%;
         margin: 10px auto;
         border-radius: 3px;
         box-shadow: 0 1px 1px rgba(0,0,0,0.3);
         height: 40px;
         font-size: 16px;
         cursor: pointer;
+        padding: 10px;
     }
     .boton_cerrar_sesion{
         align-self: flex-end;

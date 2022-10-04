@@ -21,8 +21,8 @@ if($varsesion== null || $varsesion=''){
         <!-- Estilos -->
         <!-- En casa: C:\Users\PC\Documents\Proyecto_Trenes\CSS\Hoja_de_estilos.css -->
         <!-- En el trabajo: C:\xampp\htdocs\Proyecto_Trenes\CSS\Hoja_de_estilos.css -->
-        <link rel="stylesheet" href="../../../CSS/Hoja_de_estilos.css"/> <!--Aca llamo a la hoja de estilos-->
-        <link rel="stylesheet" href="../../../CSS/Hoja_de_estilos_cajas.css"/>
+        <link rel="stylesheet" href="../../CSS/Hoja_de_estilos.css"/> <!--Aca llamo a la hoja de estilos-->
+        <link rel="stylesheet" href="../../CSS/Hoja_de_estilos_cajas.css"/>
         <!---link rel="stylesheet" href="C:\Users\PC\Documents\Proyecto_Trenes\CSS\normalize.css" /--> <!--No me funca-->
 
         <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
@@ -59,7 +59,7 @@ if($varsesion== null || $varsesion=''){
                     <nav>
                      <ul>
                         <li>
-                           <a href="../../../logout.php" class="boton_cerrar_sesion">Cerrar Sesion</a>
+                           <a href="../../logout.php" class="boton_cerrar_sesion">Cerrar Sesion</a>
                         </li>
                      </ul>
                     </nav>  

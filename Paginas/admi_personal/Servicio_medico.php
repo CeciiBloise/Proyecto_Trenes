@@ -40,9 +40,9 @@ if($varsesion== null || $varsesion=''){
                <div class="menu">
                   <nav>
                      <ul>
-                        <li><a href="../../Paginas/Inicio.html">Volver al inicio</a></li>
+                        <li><a href="../admi_general/Inicio.php">Volver al inicio</a></li>
                         <br>
-                        <li><a href="Paginas_de_servicio_medico/xvx.html">XXXXXXXXXX</a></li>
+                        <li><a href="">XXXXXXXXXX</a></li>
                      </ul>
                   </nav>
                </div>
