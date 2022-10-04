@@ -63,7 +63,7 @@ body{
     }
         
         .header {
-            background: white;
+            background: #000;
             box-shadow: 0 4px 5px grey;
             /*Flexbox*/
             display: flex;
@@ -79,7 +79,6 @@ body{
             /*Titulo*/
             text-align: center;
             font-size: 16px;
-            text-decoration-color: #000;
         }
 
         .info {

@@ -1,21 +1,20 @@
 Cosas para hacer:
-- Agregar un salir //lo agrege ahora hay que hacer que funcione el boton
-- Agregar un buscador ¿?
-- Seguridad de retroceso, agregar algo que me destruya la sesion cuando quiera dirigirme a esa pagina//https://programadorwebvalencia.com/cursos/php/paginador/
-- Validacion de error de ingreso// me figura un error cuando se confunde de contraseña o usuario y no se porque 
-- Mostrar el PDF //https://parzibyte.me/blog/2019/12/23/mostrar-pdf-navegador-php/
+- Agregar un salir //Listo
+- Seguridad de paginaion //Listo
+- Validacion de error de ingreso//Listo
+- Agregar un buscador en ficha de personal
 
 Cosas que le faltan para administrador general:
 Con crud:
 - pestaña para subir y actualizar usuarios //https://www.neoguias.com/tutorial-crud-php/#Creacion_de_la_aplicacion_CRUD 
 - pestaña para subir y actualizar archivos
+   - Mostrar el PDF //https://parzibyte.me/blog/2019/12/23/mostrar-pdf-navegador-php/
 
 Cosas generales:
 - Seguridad de base de datos
 - Seguridad de localhost
 - Un codigo que me elimine las cookis //https://www.um.es/docencia/barzana/DAWEB/2017-18/daweb-tema-17-sesiones-PHP.html#:~:text=Puede%20terminar%20una%20sesi%C3%B3n%20completa,session_destroy%20()%3B
    - Eleminar cookies //https://programadorwebvalencia.com/cursos/php/cookies/
-- Formulario para la carga de usuarios
-- Formulario para la carga de archivos
+
 
 
