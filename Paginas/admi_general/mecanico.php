@@ -4,11 +4,12 @@ session_start();
 error_reporting(0);
 $varsesion=$_SESSION['legajo'];
 if($varsesion== null || $varsesion=''){
-   //echo "NO PUEDES INGRESAR, NO TIENES AUTORIXACION";
-   header("location: ../../Index.html");
+   echo "NO PUEDES INGRESAR, NO TIENES AUTORIZACION";
+   //header("location:../../../Index.html");
    die();
 }
 ?>
+
 
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->
@@ -40,16 +41,11 @@ if($varsesion== null || $varsesion=''){
                <div class="menu">
                   <nav>
                      <ul>
-                        <!--li><a href="Inicio.html">Menu</a><li-->
+                        <li><a href="Inicio.php">Volver al inicio</a></li>
                         <br>
-                        <li><a href="admi_personal.php">Servicio medico</a></li>
-                        <br>
-                        <li><a href="mecanico.php">Mecanico</a></li>
-                        <br>
-                        <li><a href="crear.php">Registrar usuarios</a></li>
-                        <br>
-                        <li><a href="">Actualizacion de PDFs</a></li>
+                          <li><a href="">boton1</a><li> 
                      </ul>
+                     <h1>Acceso a otras cosas</h1>
                   </nav>
                </div>
                
@@ -59,14 +55,14 @@ if($varsesion== null || $varsesion=''){
                <!-- esta seccion va a ser la del titulo, seria el header -->
                <header class="header">
                   <div class="titulo">
-                    <h1>Bienvenidos</h1>  
+                    <h1>XXXXXXXXX</h1>
                     <nav>
                      <ul>
                         <li>
                            <a href="../../logout.php" class="boton_cerrar_sesion">Cerrar Sesion</a>
                         </li>
                      </ul>
-                    </nav>
+                    </nav>  
                   </div>
 
                   <div class="logo"></div>
@@ -74,12 +70,12 @@ if($varsesion== null || $varsesion=''){
 
                <!-- 3 -->
                <!-- Esta seccion va a ser donde muestro la info -->  
-               <div class="info">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                    </p>
-               </div>
+               <div class="info1">
+                  <!--en data va la direccion del pdf -->
+                    <!--<object class="pdf" type="application/pdf" data="C:\xampp\htdocs\Proyecto_Trenes\Paginas\Servicio_medico\PDFs_de_servicio_medico\Vue1"></object> -->
+                        
+               
+                </div>
 
             </section>
 

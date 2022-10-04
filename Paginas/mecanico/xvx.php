@@ -41,11 +41,10 @@ if($varsesion== null || $varsesion=''){
                <div class="menu">
                   <nav>
                      <ul>
-                        <li><a href="../../Inicio.html">Volver al inicio</a></li>
+                        <li><a href="">boton1</a></li>
                         <br>
-                          <li><a href="../Servicio_medico.html">Volver a servicio medico</a><li> 
+                          <li><a href="">boton2</a><li> 
                      </ul>
-                     <h1>Acceso a otras cosas</h1>
                   </nav>
                </div>
                
