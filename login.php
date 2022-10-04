@@ -10,46 +10,37 @@ if(!$conexion){
     die("NO HAY CONEXION" .mysqli_connect_error());
 }
 
-
-//session_start();
-
 //variables que van a recibir valor por teclado para la validacion
 $usuario = $_POST["legajo"];
 $contraseña = $_POST["contraseñaa"];
 
-/*$usuario = $_SESSION["legajo"];
-$contraseña = $_SESSION["contraseña"];*/
+session_start();
+$_SESSION["legajo"]=$usuario;
 
 //Consulta que le va hacer al SQL, selecciona todo de la tabla login
 //y buscara coincidencia entre el usuario y la contrasena ingresados con la tabla del SQL
 $query =mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '".$usuario."' and contraseña ='".$contraseña."'" );
+
 //Una vez encontra la coincidencia nos da como resultado una fila, un numero
 //$nro = mysqli_num_rows($query);
 $nro = mysqli_fetch_array($query); 
 
 //Permite el ingreso o la redirecciona al login
 
-/*if($nro['id_cargo']==1){
-    header("location: Paginas/Inicio.html");
-}
-elseif($nro['id_cargo']==2){
-    header("location: Paginas/Servicio_medico/Servicio_medico.html");
-}
-else{
-    echo "LA CONTRASEÑA O USUARIO ES INCORRECTO";
-}*/
-
+error_reporting(0);
 switch ($nro['id_cargo']) {
-    case 0:
+    
+    case null:
         //header("Location: login.php");
+        
         echo "LA CONTRASEÑA O USUARIO ES INCORRECTO";
         break;
     case 1:
-        header("Location: Paginas\Inicio.html");
+        header("Location: Paginas\Inicio.php");
         //echo "BIENVENIDO" .$usuario;
         break;
     case 2:
-        header("Location: Paginas\Servicio_medico\Servicio_medico.html");
+        header("Location: Paginas\Servicio_medico\Servicio_medico.php");
         //echo "BIENVENIDO" .$usuario;
         break;
     case 3:

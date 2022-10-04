@@ -1,3 +1,15 @@
+<?php
+//seguridad de session paginacion 
+session_start();
+error_reporting(0);
+$varsesion=$_SESSION['legajo'];
+if($varsesion== null || $varsesion=''){
+   echo "NO PUEDES INGRESAR, NO TIENES AUTORIZACION";
+   //header("location:../../../Index.html");
+   die();
+}
+?>
+
 
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->
@@ -47,7 +59,7 @@
                     <nav>
                      <ul>
                         <li>
-                           <a href="../../../Index.html" class="boton_cerrar_sesion">Cerrar Sesion</a>
+                           <a href="../../../logout.php" class="boton_cerrar_sesion">Cerrar Sesion</a>
                         </li>
                      </ul>
                     </nav>  
@@ -61,11 +73,7 @@
                <div class="info1">
                   <!--en data va la direccion del pdf -->
                     <!--<object class="pdf" type="application/pdf" data="C:\xampp\htdocs\Proyecto_Trenes\Paginas\Servicio_medico\PDFs_de_servicio_medico\Vue1"></object> -->
-                    <?php
-                        header("Content-type: application/pdf");
-                        header("Content-Disposition: inline; filename=documento.pdf");
-                        readfile("Proyecto_Trenes\Paginas\PDFs_de_servicio_medico\Vue1.pdf");
-                    ?>     
+                        
                
                 </div>
 
