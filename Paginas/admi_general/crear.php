@@ -11,7 +11,7 @@ include "templates/header.php"; ?>
       <form method="post">
       <div class="form-group">
           <label for="edad">Imagen del usuario</label>
-          <input type="text" name="edad" id="edad" class="form-control">
+          <td colspan="2"><input type="file" name="archivo"></td>
         </div>
         <br>
         <div class="form-group">
@@ -58,7 +58,7 @@ include "templates/header.php"; ?>
 
         <div class="form-group">
           <input type="submit" name="submit" class="btn btn-primary" value="Enviar">
-          <a class="btn btn-primary" href="index.php">Regresar al inicio</a>
+          <a href="../../Index.html">Regresar al inicio</a>
         </div>
       </form>
     </div>
