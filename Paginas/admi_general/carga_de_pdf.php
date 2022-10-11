@@ -1,29 +1,30 @@
 <?php
+//Se guarda paro no ando lo que esta en verde, no se porque
 //Obtengo los datos del archivo
-/*$nombre = $_FILES['archivo']['name'];
-$tipo = $_FILES['archivo']['type'];
-$tamanio = $_FILES['archivo']['size'];
-$ruta = $_FILES['archivo']['tmp_name'];
-$destino = "archivos/".$nombre;
-
 if(isset($_POST['subir'])){
+    $nombre = $_FILES['archivo']['name'];
+    $tipo = $_FILES['archivo']['type'];
+    $tamanio = $_FILES['archivo']['size'];
+    $ruta = $_FILES['archivo']['tmp_name'];
+    $destino = "archivos/".$nombre;
+    
     if($nombre != ""){
+        
         if(copy($ruta, $destino)){
             //echo "Exito";
-            $titulo= $_POST['titulo'];
+         /*  $titulo= $_POST['titulo'];
             $descripcion= $_POST['descripcion'];
-            $db=new Conect_MySql();
+            $db=new mysql_connect('localhost', 'Proyecto_trenes','');
             $sql= "INSERT INTO pdf(id_documento, titulo, descripcion, tamanio, tipo, nombre_archivo) VALUES ('$titulo', '$descripcion', '$tamanio', '$tipo', '$nombre')";
             $query = $db->execute($sql);
             if($query){
                 echo "Se guardo correctamente";
-            }
+            }*/
         }
     }else{
         echo "Erros";
     }
-}*/
-
+}
 ?> 
 
 <!DOCTYPE html> <!-- version html5 -->
@@ -39,7 +40,8 @@ if(isset($_POST['subir'])){
     <body>
         <div style="width: 500px; margin: auto; border: 1px solid black; padding: 30px">
         <h1 style="text-align: center">Carga de PDF</h1>
-        <form accion="upfile.php" method="POST" enctype="multipart/form-data">
+        <!--form accion="upfile.php" method="POST" enctype="multipart/form-data"-->
+        <form acc method="POST" enctype="multipart/form-data"-->
             <table>
                 <tr>
                     <td><label>Titulo</label></td>

@@ -1,4 +1,6 @@
+
 <?php
+
 //echo $_FILES['archivo']['nombre'];
 //Conexicion base de datos
 $dbhost = "localhost";
