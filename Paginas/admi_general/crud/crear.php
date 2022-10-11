@@ -1,31 +1,21 @@
-<style>
-  .container{
-    display: flex;
-    flex: 1 1 auto;
-    align-items: stretch;
-    align-content: center;
-    height: 85%;
-    padding: 0;
-    width: 100%;
-    font-size: 16px;
-  }
-  .form{
-        color:black;
-        background-color: white;
-        padding: 30px 0;
-        box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
-        border-radius: 10px;
+<?php
+     include("conexion_crud");
+     $conexion=conectar();
 
-        width: 30%;
-        margin: auto;
-    }
-    .row{
-      align-items: center;
-    }  
-</style>
+     $sql="SELECT * FROM carga_de_usuarios";
+     $query= mysqli_query($conexion,$sql);
 
+     $row=mysqli_fetch_array($query);
+?>
 
-<div class="container">
+<html lang="es">
+    <head>
+      <meta charset="utf-8" /> <!-- tipos de caracter -->
+      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+      <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
+    </head>
+    <body>
+    <div class="container">
   <div class="row">
     <div class="col-md-12">
       <h2 class="mt-4">Carga de usuario</h2>
@@ -86,3 +76,5 @@
     </div>
   </div>
 </div>
+    </body>
+</html>
