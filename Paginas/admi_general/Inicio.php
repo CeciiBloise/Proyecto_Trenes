@@ -46,6 +46,8 @@ if($varsesion== null || $varsesion=''){
                         <br>
                         <li><a href="crear.php">Registrar usuarios</a></li>
                         <br>
+                        <li><a href="carga_de_pdf.php">PDF</a></li>
+                        <br>
                         <li><a href="">Actualizacion de PDFs</a></li>
                      </ul>
                   </nav>

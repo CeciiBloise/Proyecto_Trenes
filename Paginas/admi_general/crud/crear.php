@@ -1,9 +1,21 @@
 <?php
-/** Creacion de usuarios **/
+     include("conexion_crud");
+     $conexion=conectar();
 
-include "templates/header.php"; ?>
+     $sql="SELECT * FROM carga_de_usuarios";
+     $query= mysqli_query($conexion,$sql);
 
-<div class="container">
+     $row=mysqli_fetch_array($query);
+?>
+
+<html lang="es">
+    <head>
+      <meta charset="utf-8" /> <!-- tipos de caracter -->
+      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+      <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
+    </head>
+    <body>
+    <div class="container">
   <div class="row">
     <div class="col-md-12">
       <h2 class="mt-4">Carga de usuario</h2>
@@ -11,7 +23,7 @@ include "templates/header.php"; ?>
       <form method="post">
       <div class="form-group">
           <label for="edad">Imagen del usuario</label>
-          <input type="text" name="edad" id="edad" class="form-control">
+          <td colspan="2"><input type="file" name="archivo"></td>
         </div>
         <br>
         <div class="form-group">
@@ -54,16 +66,15 @@ include "templates/header.php"; ?>
           <label for="edad">Celular</label>
           <input type="text" name="edad" id="edad" class="form-control">
         </div>
-        
+        <br>
 
         <div class="form-group">
           <input type="submit" name="submit" class="btn btn-primary" value="Enviar">
-          <a class="btn btn-primary" href="index.php">Regresar al inicio</a>
+          <a href="../../Index.html">Regresar al inicio</a>
         </div>
       </form>
     </div>
   </div>
 </div>
-
-<?php include "templates/footer.php"; 
-?>
+    </body>
+</html>

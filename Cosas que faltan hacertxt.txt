@@ -2,19 +2,19 @@ Cosas para resolver:
 - Agregar un salir //Listo
 - Seguridad de paginaion //Listo
 - Validacion de error de ingreso//Listo
-- Agregar un buscador en ficha de personal
+- Agregar un buscador en ficha de personal //https://www.freecodecamp.org/espanol/news/como-crear-un-formulario-responsivo-con-funcionalidad-de-filtro-usando-html-css-y-javascript/
 
 Cosas que le faltan para administrador general:
 Con crud:
 - pestaña para subir y actualizar usuarios //https://www.neoguias.com/tutorial-crud-php/#Creacion_de_la_aplicacion_CRUD 
+  //https://codigosdeprogramacion.com/cursos/?lesson=4-crud-parte-2-insertar-actualizar-eliminar-y-buscar
+
 - pestaña para subir y actualizar archivos
    - Mostrar el PDF //https://parzibyte.me/blog/2019/12/23/mostrar-pdf-navegador-php/
+   - Hasta ahora logre que me funcione la parte de cargar un pdf, pero que se guarde en la base de datos
 
 Cosas generales de la pagina:
 - Seguridad de base de datos
 - Seguridad de localhost
 - Un codigo que me elimine las cookis //https://www.um.es/docencia/barzana/DAWEB/2017-18/daweb-tema-17-sesiones-PHP.html#:~:text=Puede%20terminar%20una%20sesi%C3%B3n%20completa,session_destroy%20()%3B
    - Eleminar cookies //https://programadorwebvalencia.com/cursos/php/cookies/
-
-
-
