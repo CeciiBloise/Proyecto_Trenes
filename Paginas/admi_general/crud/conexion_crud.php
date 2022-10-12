@@ -8,7 +8,5 @@ function conectar(){
    mysqli_select_db($conexion, $dbname);
 
    return $conexion;
-   
 }
-
 ?>

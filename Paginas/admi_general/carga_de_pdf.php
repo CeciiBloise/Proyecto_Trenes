@@ -11,7 +11,7 @@ if(isset($_POST['subir'])){
     if($nombre != ""){
         
         if(copy($ruta, $destino)){
-            //echo "Exito";
+            echo "Exito";
          /*  $titulo= $_POST['titulo'];
             $descripcion= $_POST['descripcion'];
             $db=new mysql_connect('localhost', 'Proyecto_trenes','');
