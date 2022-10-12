@@ -15,66 +15,23 @@
       <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
     </head>
     <body>
-    <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h2 class="mt-4">Carga de usuario</h2>
-      <hr>
-      <form method="post">
-      <div class="form-group">
-          <label for="edad">Imagen del usuario</label>
-          <td colspan="2"><input type="file" name="archivo"></td>
-        </div>
-        <br>
-        <div class="form-group">
-          <label for="nombre">Nombre</label>
-          <input type="text" name="nombre" id="nombre" class="form-control">
-        </div>
-        <br>
-        <div class="form-group">
-          <label for="apellido">Apellido</label>
-          <input type="text" name="apellido" id="apellido" class="form-control">
-        </div>
-        <br>
-        <div class="form-group">
-          <label for="edad">Legajo</label>
-          <input type="text" name="edad" id="edad" class="form-control">
-        </div>
-        <br>
+      <div class="form_carga">
+        <h1>Ingrese los datos</h1>
+        <form action="inserta_en_bd.php" method="POST">
+          <input type="text" name="nombre" placeholder="Nombre"> <!-- name tiene que llevar el mismo nombre del campo de la base de datos-->
+          <input type="text" name="apellido" placeholder="Aprellido">
+          <input type="number" name="dni" placeholder="D.N.I">
+          <input type="text" name="fecha_de_nacimiento" placeholder="Fecha de nacimiento">
+          <input type="text" name="direccion" placeholder="Direccion">
+          <input type="number" name="celular" placeholder="Celular">
+          <input type="text" name="legajo" placeholder="Legajo">
+          <input type="text" name="puesto" placeholder="Puesto">
+          <input type="text" name="supervisor_cargo" placeholder="Supervisor a cargo de su sector">
+          <input type="text" name="fecha_de_ingreso_a_la_empresa" placeholder="Nombre">
+          
+          <button type="submit">Cargar</button>
         
-        <div class="form-group">
-          <label for="edad">Puesto</label>
-          <input type="text" name="edad" id="edad" class="form-control">
-        </div>
-        <br>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" class="form-control">
-        </div>
-        <br>
-        <div class="form-group">
-          <label for="email">Domicilio</label>
-          <input type="email" name="email" id="email" class="form-control">
-        </div>
-        <br>
-        <div class="form-group">
-          <label for="edad">Edad</label>
-          <input type="text" name="edad" id="edad" class="form-control">
-        </div>
-        <br>
-        <div class="form-group">
-          <label for="edad">Celular</label>
-          <input type="text" name="edad" id="edad" class="form-control">
-        </div>
-        <br>
-
-        <div class="form-group">
-          <input type="submit" name="submit" class="btn btn-primary" value="Enviar">
-          <a href="../../Index.html">Regresar al inicio</a>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+        </form>
+      </div>
     </body>
 </html>

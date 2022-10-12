@@ -44,7 +44,7 @@ if($varsesion== null || $varsesion=''){
                         <br>
                         <li><a href="mecanico.php">Mecanico</a></li>
                         <br>
-                        <li><a href="crear.php">Registrar usuarios</a></li>
+                        <li><a href="crud\crear.php">Registrar usuarios</a></li>
                         <br>
                         <li><a href="carga_de_pdf.php">PDF</a></li>
                         <br>
