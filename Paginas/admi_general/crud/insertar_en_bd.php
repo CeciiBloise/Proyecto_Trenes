@@ -14,7 +14,7 @@ $fecha_de_ingreso=$_POST['fecha_de_ingreso_a_la_empresa'];
 $puesto=$_POST['puesto'];
 $supervisor=$_POST['supervisor_cargo'];
 
-$sql="INSERT INTO carga_de_usuarios VALUES('$nombre', '$apellido', '$dni', '$celular', '$mail', '$direccion', '$fecha_de_nacimiento', '$legajo', '$fecha_de_ingreso', '$puesto', '$supervisor')";
+$sql="INSERT INTO carga_de_usuarios VALUES('$legajo','$nombre','$apellido','$dni','$celular','$mail','$direccion','$fecha_de_nacimiento','$fecha_de_ingreso','$puesto','$supervisor')";
 $query= mysqli_query($conexion,$sql);
 
 if($query){

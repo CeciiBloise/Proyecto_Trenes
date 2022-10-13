@@ -42,7 +42,9 @@ if($varsesion== null || $varsesion=''){
                      <ul>
                         <li><a href="Inicio.php">Volver al inicio</a></li>
                         <br>
-                        <li><a href="mecanico.php">XXXXXXXXXX</a></li>
+                        <li><a href="mecanico.php">Mecanico</a></li>
+                        <br>
+                        <li><a href="crud/tabla_crud.php">Personal</a></li>
                      </ul>
                   </nav>
                </div>

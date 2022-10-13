@@ -43,6 +43,8 @@ if($varsesion== null || $varsesion=''){
                         <li><a href="../mecanico/xvx.php">Mecanico</a></li>
                         <br>
                         <li><a href="">Ficha del personal</a></li>
+                        <br>
+                        <li><a href="../admi_general/crud/tabla_crud.php">Actualizacion de personal</a></li>
                      </ul>
                   </nav>
                </div>
