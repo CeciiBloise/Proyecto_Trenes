@@ -70,6 +70,7 @@
                         <th>Puesto</th>
                         <th>Supervisor a cargo</th>
                         <th>Fecha de ingreso a la empresa</th>
+                        <!--<th>Foto</th>-->
                         <th></th>
                         <th></th>
                     </tr>
