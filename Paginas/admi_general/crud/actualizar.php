@@ -99,10 +99,9 @@
           </div> 
           <div class="inputContainer">
             <label class="label">Foto del usuario</label> <!-- falta esto -->
-            <input class="input" type="file" name="imagen">
           </div> 
           <button class="boton" type="submit">Actualizar</button>
-        
+
         </form>
       </div>
     </body>

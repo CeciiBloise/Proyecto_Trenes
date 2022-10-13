@@ -6,12 +6,14 @@ Cosas para resolver:
 
 Cosas que le faltan para administrador general:
 Con crud:
-- pestaña para subir y actualizar usuarios //https://www.neoguias.com/tutorial-crud-php/#Creacion_de_la_aplicacion_CRUD 
+- pestaña para subir y actualizar usuarios //Listo
+  //https://www.neoguias.com/tutorial-crud-php/#Creacion_de_la_aplicacion_CRUD 
   //https://codigosdeprogramacion.com/cursos/?lesson=4-crud-parte-2-insertar-actualizar-eliminar-y-buscar
+- Buscador de usuario por legajo
 
 - pestaña para subir y actualizar archivos
    - Mostrar el PDF //https://parzibyte.me/blog/2019/12/23/mostrar-pdf-navegador-php/
-   - Hasta ahora logre que me funcione la parte de cargar un pdf, pero que se guarde en la base de datos
+   - Hasta ahora logre que me funcione la parte de cargar un pdf, pero que se guarde en la base de datos no.
 
 Cosas generales de la pagina:
 - Seguridad de base de datos

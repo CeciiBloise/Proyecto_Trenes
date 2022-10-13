@@ -47,6 +47,13 @@
         font-size: 12px;
       }
     </style>
+
+    <header>
+      <nav>
+            <a class="nav" href="../../admi_general/Inicio.php" >Inicio</a>
+            <a class="nav" href="../../../logout.php" >Cerrar Sesion</a>
+      </nav>
+    </header>
     
     <body>
       <div class="form_carga">

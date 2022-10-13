@@ -4,6 +4,8 @@
 
      $sql="SELECT * FROM carga_de_usuarios";
      $query= mysqli_query($conexion,$sql);
+
+     $row=mysqli_fetch_array($query);
 ?>
 <!DOCTYPE html> 
 <html lang="es"> 
@@ -17,39 +19,48 @@
         <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
     </head>
     <style>
-        .style-table { 
+        .content-table{ 
             border-collapse: collapse; 
-            margin: 25px 0; 
-            font-size: 1em; 
-            font-family: sans-serif; 
+            margin: 25px 0;  
             min-width: 450px; 
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); 
         }
-        .styled-table thead tr { 
-            background-color: black; 
-            color: #ffffff; 
-            text-align: middle; 
+        th, td{ 
+            padding: 10px 15px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif; 
+            border-bottom: solid 1px grey;
         }
-        .styled-table th, .styled-table td { 
-            padding: 12px 15px; 
+        tr:nth-child(even){
+            background-color:rgba(128, 128, 128, 0.4);
         }
-        .styled-table tbody tr { 
-            border-bottom: 1px solid #dddddd; 
-        } 
-        .styled-table tbody tr:nth-of-type(even) { 
-            background-color: #f3f3f3; 
-        } 
-        .styled-table tbody tr:last-of-type { 
-            border-bottom: 2px solid #009879; 
+        tr:hover td{
+            background-color: #1EBBFA;
+        }
+        caption{
+            font-size: 2em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        thead{
+            background-color: white;
+            border-bottom: solid 3px black;
         }
     </style>
+    <header>
+      <nav>
+            <a class="nav" href="../../admi_general/Inicio.php" >Inicio</a>
+            <a class="nav" href="../../../logout.php" >Cerrar Sesion</a>
+      </nav>
+    </header>
 
     <body>
+        <header></header>
         <div>
             <table class="content-table">
+                <caption>Tabla de Personal</caption>
                 <thead>
                     <tr>
-                        <th>Legajo</th>
+                        <th scope="row">Legajo</th>
                         <th>Apellido</th>
                         <th>Nombre</th>
                         <th>D.N.I</th>
@@ -68,20 +79,18 @@
                          while($row=mysqli_fetch_array($query)){
                     ?>
                     <tr>
-                    <th><?php echo $row['legajo']?></th>
-                    <th><?php echo $row['apellido']?></th>
-                    <th><?php echo $row['nombre']?></th>
-                    <th><?php echo $row['dni']?></th>
-                    <th><?php echo $row['fecha_de_nacimiento']?></th>
-                    <th><?php echo $row['direccion']?></th>
-                    <th><?php echo $row['celular']?></th>
-                    <th><?php echo $row['puesto']?></th>
-                    <th><?php echo $row['supervisor_cargo']?></th>
-                    <th><?php echo $row['fecha_de_ingreso_a_la_empresa']?></th>
-                    <th><a href="actualizar.php?id=<?php echo $row['legajo']?>">Editar</a></th>
-                    <th></th>
-                    <th><a href="delete.php?id=<?php echo $row['legajo']?>">Eliminar</a></th>
-                    <th></th>
+                    <td scope="col"><?php echo $row['legajo']?></td>
+                    <td><?php echo $row['apellido']?></td>
+                    <td><?php echo $row['nombre']?></td>
+                    <td><?php echo $row['dni']?></td>
+                    <td><?php echo $row['fecha_de_nacimiento']?></td>
+                    <td><?php echo $row['direccion']?></td>
+                    <td><?php echo $row['celular']?></td>
+                    <td><?php echo $row['puesto']?></td>
+                    <td><?php echo $row['supervisor_cargo']?></td>
+                    <td><?php echo $row['fecha_de_ingreso_a_la_empresa']?></td>
+                    <td><a href="actualizar.php?id=<?php echo $row['legajo']?>">Editar</a></td>
+                    <td><a href="eliminar.php?id=<?php echo $row['legajo']?>">Eliminar</a></td>
                     </tr>
                     <?php
                          }

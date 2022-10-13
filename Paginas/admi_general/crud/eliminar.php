@@ -7,6 +7,6 @@ $sql="DELETE FROM carga_de_usuarios  WHERE legajo='$legajo'";
 $query=mysqli_query($conexion,$sql);
 
     if($query){
-        header("Location: crear.php");
+        header("Location: tabla_crud.php");
     }
 ?>
