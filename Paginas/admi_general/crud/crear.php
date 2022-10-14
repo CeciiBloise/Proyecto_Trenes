@@ -60,12 +60,16 @@
         <form action="insertar_en_bd.php" method="POST" class="form">
           <h1 class="titulo">Ingrese los datos</h1>
           <div class="inputContainer">
-            <label class="label">Nombres:</label>
-            <input type="text" name="nombre" placeholder="Nombre" class="input"> <!-- name tiene que llevar el mismo nombre del campo de la base de datos-->
+            <label class="label">Legajo:</label>
+            <input class="input" type="number" name="legajo" placeholder="Legajo">
           </div>
           <div class="inputContainer">
             <label class="label">Apellidos:</label>
             <input type="text" name="apellido" placeholder="Aprellido" class="input">
+          </div>
+          <div class="inputContainer">
+            <label class="label">Nombres:</label>
+            <input type="text" name="nombre" placeholder="Nombre" class="input"> <!-- name tiene que llevar el mismo nombre del campo de la base de datos-->
           </div>
           <div class="inputContainer">
             <label class="label">D.N.I:</label>
@@ -80,16 +84,12 @@
             <input class="input" type="text" name="direccion" placeholder="Direccion">
           </div>
           <div class="inputContainer">
-            <label class="label">Correo Electronico:</label>
-            <input class="input" type="email" name="mail" placeholder="Correo Electronico">
-          </div>
-          <div class="inputContainer">
             <label class="label">Celular:</label>
             <input class="input" type="tel" name="celular" placeholder="Celular">
           </div>
           <div class="inputContainer">
-            <label class="label">Legajo:</label>
-            <input class="input" type="number" name="legajo" placeholder="Legajo">
+            <label class="label">Correo Electronico:</label>
+            <input class="input" type="email" name="mail" placeholder="Correo Electronico">
           </div>
           <div class="inputContainer">
             <label class="label">Puesto:</label>

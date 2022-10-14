@@ -50,58 +50,72 @@
     </style>
     
     <body>
-      <div class="form_carga">
-        <form action="update.php" method="POST" class="form">
+    <div class="form_carga">
+        <form action="insertar_en_bd.php" method="POST" class="form">
           <h1 class="titulo">Ingrese los datos</h1>
-          <div class="inputContainer">
-            <label class="label">Nombres:</label>
-            <input type="text" name="nombre" placeholder="Nombre" class="input" value="<?php echo $row['nombre'] ?>"> <!-- name tiene que llevar el mismo nombre del campo de la base de datos-->
-          </div>
-          <div class="inputContainer">
-            <label class="label">Apellidos:</label>
-            <input type="text" name="apellido" placeholder="Aprellido" class="input" value="<?php echo $row['apellido'] ?>">
-          </div>
-          <div class="inputContainer">
-            <label class="label">D.N.I:</label>
-            <input class="input" type="number" name="dni" placeholder="D.N.I sin puntos" value="<?php echo $row['dni'] ?>">
-          </div>
-          <div class="inputContainer">
-            <label class="label">Fecha de nacimiento:</label>
-            <input class="input" type="date" name="fecha_de_nacimiento" value="<?php echo $row['fecha_de_nacimiento'] ?>">
-          </div>
-          <div class="inputContainer">
-            <label class="label">Direccion:</label>
-            <input class="input" type="text" name="direccion" placeholder="Direccion" value="<?php echo $row['direccion'] ?>">
-          </div>
-          <div class="inputContainer">
-            <label class="label">Correo Electronico:</label>
-            <input class="input" type="email" name="mail" placeholder="Correo Electronico" value="<?php echo $row['mail'] ?>">
-          </div>
-          <div class="inputContainer">
-            <label class="label">Celular:</label>
-            <input class="input" type="tel" name="celular" placeholder="Celular" value="<?php echo $row['celular'] ?>">
-          </div>
+
           <div class="inputContainer">
             <label class="label">Legajo:</label>
             <input class="input" type="number" name="legajo" placeholder="Legajo" value="<?php echo $row['legajo'] ?>">
           </div>
+
+          <div class="inputContainer">
+            <label class="label">Apellidos:</label>
+            <input type="text" name="apellido" placeholder="Aprellido" class="input" value="<?php echo $row['apellido'] ?>">
+          </div>
+
+          <div class="inputContainer">
+            <label class="label">Nombres:</label>
+            <input type="text" name="nombre" placeholder="Nombre" class="input" value="<?php echo $row['nombre'] ?>"> <!-- name tiene que llevar el mismo nombre del campo de la base de datos-->
+          </div>
+
+          <div class="inputContainer">
+            <label class="label">D.N.I:</label>
+            <input class="input" type="number" name="dni" placeholder="D.N.I sin puntos" value="<?php echo $row['dni'] ?>">
+          </div>
+
+          <div class="inputContainer">
+            <label class="label">Fecha de nacimiento:</label>
+            <input class="input" type="date" name="fecha_de_nacimiento" value="<?php echo $row['fecha_de_nacimiento'] ?>">
+          </div>
+
+          <div class="inputContainer">
+            <label class="label">Direccion:</label>
+            <input class="input" type="text" name="direccion" placeholder="Direccion" value="<?php echo $row['direccion'] ?>">
+          </div>
+
+          <div class="inputContainer">
+            <label class="label">Celular:</label>
+            <input class="input" type="tel" name="celular" placeholder="Celular" value="<?php echo $row['celular'] ?>">
+          </div>
+
+          <div class="inputContainer">
+            <label class="label">Correo Electronico:</label>
+            <input class="input" type="email" name="mail" placeholder="Correo Electronico" value="<?php echo $row['mail'] ?>">
+          </div>
+
           <div class="inputContainer">
             <label class="label">Puesto:</label>
             <input class="input" type="text" name="puesto" placeholder="Puesto" value="<?php echo $row['puesto'] ?>">
           </div>
+
           <div class="inputContainer">
             <label class="label">Supervisor a cargo del sector:</label>
             <input class="input" type="text" name="supervisor_cargo" placeholder="Supervisor a cargo" value="<?php echo $row['supervisor_cargo'] ?>">
           </div>
+
           <div class="inputContainer">
             <label class="label">Fecha de ingreso a la empresa</label>
             <input class="input" type="date" name="fecha_de_ingreso_a_la_empresa" value="<?php echo $row['fecha_de_ingreso_a_la_empresa'] ?>">
           </div> 
+
           <div class="inputContainer">
             <label class="label">Foto del usuario</label> <!-- falta esto -->
+            <input class="input" type="file" name="imagen">
           </div> 
-          <button class="boton" type="submit">Actualizar</button>
-
+          
+          <button class="boton" type="submit">Cargar</button>
+        
         </form>
       </div>
     </body>
