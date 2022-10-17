@@ -5,15 +5,22 @@ Cosas para resolver:
 - Agregar un buscador en ficha de personal //https://www.freecodecamp.org/espanol/news/como-crear-un-formulario-responsivo-con-funcionalidad-de-filtro-usando-html-css-y-javascript/
 
 Cosas que le faltan para administrador general:
-Con crud:
-- pestaña para subir y actualizar usuarios //Listo
-  //https://www.neoguias.com/tutorial-crud-php/#Creacion_de_la_aplicacion_CRUD 
-  //https://codigosdeprogramacion.com/cursos/?lesson=4-crud-parte-2-insertar-actualizar-eliminar-y-buscar
-- Buscador de usuario por legajo
+-Visualizacion de un empleado
+-Lista de empleado (por nombre o legajo?)
+-Con crud:
+    - pestaña para subir y actualizar usuarios //Listo
+      //https://www.neoguias.com/tutorial-crud-php/#Creacion_de_la_aplicacion_CRUD 
+      //https://codigosdeprogramacion.com/cursos/?lesson=4-crud-parte-2-insertar-actualizar-eliminar-y-buscar
 
-- pestaña para subir y actualizar archivos
-   - Mostrar el PDF //https://parzibyte.me/blog/2019/12/23/mostrar-pdf-navegador-php/
-   - Hasta ahora logre que me funcione la parte de cargar un pdf, pero que se guarde en la base de datos no.
+      - Que se pueda ordenar // https://www.youtube.com/watch?v=43VJLLX3yx0
+      - Carga de imagen del usuario //https://programacion.net/articulo/almacenar_y_recuperar_una_imagen_de_una_base_de_datos_mysql_mediante_php_1861
+      - Buscador de usuario por legajo
+      - Agregar un ver que me muestre la ficha
+
+    - pestaña para subir y actualizar archivos
+      -//https://code.tutsplus.com/es/tutorials/how-to-upload-a-file-in-php-with-example--cms-31763
+      - Mostrar el PDF //https://parzibyte.me/blog/2019/12/23/mostrar-pdf-navegador-php/
+      - Hasta ahora logre que me funcione la parte de cargar un pdf, pero que se guarde en la base de datos no.
 
 Cosas generales de la pagina:
 - Seguridad de base de datos

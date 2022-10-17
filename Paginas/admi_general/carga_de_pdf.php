@@ -45,14 +45,14 @@ if(isset($_POST['subir'])){
             <table>
                 <tr>
                     <td><label>Titulo</label></td>
-                    <td><input type="text" name="titulo"></td>
+                    <td><input type="text" name="titulo" ></td>
                 </tr>
                 <tr>
                     <td><label>Descripcion</label></td>
                     <td><textarea name="descripcion"></textarea></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type="file" name="archivo"></td>
+                    <td colspan="2"><input type="file" name="archivo" accept="application/*"></td>
                 </tr>
                 <tr>
                     <td><input type="submit" value="subir" name="subir"></td>

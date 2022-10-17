@@ -19,14 +19,19 @@
     <style>
         .content-table{ 
             border-collapse: collapse; 
-            margin: 25px 0;  
-            min-width: 150px;  
+           margin: 25px 0;  
+            min-width: 150px;
+            table-layout:auto;
         }
         th, td{ 
             padding: 12px 15px;
             text-align: middle;
             font-family: Arial; 
             border-bottom: solid 1px grey;
+            border: solid 1px grey ;
+        }
+        th{
+             border: solid 1px lightgrey;
         }
         
         tr:nth-child(even){
@@ -48,16 +53,17 @@
     <header>
       <nav>
             <a class="nav" href="../../admi_general/Inicio.php" >Inicio</a>
+            <a class="nav" href="crear.php">Registro</a>
             <a class="nav" href="../../../logout.php" >Cerrar Sesion</a>
       </nav>
     </header>
 
     <body>
-        <header></header>
         <div>
             <table class="content-table">
-                <caption>Tabla de Personal</caption>
-                <thead>
+            <caption>Tabla de Personal</caption>
+                <thead>     
+            <!--<caption>Tabla de Personal</caption>-->
                     <tr>
                         <th scope="row">Legajo</th>
                         <th>Apellido</th>
@@ -68,11 +74,11 @@
                         <th>Celular</th>
                         <th>Correo Electronico</th>
                         <th>Puesto</th>
-                        <th>Supervisor a cargo</th>
+                        <th>Supervisor</th>
                         <th>Fecha de ingreso a la empresa</th>
                         <!--<th>Foto</th>-->
-                        <th></th>
-                        <th></th>
+                        <th colspan="2"></th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -81,16 +87,16 @@
                     ?>
                     <tr>
                     <td scope="col"><?php echo $row['legajo']?></td>
-                    <td><?php echo $row['apellido']?></td>
-                    <td><?php echo $row['nombre']?></td>
+                    <td nowrap><?php echo $row['apellido']?></td>
+                    <td nowrap><?php echo $row['nombre']?></td>
                     <td><?php echo $row['dni']?></td>
                     <td><?php echo $row['fecha_de_nacimiento']?></td>
-                    <td><?php echo $row['direccion']?></td>
+                    <td nowrap><?php echo $row['direccion']?></td>
                     <td><?php echo $row['celular']?></td>
                     <td><?php echo $row['mail']?></td>
                     <td><?php echo $row['puesto']?></td>
-                    <td><?php echo $row['supervisor_cargo']?></td>
-                    <td><?php echo $row['fecha_de_ingreso_a_la_empresa']?></td>
+                    <td nowrap><?php echo $row['supervisor_cargo']?></td>
+                    <td nowrap><?php echo $row['fecha_de_ingreso_a_la_empresa']?></td>
                     <td><a href="actualizar.php?id=<?php echo $row['legajo']?>">Editar</a></td>
                     <td><a href="eliminar.php?id=<?php echo $row['legajo']?>">Eliminar</a></td>
                     </tr>
