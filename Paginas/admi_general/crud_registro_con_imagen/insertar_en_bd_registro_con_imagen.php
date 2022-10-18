@@ -19,12 +19,12 @@ $nombre_imagen=$imagen['name'];
 $type=$imagen['type'];
 $url_temporal=$imagen['tpm_name'];
 
-$imagen_usuario='img_usuario.png'; /*No se para que*/
+//$imagen_usuario='img_usuario.png';
 
 if($nombre_imagen != ''){
     $destino='imagen_usuario/';
     $imagen_nombre='img_'.md5(date('d-m-Y H:m:s'));
-    $imagen_usuario=$imagen_nombre.'jpg';
+    $imagen_usuario=$imagen_nombre.'.jpg';
     $src=$destino.$imagen_usuario;
 }
 
@@ -33,9 +33,10 @@ $query= mysqli_query($conexion,$sql);
 
 if($query){
     if($nombre_imagen != ''){
-        move_uploaded_file($url_temporal,$src);
+        move_uploaded_file($url_temporal, $src);
     }
     header("Location: crear_registro_con_imagen.php");
+    
 }
 else{
     echo "ERROR ESE USUARIO YA EXISTE";
