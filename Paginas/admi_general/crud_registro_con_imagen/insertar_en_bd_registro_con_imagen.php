@@ -1,0 +1,44 @@
+<?php
+include("conexion_crud_registro_con_imagen.php");
+$conexion=conectar();
+
+$legajo=$_POST['legajo'];
+$apellido=$_POST['apellido'];
+$nombre=$_POST['nombre'];
+$dni=$_POST['dni'];
+$fecha_de_nacimiento=$_POST['fecha_de_nacimiento'];
+$direccion=$_POST['direccion'];
+$celular=$_POST['celular'];
+$mail=$_POST['mail'];
+$puesto=$_POST['puesto'];
+$supervisor=$_POST['supervisor_cargo'];
+$fecha_de_ingreso=$_POST['fecha_de_ingreso_a_la_empresa'];
+
+$imagen=$_FILES['imagen'];
+$nombre_imagen=$imagen['name'];
+$type=$imagen['type'];
+$url_temporal=$imagen['tpm_name'];
+
+$imagen_usuario='img_usuario.png'; /*No se para que*/
+
+if($nombre_imagen != ''){
+    $destino='imagen_usuario/';
+    $imagen_nombre='img_'.md5(date('d-m-Y H:m:s'));
+    $imagen_usuario=$imagen_nombre.'jpg';
+    $src=$destino.$imagen_usuario;
+}
+
+$sql="INSERT INTO carga_de_usuarios VALUES('$legajo','$apellido','$nombre','$dni','$fecha_de_nacimiento','$direccion','$celular','$mail','$puesto','$supervisor','$fecha_de_ingreso','$imagen_usuario')";
+$query= mysqli_query($conexion,$sql);
+
+if($query){
+    if($nombre_imagen != ''){
+        move_uploaded_file($url_temporal,$src);
+    }
+    header("Location: crear_registro_con_imagen.php");
+}
+else{
+    echo "ERROR ESE USUARIO YA EXISTE";
+}
+
+?>
