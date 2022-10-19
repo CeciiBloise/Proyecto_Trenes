@@ -34,7 +34,7 @@ $query= mysqli_query($conexion,$sql);
 if($query){
     if($nombre_imagen != ''){
         move_uploaded_file($url_temporal, $src);
-    }
+    } 
     header("Location: crear_registro_con_imagen.php");
     
 }
