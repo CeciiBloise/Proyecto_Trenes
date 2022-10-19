@@ -121,7 +121,7 @@
             <input class="input" type="file" name="imagen" accept="imagen/*">
           </div> 
 
-          <input type="submit" name="subir" value="Subir"/>
+          <input type="submit"  value="Subir"/>
         
         </form>
       </div>
