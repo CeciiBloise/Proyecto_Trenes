@@ -28,12 +28,13 @@ if($nombre_imagen != ''){
     $src=$destino.$imagen_usuario;
 }
 
-$sql="INSERT INTO carga_de_usuarios VALUES('$legajo','$apellido','$nombre','$dni','$fecha_de_nacimiento','$direccion','$celular','$mail','$puesto','$supervisor','$fecha_de_ingreso','$imagen_usuario')";
+$sql="INSERT INTO carga_de_usuarios VALUES('$legajo','$apellido','$nombre','$dni','$fecha_de_nacimiento','$direccion','$celular','$mail','$puesto','$supervisor','$fecha_de_ingreso')";
 $query= mysqli_query($conexion,$sql);
 
 if($query){
     if($nombre_imagen != ''){
-        move_uploaded_file($url_temporal, $src);
+        //move_uploaded_file($url_temporal, $src);
+        copy($url_temporal,$src);
     } 
     header("Location: crear_registro_con_imagen.php");
     
