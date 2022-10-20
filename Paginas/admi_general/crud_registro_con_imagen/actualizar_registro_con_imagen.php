@@ -100,6 +100,11 @@
           </div>
 
           <div class="inputContainer">
+            <label class="label">Habilitaciones:</label>
+            <input class="input" type="text" name="habilitaciones" placeholder="Separarlas por coma" value="<?php echo $row['habilitaciones'] ?>">
+          </div>
+
+          <div class="inputContainer">
             <label class="label">Supervisor a cargo del sector:</label>
             <input class="input" type="text" name="supervisor_cargo" placeholder="Supervisor a cargo" value="<?php echo $row['supervisor_cargo'] ?>">
           </div>

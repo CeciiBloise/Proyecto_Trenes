@@ -41,7 +41,7 @@ if(isset($_POST['subir'])){
         <div style="width: 500px; margin: auto; border: 1px solid black; padding: 30px">
         <h1 style="text-align: center">Carga de PDF</h1>
         <!--form accion="upfile.php" method="POST" enctype="multipart/form-data"-->
-        <form acc method="POST" enctype="multipart/form-data"-->
+        <form  method="POST" enctype="multipart/form-data">
             <table>
                 <tr>
                     <td><label>Titulo</label></td>

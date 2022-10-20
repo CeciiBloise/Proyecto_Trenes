@@ -107,6 +107,11 @@
           </div>
 
           <div class="inputContainer">
+            <label class="label">Habilitaciones:</label>
+            <input class="input" type="text" name="habilitaciones" placeholder="Separarlas por coma">
+          </div>
+
+          <div class="inputContainer">
             <label class="label">Supervisor a cargo del sector:</label>
             <input class="input" type="text" name="supervisor_cargo" placeholder="Supervisor a cargo">
           </div>
@@ -121,7 +126,7 @@
             <input class="input" type="file" name="imagen" accept="imagen/*">
           </div> 
 
-          <input type="submit"  value="Subir"/>
+          <input type="submit"  value="subir" name="subir">
         
         </form>
       </div>
