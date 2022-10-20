@@ -18,25 +18,25 @@ $fecha_de_ingreso=$_POST['fecha_de_ingreso_a_la_empresa'];
 $imagen=$_FILES['imagen'];
 $nombre_imagen=$imagen['name'];
 $type=$imagen['type'];
-//$url_temporal=$imagen['tpm_name'];
+$url_temporal=$imagen['tmp_name'];
 
 //$imagen_usuario='img_usuario.png';
 
-//if($nombre_imagen != ''){
-    $destino='imagen_usuario/';
-    $imagen_nombre='img_'.md5(date('d-m-Y H:m:s'));
-    $imagen_usuario=$imagen_nombre.'.jpg';
-    $src=$destino.$imagen_usuario;
-//}
+if($nombre_imagen != ''){
+    $destino='imagen_usuarios/'.$nombre_imagen;
+  //  $imagen_nombre='img_'.md5(date('d-m-Y H:m:s'));
+  //  $imagen_usuario=$imagen_nombre.'.jpg';
+   // $src=$destino.$imagen_usuario;
+}
 
-$sql="INSERT INTO carga_de_usuarios VALUES('$legajo','$apellido','$nombre','$dni','$fecha_de_nacimiento','$direccion','$celular','$mail','$puesto','$habilitaciones','$supervisor','$fecha_de_ingreso')";
+$sql="INSERT INTO carga_de_usuarios VALUES('$legajo','$apellido','$nombre','$dni','$fecha_de_nacimiento','$direccion','$celular','$mail','$puesto','$habilitaciones','$supervisor','$fecha_de_ingreso', '$imagen_usuario')";
 $query= mysqli_query($conexion,$sql);
 
 if($query){
-   // if($nombre_imagen != ''){
-        //move_uploaded_file($url_temporal, $src);
-      //  copy($url_temporal,$destino);
-   // } 
+    if($nombre_imagen != ''){
+        move_uploaded_file($url_temporal, $destino);
+    
+    } 
     header("Location: crear_registro_con_imagen.php");
     
 }

@@ -11,7 +11,7 @@ $direccion=$_POST['direccion'];
 $celular=$_POST['celular'];
 $mail=$_POST['mail'];
 $puesto=$_POST['puesto'];
-$habilitaciones=$_POST['habilitaciones']
+$habilitaciones=$_POST['habilitaciones'];
 $supervisor=$_POST['supervisor_cargo'];
 $fecha_de_ingreso=$_POST['fecha_de_ingreso_a_la_empresa'];
 
