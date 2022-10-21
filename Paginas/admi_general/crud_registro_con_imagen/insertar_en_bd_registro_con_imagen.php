@@ -2,6 +2,7 @@
 include("conexion_crud_registro_con_imagen.php");
 $conexion=conectar();
 
+$id_usuario=$_GET['id_usuario'];
 $legajo=$_POST['legajo'];
 $apellido=$_POST['apellido'];
 $nombre=$_POST['nombre'];
@@ -29,7 +30,7 @@ if($nombre_imagen != ''){
     $src=$destino.$imagen_usuario;
 }
 
-$sql="INSERT INTO carga_de_usuarios VALUES('$legajo','$apellido','$nombre','$dni','$fecha_de_nacimiento','$direccion','$celular','$mail','$puesto','$habilitaciones','$supervisor','$fecha_de_ingreso', '$imagen_usuario')";
+$sql="INSERT INTO carga_de_usuarios VALUES('$id_usuario','$legajo','$apellido','$nombre','$dni','$fecha_de_nacimiento','$direccion','$celular','$mail','$puesto','$habilitaciones','$supervisor','$fecha_de_ingreso', '$imagen_usuario')";
 $query= mysqli_query($conexion,$sql);
 
 if($query){

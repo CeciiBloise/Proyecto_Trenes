@@ -102,6 +102,7 @@
                     <td><?php echo $row['imagen']?></td>
                     <td><a href="actualizar_registro_con_imagen.php?id=<?php echo $row['legajo']?>">Editar</a></td>
                     <td><a href="eliminar_registro_con_imagen.php?id=<?php echo $row['legajo']?>">Eliminar</a></td>
+                    <td><a href="ficha_personal.php?id=<? echo $row['legajo']?>">Ver</a></td>
                     </tr>
                     <?php
                          }
