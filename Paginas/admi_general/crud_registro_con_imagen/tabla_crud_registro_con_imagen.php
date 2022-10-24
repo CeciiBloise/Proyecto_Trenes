@@ -7,6 +7,7 @@
 
      $row=mysqli_fetch_array($query);
 ?>
+
 <!DOCTYPE html> 
 <html lang="es"> 
     <head>
@@ -78,7 +79,7 @@
                         <th>Supervisor</th>
                         <th>Fecha de ingreso a la empresa</th>
                         <th>Imagen de Usuario</th>
-                        <th colspan="2"></th>
+                        <th colspan="3"></th>
                         
                     </tr>
                 </thead>
@@ -102,7 +103,7 @@
                     <td><?php echo $row['imagen']?></td>
                     <td><a href="actualizar_registro_con_imagen.php?id=<?php echo $row['legajo']?>">Editar</a></td>
                     <td><a href="eliminar_registro_con_imagen.php?id=<?php echo $row['legajo']?>">Eliminar</a></td>
-                    <td><a href="ficha_personal.php?id=<? echo $row['legajo']?>">Ver</a></td>
+                    <td><a href="ficha_personal_con_imagen.php?id=<?php echo $row['legajo']?>">Ver</a></td>
                     </tr>
                     <?php
                          }
