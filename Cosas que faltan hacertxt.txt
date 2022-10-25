@@ -32,3 +32,4 @@ Cosas generales de la pagina:
 
 Tablas:
 https://mosaic.uoc.edu/ac/le/es/m6/ud7/index.html
+https://ishadeed.com/article/min-max-css/#min-width-and-max-width-properties
