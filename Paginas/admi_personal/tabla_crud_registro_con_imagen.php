@@ -1,5 +1,5 @@
 <?php
-     include("conexion_crud_registro_con_imagen.php");
+     include("../admi_general/crud_registro_con_imagen/conexion_crud_registro_con_imagen.php");
      $conexion=conectar();
 
      $sql="SELECT * FROM carga_de_usuarios";
@@ -18,7 +18,7 @@
         <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
     </head>
     <style>
-        .content-table{ 
+       .content-table{ 
             border-collapse: collapse; 
             margin: 25px 0;  
             min-width: 150px;
@@ -29,12 +29,8 @@
             text-align: middle;
             font-family: Arial; 
             border-bottom: solid 1px grey;
-            border: solid 1px grey;
+            border: solid 1px grey ;
         }
-        th{
-             border: solid 1px lightgrey;
-        }
-        
         tr:nth-child(even){
             background-color:rgba(128, 128, 128, 0.4);
         }
@@ -44,27 +40,30 @@
         caption{
             font-size: 2em;
             font-family: Arial, Helvetica, sans-serif;
+            padding: 0.3em;
         }
         thead{
+            border-collapse: collapse;
             background-color: grey;
             border-bottom: solid 3px black;
+            text-align: center;
         }
     </style>
 
     <header>
       <nav>
-            <a class="nav" href="../../admi_general/Inicio.php" >Inicio</a>
-            <a class="nav" href="crear_registro_con_imagen.php">Registro con imagen</a>
-            <a class="nav" href="../../../logout.php" >Cerrar Sesion</a>
+
+        <a class="nav" href="../admi_personal/inicio_admi_personal.php" >Inicio</a>
+        <a class="nav" href="../../logout.php" >Cerrar Sesion</a>
+    
       </nav>
     </header>
 
     <body>
         <div>
             <table class="content-table">
-            <caption>Tabla de Personal</caption>
+                <caption>Tabla de Personal</caption>
                 <thead>     
-            <!--<caption>Tabla de Personal</caption>-->
                     <tr>
                         <th scope="row">Legajo</th>
                         <th>Apellido</th>
@@ -77,10 +76,7 @@
                         <th>Puesto</th>
                         <th>Habilitaciones</th>
                         <th>Supervisor</th>
-                        <th>Fecha de ingreso a la empresa</th>
-                        <th>Imagen de Usuario</th>
-                        <th colspan="3"></th>
-                        
+                        <th colspan="1"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -99,10 +95,7 @@
                     <td><?php echo $row['puesto']?></td>
                     <td nowrap><?php echo $row['habilitaciones']?></td>
                     <td nowrap><?php echo $row['supervisor_cargo']?></td>
-                    <td nowrap><?php echo $row['fecha_de_ingreso_a_la_empresa']?></td>
-                    <td><?php echo $row['imagen']?></td>
-                    <td><a href="actualizar_registro_con_imagen.php?id=<?php echo $row['legajo']?>">Editar</a></td>
-                    <td><a href="eliminar_registro_con_imagen.php?id=<?php echo $row['legajo']?>">Eliminar</a></td>
+
                     <td><a href="ficha_personal_con_imagen.php?id=<?php echo $row['legajo']?>">Ver</a></td>
                     </tr>
                     <?php

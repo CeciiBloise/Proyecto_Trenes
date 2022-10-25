@@ -44,7 +44,9 @@ if($varsesion== null || $varsesion=''){
                         <br>
                         <li><a href="">Ficha del personal</a></li>
                         <br>
-                        <li><a href="../admi_general/crud/tabla_crud.php">Actualizacion de personal</a></li>
+                        <li><a href="tabla_crud_registro_con_imagen.php">Tabla de personal</a></li>
+                        <br>
+                        <li><a href="prueba.php">Prueba</a></li>
                      </ul>
                   </nav>
                </div>
