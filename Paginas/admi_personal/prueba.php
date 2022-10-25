@@ -20,12 +20,11 @@
             
         }
         .contenedor-hijo{
-            display: block;
+            display: flex;
             min-width: 50%;
             background-color: black;
-            align-items: center;
             height: 100vh;
-            justify-content: center;
+            justify-content: start;
         }
        
         li{
