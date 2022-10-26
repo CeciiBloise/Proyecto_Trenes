@@ -1,3 +1,5 @@
+Tabla de colores: https://htmlcolorcodes.com/es/tabla-de-colores/
+
 Cosas para resolver:
 - Agregar un salir //Listo
 - Seguridad de paginaion //Listo
@@ -33,3 +35,5 @@ Cosas generales de la pagina:
 Tablas:
 https://mosaic.uoc.edu/ac/le/es/m6/ud7/index.html
 https://ishadeed.com/article/min-max-css/#min-width-and-max-width-properties
+
+Menu horizontal: hacer que cubra el 100% de la pantalla

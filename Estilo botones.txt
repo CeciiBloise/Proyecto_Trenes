@@ -1,0 +1,17 @@
+Botones css
+a{         
+   border: 0.5px solid #5D6D7E; /*anchura, estilo y color borde*/
+   padding: 10px; /*espacio alrededor texto*/
+   background-color: #5D6D7E; /*color botón*/
+   color: white; /*color texto*/
+   text-transform: uppercase; /*capitalización texto*/
+   border-radius: 6px; /*bordes redondos*/
+   text-decoration:none;
+   box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+ }
+a:hover {
+         background-color: #3498DB;
+         border: 0.5px solid #3498DB;
+         box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+         color: white;
+        }

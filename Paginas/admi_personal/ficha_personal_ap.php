@@ -22,8 +22,31 @@
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        background-color: white;
+        background-color: #F2F3F4;
+        font-family: Arial;
       }
+      .navMenu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color:   #5D6D7E;
+        }
+        li {
+            float: left;    
+        }
+        li a {
+            display: block;
+            padding: 8px;
+            color: white;
+            text-decoration: none;
+        }
+        a:hover {
+            background-color: #3498DB;
+            border: 0.5px solid #3498DB;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+            color: white;
+        }
       .form_carga{
         display: flex;
         justify-content: center;
@@ -31,12 +54,12 @@
         height: 100vh;
       }
       .form {
-        background-color: white;
+        background-color: #F2F3F4;
         width: 400px;
         border-radius: 8px;
         padding: 20px 40px;
-        box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
-        font-family: Arial; 
+        box-shadow: 0 10px 25px rgba(92, 99, 105, .2); 
+        background-color: #F2F3F4;
       }
       .inputContainer{
         flex-direction: column;
@@ -48,16 +71,17 @@
       }
       .label{
         font-weight: bold;
+        text-transform: uppercase;
+
       }
     </style>
 
     <header>
-      <nav>
-            <a class="nav" href="../admi_personal/inicio_admi_personal.php" >Inicio</a>
-
-            <a class="nav" href="tabla_crud_registro_con_imagen.php">Tabla de personal</a>
-            
-            <a class="nav" href="../../logout.php" >Cerrar Sesion</a>
+      <nav class="navMenu">
+        <li><a href="inicio_admi_personal.php" >Inicio</a></li>
+        <li><a href="tabla_crud_registro_ap.php">Tabla de personal</a></li>
+        <li><a href="../mecanico/mecanico.php">Mecanico</a></li>
+        <li><a href="../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
 

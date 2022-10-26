@@ -40,11 +40,11 @@ switch ($nro['id_cargo']) {
         //echo "BIENVENIDO" .$usuario;
         break;
     case 2:
-        header("Location: Paginas\admi_personal\inicio_admi_personal.php");
+       header("Location: Paginas\admi_personal\inicio_admi_personal.php");
         //echo "BIENVENIDO" .$usuario;
         break;
     case 3:
-        header("Location: Paginas\mecanico\xvx.php");
+        header("Location: Paginas\mecanico\mecanico.php");
         //echo "BIENVENIDO" .$usuario;
         break;
 }

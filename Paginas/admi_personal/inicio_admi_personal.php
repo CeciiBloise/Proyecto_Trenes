@@ -9,7 +9,6 @@ if($varsesion== null || $varsesion=''){
    die();
 }
 ?>
-
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->
 
@@ -17,88 +16,82 @@ if($varsesion== null || $varsesion=''){
         <meta charset="utf-8" /> <!-- tipos de caracter -->
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
         
-        <!-- Estilos -->
-        <!-- En casa: C:\Users\PC\Documents\Proyecto_Trenes\CSS\Hoja_de_estilos.css -->
-        <!-- En el trabajo: C:\xampp\htdocs\Proyecto_Trenes\CSS\Hoja_de_estilos.css -->
-        <link rel="stylesheet" href="../../CSS/Hoja_de_estilos.css"/> <!--Aca llamo a la hoja de estilos-->
-        <link rel="stylesheet" href="../../CSS/Hoja_de_estilos_cajas.css"/>
-        <!---link rel="stylesheet" href="C:\Users\PC\Documents\Proyecto_Trenes\CSS\normalize.css" /--> <!--No me funca-->
-
         <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
     
     </head>
+    <style>
+        body{
+            background: #F2F3F4;
+            font-family: Arial;
+        }
+        .contenedor-padre{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+           /* min-height: 100px;*/
+            color: #fff; /*revisar esto*/ 
+            background: #F2F3F4;
+            height: 100vh;
+            
+        }
+        .contenedor-hijo{
+            /*display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 90%;
+            height: 100vh;*/
+            width: 400px;
+            background-color: #F2F3F4;
+            list-style: none;
+            box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+            border-radius: 6px;
+
+        }
+       
+        li{
+            flex-direction: column;
+            align-items: center;
+            list-style-type:none;
+            display: flex;
+            justify-content: center;
+
+        }
+        a{         
+            border: 0.5px solid #5D6D7E; /*anchura, estilo y color borde*/
+            padding: 10px; /*espacio alrededor texto*/
+            background-color: #5D6D7E; /*color botón*/
+            color: white; /*color texto*/
+            text-transform: uppercase; /*capitalización texto*/
+            border-radius: 6px; /*bordes redondos*/
+            text-decoration:none;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+        }
+        a:hover {
+            background-color: #3498DB;
+            border: 0.5px solid #3498DB;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+    </style>
     
     <body>
+        <div class="contenedor-padre">
+            <div class="contenedor-hijo">
+            <nav>
+             <ul>
+                
+                <li><a href="tabla_crud_registro_ap.php">Tabla de personal</a></li>
+                <br>
+                <li><a href="../mecanico/mecanico.php">Mecanico</a></li>
+                <br>
+                <li><a href="../../logout.php">Cerrar Sesion</a></li>
 
-        <!-- contenido principal del cuerpo -->
-        <div class="flex-contenedor">
+             </ul>
+           </nav>
 
-        <!-- Voy a dividir la pagina en tres secciones -->
-
-        <!-- 1 -->
-               <!-- esta seccion va ser del menu -->
-               <div class="menu">
-                  <nav>
-                     <ul>
-                        <li><a href="../mecanico/xvx.php">Mecanico</a></li>
-                        <br>
-                        <li><a href="">Ficha del personal</a></li>
-                        <br>
-                        <li><a href="tabla_crud_registro_con_imagen.php">Tabla de personal</a></li>
-                        <br>
-                        <li><a href="prueba.php">Prueba</a></li>
-                     </ul>
-                  </nav>
-               </div>
-               
-            <section class="contenedor">
-
-               <!-- 2 -->
-               <!-- esta seccion va a ser la del titulo, seria el header -->
-               <header class="header">
-                  <div class="titulo">
-                    <h1>Servicio Medico</h1>  
-                    <nav>
-                     <ul>
-                        <li>
-                           <a href="../../logout.php" class="boton_cerrar_sesion">Cerrar Sesion</a>
-                        </li>
-                     </ul>
-                    </nav>
-                  </div>
-               </header>  
-
-               <!-- 3 -->
-               <!-- Esta seccion va a ser donde muestro la info -->  
-               <div class="info">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius lacinia enim sed vulputate. Donec ligula nunc, bibendum a enim sit amet, rutrum sodales arcu. Nam sit amet lorem orci. Morbi scelerisque libero nec gravida viverra. Suspendisse dictum ante at nisi facilisis, faucibus varius ex ultricies. Aenean aliquam dapibus nisl sit amet malesuada. Vivamus consequat pharetra nulla, vel fermentum urna sodales sed.
-                    </p>
-               </div>
-
-            </section>
-
+            </div>
         </div>
-        
-        <!-- pie de pagina -->
-        <footer class="footer"> 
-         <p> © 2022 Estacion de Trenes Quilmes </p>
-      </footer>
-
-      </body>
+    </body>
 </html>
