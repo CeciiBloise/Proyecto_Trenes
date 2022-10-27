@@ -13,49 +13,17 @@
     <head>
         <meta charset="utf-8" /> <!-- tipos de caracter -->
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-        
+        <link rel="stylesheet" href="../../../CSS/estilo_menu_horizontal.css"/>
+        <link rel="stylesheet" href="../../../CSS/estilo_tablas.css"/>
         <!-- Estilos -->
         <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
     </head>
-    <style>
-        .content-table{ 
-            border-collapse: collapse; 
-            margin: 25px 0;  
-            min-width: 150px;
-            table-layout:auto;
-        }
-        th, td{ 
-            padding: 12px 15px;
-            text-align: middle;
-            font-family: Arial; 
-            border-bottom: solid 1px grey;
-            border: solid 1px grey;
-        }
-        th{
-             border: solid 1px lightgrey;
-        }
-        
-        tr:nth-child(even){
-            background-color:rgba(128, 128, 128, 0.4);
-        }
-        tr:hover td{
-            background-color: #1EBBFA;
-        }
-        caption{
-            font-size: 2em;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        thead{
-            background-color: grey;
-            border-bottom: solid 3px black;
-        }
-    </style>
 
     <header>
-      <nav>
-            <a class="nav" href="../../admi_general/Inicio.php" >Inicio</a>
-            <a class="nav" href="crear_registro_con_imagen.php">Registro con imagen</a>
-            <a class="nav" href="../../../logout.php" >Cerrar Sesion</a>
+      <nav class="navMenu">
+            <li><a href="../../admi_general/Inicio.php" >Inicio</a></li>
+            <li><a href="crear_registro_con_imagen.php">Registro de usuario</a></li>
+            <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
 

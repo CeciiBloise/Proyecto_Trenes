@@ -1,0 +1,33 @@
+/*Estilo ficha personal*/
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #F2F3F4;
+    font-family: Arial;
+  }
+  .form_carga{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .form {
+    background-color: #F2F3F4;
+    width: 400px;
+    border-radius: 8px;
+    padding: 20px 40px;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+  }
+  .inputContainer{
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  .imagen{
+    display: block;
+    margin:auto;
+  }
+  .label{
+    font-weight: bold;
+    text-transform: uppercase;
+  }

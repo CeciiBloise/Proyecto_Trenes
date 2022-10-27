@@ -13,87 +13,11 @@
     <head>
         <meta charset="utf-8" /> <!-- tipos de caracter -->
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-        
+        <link rel="stylesheet" href="../../CSS/estilo_menu_horizontal.css"/>
+        <link rel="stylesheet" href="../../CSS/estilo_tablas.css"/>
         <!-- Estilos -->
         <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
     </head>
-    <style>
-        *{
-            margin: 0;/*el margen de la hoja*/
-            padding: 0;/*el espacio de relleno*/
-            box-sizing: border-box; /*para que no se desborden las cajas unas con otras*/
-            font-family: Arial; /*establece una lista de fuentes */
-        }
-        #header{
-            margin: auto;
-            width: 100%;
-        }
-
-        body{
-            background:  #F2F3F4;
-        }
-        /*scroll*/
-        body::-webkit-scrollbar{
-            width: 6px; 
-        }
-        body::-webkit-scrollbar-thumb{
-            background: #34495E; /*color de la barra*/
-        }
-        .navMenu {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #5D6D7E;
-        }
-        li {
-            float: left;    
-        }
-        li a {
-            display: block;
-            padding: 8px;
-            color: white;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-        a:hover {
-            background-color: #3498DB;
-            border: 0.5px solid #3498DB;
-            box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-            color: white;
-        }
-        .content-table{ 
-            border-collapse: collapse; 
-            margin: 25px 0;  
-            min-width: 150px;
-            table-layout:auto;
-            padding: 1rem;
-        }
-        th, td{ 
-            padding: 12px 15px;
-            text-align: middle;
-            font-family: Arial; 
-            border-bottom: solid 1px #AEB6BF;
-            border: solid 1px #AEB6BF;
-        }
-        tr:nth-child(even){
-            background-color:#D6DBDF;
-        }
-        tr:hover td{
-            background-color: #1EBBFA;
-        }
-        caption{
-            font-size: 2em;
-            font-family: Arial, Helvetica, sans-serif;
-            padding: 0.3em;
-        }
-        thead{
-            border-collapse: collapse;
-            background-color: #85929E;
-            border-bottom: solid 3px black;
-            text-align: center;
-        }
-    </style>
 
     <header>
       <nav class="navMenu">

@@ -14,49 +14,18 @@
     <head>
       <meta charset="utf-8" /> <!-- tipos de caracter -->
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+      <link rel="stylesheet" href="../../CSS/estilo_menu_horizontal.css"/>
+      <link rel="stylesheet" href="../../CSS/estilo_ficha.css"/>
+
       <title>Estacion Quilmes</title> <!-- titulo de la pagina -->
     </head>
-    
-    <style>
-      body{
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        background-color: white;
-      }
-      .form_carga{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-      .form {
-        background-color: white;
-        width: 400px;
-        border-radius: 8px;
-        padding: 20px 40px;
-        box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
-      }
-      .inputContainer{
-        flex-direction: column;
-        margin-bottom: 10px;
-      }
-      .imagen{
-        display: block;
-        margin:auto;
-      }
-      
-    </style>
 
     <header>
-      <nav>
-            <a class="nav" href="../../admi_general/Inicio.php" >Inicio</a>
-
-            <a class="nav" href="crear_registro_con_imagen.php">Registro con imagen</a>
-
-            <a class="nav" href="tabla_crud_registro_con_imagen.php">Tabla personal con imagen</a>
-            
-            <a class="nav" href="../../../logout.php" >Cerrar Sesion</a>
+      <nav class="navMenu">
+            <li><a href="../../admi_general/Inicio.php" >Inicio</a></li>
+            <li><a href="crear_registro_con_imagen.php">Registro con imagen</a></li>
+            <li><a href="tabla_crud_registro_con_imagen.php">Tabla personal con imagen</a></li>
+            <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
 

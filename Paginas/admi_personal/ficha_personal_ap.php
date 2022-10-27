@@ -14,67 +14,11 @@
     <head>
       <meta charset="utf-8" /> <!-- tipos de caracter -->
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+      <link rel="stylesheet" href="../../CSS/estilo_menu_horizontal.css"/>
+      <link rel="stylesheet" href="../../CSS/estilo_ficha.css"/>
+      
       <title>Estacion Quilmes</title> <!-- titulo de la pagina -->
     </head>
-    
-    <style>
-      body{
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        background-color: #F2F3F4;
-        font-family: Arial;
-      }
-      .navMenu {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color:   #5D6D7E;
-        }
-        li {
-            float: left;    
-        }
-        li a {
-            display: block;
-            padding: 8px;
-            color: white;
-            text-decoration: none;
-        }
-        a:hover {
-            background-color: #3498DB;
-            border: 0.5px solid #3498DB;
-            box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-            color: white;
-        }
-      .form_carga{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-      .form {
-        background-color: #F2F3F4;
-        width: 400px;
-        border-radius: 8px;
-        padding: 20px 40px;
-        box-shadow: 0 10px 25px rgba(92, 99, 105, .2); 
-        background-color: #F2F3F4;
-      }
-      .inputContainer{
-        flex-direction: column;
-        margin-bottom: 10px;
-      }
-      .imagen{
-        display: block;
-        margin:auto;
-      }
-      .label{
-        font-weight: bold;
-        text-transform: uppercase;
-
-      }
-    </style>
 
     <header>
       <nav class="navMenu">
