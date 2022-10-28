@@ -36,4 +36,6 @@ Tablas:
 https://mosaic.uoc.edu/ac/le/es/m6/ud7/index.html
 https://ishadeed.com/article/min-max-css/#min-width-and-max-width-properties
 
-Menu horizontal: hacer que cubra el 100% de la pantalla
+Menu horizontal: hacer que cubra el 100% de la pantalla //listo
+
+que en registro y actualizacion me aparezca un cartel que diga listo se cargo o listo se actualizo

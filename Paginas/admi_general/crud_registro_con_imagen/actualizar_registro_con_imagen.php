@@ -20,10 +20,17 @@
       <title>Estacion Quilmes</title> <!-- titulo de la pagina -->
     </head>
 
+    <style>
+      body{
+        background:  #F2F3F4;
+        font-family: Arial;
+      }
+    </style>
+
     <header>
       <nav class="navMenu">
             <li><a href="../../admi_general/Inicio.php" >Inicio</a></li>
-            <li><a href="tabla_crud_registro_con_imagen.php">Tabla personal con imagen</a></li>
+            <li><a href="tabla_crud_registro_con_imagen.php">Tabla personal</a></li>
             <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
@@ -99,7 +106,7 @@
           </div> 
 
           <div class="boton">
-            <input class="boton-subir" type="submit" name="subir" value="Subir"/>
+            <input class="boton-subir" type="submit" name="subir" value="Actualizar"/>
           </div>
         </form>
       </div>
