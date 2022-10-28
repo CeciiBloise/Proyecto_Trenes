@@ -23,8 +23,8 @@
     <header>
       <nav class="navMenu">
             <li><a href="../../admi_general/Inicio.php" >Inicio</a></li>
-            <li><a href="crear_registro_con_imagen.php">Registro con imagen</a></li>
-            <li><a href="tabla_crud_registro_con_imagen.php">Tabla personal con imagen</a></li>
+            <li><a href="crear_registro_con_imagen.php">Registro</a></li>
+            <li><a href="tabla_crud_registro_con_imagen.php">Tabla personal</a></li>
             <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
