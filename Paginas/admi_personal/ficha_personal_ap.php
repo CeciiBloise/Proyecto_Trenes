@@ -22,10 +22,12 @@
 
     <header>
       <nav class="navMenu">
+        
         <li><a href="inicio_admi_personal.php" >Inicio</a></li>
         <li><a href="tabla_crud_registro_ap.php">Tabla de personal</a></li>
         <li><a href="../mecanico/mecanico.php">Mecanico</a></li>
         <li><a href="../../logout.php" >Cerrar Sesion</a></li>
+        
       </nav>
     </header>
 

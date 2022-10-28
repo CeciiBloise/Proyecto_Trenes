@@ -1,8 +1,15 @@
 /*estilo registro de usuarios*/
+
+.titulo{
+  text-transform: uppercase;
+  justify-content: center;
+  text-align: center;
+  font-size: 30px;
+}
 .form_carga{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     font-weight: bold;
     height: 100vh;
   }
@@ -18,26 +25,25 @@
     margin-bottom: 10px;
   }
   .boton{
-    display: block;
-    padding: 6px 6px;
-    cursor: pointer;
-    font-size: 12px;
+    justify-content: center;
+    align-items: center;
   }
   .boton-subir{
+    display: block;
+    margin: 10px auto;
     border: 0.5px solid #5D6D7E; /*anchura, estilo y color borde*/
-    padding: 10px; /*espacio alrededor texto*/
+    padding: 8px; /*espacio alrededor texto*/
     background-color: #5D6D7E; /*color botón*/
+    border-radius: 3px; /*bordes redondos*/
+    justify-content: center;
     color: white; /*color texto*/
     text-transform: uppercase; /*capitalización texto*/
-    border-radius: 6px; /*bordes redondos*/
     text-decoration:none;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 
-    align-items: center;
   }
   .boton-subir:hover {
     background-color: #3498DB;
     border: 0.5px solid #3498DB;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
     color: white;
    }

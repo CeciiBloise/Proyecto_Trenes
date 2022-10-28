@@ -27,12 +27,17 @@
       </nav>
     </header>
 
+    <style>
+        .navMenu{
+        width: 157rem;
+        }
+    </style>
+
     <body>
         <div>
             <table class="content-table">
-            <caption>Tabla de Personal</caption>
+            <caption>TABLA DE PERSONAL</caption>
                 <thead>     
-            <!--<caption>Tabla de Personal</caption>-->
                     <tr>
                         <th scope="row">Legajo</th>
                         <th>Apellido</th>

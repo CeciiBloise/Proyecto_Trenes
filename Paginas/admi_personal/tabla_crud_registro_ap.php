@@ -19,12 +19,20 @@
         <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
     </head>
 
+    <style>
+        .navMenu{
+             width: 117rem;
+        }
+    </style>
+
     <header>
       <nav class="navMenu">
+      
         <li><a href="../admi_personal/inicio_admi_personal.php" >Inicio</a></li>
         <li><a href="../mecanico/mecanico.php">Mecanico</a></li>
         <li><a href="../../logout.php" >Cerrar Sesion</a></li>
-      </nav>
+      
+       </nav>
     </header>
 
     <body>
