@@ -10,7 +10,7 @@ body{
     font-family: Arial;
 
 }
-nav{
+.menuPrincipal{
     position: absolute;
     top: 25%;
     left: 35%;

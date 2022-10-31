@@ -15,23 +15,21 @@ if($varsesion== null || $varsesion=''){
     <head>
         <meta charset="utf-8" /> <!-- tipos de caracter -->
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-        <link rel="stylesheet" href="../../CSS/estilo_menu.css"/>
+        <link rel="stylesheet" href="../../CSS/estilo_menuPrincipal.css"/>
 
         <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
     
     </head>
     
     <body>
-        <div class="contenedor-padre">
-            <div class="contenedor-hijo">
-                <nav>
+
+                <nav class="menuPrincipal">
                         <li><a href="tabla_crud_registro_ap.php">Tabla de personal</a></li>
                         
                         <li><a href="../mecanico/mecanico.php">Mecanico</a></li>
                         
                         <li><a href="../../logout.php">Cerrar Sesion</a></li>
                 </nav>
-            </div>
-        </div>
+
     </body>
 </html>
