@@ -1,58 +1,55 @@
-/*Hoja de estilos*/
-
-/*Estilo Menu*/
+*,
+*:before,
+*:after{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
-    background: #F2F3F4;
+   background: #F2F3F4;
     font-family: Arial;
+
 }
-.contenedor-padre{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-   /* min-height: 100px;*/
-    color: #fff; /*revisar esto*/ 
-    background: #F2F3F4;
-    height: 100vh;
-    
-}
-.contenedor-hijo{
-    /*display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 90%;
-    height: 100vh;*/
-    width: 400px;
-    background-color: #F2F3F4;
+nav{
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    /*transform: translate(-50%, -50%);*/
     list-style: none;
-    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
-    border-radius: 6px;
-
+    font-size: 20px;
+    /*opacity: 0;
+    transition: .25s .1s cubic-bezier(0, 1.07, 0, 1.02);
+    z-index: 2;*/
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
-/*Estilos Botones*/
-
-li{
-    flex-direction: column;
-    align-items: center;
-    list-style-type:none;
-    display: flex;
-    justify-content: center;
+li a{
+    background-color: #F2F3F4;
+    transform: all 300ms;
+    position: relative;
+     
+}
+li a:before{
+    content: '';
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: #F2F3F4;
+    transition: all 300ms cubic-bezier(1, 0, 0, 1);
+}
+li a:hover::before{
+    width: 110%;
 
 }
-a{         
-    border: 0.5px solid #5D6D7E; /*anchura, estilo y color borde*/
-    padding: 10px; /*espacio alrededor texto*/
-    background-color: #5D6D7E; /*color botón*/
-    color: white; /*color texto*/
-    text-transform: uppercase; /*capitalización texto*/
-    border-radius: 6px; /*bordes redondos*/
-    text-decoration:none;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+a:hover{
+    color: black;
 }
-a:hover {
-    background-color: #3498DB;
-    border: 0.5px solid #3498DB;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-    color: white;
+a{
+    color: #5D6D7E;
+    display: block;
+    margin-bottom: 1em;
+    text-decoration: none;
 }

@@ -27,15 +27,13 @@ if($varsesion== null || $varsesion=''){
         <div class="contenedor-padre">
             <div class="contenedor-hijo">
                 <nav>
-                    <ul>
                         <li><a href="">XXXXXXXXX</a></li>
-                        <br>
+                        
                         <li><a href="">XXXXXXXXX</a></li>
-                        <br>
+                        
                         <li><a href="">XXXXXXXXX</a></li>
-                        <br>
+                        
                         <li><a href="../../logout.php">Cerrar Sesion</a></li>
-                    </ul>
                 </nav>
             </div>
         </div>
