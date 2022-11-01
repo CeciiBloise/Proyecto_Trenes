@@ -95,14 +95,24 @@
 
           <div class="inputContainer">
             <label>Fecha de ingreso a la empresa:</label>
-            <input type="date" name="fecha_de_ingreso_a_la_empresa" placeholder="Nombre">
+            <input type="date" name="fecha_de_ingreso_a_la_empresa" placeholder="Fecha de ingreso">
           </div> 
 
           <div class="inputContainer">
             <label>Foto del usuario</label> <!-- falta esto -->
             <input type="file" name="imagen" accept="imagen/*">
           </div>
+
+          <div class="inputContainer"> <!--la contraseña se la signo yo? -->
+            <label>contraseña:</label>
+            <input type="password" name="contraseña" placeholder="contraseña de maximo 6 caracteres">
+          </div> 
           
+          <div class="inputContainer"> <!--la contraseña se la signo yo? -->
+            <label>Rol:</label>
+            <input type="number" name="id_cargo" placeholder="1-admi_general; 2-admi_personal; 3-mecanico">
+          </div>
+
           <div class="boton">
             <input class="boton-subir" type="submit"  value="subir" name="subir">
           </div>

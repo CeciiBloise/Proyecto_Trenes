@@ -1,11 +1,11 @@
+/** LOGIN VIEJO - VALIDACION VIEJA **/
 <?php
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname = "proyecto_trenes"; //nombre de la base de datos
 
-/*** VALIDACION DE USUARIO ***/
-/* https://www.baulphp.com/niveles-de-usuarios-php-y-mysql-ejemplo-completo/ */
-
-include("Paginas/admi_general/crud_registro_con_imagen/conexion_crud_registro_con_imagen.php");
-$conexion=conectar();
-
+$conexion = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 //Condicional por si no hay conexion que muestre el error
 if(!$conexion){
     die("NO HAY CONEXION" .mysqli_connect_error());
@@ -20,7 +20,7 @@ $_SESSION["legajo"]=$usuario;
 
 //Consulta que le va hacer al SQL, selecciona todo de la tabla login
 //y buscara coincidencia entre el usuario y la contrasena ingresados con la tabla del SQL
-$query =mysqli_query($conexion, "SELECT * FROM carga_de_usuarios WHERE legajo = '".$usuario."' and contraseña ='".$contraseña."'" );
+$query =mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '".$usuario."' and contraseña ='".$contraseña."'" );
 
 //Una vez encontra la coincidencia nos da como resultado una fila, un numero
 //$nro = mysqli_num_rows($query);

@@ -13,11 +13,11 @@
       
                <nav class="menuPrincipal">
                         <li><a href="Inicio.php">Volver a principal</a></li>
-                        <br>
+                        
                         <li><a href="../admi_personal/tabla_crud_registro_ap.php">Tabla de personal</a></li>
-                        <br>
+                        
                         <li><a href="mecanico_admi.php">Mecanico</a></li>
-                        <br>
+                        
                         <li><a href="../../logout.php">Cerrar Sesion</a></li>
                     </ul>
                 </nav>

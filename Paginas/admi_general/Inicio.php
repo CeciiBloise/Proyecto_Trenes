@@ -24,19 +24,19 @@ if($varsesion== null || $varsesion=''){
     
     <body>
         
-               <nav class="menuPrincipal">
-                     <li><a href="admi_personal.php">Servicio medico</a></li>
+            <nav class="menuPrincipal">
+                 <li><a href="admi_personal.php">Personal</a></li>
                      
-                     <li><a href="mecanico_admi.php">Mecanico</a></li>
+                 <li><a href="mecanico_admi.php">Mecanico</a></li>
                      
-                     <li><a href="crud_registro_con_imagen/crear_registro_con_imagen.php">Registar usuario</a></li>
+                 <li><a href="crud_registro_con_imagen/crear_registro_con_imagen.php">Registar usuario</a></li>
                      
-                     <li><a href="crud_registro_con_imagen/tabla_crud_registro_con_imagen.php">Tabla de personal</a></li>
+                <li><a href="crud_registro_con_imagen/tabla_crud_registro_con_imagen.php">Tabla de personal</a></li>
                      
-                     <li><a href="carga_de_pdf.php">Carga de PDF</a></li>
+                <li><a href="carga_de_pdf.php">Carga de PDF</a></li>
                      
-                     <li><a href="../../logout.php">Cerrar sesion</a></li>
-                </nav>
+                <li><a href="../../logout.php">Cerrar sesion</a></li>
+            </nav>
          
     </body>
 
