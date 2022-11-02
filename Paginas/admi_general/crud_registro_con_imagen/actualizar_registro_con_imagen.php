@@ -101,9 +101,19 @@
           </div>
 
           <div class="inputContainer">
+            <label class="label">Rol:</label>
+            <input class="input" type="number" name="id_cargo" value="<?php echo $row['id_cargo'] ?>">
+          </div>
+
+          <div class="inputContainer">
+            <label class="label">Contraseña:</label>
+            <input class="input" type="password" name="contraseña" value="<?php echo $row['contraseña'] ?>">
+          </div>
+
+          <div class="inputContainer">
             <label class="label">Foto del usuario</label> <!-- falta esto -->
-            <input class="input" type="file" name="imagen" accept="imagen/*" <?php echo $row['imagen']?>>
-          </div> 
+            <input class="input" type="file" name="imagen" accept="imagen/*" value="<?php echo $row['imagen']?>">
+          </div>
 
           <div class="boton">
             <input class="boton-subir" type="submit" name="subir" value="Actualizar"/>

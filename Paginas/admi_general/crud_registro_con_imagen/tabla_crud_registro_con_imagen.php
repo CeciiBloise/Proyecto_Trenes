@@ -51,6 +51,8 @@
                         <th>Habilitaciones</th>
                         <th>Supervisor</th>
                         <th>Fecha de ingreso a la empresa</th>
+                        <th>Rol</th>
+                        <th>Contraseña</th>
                         <th>Imagen de Usuario</th>
                         <th colspan="3"></th>
                         
@@ -73,6 +75,8 @@
                     <td nowrap><?php echo $row['habilitaciones']?></td>
                     <td nowrap><?php echo $row['supervisor_cargo']?></td>
                     <td nowrap><?php echo $row['fecha_de_ingreso_a_la_empresa']?></td>
+                    <td><?php echo $row['id_cargo']?></td>
+                    <td><?php echo $row['contraseña']?></td>
                     <td><?php echo $row['imagen']?></td>
                     <td><a href="actualizar_registro_con_imagen.php?id=<?php echo $row['legajo']?>">Editar</a></td>
                     <td><a href="eliminar_registro_con_imagen.php?id=<?php echo $row['legajo']?>">Eliminar</a></td>

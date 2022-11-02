@@ -14,8 +14,8 @@ $puesto=$_POST['puesto'];
 $habilitaciones=$_POST['habilitaciones'];
 $supervisor=$_POST['supervisor_cargo'];
 $fecha_de_ingreso=$_POST['fecha_de_ingreso_a_la_empresa'];
-$contraseña=$_POST['contraseña'];
 $rol=$_POST['id_cargo'];
+$contraseña=$_POST['contraseña'];
 
 $imagen=$_FILES['imagen'];
 $nombre_imagen=$imagen['name'];
@@ -32,7 +32,8 @@ if($nombre_imagen != ''){
     $src=$destino.$imagen_usuario;
 }
 
-$sql="INSERT INTO carga_de_usuarios VALUES('$legajo','$apellido','$nombre','$dni','$fecha_de_nacimiento','$direccion','$celular','$mail','$puesto','$habilitaciones','$supervisor','$fecha_de_ingreso','$contraseña','$rol', '$imagen_usuario')";
+$sql="INSERT INTO carga_de_usuarios VALUES('$legajo','$apellido','$nombre','$dni','$fecha_de_nacimiento','$direccion','$celular','$mail','$puesto','$habilitaciones','$supervisor','$fecha_de_ingreso','$rol','$contraseña','$imagen_usuario')";
+
 $query= mysqli_query($conexion,$sql);
 
 if($query){
