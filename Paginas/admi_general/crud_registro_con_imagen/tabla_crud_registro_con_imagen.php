@@ -28,13 +28,42 @@
     </header>
 
     <style>
+        /*ancho del menu*/
         .navMenu{
         width: 157rem;
         }
+        /*Barra Buscador*/
+        .buscador input[type=search]{
+            width:300px;
+            height:25px;
+            border-radius:5px;
+            border-color: #5D6D7E;
+        }
+          
+        .buscador{
+            /*float:right;*/
+            margin:7px;
+        }
+          
+        .boton{
+            background-color: #5D6D7E;
+            color: white;
+            /*float: right;*/
+            padding: 5px 10px;
+            margin-right: 16px;
+            font-size: 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+    }
     </style>
 
     <body>
         <div>
+            <form accion="buscar.php" method="post" class="buscador">
+                <input type="search" placeholder="" name="buscar" maxlength="10">
+                <input class="boton" type="submit" value="Buscar">
+            </form>
             <table class="content-table">
             <caption>TABLA DE PERSONAL</caption>
                 <thead>     
