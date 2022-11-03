@@ -17,11 +17,6 @@ $fecha_de_ingreso=$_POST['fecha_de_ingreso_a_la_empresa'];
 $rol=$_POST['id_cargo'];
 $contraseña=$_POST['contraseña'];
 
-/* actualizacion de image: 
-https://www.youtube.com/watch?v=TnyroYqXMe0 
-https://www.youtube.com/watch?v=tgwvotG6t64
-https://www.youtube.com/watch?v=FWPHpyX2tPY
-*/
 $imagen=$_FILES['imagen'];
 $nombre_imagen=$imagen['name'];
 $type=$imagen['type'];
