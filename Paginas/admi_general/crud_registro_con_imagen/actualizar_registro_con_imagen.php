@@ -37,7 +37,7 @@
     
     <body>
     <div class="form_carga">
-        <form action="update_registro_con_imagen.php" method="POST" class="form">
+        <form action="update_registro_con_imagen.php" method="POST" enctype="multipart/form-data" class="form">
           <h1 class="titulo">Ingrese los datos</h1>
 
           <div class="inputContainer">
