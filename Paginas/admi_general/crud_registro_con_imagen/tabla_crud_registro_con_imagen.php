@@ -60,7 +60,7 @@
 
     <body>
         <div>
-            <form accion="buscar.php" method="post" class="buscador">
+            <form accion="buscar.php" method="get" class="buscador">
                 <input type="search" placeholder="" name="buscar" maxlength="10">
                 <input class="boton" type="submit" value="Buscar">
             </form>
