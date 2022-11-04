@@ -113,7 +113,7 @@ http://ibiblio.org/pub/linux/docs/LuCaS/Manuales-LuCAS/manual_PHP/manual_PHP/mys
 
                 $query=mysqli_query($conexion, "SELECT u.legajo, u.apellido, u.nombre, r.id_cargo
                 FROM carga_de_usuarios u
-                INNER JOIN id_cargo r ON u.id_cargo=r.id_cargo 
+                INNER JOIN legajo r ON u.legajo = r.legajo 
                 WHERE ( u.legajo LIKE '%$busqueda%' 
                 OR u.apellido LIKE '%$busqueda%' 
                 OR u.nombre LIKE '%$busqueda%' 
@@ -124,6 +124,9 @@ http://ibiblio.org/pub/linux/docs/LuCaS/Manuales-LuCAS/manual_PHP/manual_PHP/mys
 
                 ");
                 $resultado=mysqli_num_rows($query);
+
+/*https://www.campusmvp.es/recursos/post/Fundamentos-de-SQL-Consultas-SELECT-multi-tabla-JOIN.aspx */
+
                 ?>
                 <tbody>
                     <?php
