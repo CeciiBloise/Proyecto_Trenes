@@ -1,18 +1,11 @@
 <?php
      include("conexion_crud_registro_con_imagen.php");
-     $conexion=conectar();
-
-     $sql="SELECT * FROM carga_de_usuarios";
-     $query= mysqli_query($conexion,$sql);
-
-     $row=mysqli_fetch_array($query);
+    /* $conexion=conectar();*/
 
 /*
 https://www.jose-aguilar.com/blog/search-simple-php/ 
 http://ibiblio.org/pub/linux/docs/LuCaS/Manuales-LuCAS/manual_PHP/manual_PHP/mysql/buscador_bd.htm
-
 */
-
 ?>
 
 <!DOCTYPE html> 
@@ -67,14 +60,8 @@ http://ibiblio.org/pub/linux/docs/LuCaS/Manuales-LuCAS/manual_PHP/manual_PHP/mys
 
     <body>
         <div>
-            <?php
-                $busqueda=strtolower($_REQUEST['busqueda']);
-                if(empty($busqueda)){
-                    header("location: tabla_crud_registro_con_imagen.php");
-                }
-            ?>
-            <form accion="buscar.php" method="get" class="buscador">
-                <input type="search" placeholder="" name="buscar" maxlength="10" value="<?php echo $busqueda ?>">
+            <form accion="buscar.php" method="POST" class="buscador">
+                <input type="search" placeholder="" name="buscar" value="<?php echo $buscar?>">
                 <input class="boton" type="submit" value="Buscar">
             </form>
             <table class="content-table">
@@ -99,38 +86,22 @@ http://ibiblio.org/pub/linux/docs/LuCaS/Manuales-LuCAS/manual_PHP/manual_PHP/mys
                         <th colspan="3"></th>
                         
                     </tr>
-                </thead>
-                <?php
-                $sql_registro= mysqli_query($conexion, "SELECT COUNT(*) as total_registro FROM carga_de_usuarios 
-                WHERE ( legajo LIKE '%$busqueda%' 
-                OR apellido LIKE '%$busqueda%' 
-                OR nombre LIKE '%$busqueda%' 
-                OR habilitaciones LIKE '%$busqueda%' 
-                OR id_cargo LIKE '%$busqueda%') 
-                AND id_cargo = 1 ");
-                $resultado= mysqli_fetch_array($sql_registro);
-                $total_registro= $resultado('total_registro');
 
-                $query=mysqli_query($conexion, "SELECT u.legajo, u.apellido, u.nombre, r.id_cargo
-                FROM carga_de_usuarios u
-                INNER JOIN legajo r ON u.legajo = r.legajo 
-                WHERE ( u.legajo LIKE '%$busqueda%' 
-                OR u.apellido LIKE '%$busqueda%' 
-                OR u.nombre LIKE '%$busqueda%' 
-                OR u.habilitaciones LIKE '%$busqueda%' 
-                OR r.id_cargo LIKE '%$busqueda%')
-                AND
-                id_cargo = 1 ORDER BY u.legajo
+                    <?php
+                    $buscar=$_POST['buscar'];
 
-                ");
-                $resultado=mysqli_num_rows($query);
-
+                    $sql_read="SELECT * FROM carga_de_usuarios WHERE legajo LIKE '%$buscar%'";
+                    
+                    $sql_query= mysqli_query($conexion, $sql_read);
+                    
 /*https://www.campusmvp.es/recursos/post/Fundamentos-de-SQL-Consultas-SELECT-multi-tabla-JOIN.aspx */
 
                 ?>
+
+                </thead>
                 <tbody>
                     <?php
-                         while($row=mysqli_fetch_array($query)){
+                         while($row=mysqli_fetch_array($sql_query)){
                     ?>
                     <tr>
                     <td scope="col"><?php echo $row['legajo']?></td>

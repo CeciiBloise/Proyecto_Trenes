@@ -60,8 +60,8 @@
 
     <body>
         <div>
-            <form accion="buscar.php" method="get" class="buscador">
-                <input type="search" placeholder="" name="buscar" maxlength="10">
+            <form accion="buscar.php" method="POST" class="buscador">
+                <input type="search" placeholder="" name="buscar">
                 <input class="boton" type="submit" value="Buscar">
             </form>
             <table class="content-table">
