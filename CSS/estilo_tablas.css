@@ -39,3 +39,8 @@ body::-webkit-scrollbar{
     body::-webkit-scrollbar-thumb{
     background: #34495E; /*color de la barra*/
     }
+
+.flechas{
+    float: right;
+    padding-top: 5px;
+}

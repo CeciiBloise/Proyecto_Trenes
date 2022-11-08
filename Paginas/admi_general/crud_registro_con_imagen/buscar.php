@@ -83,7 +83,7 @@ http://ibiblio.org/pub/linux/docs/LuCaS/Manuales-LuCAS/manual_PHP/manual_PHP/mys
                         <th>Rol</th>
                         <th>Contraseña</th>
                         <th>Imagen de Usuario</th>
-                        <th colspan="3"></th>
+                        <th colspan="3">Acciones</th>
                         
                     </tr>
 
