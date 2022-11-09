@@ -69,14 +69,14 @@
             border: none;
             cursor: pointer;
             font-size: 16px;
-    }
+        }
     </style>
 
     <body>
 
         <div>
             <form accion="buscar.php" method="POST" class="buscador">
-                <input type="search" placeholder="" name="buscar">
+                <input type="text" placeholder="" name="buscar">
                 <input class="boton" type="submit" value="Buscar">
             </form>
             <table class="content-table">
@@ -99,7 +99,7 @@
                             </div>
                         </th>
                         <th>Apellido
-                            <div class="flechas">
+                            <div class="float-right">
                                     <?php if (isset($_GET['columna']) && $_GET['columna'] == 'apellido' && $_GET['tipo'] == 'ASC'): ?>
                                         <i class="fa-sharp fa-solid fa-arrow-up"></i>
                                         <?php else : ?>
@@ -113,7 +113,7 @@
                             </div>
                         </th>
                         <th>Nombre
-                            <div class="flechas">
+                            <div class="float-right">
                                     <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre' && $_GET['tipo'] == 'ASC'): ?>
                                         <i class="fa-sharp fa-solid fa-arrow-up"></i>
                                         <?php else : ?>
