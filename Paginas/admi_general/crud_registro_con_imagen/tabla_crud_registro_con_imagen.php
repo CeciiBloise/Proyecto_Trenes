@@ -2,18 +2,23 @@
      include("conexion_crud_registro_con_imagen.php");
      $conexion=conectar();
 
-     $sql="SELECT * FROM carga_de_usuarios";
-     $query= mysqli_query($conexion,$sql);
 
-     $row=mysqli_fetch_array($query);
+    $sql="SELECT * FROM carga_de_usuarios";
+    $query= mysqli_query($conexion,$sql);
 
-     $where= " where 1=1 ";
-     $order="";
+    $row=mysqli_fetch_array($query);
 
-     if(isset($_GET['columna'])){
-        $order=" order by ".$_GET['columna']." ".$_GET['tipo'];
-     }
-
+    //Si toco alguna flecha entro aca para ordenar
+    if(isset($_GET['columna'])){
+       $where= " where 1=1";
+       $order=" ORDER BY ".$_GET['columna']." ".$_GET['tipo'];
+       $sql="SELECT*FROM carga_de_usuarios 
+       $where
+       $order
+       ;
+       ";
+       $query= mysqli_query($conexion,$sql);
+    }
 ?>
 
 <!DOCTYPE html> 
@@ -69,15 +74,6 @@
 
     <body>
 
-    <?php
-    $sql="SELECT apellido,nombre FROM carga_de_usuarios
-    $where
-    $order
-    ''
-    ";
-    $resultado= mysqli_query($conexion, $sql);
-    ?>
-    
         <div>
             <form accion="buscar.php" method="POST" class="buscador">
                 <input type="search" placeholder="" name="buscar">
@@ -88,13 +84,14 @@
                 <thead>     
                     <tr>
                         <th scope="row">Legajo
-                        <div class="flechas">
-                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'legajo' && $_GET['tipo'] == 'asc'): ?>
+                            <div class="float-right">
+                                <!-- Funcionamiento de las flechas -->
+                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'legajo' && $_GET['tipo'] == 'ASC'): ?>
                                         <i class="fa-sharp fa-solid fa-arrow-up"></i>
                                         <?php else : ?>
                                             <a href="tabla_crud_registro_con_imagen.php?columna=legajo&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
                                         <?php endif; ?>
-                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'legajo' && $_GET['tipo'] == 'desc') : ?>
+                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'legajo' && $_GET['tipo'] == 'DESC') : ?>
                                             <i class="fa-sharp fa-solid fa-arrow-down"></i>
                                         <?php else : ?>
                                             <a href="tabla_crud_registro_con_imagen.php?columna=apellido&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
@@ -103,12 +100,12 @@
                         </th>
                         <th>Apellido
                             <div class="flechas">
-                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'apellido' && $_GET['tipo'] == 'asc'): ?>
+                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'apellido' && $_GET['tipo'] == 'ASC'): ?>
                                         <i class="fa-sharp fa-solid fa-arrow-up"></i>
                                         <?php else : ?>
                                             <a href="tabla_crud_registro_con_imagen.php?columna=apellido&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
                                         <?php endif; ?>
-                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'apellido' && $_GET['tipo'] == 'desc') : ?>
+                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'apellido' && $_GET['tipo'] == 'DESC') : ?>
                                             <i class="fa-sharp fa-solid fa-arrow-down"></i>
                                         <?php else : ?>
                                             <a href="tabla_crud_registro_con_imagen.php?columna=apellido&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
@@ -116,13 +113,13 @@
                             </div>
                         </th>
                         <th>Nombre
-                        <div class="flechas">
-                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre' && $_GET['tipo'] == 'asc'): ?>
+                            <div class="flechas">
+                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre' && $_GET['tipo'] == 'ASC'): ?>
                                         <i class="fa-sharp fa-solid fa-arrow-up"></i>
                                         <?php else : ?>
                                             <a href="tabla_crud_registro_con_imagen.php?columna=nombre&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
                                         <?php endif; ?>
-                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre' && $_GET['tipo'] == 'desc') : ?>
+                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre' && $_GET['tipo'] == 'DESC') : ?>
                                             <i class="fa-sharp fa-solid fa-arrow-down"></i>
                                         <?php else : ?>
                                             <a href="tabla_crud_registro_con_imagen.php?columna=nombre&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
