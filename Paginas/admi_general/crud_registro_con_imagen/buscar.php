@@ -1,20 +1,27 @@
 <?php
-     include("conexion_crud_registro_con_imagen.php");
-     $conexion=conectar();
-
 /*
 https://www.jose-aguilar.com/blog/search-simple-php/ 
 http://ibiblio.org/pub/linux/docs/LuCaS/Manuales-LuCAS/manual_PHP/manual_PHP/mysql/buscador_bd.htm
 */
-$buscar=isset($_POST['buscar']);
-$where= "where 1=1";
+if(isset($_POST['buscar'])){
 
-$sql="SELECT * FROM carga_de_usuarios
-$where
-LIKE '%$buscar%'";
+    $buscar=$_POST['buscar'];
 
-$query= mysqli_query($conexion, $sql);
+    /*Conecto a la base de datos*/ 
+    include("conexion_crud_registro_con_imagen.php");
+    $conexion=conectar();
+    
+    $sql="SELECT*FROM carga_de_usuarios
+    WHERE status = '1'
+    AND (
+    legajo LIKE '% . $buscar . %'
+    OR apellido LIKE '% . $buscar . %' 
+    OR nombre LIKE '% . $buscar . %' 
+    OR habilitaciones LIKE '% . $buscar . %')";
 
+    $query= mysqli_query($conexion, $sql); 
+
+}
 /*https://www.campusmvp.es/recursos/post/Fundamentos-de-SQL-Consultas-SELECT-multi-tabla-JOIN.aspx */
 
 ?>
@@ -112,7 +119,10 @@ $query= mysqli_query($conexion, $sql);
                 </thead>
                 <tbody>
                     <?php
-                         while($row=mysqli_fetch_array($query)){
+                
+                
+                           while($row=mysqli_fetch_array($query)){
+                   
                     ?>
                     <tr>
                     <td scope="col"><?php echo $row['legajo']?></td>

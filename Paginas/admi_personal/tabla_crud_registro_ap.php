@@ -2,10 +2,23 @@
      include("../admi_general/crud_registro_con_imagen/conexion_crud_registro_con_imagen.php");
      $conexion=conectar();
 
-     $sql="SELECT * FROM carga_de_usuarios";
-     $query= mysqli_query($conexion,$sql);
 
-     $row=mysqli_fetch_array($query);
+    $sql="SELECT * FROM carga_de_usuarios";
+    $query= mysqli_query($conexion,$sql);
+
+    $row=mysqli_fetch_array($query);
+
+    //Si toco alguna flecha entro aca para ordenar
+    if(isset($_GET['columna'])){
+       $where= " where 1=1";
+       $order=" ORDER BY ".$_GET['columna']." ".$_GET['tipo'];
+       $sql="SELECT*FROM carga_de_usuarios 
+       $where
+       $order
+       ;
+       ";
+       $query= mysqli_query($conexion,$sql);
+    }
 ?>
 
 <!DOCTYPE html> 
@@ -15,15 +28,10 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
         <link rel="stylesheet" href="../../CSS/estilo_menu_horizontal.css"/>
         <link rel="stylesheet" href="../../CSS/estilo_tablas.css"/>
+        <script src="https://kit.fontawesome.com/3de4daf040.js" crossorigin="anonymous"></script>
         <!-- Estilos -->
         <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
     </head>
-
-    <style>
-        .navMenu{
-             width: 117rem;
-        }
-    </style>
 
     <header>
       <nav class="navMenu">
@@ -35,15 +43,88 @@
        </nav>
     </header>
 
+    <style>
+        .navMenu{
+             width: 117rem;
+        }
+        /*Barra Buscador*/
+        .buscador input[type=search]{
+            width:300px;
+            height:25px;
+            border-radius:5px;
+            border-color: #5D6D7E;
+        }
+          
+        .buscador{
+            /*float:right;*/
+            margin:7px;
+        }
+          
+        .boton{
+            background-color: #5D6D7E;
+            color: white;
+            /*float: right;*/
+            padding: 5px 10px;
+            margin-right: 16px;
+            font-size: 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+
     <body>
         <div>
+
+            <form accion="buscar.php" method="POST" class="buscador">
+                <input type="text" placeholder="" name="buscar">
+                <input class="boton" type="submit" value="Buscar">
+            </form>
+
             <table class="content-table">
-                <caption>Tabla de Personal</caption>
+                <caption>TABLA DE PERSONAL</caption>
                 <thead>     
                     <tr>
                         <th scope="row">Legajo</th>
+                            <div class="float-right">
+                                <!-- Funcionamiento de las flechas -->
+                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'legajo' && $_GET['tipo'] == 'ASC'): ?>
+                                        <i class="fa-sharp fa-solid fa-arrow-up"></i>
+                                        <?php else : ?>
+                                            <a href="tabla_crud_registro_con_imagen.php?columna=legajo&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
+                                        <?php endif; ?>
+                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'legajo' && $_GET['tipo'] == 'DESC') : ?>
+                                            <i class="fa-sharp fa-solid fa-arrow-down"></i>
+                                        <?php else : ?>
+                                            <a href="tabla_crud_registro_con_imagen.php?columna=apellido&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
+                                        <?php endif; ?>
+                            </div>
                         <th>Apellido</th>
+                             <div class="float-right">
+                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'apellido' && $_GET['tipo'] == 'ASC'): ?>
+                                        <i class="fa-sharp fa-solid fa-arrow-up"></i>
+                                        <?php else : ?>
+                                            <a href="tabla_crud_registro_con_imagen.php?columna=apellido&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
+                                        <?php endif; ?>
+                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'apellido' && $_GET['tipo'] == 'DESC') : ?>
+                                            <i class="fa-sharp fa-solid fa-arrow-down"></i>
+                                        <?php else : ?>
+                                            <a href="tabla_crud_registro_con_imagen.php?columna=apellido&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
+                                        <?php endif; ?>
+                            </div>
                         <th>Nombre</th>
+                            <div class="float-right">
+                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre' && $_GET['tipo'] == 'ASC'): ?>
+                                        <i class="fa-sharp fa-solid fa-arrow-up"></i>
+                                        <?php else : ?>
+                                            <a href="tabla_crud_registro_con_imagen.php?columna=nombre&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
+                                        <?php endif; ?>
+                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre' && $_GET['tipo'] == 'DESC') : ?>
+                                            <i class="fa-sharp fa-solid fa-arrow-down"></i>
+                                        <?php else : ?>
+                                            <a href="tabla_crud_registro_con_imagen.php?columna=nombre&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
+                                        <?php endif; ?>
+                            </div>
                         <th>D.N.I</th>
                         <th>Fecha de Nacimiento</th>
                         <th>Direccion</th>
