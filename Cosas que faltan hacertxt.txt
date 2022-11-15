@@ -4,7 +4,7 @@ Cosas para resolver:
 - Agregar un salir //Listo
 - Seguridad de paginaion //Listo
 - Validacion de error de ingreso//Listo
-- Agregar un buscador en ficha de personal //https://www.freecodecamp.org/espanol/news/como-crear-un-formulario-responsivo-con-funcionalidad-de-filtro-usando-html-css-y-javascript/
+- Agregar un buscador //Falta conectarlo con la base de datos
 
 Cosas que le faltan para administrador general:
 -Visualizacion de un empleado //Listo
@@ -14,10 +14,9 @@ Cosas que le faltan para administrador general:
       //https://www.neoguias.com/tutorial-crud-php/#Creacion_de_la_aplicacion_CRUD 
       //https://codigosdeprogramacion.com/cursos/?lesson=4-crud-parte-2-insertar-actualizar-eliminar-y-buscar
 
-      - Que se pueda ordenar // https://www.youtube.com/watch?v=43VJLLX3yx0
+      - Que se pueda ordenar // https://www.youtube.com/watch?v=43VJLLX3yx0 //Listo
       - Carga de imagen del usuario// Listo 
         //https://programacion.net/articulo/almacenar_y_recuperar_una_imagen_de_una_base_de_datos_mysql_mediante_php_1861
-      - Buscador de usuario por legajo
       - Agregar un ver que me muestre la ficha //Listo
 
     - pestaña para subir y actualizar archivos
@@ -38,4 +37,20 @@ https://ishadeed.com/article/min-max-css/#min-width-and-max-width-properties
 
 Menu horizontal: hacer que cubra el 100% de la pantalla //listo
 
-que en registro y actualizacion me aparezca un cartel que diga listo se cargo o listo se actualizo
+A la fecha 15/11/22
+Me falta:
+-Conectar el bucador con la base de datos
+-Pensar como voy a ordenar y clasificar los archivos
+-Gestro de archivos
+-Crud de archivos
+-Seguridad de pagina
+-Seguridad de localhost
+-Una vez finalzado esto, preguntar si puedo agregar los registros levantados de las barrreras
+
+
+
+
+
+
+
+
