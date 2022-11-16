@@ -27,6 +27,10 @@ Cosas que le faltan para administrador general:
 Cosas generales de la pagina:
 - Seguridad de base de datos
 - Seguridad de localhost
+  - https://www.cloudcenterandalucia.es/blog/localhost-que-es-conceptos-basicos-y-como-crearlo/
+  - http://www.lopeztorrijos.com/tutoriales/instalar-xampp-como-servidor-local/instalacion-de-xampp-para-win/comprobar-y-configurar-seguridad-en-los-servidores-locales
+  - https://www.ibm.com/docs/es/aix/7.2?topic=protocols-internet-protocol-ip-version-6
+
 - Un codigo que me elimine las cookis //https://www.um.es/docencia/barzana/DAWEB/2017-18/daweb-tema-17-sesiones-PHP.html#:~:text=Puede%20terminar%20una%20sesi%C3%B3n%20completa,session_destroy%20()%3B
    - Eleminar cookies //https://programadorwebvalencia.com/cursos/php/cookies/
 

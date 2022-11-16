@@ -1,6 +1,16 @@
 <?php
     
-    /*https://www.configuroweb.com/sistema-gestor-de-archivos-hecho-en-php-y-mysql/ */
+    /*https://www.configuroweb.com/sistema-gestor-de-archivos-hecho-en-php-y-mysql/ 
+    
+    https://parzibyte.me/blog/2021/01/27/software-gestor-archivos-nube-php-mysql/
+
+    https://compubinario.com/gestor-de-archivos-en-php-y-mysql/
+
+    https://facultadautodidacta.com/curso/sistema-gestor-de-archivos-con-php-y-mysql
+
+    https://github.com/parzibyte/gestor_archivos_php
+
+    */
     
     
     
