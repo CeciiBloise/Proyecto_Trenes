@@ -1,6 +1,9 @@
 <?php
     
-    /*https://www.configuroweb.com/sistema-gestor-de-archivos-hecho-en-php-y-mysql/ 
+    /*
+    https://informaticapc.com/tutorial-php/configurar.php#ini
+
+    https://www.configuroweb.com/sistema-gestor-de-archivos-hecho-en-php-y-mysql/ 
     
     https://parzibyte.me/blog/2021/01/27/software-gestor-archivos-nube-php-mysql/
 
