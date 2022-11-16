@@ -1,6 +1,20 @@
 <?php
     
     /*
+    https://www.solvetic.com/tutoriales/article/2481-almacenar-archivos-en-campos-blob-con-php-y-mysql/
+    
+    https://www.phpcentral.com/pregunta/898/como-guardar-un-documento-pdf-o-doc-en-mi-base-de-datos-mysql
+
+    https://www.digitalocean.com/community/tutorials/how-to-use-the-mysql-blob-data-type-to-store-images-with-php-on-ubuntu-18-04-es
+
+    Como guardar archivos en mi base de datos: https://kiuvox.com/como-guardar-archivos-en-mysql-desde-php/
+
+    https://informaticapc.com/tutorial-php/crear-archivos.php
+
+    http://desarrolloweb.dlsi.ua.es/idesweb-2a-ed/modulo-11
+
+    https://parzibyte.me/blog/2018/07/10/trabajando-con-archivos-y-carpetas-en-php-crud/
+
     https://informaticapc.com/tutorial-php/configurar.php#ini
 
     https://www.configuroweb.com/sistema-gestor-de-archivos-hecho-en-php-y-mysql/ 
