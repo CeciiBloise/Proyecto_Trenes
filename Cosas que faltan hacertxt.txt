@@ -45,12 +45,12 @@ A la fecha 15/11/22
 Me falta:
 -Conectar el bucador con la base de datos
 -Pensar como voy a ordenar y clasificar los archivos
--Gestro de archivos
--Crud de archivos
+ -Gestro de archivos: pensar directorios
+https://es.stackoverflow.com/questions/42120/elegir-ruta-donde-subir-archivo-a-servidor-php
+ -Crud de archivos
 -Seguridad de pagina
 -Seguridad de localhost
 -Una vez finalzado esto, preguntar si puedo agregar los registros levantados de las barrreras
-
 
 
 
