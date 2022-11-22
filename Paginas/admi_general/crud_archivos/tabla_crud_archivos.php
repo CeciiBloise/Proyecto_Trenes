@@ -127,21 +127,21 @@
                                         <?php if (isset($_GET['columna']) && $_GET['columna'] == 'id_archivo' && $_GET['tipo'] == 'DESC') : ?>
                                             <i class="fa-sharp fa-solid fa-arrow-down"></i>
                                         <?php else : ?>
-                                            <a href="tabla_crud_registro_con_imagen.php?columna=id_archivo&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
+                                            <a href="tabla_crud_archivos.php?columna=id_archivo&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
                                         <?php endif; ?>
                             </div>
                         </th>
                         <th>Nombre
                             <div class="float-right">
-                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre' && $_GET['tipo'] == 'ASC'): ?>
+                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre_archivo' && $_GET['tipo'] == 'ASC'): ?>
                                         <i class="fa-sharp fa-solid fa-arrow-up"></i>
                                         <?php else : ?>
-                                            <a href="tabla_crud_registro_con_imagen.php?columna=nombre&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
+                                            <a href="tabla_crud_archivos.php?columna=nombre_archivo&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
                                         <?php endif; ?>
-                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre' && $_GET['tipo'] == 'DESC') : ?>
+                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre_archivo' && $_GET['tipo'] == 'DESC') : ?>
                                             <i class="fa-sharp fa-solid fa-arrow-down"></i>
                                         <?php else : ?>
-                                            <a href="tabla_crud_registro_con_imagen.php?columna=nombre&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
+                                            <a href="tabla_crud_archivos.php?columna=nombre_archivo&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
                                         <?php endif; ?>
                             </div>
                         </th>
@@ -150,33 +150,38 @@
                                     <?php if (isset($_GET['columna']) && $_GET['columna'] == 'categoria' && $_GET['tipo'] == 'ASC'): ?>
                                         <i class="fa-sharp fa-solid fa-arrow-up"></i>
                                         <?php else : ?>
-                                            <a href="tabla_crud_registro_con_imagen.php?columna=categoria&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
+                                            <a href="tabla_crud_archivos.php?columna=categoria&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
                                         <?php endif; ?>
                                         <?php if (isset($_GET['columna']) && $_GET['columna'] == 'categoria' && $_GET['tipo'] == 'DESC') : ?>
                                             <i class="fa-sharp fa-solid fa-arrow-down"></i>
                                         <?php else : ?>
-                                            <a href="tabla_crud_registro_con_imagen.php?columna=categoria&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
+                                            <a href="tabla_crud_archivos.php?columna=categoria&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
                                         <?php endif; ?>
                             </div>
                         </th>
                         <th>Fecha</th>
                         <th>Descripcion</th>
+                        <th>Tipo</th>
                         <th colspan="3">Acciones</th>
                         
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                         while($row=mysqli_fetch_array($query)){
+                    $contador=0;
+                         while($row=mysqli_fetch_assoc($query)){
+                            $contador++;
                     ?>
                     <tr>
                     <td scope="col"><?php echo $row['id_archivo']?></td>
-                    <td nowrap><?php echo $row['nombre']?></td>
+                    <td nowrap><?php echo $row['nombre_archivo']?></td>
                     <td nowrap><?php echo $row['categoria']?></td>
+                    <td><?php echo $row['fecha_creacion']?></td>
                     <td><?php echo $row['descripcion']?></td>
-                    <td><a href="actualizar_archivos.php?id=<?php echo $row['legajo']?>">Editar</a></td>
-                    <td><a href="eliminar_archivos.php?id=<?php echo $row['legajo']?>">Eliminar</a></td>
-                    <td><a href="ver_archivo.php?id=<?php echo $row['legajo']?>">Ver</a></td>
+                    <td><?php echo $row['type']?></td> <!--Esto no anda-->
+                    <td><a href="actualizar_archivos.php?id=<?php echo $row['id_archivo']?>">Editar</a></td>
+                    <td><a href="eliminar_archivos.php?id=<?php echo $row['id_archivo']?>">Eliminar</a></td>
+                    <td><a href="ver_archivo.php?id=<?php echo $row['id_archivo']?>">Ver</a></td>
                     </tr>
                     <?php
                          }

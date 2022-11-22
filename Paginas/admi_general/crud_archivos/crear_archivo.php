@@ -5,7 +5,7 @@
     $sql="SELECT * FROM archivos";
     $query= mysqli_query($conexion,$sql);
 
-    $row=mysqli_fetch_array($query);
+    $row=mysqli_fetch_assoc($query);
 
 
 ?>
@@ -40,6 +40,16 @@
                 <div class="inputContainer">
                   <label>Nombre del archivo:</label>
                   <input type="text" name="nombre_archivo" placeholder="Nombre">
+                </div>
+                <div class="inputContainer">
+                <div class="inputContainer">
+                  <label for="categoria">Categoria:</label>
+                    <select name="categoria" id="categoria">
+                      <option value="planos_vias">Planos vias</option>
+                      <option value="manuales">Manuales</option>
+                      <option value="vistas">Vistas</option>
+                      <!--https://www.freecodecamp.org/espanol/news/etiqueta-select-de-html-como-hacer-un-menu-desplegable-o-lista-combinada/-->
+                    </select>
                 </div>
                 <div class="inputContainer">
                   <label>Descripcion:</label>
