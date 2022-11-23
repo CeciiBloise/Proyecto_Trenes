@@ -45,12 +45,19 @@ A la fecha 15/11/22
 Me falta:
 -Conectar el bucador con la base de datos
 -Pensar como voy a ordenar y clasificar los archivos
+ - Que se carguen los archivos desde un solo lugar y ahi se puedan elegir que como se va a clasificar  
+ - Que se carguen desde la misma seccion y se pueda crear carpetas
  -Gestro de archivos: pensar directorios
 https://es.stackoverflow.com/questions/42120/elegir-ruta-donde-subir-archivo-a-servidor-php
  -Crud de archivos
 -Seguridad de pagina
 -Seguridad de localhost
 -Una vez finalzado esto, preguntar si puedo agregar los registros levantados de las barrreras
+
+Tiene cositas: https://www.configuroweb.com/46-aplicaciones-gratuitas-en-php-python-y-javascript/#Sistema-Manejador-de-Archivos
+
+https://github.com/Amplizer/Archivador-Web
+
 
 
 
