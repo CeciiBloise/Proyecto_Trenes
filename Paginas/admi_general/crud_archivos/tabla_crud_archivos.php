@@ -85,37 +85,9 @@
             <caption>TABLA DE ARCHIVOS</caption>
                 <thead>     
                     <tr>
-                        <th scope="row">ID
-                            <div class="float-right">
-                                <!-- Funcionamiento de las flechas -->
-                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'id_archivo' && $_GET['tipo'] == 'ASC'): ?>
-                                        <i class="fa-sharp fa-solid fa-arrow-up"></i>
-                                        <?php else : ?>
-                                            <a href="tabla_crud_archivos.php?columna=id_archivo&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
-                                        <?php endif; ?>
-                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'id_archivo' && $_GET['tipo'] == 'DESC') : ?>
-                                            <i class="fa-sharp fa-solid fa-arrow-down"></i>
-                                        <?php else : ?>
-                                            <a href="tabla_crud_archivos.php?columna=id_archivo&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
-                                        <?php endif; ?>
-                            </div>
-                        </th>
+                        <th scope="row">ID</th>
 
-                        <th>Nombre
-                            <div class="float-right">
-                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre_archivo' && $_GET['tipo'] == 'ASC'): ?>
-                                        <i class="fa-sharp fa-solid fa-arrow-up"></i>
-                                        <?php else : ?>
-                                            <a href="tabla_crud_archivos.php?columna=nombre_archivo&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
-                                        <?php endif; ?>
-                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre_archivo' && $_GET['tipo'] == 'DESC') : ?>
-                                            <i class="fa-sharp fa-solid fa-arrow-down"></i>
-                                        <?php else : ?>
-                                            <a href="tabla_crud_archivos.php?columna=nombre_archivo&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
-                                        <?php endif; ?>
-                            </div>
-                        </th>
-
+                        <th>Nombre</th>
                         <th>Subestacion</th>
                         <th>Categoria</th>
                         <th>Descripcion</th>
