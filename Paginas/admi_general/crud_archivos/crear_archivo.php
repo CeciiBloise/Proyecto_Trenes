@@ -42,12 +42,18 @@
                   <input type="text" name="nombre_archivo" placeholder="Nombre">
                 </div>
                 <div class="inputContainer">
+                  <label for="subestacion">Subestacion:</label>
+                    <select name="subestacion" id="subestacion">
+                      <option value="quilmes">Quilmes</option>
+                      <option value="bosques">Bosques</option>
+                      <option value="tolosa">Tolosa</option>
+                    </select>  
+                </div>
                 <div class="inputContainer">
                   <label for="categoria">Categoria:</label>
                     <select name="categoria" id="categoria">
-                      <option value="planos_vias">Planos vias</option>
+                      <option value="planos">Planos</option>
                       <option value="manuales">Manuales</option>
-                      <option value="vistas">Vistas</option>
                       <!--https://www.freecodecamp.org/espanol/news/etiqueta-select-de-html-como-hacer-un-menu-desplegable-o-lista-combinada/-->
                     </select>
                 </div>

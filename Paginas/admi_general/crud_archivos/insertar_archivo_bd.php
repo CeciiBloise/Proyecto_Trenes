@@ -6,7 +6,7 @@ $nombre= $_POST['nombre_archivo'];
 $categoria=$_POST['categoria'];
 $descripcion= $_POST['descripcion'];
 $fecha_carga= $_POST['fecha_creacion'];
-
+/*Tengo que hacer que el nombre que yo le imgreso sea el nuevo nombre del archivo*/
 $archivo= $_FILES['archivo'];
 $nombre_archivo=$archivo['name'];
 $type = $archivo['type'];
@@ -18,7 +18,7 @@ $destino = 'archivos/';
 $src=$destino.$nombre_archivo;
 
 
-$sql="INSERT INTO archivos(nombre_archivo, categoria, descripcion, fecha_creacion, type, archivo) VALUES('$nombre','$categoria','$descripcion','$fecha_carga','$type','$archivoBLOB')";
+$sql="INSERT INTO archivos(nombre_archivo, categoria, descripcion, fecha_creacion, archivo, type) VALUES('$nombre','$categoria','$descripcion','$fecha_carga','$archivoBLOB','$type')";
 $query=mysqli_query($conexion,$sql);
 
 if($query){

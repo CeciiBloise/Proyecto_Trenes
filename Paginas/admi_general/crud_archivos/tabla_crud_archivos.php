@@ -1,37 +1,4 @@
 <?php
-    
-    /*
-    https://www.solvetic.com/tutoriales/article/2481-almacenar-archivos-en-campos-blob-con-php-y-mysql/
-    
-    https://www.phpcentral.com/pregunta/898/como-guardar-un-documento-pdf-o-doc-en-mi-base-de-datos-mysql
-
-    https://www.digitalocean.com/community/tutorials/how-to-use-the-mysql-blob-data-type-to-store-images-with-php-on-ubuntu-18-04-es
-
-    Como guardar archivos en mi base de datos: https://kiuvox.com/como-guardar-archivos-en-mysql-desde-php/
-
-    https://informaticapc.com/tutorial-php/crear-archivos.php
-
-    http://desarrolloweb.dlsi.ua.es/idesweb-2a-ed/modulo-11
-
-    https://parzibyte.me/blog/2018/07/10/trabajando-con-archivos-y-carpetas-en-php-crud/
-
-    https://informaticapc.com/tutorial-php/configurar.php#ini
-
-    https://www.configuroweb.com/sistema-gestor-de-archivos-hecho-en-php-y-mysql/ 
-    
-    https://parzibyte.me/blog/2021/01/27/software-gestor-archivos-nube-php-mysql/
-
-    https://compubinario.com/gestor-de-archivos-en-php-y-mysql/
-
-    https://facultadautodidacta.com/curso/sistema-gestor-de-archivos-con-php-y-mysql
-
-    https://github.com/parzibyte/gestor_archivos_php
-
-    */
-    
-    
-    
-    
     include("../crud_registro_con_imagen/conexion_crud_registro_con_imagen.php");
      $conexion=conectar();
 
@@ -69,17 +36,17 @@
     <header>
       <nav class="navMenu">
             <li><a href="../../admi_general/Inicio.php" >Inicio</a></li>
-            
+            <li><a href="crear_archivo.php">Cargar Archivo</a></li>
             <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
 
     <style>
         /*ancho del menu*/
-        .navMenu{
+       /* .navMenu{
         width: 157rem;
-        }
-        /*Barra Buscador*/
+        }*/
+                /*Barra Buscador*/
         .buscador input[type=search]{
             width:300px;
             height:25px;
@@ -108,10 +75,12 @@
     <body>
 
         <div>
+            <!--Barra buscador-->
             <form accion="buscar.php" method="POST" class="buscador">
                 <input type="text" placeholder="" name="buscar">
                 <input class="boton" type="submit" value="Buscar">
             </form>
+
             <table class="content-table">
             <caption>TABLA DE ARCHIVOS</caption>
                 <thead>     
@@ -131,6 +100,7 @@
                                         <?php endif; ?>
                             </div>
                         </th>
+
                         <th>Nombre
                             <div class="float-right">
                                     <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre_archivo' && $_GET['tipo'] == 'ASC'): ?>
@@ -145,43 +115,33 @@
                                         <?php endif; ?>
                             </div>
                         </th>
-                        <th>Categoria
-                            <div class="float-right">
-                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'categoria' && $_GET['tipo'] == 'ASC'): ?>
-                                        <i class="fa-sharp fa-solid fa-arrow-up"></i>
-                                        <?php else : ?>
-                                            <a href="tabla_crud_archivos.php?columna=categoria&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
-                                        <?php endif; ?>
-                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'categoria' && $_GET['tipo'] == 'DESC') : ?>
-                                            <i class="fa-sharp fa-solid fa-arrow-down"></i>
-                                        <?php else : ?>
-                                            <a href="tabla_crud_archivos.php?columna=categoria&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
-                                        <?php endif; ?>
-                            </div>
-                        </th>
-                        <th>Fecha</th>
+
+                        <th>Subestacion</th>
+                        <th>Categoria</th>
                         <th>Descripcion</th>
-                        <th>Tipo</th>
-                        <th colspan="3">Acciones</th>
+                        <th>Fecha</th>
+
+
+                        <th colspan="5">Acciones</th>
                         
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    $contador=0;
-                         while($row=mysqli_fetch_assoc($query)){
-                            $contador++;
+                         while($row=mysqli_fetch_assoc($query)){ /*El assoc lo combierte en un arreglo asociativo*/
                     ?>
                     <tr>
                     <td scope="col"><?php echo $row['id_archivo']?></td>
                     <td nowrap><?php echo $row['nombre_archivo']?></td>
-                    <td nowrap><?php echo $row['categoria']?></td>
-                    <td><?php echo $row['fecha_creacion']?></td>
+                    <td><?php echo $row['subestacion']?></td><td>
+                    <td><?php echo $row['categoria']?></td>
                     <td><?php echo $row['descripcion']?></td>
-                    <td><?php echo $row['type']?></td> <!--Esto no anda-->
+                    <td><?php echo $row['fecha_creacion']?></td>
+
                     <td><a href="actualizar_archivos.php?id=<?php echo $row['id_archivo']?>">Editar</a></td>
                     <td><a href="eliminar_archivos.php?id=<?php echo $row['id_archivo']?>">Eliminar</a></td>
                     <td><a href="ver_archivo.php?id=<?php echo $row['id_archivo']?>">Ver</a></td>
+                    <td><a href="descarga.php?id=<?php echo $row['id_archivo']?>">Descargar</a></td>
                     </tr>
                     <?php
                          }
