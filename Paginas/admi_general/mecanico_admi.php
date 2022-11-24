@@ -13,12 +13,16 @@
     <body>
 
                 <nav class="menuPrincipal">
+                    
+                        <li><a href="Inicio.php">Volver al inicio</a></li>
 
-                        <li><a href="">XXXXXXXXX</a></li>
+                        <li><a href="mecanico/planos/inicio_planos.php">Planos</a></li>
 
-                        <li><a href="">XXXXXXXXX</a></li>
+                        <li><a href="">Manuales</a></li>
 
-                        <li><a href="">XXXXXXXXX</a></li>
+                        <li><a href="">Plan de Frecuencia</a></li>
+
+                        <li><a href="">Registros</a></li>
 
                         <li><a href="Inicio.php">Volver al inicio</a></li>
 

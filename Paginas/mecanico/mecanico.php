@@ -25,11 +25,13 @@ if($varsesion== null || $varsesion=''){
     
     <body>
                 <nav class="menuPrincipal">
-                        <li><a href="">XXXXXXXXX</a></li>
+                        <li><a href="../admi_general/mecanico/planos/quilmes/planos_quilmes.php">Planos</a></li>
                         
-                        <li><a href="">XXXXXXXXX</a></li>
+                        <li><a href="">Manuales</a></li>
                         
-                        <li><a href="">XXXXXXXXX</a></li>
+                        <li><a href="">Plan de Frecuencias</a></li>
+
+                        <li><a href="">Registro</a></li>
                         
                         <li><a href="../../logout.php">Cerrar Sesion</a></li>
                 </nav>

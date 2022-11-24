@@ -12,11 +12,11 @@
     <body>
       
                <nav class="menuPrincipal">
-                        <li><a href="Inicio.php">Volver a principal</a></li>
+                        <li><a href="Inicio.php">Volver al inicio</a></li>
+
+                        <li><a href="../admi_general/crud_registro_con_imagen/crear_registro_con_imagen.php">Registar usuario</a></li>
                         
                         <li><a href="../admi_personal/tabla_crud_registro_ap.php">Tabla de personal</a></li>
-                        
-                        <li><a href="mecanico_admi.php">Mecanico</a></li>
                         
                         <li><a href="../../logout.php">Cerrar Sesion</a></li>
                     </ul>

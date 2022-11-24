@@ -29,14 +29,6 @@ if($varsesion== null || $varsesion=''){
                      
                  <li><a href="mecanico_admi.php">Mecanico</a></li>
                      
-                 <li><a href="crud_registro_con_imagen/crear_registro_con_imagen.php">Registar usuario</a></li>
-                     
-                <li><a href="crud_registro_con_imagen/tabla_crud_registro_con_imagen.php">Tabla de personal</a></li>
-                     
-                <li><a href="crud_archivos/crear_archivo.php">Carga de archivos</a></li>
-
-                <li><a href="crud_archivos/tabla_crud_archivos.php">Tabla de archivos</a></li>
-                     
                 <li><a href="../../logout.php">Cerrar sesion</a></li>
             </nav>
          

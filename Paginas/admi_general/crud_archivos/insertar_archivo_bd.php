@@ -3,6 +3,7 @@ include("../crud_registro_con_imagen/conexion_crud_registro_con_imagen.php");
 $conexion=conectar();
 
 $nombre= $_POST['nombre_archivo'];
+$subestacion=$_POST['subestacion'];
 $categoria=$_POST['categoria'];
 $descripcion= $_POST['descripcion'];
 $fecha_carga= $_POST['fecha_creacion'];
@@ -18,7 +19,7 @@ $destino = 'archivos/';
 $src=$destino.$nombre_archivo;
 
 
-$sql="INSERT INTO archivos(nombre_archivo, categoria, descripcion, fecha_creacion, archivo, type) VALUES('$nombre','$categoria','$descripcion','$fecha_carga','$archivoBLOB','$type')";
+$sql="INSERT INTO archivos(nombre_archivo,subestacion,categoria,descripcion,fecha_creacion,archivo,type) VALUES('$nombre','$subestacion','$categoria','$descripcion','$fecha_carga','$archivoBLOB','$type')";
 $query=mysqli_query($conexion,$sql);
 
 if($query){

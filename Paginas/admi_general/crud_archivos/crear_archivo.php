@@ -30,6 +30,7 @@
     <header>
       <nav class="navMenu">
             <li><a href="../../admi_general/Inicio.php" >Inicio</a></li>
+            <li><a href="tabla_crud_archivos.php">Tabla de archivos</a></li>
             <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
@@ -42,8 +43,8 @@
                   <input type="text" name="nombre_archivo" placeholder="Nombre">
                 </div>
                 <div class="inputContainer">
-                  <label for="subestacion">Subestacion:</label>
-                    <select name="subestacion" id="subestacion">
+                  <label for="estacion">Estacion:</label>
+                    <select name="Estacion" id="subestacion">
                       <option value="quilmes">Quilmes</option>
                       <option value="bosques">Bosques</option>
                       <option value="tolosa">Tolosa</option>
