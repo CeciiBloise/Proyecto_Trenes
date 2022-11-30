@@ -24,8 +24,6 @@
 
                         <li><a href="">Registros</a></li>
 
-                        <li><a href="Inicio.php">Volver al inicio</a></li>
-
                         <li><a href="../../logout.php">Cerrar Sesion</a></li>
 
                 </nav>

@@ -106,7 +106,7 @@
           </div>
 
           <div class="inputContainer">
-            <label class="label">Contraseña:</label>
+            <label class="label"> Contraseña:</label>
             <input class="input" type="password" name="contraseña" value="<?php echo $row['contraseña'] ?>">
           </div>
 

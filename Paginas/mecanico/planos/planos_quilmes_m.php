@@ -1,5 +1,5 @@
 <?php
-    include("../crud_registro_con_imagen/conexion_crud_registro_con_imagen.php");
+    include("../../admi_general/crud_registro_con_imagen/conexion_crud_registro_con_imagen.php");
      $conexion=conectar();
 
 
@@ -26,8 +26,8 @@
     <head>
         <meta charset="utf-8" /> <!-- tipos de caracter -->
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-        <link rel="stylesheet" href="../../../CSS/estilo_menu_horizontal.css"/>
-        <link rel="stylesheet" href="../../../CSS/estilo_tablas.css"/>
+        <link rel="stylesheet" href="../../../../../CSS/estilo_menu_horizontal.css"/>
+        <link rel="stylesheet" href="../../../../../CSS/estilo_tablas.css"/>
         <script src="https://kit.fontawesome.com/3de4daf040.js" crossorigin="anonymous"></script>
         <!-- Estilos -->
         <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
@@ -35,9 +35,8 @@
 
     <header>
       <nav class="navMenu">
-            <li><a href="../../admi_general/Inicio.php" >Inicio</a></li>
-            <li><a href="crear_archivo.php">Cargar Archivo</a></li>
-            <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
+            <li><a href="../inicio_planos.php" >Inicio</a></li>
+            <li><a href="../../../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
 
@@ -82,20 +81,15 @@
             </form>
 
             <table class="content-table">
-            <caption>TABLA DE ARCHIVOS</caption>
+            <caption>PLANOS</caption>
                 <thead>     
                     <tr>
                         <th scope="row">ID</th>
 
                         <th>Nombre</th>
-                        <th>Subestacion</th>
-                        <th>Categoria</th>
                         <th>Descripcion</th>
-                        <th>Fecha</th>
-
-
-                        <th colspan="5">Acciones</th>
-                        
+                        <th>Fecha de carga</th>
+                        <th colspan="4">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -105,14 +99,11 @@
                     <tr>
                     <td scope="col"><?php echo $row['id_archivo']?></td>
                     <td nowrap><?php echo $row['nombre_archivo']?></td>
-                    <td><?php echo $row['subestacion']?></td><td>
-                    <td><?php echo $row['categoria']?></td>
                     <td><?php echo $row['descripcion']?></td>
                     <td><?php echo $row['fecha_creacion']?></td>
 
-                    <td><a href="actualizar_archivos.php?id=<?php echo $row['id_archivo']?>">Editar</a></td>
-                    <td><a href="eliminar_archivos.php?id=<?php echo $row['id_archivo']?>">Eliminar</a></td>
                     <td><a href="ver_archivo.php?id=<?php echo $row['id_archivo']?>">Ver</a></td>
+                    <td><a href="descargar_archivo.php?id=<?php echo $row['id_archivo']?>">Descarga</a></td>
 
                     </tr>
                     <?php

@@ -73,93 +73,104 @@
         }
     </style>
 
-    <body>
-        <div>
+<body>
 
-            <form accion="buscar.php" method="POST" class="buscador">
-                <input type="text" placeholder="" name="buscar">
-                <input class="boton" type="submit" value="Buscar">
-            </form>
-
-            <table class="content-table">
-                <caption>TABLA DE PERSONAL</caption>
-                <thead>     
-                    <tr>
-                        <th scope="row">Legajo</th>
-                            <div class="float-right">
-                                <!-- Funcionamiento de las flechas -->
-                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'legajo' && $_GET['tipo'] == 'ASC'): ?>
-                                        <i class="fa-sharp fa-solid fa-arrow-up"></i>
-                                        <?php else : ?>
-                                            <a href="tabla_crud_registro_con_imagen.php?columna=legajo&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
-                                        <?php endif; ?>
-                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'legajo' && $_GET['tipo'] == 'DESC') : ?>
-                                            <i class="fa-sharp fa-solid fa-arrow-down"></i>
-                                        <?php else : ?>
-                                            <a href="tabla_crud_registro_con_imagen.php?columna=apellido&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
-                                        <?php endif; ?>
-                            </div>
-                        <th>Apellido</th>
-                             <div class="float-right">
-                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'apellido' && $_GET['tipo'] == 'ASC'): ?>
-                                        <i class="fa-sharp fa-solid fa-arrow-up"></i>
-                                        <?php else : ?>
-                                            <a href="tabla_crud_registro_con_imagen.php?columna=apellido&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
-                                        <?php endif; ?>
-                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'apellido' && $_GET['tipo'] == 'DESC') : ?>
-                                            <i class="fa-sharp fa-solid fa-arrow-down"></i>
-                                        <?php else : ?>
-                                            <a href="tabla_crud_registro_con_imagen.php?columna=apellido&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
-                                        <?php endif; ?>
-                            </div>
-                        <th>Nombre</th>
-                            <div class="float-right">
-                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre' && $_GET['tipo'] == 'ASC'): ?>
-                                        <i class="fa-sharp fa-solid fa-arrow-up"></i>
-                                        <?php else : ?>
-                                            <a href="tabla_crud_registro_con_imagen.php?columna=nombre&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
-                                        <?php endif; ?>
-                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre' && $_GET['tipo'] == 'DESC') : ?>
-                                            <i class="fa-sharp fa-solid fa-arrow-down"></i>
-                                        <?php else : ?>
-                                            <a href="tabla_crud_registro_con_imagen.php?columna=nombre&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
-                                        <?php endif; ?>
-                            </div>
-                        <th>D.N.I</th>
-                        <th>Fecha de Nacimiento</th>
-                        <th>Direccion</th>
-                        <th>Celular</th>
-                        <th>Correo Electronico</th>
-                        <th>Puesto</th>
-                        <th>Habilitaciones</th>
-                        <th>Supervisor</th>
-                        <th colspan="1"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                         while($row=mysqli_fetch_array($query)){
-                    ?>
-                    <tr>
-                    <td scope="col"><?php echo $row['legajo']?></td>
-                    <td nowrap><?php echo $row['apellido']?></td>
-                    <td nowrap><?php echo $row['nombre']?></td>
-                    <td><?php echo $row['dni']?></td>
-                    <td><?php echo $row['fecha_de_nacimiento']?></td>
-                    <td nowrap><?php echo $row['direccion']?></td>
-                    <td><?php echo $row['celular']?></td>
-                    <td><?php echo $row['mail']?></td>
-                    <td><?php echo $row['puesto']?></td>
-                    <td nowrap><?php echo $row['habilitaciones']?></td>
-                    <td nowrap><?php echo $row['supervisor_cargo']?></td>
-
-                    <td><a href="ficha_personal_ap.php?id=<?php echo $row['legajo']?>">Ver</a></td>
-                    </tr>
-                    <?php
-                         }
-                    ?>
-                </tbody>
-            </table>
-        </div>
-    </body>
+<div>
+    <form accion="buscar.php" method="POST" class="buscador">
+        <input type="text" placeholder="" name="buscar">
+        <input class="boton" type="submit" value="Buscar">
+    </form>
+    <table class="content-table">
+    <caption>TABLA DE PERSONAL</caption>
+        <thead>     
+            <tr>
+                <th scope="row">Legajo
+                    <div class="float-right">
+                        <!-- Funcionamiento de las flechas -->
+                            <?php if (isset($_GET['columna']) && $_GET['columna'] == 'legajo' && $_GET['tipo'] == 'ASC'): ?>
+                                <i class="fa-sharp fa-solid fa-arrow-up"></i>
+                                <?php else : ?>
+                                    <a href="tabla_crud_registro_ap.php?columna=legajo&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
+                                <?php endif; ?>
+                                <?php if (isset($_GET['columna']) && $_GET['columna'] == 'legajo' && $_GET['tipo'] == 'DESC') : ?>
+                                    <i class="fa-sharp fa-solid fa-arrow-down"></i>
+                                <?php else : ?>
+                                    <a href="tabla_crud_registro_ap.php?columna=legajo&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
+                                <?php endif; ?>
+                    </div>
+                </th>
+                <th>Apellido
+                    <div class="float-right">
+                            <?php if (isset($_GET['columna']) && $_GET['columna'] == 'apellido' && $_GET['tipo'] == 'ASC'): ?>
+                                <i class="fa-sharp fa-solid fa-arrow-up"></i>
+                                <?php else : ?>
+                                    <a href="tabla_crud_registro_ap.php?columna=apellido&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
+                                <?php endif; ?>
+                                <?php if (isset($_GET['columna']) && $_GET['columna'] == 'apellido' && $_GET['tipo'] == 'DESC') : ?>
+                                    <i class="fa-sharp fa-solid fa-arrow-down"></i>
+                                <?php else : ?>
+                                    <a href="tabla_crud_registro_ap.php?columna=apellido&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
+                                <?php endif; ?>
+                    </div>
+                </th>
+                <th>Nombre
+                    <div class="float-right">
+                            <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre' && $_GET['tipo'] == 'ASC'): ?>
+                                <i class="fa-sharp fa-solid fa-arrow-up"></i>
+                                <?php else : ?>
+                                    <a href="tabla_crud_registro_ap.php?columna=nombre&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
+                                <?php endif; ?>
+                                <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre' && $_GET['tipo'] == 'DESC') : ?>
+                                    <i class="fa-sharp fa-solid fa-arrow-down"></i>
+                                <?php else : ?>
+                                    <a href="tabla_crud_registro_ap.php?columna=nombre&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
+                                <?php endif; ?>
+                    </div>
+                </th>
+                <th>D.N.I</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Direccion</th>
+                <th>Celular</th>
+                <th>Correo Electronico</th>
+                <th>Puesto</th>
+                <th>Habilitaciones</th>
+                <th>Supervisor</th>
+                <th>Fecha de ingreso a la empresa</th>
+                <th>Rol</th>
+                <th>Contraseña</th>
+                <th>Imagen de Usuario</th>
+                <th colspan="3">Acciones</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                 while($row=mysqli_fetch_array($query)){
+            ?>
+            <tr>
+            <td scope="col"><?php echo $row['legajo']?></td>
+            <td nowrap><?php echo $row['apellido']?></td>
+            <td nowrap><?php echo $row['nombre']?></td>
+            <td><?php echo $row['dni']?></td>
+            <td><?php echo $row['fecha_de_nacimiento']?></td>
+            <td nowrap><?php echo $row['direccion']?></td>
+            <td><?php echo $row['celular']?></td>
+            <td><?php echo $row['mail']?></td>
+            <td><?php echo $row['puesto']?></td>
+            <td nowrap><?php echo $row['habilitaciones']?></td>
+            <td nowrap><?php echo $row['supervisor_cargo']?></td>
+            <td nowrap><?php echo $row['fecha_de_ingreso_a_la_empresa']?></td>
+            <td><?php echo $row['id_cargo']?></td>
+            <td><?php echo $row['contraseña']?></td>
+            <td><?php echo $row['imagen']?></td>
+    
+            <td><a href="ficha_personal_con_imagen.php?id=<?php echo $row['legajo']?>">Ver</a></td>
+            </tr>
+            <?php
+                 }
+            ?>
+        </tbody>
+    </table>
+</div>
+</body>
 </html>

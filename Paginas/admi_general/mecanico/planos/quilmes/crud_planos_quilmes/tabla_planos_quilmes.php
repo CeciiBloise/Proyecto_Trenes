@@ -1,9 +1,10 @@
 <?php
-    include("../../../crud_registro_con_imagen/conexion_crud_registro_con_imagen.php");
+    include("conexion_planos_quilmes.php");
+
      $conexion=conectar();
 
 
-    $sql="SELECT * FROM archivos";
+    $sql="SELECT * FROM planos";
     $query= mysqli_query($conexion,$sql);
 
     $row=mysqli_fetch_array($query);
@@ -26,8 +27,8 @@
     <head>
         <meta charset="utf-8" /> <!-- tipos de caracter -->
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-        <link rel="stylesheet" href="../../../../../CSS/estilo_menu_horizontal.css"/>
-        <link rel="stylesheet" href="../../../../../CSS/estilo_tablas.css"/>
+        <link rel="stylesheet" href="../../../../../../CSS/estilo_menu_horizontal.css"/>
+        <link rel="stylesheet" href="../../../../../../CSS/estilo_tablas.css"/>
         <script src="https://kit.fontawesome.com/3de4daf040.js" crossorigin="anonymous"></script>
         <!-- Estilos -->
         <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
@@ -35,9 +36,9 @@
 
     <header>
       <nav class="navMenu">
-            <li><a href="../inicio_planos.php" >Inicio</a></li>
-            <li><a href="../../../crud_archivos/crear_archivo.php">Cargar Archivo</a></li>
-            <li><a href="../../../../../logout.php" >Cerrar Sesion</a></li>
+            <li><a href="../../inicio_planos.php" >Inicio</a></li>
+            <li><a href="crear_planos_quilmes.php">Cargar Archivo</a></li>
+            <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
 
@@ -82,15 +83,19 @@
             </form>
 
             <table class="content-table">
-            <caption>PLANOS</caption>
+            <caption>TABLA DE ARCHIVOS</caption>
                 <thead>     
                     <tr>
-                        <th scope="row">ID</th>
+                        <th scope="row">#</th>
 
                         <th>Nombre</th>
                         <th>Descripcion</th>
-                        <th>Fecha de carga</th>
-                        <th colspan="4">Acciones</th>
+                        <th>Fecha</th>
+                        <th>Archivo</th>
+
+
+                        <th colspan="5">Acciones</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -98,15 +103,15 @@
                          while($row=mysqli_fetch_assoc($query)){ /*El assoc lo combierte en un arreglo asociativo*/
                     ?>
                     <tr>
-                    <td scope="col"><?php echo $row['id_archivo']?></td>
-                    <td nowrap><?php echo $row['nombre_archivo']?></td>
+                    <td scope="col"><?php echo $row['id_plano']?></td>
+                    <td nowrap><?php echo $row['nombre_plano']?></td>
                     <td><?php echo $row['descripcion']?></td>
                     <td><?php echo $row['fecha_creacion']?></td>
+                    <td><?php echo $row['plano']?></td>
 
-                    <td><a href="actualizar_archivos.php?id=<?php echo $row['id_archivo']?>">Editar</a></td>
-                    <td><a href="eliminar_archivos.php?id=<?php echo $row['id_archivo']?>">Eliminar</a></td>
-                    <td><a href="ver_archivo.php?id=<?php echo $row['id_archivo']?>">Ver</a></td>
-                    <td><a href="descargar_archivo.php?id=<?php echo $row['id_archivo']?>">Descarga</a></td>
+                    <td><a href="?id=<?php echo $row['id_plano']?>">Editar</a></td>
+                    <td><a href="eliminar_planos_quilmes.php?id=<?php echo $row['id_plano']?>">Eliminar</a></td>
+                    <td><a href="ver_planos_quilmes.php?id=<?php echo $row['id_plano']?>">Ver</a></td>
 
                     </tr>
                     <?php

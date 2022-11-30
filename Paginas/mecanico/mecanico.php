@@ -25,7 +25,7 @@ if($varsesion== null || $varsesion=''){
     
     <body>
                 <nav class="menuPrincipal">
-                        <li><a href="../admi_general/mecanico/planos/quilmes/planos_quilmes.php">Planos</a></li>
+                        <li><a href="planos/planos_quilmes_m.php">Planos</a></li>
                         
                         <li><a href="">Manuales</a></li>
                         

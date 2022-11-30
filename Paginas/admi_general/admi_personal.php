@@ -16,7 +16,7 @@
 
                         <li><a href="../admi_general/crud_registro_con_imagen/crear_registro_con_imagen.php">Registar usuario</a></li>
                         
-                        <li><a href="../admi_personal/tabla_crud_registro_ap.php">Tabla de personal</a></li>
+                        <li><a href="../admi_general/crud_registro_con_imagen/tabla_crud_registro_con_imagen.php">Tabla de personal</a></li>
                         
                         <li><a href="../../logout.php">Cerrar Sesion</a></li>
                     </ul>
