@@ -17,8 +17,7 @@ if($nombre_plano != ''){
     $plano=$plano_nombre.'.pdf';
     $src=$destino.$plano;
 }
-
-$sql="INSERT INTO planos(nombre_plano,descripcion,fecha_creacion,plano) VALUES('$nombre','$descripcion','$fecha_carga','$plano')";
+$sql="UPDATE planos SET nombre_plano'$nombre',descripcion='$descripcion',fecha_creacion='$fecha_carga',plano='$plano' WHERE id_plano='$id'";
 
 $query=mysqli_query($conexion,$sql);
 
@@ -26,7 +25,7 @@ if($query){
     if($plano_nombre != ''){
         move_uploaded_file($url_temporal, $src);
     }
-    header("Location: crear_planos_quilmes.php");
+    header("Location: tabla_planos_quilmes.php");
 }
 else{
     echo "ERROR";

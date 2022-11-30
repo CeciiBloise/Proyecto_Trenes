@@ -2,12 +2,12 @@
     include("conexion_planos_quilmes.php");
     $conexion=conectar();
 
-    $sql="SELECT * FROM planos";
+    $id=$_GET['id'];
+
+    $sql="SELECT * FROM planos WHERE id_plano='$id'";
     $query= mysqli_query($conexion,$sql);
 
     $row=mysqli_fetch_assoc($query);
-
-
 ?>
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->
@@ -29,35 +29,35 @@
     </style>
     <header>
       <nav class="navMenu">
-            <li><a href="../../inicio_planos.php" >Planos</a></li>
+            <li><a href="../../inicio_planos.php" >Inicio</a></li>
             <li><a href="tabla_planos_quilmes.php">Tabla de archivos</a></li>
             <li><a href="../../../../../../login.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
     <body>
         <div class="form_carga">
-            <form action="insertar_planos_quilmes.php" method="POST" enctype="multipart/form-data" class="form">
-                <h1 class="titulo">Carga de planos Quilmes</h1>  
+            <form action="update_planos_quilmes.php" method="POST" enctype="multipart/form-data" class="form">
+                <h1 class="titulo">Carga de archivo</h1>  
 
                 <div class="inputContainer">
                   <label>Nombre del archivo:</label>
-                  <input type="text" name="nombre_plano" placeholder="Nombre">
+                  <input type="text" name="nombre_plano" placeholder="Nombre" value="<?php echo $row['nombre_plano'] ?>">
                 </div>
 
                 <div class="inputContainer">
-                  <label>Descripcion:</label>
-                  <input type="text" name="descripcion" placeholder="Breve descripcion">
+                  <label>Brebe descripcion:</label>
+                  <input type="text" name="descripcion" placeholder="Breve descripcion" value="<?php echo $row['descripcion'] ?>">
                 </div>   
                 <div class="inputContainer">
                   <label>Fecha de carga:</label>
-                  <input type="date" name="fecha_creacion">
+                  <input type="date" name="fecha_creacion" value="<?php echo $row['fecha_creacion'] ?>">
                 </div>
                 <div class="inputContainer">
                   <label>Archivo</label> 
-                  <input type="file" name="plano" accept="application/*">
+                  <input type="file" name="plano" accept="application/*" value="<?php echo $row['plano'] ?>">
                 </div>     
                 <div class="boton">
-                    <input class="boton-subir" type="submit"  value="subir" name="subir">
+                    <input class="boton-subir" type="submit"  value="subir" name="subir" value="Actualizar">
                 </div>
             </form>
         </div>

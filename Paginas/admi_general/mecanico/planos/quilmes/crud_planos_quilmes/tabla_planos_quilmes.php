@@ -36,8 +36,8 @@
 
     <header>
       <nav class="navMenu">
-            <li><a href="../../inicio_planos.php" >Inicio</a></li>
-            <li><a href="crear_planos_quilmes.php">Cargar Archivo</a></li>
+            <li><a href="../../inicio_planos.php" >Planos</a></li>
+            <li><a href="crear_planos_quilmes.php">Cargar Planos</a></li>
             <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
@@ -83,13 +83,11 @@
             </form>
 
             <table class="content-table">
-            <caption>TABLA DE ARCHIVOS</caption>
+            <caption>TABLA DE PLANOS QUILMES</caption>
                 <thead>     
                     <tr>
-                        <th scope="row">#</th>
-
-                        <th>Nombre</th>
-                        <th>Descripcion</th>
+                        <th scope="row">Nombre</th>
+                        <th> Breve Descripcion</th>
                         <th>Fecha</th>
                         <th>Archivo</th>
 
@@ -103,13 +101,12 @@
                          while($row=mysqli_fetch_assoc($query)){ /*El assoc lo combierte en un arreglo asociativo*/
                     ?>
                     <tr>
-                    <td scope="col"><?php echo $row['id_plano']?></td>
                     <td nowrap><?php echo $row['nombre_plano']?></td>
                     <td><?php echo $row['descripcion']?></td>
                     <td><?php echo $row['fecha_creacion']?></td>
                     <td><?php echo $row['plano']?></td>
 
-                    <td><a href="?id=<?php echo $row['id_plano']?>">Editar</a></td>
+                    <td><a href="actualizar_plano_quilmes.php?id=<?php echo $row['id_plano']?>">Editar</a></td>
                     <td><a href="eliminar_planos_quilmes.php?id=<?php echo $row['id_plano']?>">Eliminar</a></td>
                     <td><a href="ver_planos_quilmes.php?id=<?php echo $row['id_plano']?>">Ver</a></td>
 
