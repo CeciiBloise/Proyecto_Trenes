@@ -49,8 +49,8 @@
                   <input type="text" name="descripcion" placeholder="Breve descripcion">
                 </div>   
                 <div class="inputContainer">
-                  <label>Fecha de carga:</label>
-                  <input type="date" name="fecha_creacion">
+                  <label>Categoria:</label>
+                  <input type="text" name="categoria" placeholder="Categoria">
                 </div>
                 <div class="inputContainer">
                   <label>Archivo</label> 

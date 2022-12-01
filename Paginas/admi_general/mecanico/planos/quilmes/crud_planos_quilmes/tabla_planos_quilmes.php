@@ -13,7 +13,7 @@
     if(isset($_GET['columna'])){
        $where= " where 1=1";
        $order=" ORDER BY ".$_GET['columna']." ".$_GET['tipo'];
-       $sql="SELECT*FROM archivos 
+       $sql="SELECT*FROM planos 
        $where
        $order
        ;
@@ -86,27 +86,54 @@
             <caption>TABLA DE PLANOS QUILMES</caption>
                 <thead>     
                     <tr>
-                        <th scope="row">Nombre</th>
-                        <th> Breve Descripcion</th>
-                        <th>Fecha</th>
+                        <th scope="row">Nombre
+                            <div class="float-right">
+                                <!-- Funcionamiento de las flechas -->
+                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre_plano' && $_GET['tipo'] == 'ASC'): ?>
+                                        <i class="fa-sharp fa-solid fa-arrow-up"></i>
+                                        <?php else : ?>
+                                            <a href="tabla_planos_quilmes.php?columna=nombre_plano&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
+                                        <?php endif; ?>
+                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre' && $_GET['tipo'] == 'DESC') : ?>
+                                            <i class="fa-sharp fa-solid fa-arrow-down"></i>
+                                        <?php else : ?>
+                                            <a href="tabla_planos_quilmes.php?columna=nombre_plano&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
+                                        <?php endif; ?>
+                            </div>
+                        </th>
+                        <th>Breve Descripcion</th>
+                        <th>Categoria
+                            <div class="float-right">
+                                <!-- Funcionamiento de las flechas -->
+                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'categoria' && $_GET['tipo'] == 'ASC'): ?>
+                                        <i class="fa-sharp fa-solid fa-arrow-up"></i>
+                                        <?php else : ?>
+                                            <a href="tabla_planos_quilmes.php?columna=categoria&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
+                                        <?php endif; ?>
+                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'categoria' && $_GET['tipo'] == 'DESC') : ?>
+                                            <i class="fa-sharp fa-solid fa-arrow-down"></i>
+                                        <?php else : ?>
+                                            <a href="tabla_planos_quilmes.php?columna=categoria&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
+                                        <?php endif; ?>
+                            </div>
+                        </th>
                         <th>Archivo</th>
-
-
+                        <th>Fecha</th>
                         <th colspan="5">Acciones</th>
                         
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                         while($row=mysqli_fetch_assoc($query)){ /*El assoc lo combierte en un arreglo asociativo*/
+                         while($row=mysqli_fetch_array($query)){ /*El assoc lo combierte en un arreglo asociativo*/
                     ?>
                     <tr>
-                    <td nowrap><?php echo $row['nombre_plano']?></td>
+                    <td nowrap scope="col"><?php echo $row['nombre_plano']?></td>
                     <td><?php echo $row['descripcion']?></td>
-                    <td><?php echo $row['fecha_creacion']?></td>
+                    <td><?php echo $row['categoria']?></td>
                     <td><?php echo $row['plano']?></td>
+                    <td><?php echo $row['fecha']?></td>
 
-                    <td><a href="actualizar_plano_quilmes.php?id=<?php echo $row['id_plano']?>">Editar</a></td>
                     <td><a href="eliminar_planos_quilmes.php?id=<?php echo $row['id_plano']?>">Eliminar</a></td>
                     <td><a href="ver_planos_quilmes.php?id=<?php echo $row['id_plano']?>">Ver</a></td>
 

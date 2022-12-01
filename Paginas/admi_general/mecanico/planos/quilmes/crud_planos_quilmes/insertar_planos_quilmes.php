@@ -2,14 +2,20 @@
 include("conexion_planos_quilmes.php");
 $conexion=conectar();
 
+date_default_timezone_set('america/argentina/buenos_aires');
+
 $id= $_POST['id_plano'];
 $nombre= $_POST['nombre_plano'];
 $descripcion= $_POST['descripcion'];
-$fecha_carga= $_POST['fecha_creacion'];
+$categoria= $_POST['categoria'];
+$fecha=$_POST['fecha'];
+$fecha_carga=date('d-m-Y H:m:s');
+$fecha_creacion=
 $archivo= $_FILES['plano'];
 $nombre_plano=$archivo['name'];
 $type = $archivo['type'];
 $url_temporal=$archivo['tmp_name'];
+
 
 if($nombre_plano != ''){
     $destino="planos_quilmes/";
@@ -18,7 +24,7 @@ if($nombre_plano != ''){
     $src=$destino.$plano;
 }
 
-$sql="INSERT INTO planos(nombre_plano,descripcion,fecha_creacion,plano) VALUES('$nombre','$descripcion','$fecha_carga','$plano')";
+$sql="INSERT INTO planos(nombre_plano,descripcion,categoria,fecha,plano) VALUES('$nombre','$descripcion','$categoria','$fecha_carga','$plano')";
 
 $query=mysqli_query($conexion,$sql);
 
