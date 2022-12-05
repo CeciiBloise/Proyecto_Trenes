@@ -20,7 +20,7 @@
 
                         <li><a href="">Manuales</a></li>
 
-                        <li><a href="">Plan de Frecuencia</a></li>
+                        <li><a href="mecanico/plan_de_frecuencias/tabla_plan_de_frecuencia.php">Plan de Frecuencia</a></li>
 
                         <li><a href="">Registros</a></li>
 
