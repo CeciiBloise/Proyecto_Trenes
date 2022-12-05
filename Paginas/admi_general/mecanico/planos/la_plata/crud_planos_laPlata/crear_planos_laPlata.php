@@ -1,8 +1,8 @@
 <?php
-    include("conexion_planos_quilmes.php");
+    include("conexion_planos_laPlata.php");
     $conexion=conectar();
 
-    $sql="SELECT * FROM planos_quilmes";
+    $sql="SELECT * FROM planos_laplata";
     $query= mysqli_query($conexion,$sql);
 
     $row=mysqli_fetch_assoc($query);
@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="../../../../../../CSS/estilo_menu_horizontal.css"/>
         <link rel="stylesheet" href="../../../../../../CSS/estilo_registro.css"/>
 
-        <title>Trenes Argentinos</title> <!-- titulo de la pagina -->
+        <title> Trenes Argentinos</title> <!-- titulo de la pagina -->
     
     </head>
     <style>
@@ -30,35 +30,35 @@
     <header>
       <nav class="navMenu">
             <li><a href="../../inicio_planos.php" >Planos</a></li>
-            <li><a href="tabla_planos_quilmes.php">Tabla de archivos</a></li>
+            <li><a href="tabla_planos_laPlata.php">Tabla de archivos</a></li>
             <li><a href="../../../../../../login.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
     <body>
         <div class="form_carga">
-            <form action="insertar_planos_quilmes.php" method="POST" enctype="multipart/form-data" class="form">
-                <h1 class="titulo">Carga de planos Quilmes</h1>  
+            <form action="insertar_planos_laPlata.php" method="POST" enctype="multipart/form-data" class="form">
+                <h1 class="titulo">Carga de planos La Plata</h1>  
 
                 <div class="inputContainer">
                   <label>Nombre del archivo:</label>
-                  <input type="text" name="nombre_quilmes" placeholder="Nombre">
+                  <input type="text" name="nombre_laPlata" placeholder="Nombre">
                 </div>
 
                 <div class="inputContainer">
                   <label>Descripcion:</label>
-                  <input type="text" name="descripcion_quilmes" placeholder="Breve descripcion">
+                  <input type="text" name="descripcion_laPlata" placeholder="Breve descripcion">
                 </div>   
                 <div class="inputContainer">
                   <label>Categoria:</label>
-                  <input type="text" name="categoria_quilmes" placeholder="Categoria">
+                  <input type="text" name="categoria_laPlata" placeholder="Categoria">
                 </div>
                 <div class="inputContainer">
                   <label>Fecha:</label>
-                  <input type="date" name="fecha_quilmes">
+                  <input type="date" name="fecha_laPlata">
                 </div>
                 <div class="inputContainer">
                   <label>Archivo</label> 
-                  <input type="file" name="plano_quilmes" accept="application/*">
+                  <input type="file" name="plano_laPlata" accept="application/*">
                 </div>     
                 <div class="boton">
                     <input class="boton-subir" type="submit"  value="subir" name="subir">

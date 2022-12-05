@@ -4,7 +4,7 @@ $conexion=conectar();
 
 $id_plano=$_GET['id'];
 
-$sql="DELETE FROM planos  WHERE id_plano='$id_plano'";
+$sql="DELETE FROM planos_quilmes  WHERE id_plano_quilmes='$id_plano'";
 $query=mysqli_query($conexion,$sql);
 
     if($query){

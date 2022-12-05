@@ -1,10 +1,10 @@
 <?php
-    include("conexion_planos_quilmes.php");
+    include("conexion_planos_bosques.php");
 
      $conexion=conectar();
 
 
-    $sql="SELECT * FROM planos_quilmes";
+    $sql="SELECT * FROM planos_bosques";
     $query= mysqli_query($conexion,$sql);
 
     $row=mysqli_fetch_array($query);
@@ -13,7 +13,7 @@
     if(isset($_GET['columna'])){
        $where= " where 1=1";
        $order=" ORDER BY ".$_GET['columna']." ".$_GET['tipo'];
-       $sql="SELECT*FROM planos_quilmes 
+       $sql="SELECT*FROM planos_bosques 
        $where
        $order
        ;
@@ -31,13 +31,13 @@
         <link rel="stylesheet" href="../../../../../../CSS/estilo_tablas.css"/>
         <script src="https://kit.fontawesome.com/3de4daf040.js" crossorigin="anonymous"></script>
         <!-- Estilos -->
-        <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
+        <title>Trenes Argentinos</title> <!-- titulo de la pagina -->
     </head>
 
     <header>
       <nav class="navMenu">
             <li><a href="../../inicio_planos.php" >Planos</a></li>
-            <li><a href="crear_planos_quilmes.php">Cargar Planos</a></li>
+            <li><a href="crear_planos_bosques.php">Cargar Planos</a></li>
             <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
@@ -83,21 +83,21 @@
             </form>
 
             <table class="content-table">
-            <caption>TABLA DE PLANOS QUILMES</caption>
+            <caption>TABLA DE PLANOS BOSQUES</caption>
                 <thead>     
                     <tr>
                         <th scope="row">Nombre
                             <div class="float-right">
                                 <!-- Funcionamiento de las flechas -->
-                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre_quilmes' && $_GET['tipo'] == 'ASC'): ?>
+                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre_bosques' && $_GET['tipo'] == 'ASC'): ?>
                                         <i class="fa-sharp fa-solid fa-arrow-up"></i>
                                         <?php else : ?>
-                                            <a href="tabla_planos_quilmes.php?columna=nombre_plano&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
+                                            <a href="tabla_planos_bosques.php?columna=nombre_bosques&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
                                         <?php endif; ?>
-                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre_quilmes' && $_GET['tipo'] == 'DESC') : ?>
+                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre_bosques' && $_GET['tipo'] == 'DESC') : ?>
                                             <i class="fa-sharp fa-solid fa-arrow-down"></i>
                                         <?php else : ?>
-                                            <a href="tabla_planos_quilmes.php?columna=nombre_plano&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
+                                            <a href="tabla_planos_bosques.php?columna=nombre_bosques&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
                                         <?php endif; ?>
                             </div>
                         </th>
@@ -105,15 +105,15 @@
                         <th>Categoria
                             <div class="float-right">
                                 <!-- Funcionamiento de las flechas -->
-                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'categoria_quilmes' && $_GET['tipo'] == 'ASC'): ?>
+                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'categoria_bosques' && $_GET['tipo'] == 'ASC'): ?>
                                         <i class="fa-sharp fa-solid fa-arrow-up"></i>
                                         <?php else : ?>
-                                            <a href="tabla_planos_quilmes.php?columna=categoria&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
+                                            <a href="tabla_planos_bosques.php?columna=categoria_bosques&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
                                         <?php endif; ?>
-                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'categoria_quilmes' && $_GET['tipo'] == 'DESC') : ?>
+                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'categoria_bosques' && $_GET['tipo'] == 'DESC') : ?>
                                             <i class="fa-sharp fa-solid fa-arrow-down"></i>
                                         <?php else : ?>
-                                            <a href="tabla_planos_quilmes.php?columna=categoria&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
+                                            <a href="tabla_planos_bosques.php?columna=categoria_bosques&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
                                         <?php endif; ?>
                             </div>
                         </th>
@@ -128,14 +128,14 @@
                          while($row=mysqli_fetch_array($query)){ /*El assoc lo combierte en un arreglo asociativo*/
                     ?>
                     <tr>
-                    <td nowrap scope="col"><?php echo $row['nombre_quilmes']?></td>
-                    <td><?php echo $row['descripcion_quilmes']?></td>
-                    <td><?php echo $row['categoria_quilmes']?></td>
-                    <td><?php echo $row['plano_quilmes']?></td>
-                    <td><?php echo $row['fecha_quilmes']?></td>
+                    <td nowrap scope="col"><?php echo $row['nombre_bosques']?></td>
+                    <td><?php echo $row['descripcion_bosques']?></td>
+                    <td><?php echo $row['categoria_bosques']?></td>
+                    <td><?php echo $row['plano_bosques']?></td>
+                    <td><?php echo $row['fecha_bosques']?></td>
 
-                    <td><a href="eliminar_planos_quilmes.php?id=<?php echo $row['id_plano_quilmes']?>">Eliminar</a></td>
-                    <td><a href="ver_planos_quilmes.php?id=<?php echo $row['id_plano_quilmes']?>">Ver</a></td>
+                    <td><a href="eliminar_planos_bosques.php?id=<?php echo $row['id_plano_bosques']?>">Eliminar</a></td>
+                    <td><a href="ver_planos_bosques.php?id=<?php echo $row['id_plano_bosques']?>">Ver</a></td>
 
                     </tr>
                     <?php

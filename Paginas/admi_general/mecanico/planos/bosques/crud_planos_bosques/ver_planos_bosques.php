@@ -1,12 +1,12 @@
 <?php
-    include("conexion_planos_quilmes.php");
+    include("conexion_planos_bosques.php");
 
     $conexion=conectar();
 
 
       $id=$_GET['id'];
 
-      $sql="SELECT * FROM planos_quilmes WHERE id_plano_quilmes='$id'";
+      $sql="SELECT * FROM planos_bosques WHERE id_plano_bosques='$id'";
       $query=mysqli_query($conexion,$sql);
 
       $row=mysqli_fetch_array($query);
@@ -58,14 +58,14 @@
     <header>
       <nav class="navMenu">
             <li><a href="../../inicio_planos.php" >Planos</a></li>
-            <li><a href="tabla_planos_quilmes.php">Tabla planos</a></li>
+            <li><a href="tabla_planos_bosques.php">Tabla planos</a></li>
             <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
 
     <body>
       <div class="mi-iframe">
-        <iframe src="planos_quilmes/<?php echo $row['plano_quilmes']?>" type="application/pdf" width="100%" height="600px"></iframe>
+        <iframe src="planos_bosques/<?php echo $row['plano_bosques']?>" type="application/pdf" width="100%" height="600px"></iframe>
       </div>
     </body>
 </html>
