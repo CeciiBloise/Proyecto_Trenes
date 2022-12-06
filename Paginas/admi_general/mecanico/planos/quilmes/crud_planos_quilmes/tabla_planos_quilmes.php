@@ -92,12 +92,12 @@
                                     <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre_quilmes' && $_GET['tipo'] == 'ASC'): ?>
                                         <i class="fa-sharp fa-solid fa-arrow-up"></i>
                                         <?php else : ?>
-                                            <a href="tabla_planos_quilmes.php?columna=nombre_plano&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
+                                            <a href="tabla_planos_quilmes.php?columna=nombre_quilmes&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
                                         <?php endif; ?>
                                         <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre_quilmes' && $_GET['tipo'] == 'DESC') : ?>
                                             <i class="fa-sharp fa-solid fa-arrow-down"></i>
                                         <?php else : ?>
-                                            <a href="tabla_planos_quilmes.php?columna=nombre_plano&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
+                                            <a href="tabla_planos_quilmes.php?columna=nombre_quilmes&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
                                         <?php endif; ?>
                             </div>
                         </th>
@@ -108,12 +108,12 @@
                                     <?php if (isset($_GET['columna']) && $_GET['columna'] == 'categoria_quilmes' && $_GET['tipo'] == 'ASC'): ?>
                                         <i class="fa-sharp fa-solid fa-arrow-up"></i>
                                         <?php else : ?>
-                                            <a href="tabla_planos_quilmes.php?columna=categoria&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
+                                            <a href="tabla_planos_quilmes.php?columna=categoria_quilmes&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
                                         <?php endif; ?>
                                         <?php if (isset($_GET['columna']) && $_GET['columna'] == 'categoria_quilmes' && $_GET['tipo'] == 'DESC') : ?>
                                             <i class="fa-sharp fa-solid fa-arrow-down"></i>
                                         <?php else : ?>
-                                            <a href="tabla_planos_quilmes.php?columna=categoria&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
+                                            <a href="tabla_planos_quilmes.php?columna=categoria_quilmes&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
                                         <?php endif; ?>
                             </div>
                         </th>

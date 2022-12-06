@@ -9,6 +9,7 @@ $nombre= $_POST['nombre_quilmes'];
 $descripcion= $_POST['descripcion_quilmes'];
 $categoria= $_POST['categoria_quilmes'];
 $fecha=$_POST['fecha_quilmes'];
+
 $archivo= $_FILES['plano_quilmes'];
 $nombre_plano=$archivo['name'];
 $type = $archivo['type'];

@@ -35,9 +35,9 @@
 
     <header>
       <nav class="navMenu">
-            <li><a href="../../admi_general/Inicio.php" >Inicio</a></li>
+            <li><a href="../../mecanico_admi.php" >Inicio</a></li>
             <li><a href="crear_plan_de_frecuencias.php">Carga Plan de Frecuencia</a></li>
-            <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
+            <li><a href="../../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
 
@@ -80,39 +80,42 @@
                 <input class="boton" type="submit" value="Buscar">
             </form>
             <table class="content-table">
-            <caption>TABLA DE PLAN DE FRECUENCIAS</caption>
+            <caption>PLAN DE FRECUENCIAS</caption>
                 <thead>     
                     <tr>
-                        <th scope="row">nombre
+                        <th scope="row">Nombre
                             <div class="float-right">
                                 <!-- Funcionamiento de las flechas -->
                                     <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre_frecuencia' && $_GET['tipo'] == 'ASC'): ?>
                                         <i class="fa-sharp fa-solid fa-arrow-up"></i>
                                         <?php else : ?>
-                                            <a href="tabla_plan_de_frecuencia.php?columna=nombre_frecuencia&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
+                                            <a href="tabla_plan_de_frecuencias.php?columna=nombre_frecuencia&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
                                         <?php endif; ?>
                                         <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre_frecuencia' && $_GET['tipo'] == 'DESC') : ?>
                                             <i class="fa-sharp fa-solid fa-arrow-down"></i>
                                         <?php else : ?>
-                                            <a href="tabla_plan_de_frecuencia.php?columna=nombre_frecuencia&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
+                                            <a href="tabla_plan_de_frecuencias.php?columna=nombre_frecuencia&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
                                         <?php endif; ?>
                             </div>
                         </th>
-                        <th>paso a nivel
+                        <th>Paso a Nivel
                             <div class="float-right">
                                     <?php if (isset($_GET['columna']) && $_GET['columna'] == 'paso_nivel' && $_GET['tipo'] == 'ASC'): ?>
                                         <i class="fa-sharp fa-solid fa-arrow-up"></i>
                                         <?php else : ?>
-                                            <a href="tabla_plan_de_frecuencia.php?columna=paso_nivel&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
+                                            <a href="tabla_plan_de_frecuencias.php?columna=paso_nivel&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
                                         <?php endif; ?>
                                         <?php if (isset($_GET['columna']) && $_GET['columna'] == 'paso_nivel' && $_GET['tipo'] == 'DESC') : ?>
                                             <i class="fa-sharp fa-solid fa-arrow-down"></i>
                                         <?php else : ?>
-                                            <a href="tabla_plan_de_frecuencia.php?columna=paso_nivel&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
+                                            <a href="tabla_plan_de_frecuencias.php?columna=paso_nivel&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
                                         <?php endif; ?>
                             </div>
                         </th>
-                        <th>Archivo</tr>
+                        <th>Archivo</th>
+                        <th colspan="2">Acciones</th>
+
+                    </tr>
                 </thead>
                 <tbody>
                     <?php
