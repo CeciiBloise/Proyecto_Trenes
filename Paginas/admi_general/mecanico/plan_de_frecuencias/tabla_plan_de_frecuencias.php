@@ -83,38 +83,9 @@
             <caption>PLAN DE FRECUENCIAS</caption>
                 <thead>     
                     <tr>
-                        <th scope="row">Nombre
-                            <div class="float-right">
-                                <!-- Funcionamiento de las flechas -->
-                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre_frecuencia' && $_GET['tipo'] == 'ASC'): ?>
-                                        <i class="fa-sharp fa-solid fa-arrow-up"></i>
-                                        <?php else : ?>
-                                            <a href="tabla_plan_de_frecuencias.php?columna=nombre_frecuencia&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
-                                        <?php endif; ?>
-                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'nombre_frecuencia' && $_GET['tipo'] == 'DESC') : ?>
-                                            <i class="fa-sharp fa-solid fa-arrow-down"></i>
-                                        <?php else : ?>
-                                            <a href="tabla_plan_de_frecuencias.php?columna=nombre_frecuencia&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
-                                        <?php endif; ?>
-                            </div>
-                        </th>
-                        <th>Paso a Nivel
-                            <div class="float-right">
-                                    <?php if (isset($_GET['columna']) && $_GET['columna'] == 'paso_nivel' && $_GET['tipo'] == 'ASC'): ?>
-                                        <i class="fa-sharp fa-solid fa-arrow-up"></i>
-                                        <?php else : ?>
-                                            <a href="tabla_plan_de_frecuencias.php?columna=paso_nivel&tipo=asc"><i class="fa-sharp fa-solid fa-arrow-up"></i></a><!-- De A a Z ascendente-->
-                                        <?php endif; ?>
-                                        <?php if (isset($_GET['columna']) && $_GET['columna'] == 'paso_nivel' && $_GET['tipo'] == 'DESC') : ?>
-                                            <i class="fa-sharp fa-solid fa-arrow-down"></i>
-                                        <?php else : ?>
-                                            <a href="tabla_plan_de_frecuencias.php?columna=paso_nivel&tipo=desc"><i class="fa-sharp fa-solid fa-arrow-down"></i></a>
-                                        <?php endif; ?>
-                            </div>
-                        </th>
-                        <th>Archivo</th>
-                        <th colspan="2">Acciones</th>
-
+                        <th scope="row">Paso a Nivel</th>
+                        <th colspan="2">Frecuencia</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -122,12 +93,11 @@
                          while($row=mysqli_fetch_array($query)){
                     ?>
                     <tr>
-                    <td scope="col"><?php echo $row['nombre_frecuencia']?></td>
-                    <td nowrap><?php echo $row['paso_nivel']?></td>
-                    <td nowrap><?php echo $row['plan_de_frecuencia']?></td>
-                
-                    <td><a href="eliminar_plan_de_frecuencias.php?id=<?php echo $row['id_plan_de_frecuencia']?>">Eliminar</a></td>
-                    <td><a href="ver_plan_de_frecuencias.php?id=<?php echo $row['id_plan_de_frecuencia']?>">Ver</a></td>
+                    <td scope="col"><?php echo $row['nombre_paso_nivel']?></td>
+                    <td nowrap><?php echo $row['asc']?></td>
+                    <td nowrap><?php echo $row['desc']?></td>
+             
+                    <td><a href="ver_mas_info.php?id=<?php echo $row['id_plan_de_frecuencia']?>">Mas Informacion</a></td>
                     </tr>
                     <?php
                          }
