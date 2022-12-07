@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-12-2022 a las 16:27:21
+-- Tiempo de generación: 07-12-2022 a las 15:18:41
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -20,18 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `proyecto_trenes`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `carga_de_pdf`
---
-
-CREATE TABLE `carga_de_pdf` (
-  `id_archivo` int(11) NOT NULL,
-  `titulo` varchar(250) NOT NULL,
-  `descripcion` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -91,36 +79,103 @@ INSERT INTO `permisos` (`id`, `descripcion`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `planos`
+-- Estructura de tabla para la tabla `planos_bosques`
 --
 
-CREATE TABLE `planos` (
-  `id_plano` int(10) NOT NULL,
-  `nombre_plano` varchar(1024) NOT NULL,
-  `descripcion` varchar(250) NOT NULL,
-  `categoria` varchar(250) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT current_timestamp(),
-  `plano` varchar(250) NOT NULL
+CREATE TABLE `planos_bosques` (
+  `id_plano_bosques` int(10) NOT NULL,
+  `nombre_bosques` varchar(250) NOT NULL,
+  `descripcion_bosques` varchar(250) NOT NULL,
+  `categoria_bosques` varchar(250) NOT NULL,
+  `fecha_bosques` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `plano_bosques` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `planos`
+-- Volcado de datos para la tabla `planos_bosques`
 --
 
-INSERT INTO `planos` (`id_plano`, `nombre_plano`, `descripcion`, `categoria`, `fecha`, `plano`) VALUES
-(32, 'Prueba1', 'Esto es una prueba de lo que tengo que describir del archivo', 'Cables', '0000-00-00 00:00:00', ''),
-(33, 'Prueba18', '', '', '0000-00-00 00:00:00', ''),
-(34, 'Prueba2', '', '', '0000-00-00 00:00:00', '');
+INSERT INTO `planos_bosques` (`id_plano_bosques`, `nombre_bosques`, `descripcion_bosques`, `categoria_bosques`, `fecha_bosques`, `plano_bosques`) VALUES
+(1, 'prueba1', 'Acá iría una breve descripción del contenido del archivo', 'Categoría 1', '2022-12-06 03:00:00', '60a8c415119ed804d03aa788fa206cad_prueba1.pdf'),
+(2, 'prueba1', 'Acá iría una breve descripción del contenido del archivo', 'Categoría 1', '2022-12-06 03:00:00', '9cf021e439c597ad7a796b400911a299_prueba1.pdf');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `planos_laplata`
+--
+
+CREATE TABLE `planos_laplata` (
+  `id_plano_laPlata` int(10) NOT NULL,
+  `nombre_laPlata` varchar(250) NOT NULL,
+  `descripcion_laPlata` varchar(250) NOT NULL,
+  `categoria_laPlata` varchar(250) NOT NULL,
+  `fecha_laPlata` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `plano_laPlata` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `planos_laplata`
+--
+
+INSERT INTO `planos_laplata` (`id_plano_laPlata`, `nombre_laPlata`, `descripcion_laPlata`, `categoria_laPlata`, `fecha_laPlata`, `plano_laPlata`) VALUES
+(2, 'prueba1', 'Esto es una prueba de funcionamiento', 'Categoria1', '2022-12-06 03:00:00', 'e747e314ccff595124b158948bbb1bb6_prueba1.pdf');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `planos_quilmes`
+--
+
+CREATE TABLE `planos_quilmes` (
+  `id_plano_quilmes` int(10) NOT NULL,
+  `nombre_quilmes` varchar(250) NOT NULL,
+  `descripcion_quilmes` varchar(250) NOT NULL,
+  `categoria_quilmes` varchar(250) NOT NULL,
+  `fecha_quilmes` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `plano_quilmes` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `planos_quilmes`
+--
+
+INSERT INTO `planos_quilmes` (`id_plano_quilmes`, `nombre_quilmes`, `descripcion_quilmes`, `categoria_quilmes`, `fecha_quilmes`, `plano_quilmes`) VALUES
+(1, 'prueba1', 'Aca iria una breve descripcion de lo que contiene el plano', 'Categoria1', '2022-12-06 03:00:00', 'bace176a1329d21e130eab9d2501186a_prueba1.pdf'),
+(2, 'prueba1', 'Aqui va una breve descripcion de lo que tiene el archivo', 'Categoria1', '2022-12-07 03:00:00', '9ec0d5d4f156aeeab85e67c3b693e371_prueba1.pdf'),
+(4, 'prueba2', 'Aqui va una breve descripcion de lo que tiene el archivo', 'Categoria2', '2022-12-07 03:00:00', 'b113c450c57b28e539b72985c2110179_prueba2.pdf');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `plan_de_frecuencias`
+--
+
+CREATE TABLE `plan_de_frecuencias` (
+  `id_plan_de_frecuencia` int(10) NOT NULL,
+  `nombre_paso_nivel` varchar(250) NOT NULL,
+  `frecuencia_asc` varchar(250) NOT NULL,
+  `frecuencia_desc` varchar(250) NOT NULL,
+  `nivel_señal` varchar(250) NOT NULL,
+  `nivel_tension` varchar(250) NOT NULL,
+  `filtro` varchar(250) NOT NULL,
+  `ubicacion` varchar(250) NOT NULL,
+  `plan_de_frecuencia` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `plan_de_frecuencias`
+--
+
+INSERT INTO `plan_de_frecuencias` (`id_plan_de_frecuencia`, `nombre_paso_nivel`, `frecuencia_asc`, `frecuencia_desc`, `nivel_señal`, `nivel_tension`, `filtro`, `ubicacion`, `plan_de_frecuencia`) VALUES
+(5, 'Quilmes', '', '', 'F', 'G', '', 'F', ''),
+(11, 'XXX', 'X', 'Y', 'A', 'B', 'Si', 'F', ''),
+(12, 'EEE', 'T', 'R', 'F', 'N', 'No', '', ''),
+(13, 'XXX', 'X', 'Y', 'A', 'B', 'Si', 'F', '');
 
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `carga_de_pdf`
---
-ALTER TABLE `carga_de_pdf`
-  ADD PRIMARY KEY (`id_archivo`);
 
 --
 -- Indices de la tabla `carga_de_usuarios`
@@ -136,20 +191,32 @@ ALTER TABLE `permisos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `planos`
+-- Indices de la tabla `planos_bosques`
 --
-ALTER TABLE `planos`
-  ADD PRIMARY KEY (`id_plano`);
+ALTER TABLE `planos_bosques`
+  ADD PRIMARY KEY (`id_plano_bosques`);
+
+--
+-- Indices de la tabla `planos_laplata`
+--
+ALTER TABLE `planos_laplata`
+  ADD PRIMARY KEY (`id_plano_laPlata`);
+
+--
+-- Indices de la tabla `planos_quilmes`
+--
+ALTER TABLE `planos_quilmes`
+  ADD PRIMARY KEY (`id_plano_quilmes`);
+
+--
+-- Indices de la tabla `plan_de_frecuencias`
+--
+ALTER TABLE `plan_de_frecuencias`
+  ADD PRIMARY KEY (`id_plan_de_frecuencia`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
-
---
--- AUTO_INCREMENT de la tabla `carga_de_pdf`
---
-ALTER TABLE `carga_de_pdf`
-  MODIFY `id_archivo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `carga_de_usuarios`
@@ -164,10 +231,28 @@ ALTER TABLE `permisos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `planos`
+-- AUTO_INCREMENT de la tabla `planos_bosques`
 --
-ALTER TABLE `planos`
-  MODIFY `id_plano` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+ALTER TABLE `planos_bosques`
+  MODIFY `id_plano_bosques` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `planos_laplata`
+--
+ALTER TABLE `planos_laplata`
+  MODIFY `id_plano_laPlata` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `planos_quilmes`
+--
+ALTER TABLE `planos_quilmes`
+  MODIFY `id_plano_quilmes` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `plan_de_frecuencias`
+--
+ALTER TABLE `plan_de_frecuencias`
+  MODIFY `id_plan_de_frecuencia` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Restricciones para tablas volcadas
