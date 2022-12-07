@@ -3,7 +3,7 @@
 
     $conexion=conectar();
 
-
+    
       $id=$_GET['id'];
 
       $sql="SELECT * FROM plan_de_frecuencias WHERE id_plan_de_frecuencia='$id'";

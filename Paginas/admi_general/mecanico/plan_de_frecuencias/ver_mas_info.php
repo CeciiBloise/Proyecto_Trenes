@@ -81,7 +81,7 @@
                 <input class="boton" type="submit" value="Buscar">
             </form>
             <div>
-                <button class="boton"><a href="ver_plano_plan_de_frecuencias.php"></a>Plano</button>
+                <button class="boton"><a href="ver_plano_plan_de_frecuencias.php">Plano</a></button>
             </div>
             <table class="content-table">
             <caption>PLAN DE FRECUENCIAS</caption>
