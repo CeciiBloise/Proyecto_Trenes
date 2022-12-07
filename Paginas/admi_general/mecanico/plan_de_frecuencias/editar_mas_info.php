@@ -41,20 +41,20 @@
 
                 <div class="inputContainer">
                   <label>Paso a Nivel:</label>
-                  <input type="text" name="nombre_paso_nivel" placeholder="Paso a nivel">
+                  <input type="text" name="nombre_paso_nivel" placeholder="Paso a nivel" value="<?php echo $row['nombre_paso_nivel'] ?>">
                 </div>
 
                 <div class="inputContainer">
                   <label>Frecuencia:</label>
                   <br>
-                  <input type="text" name="frecuencia_asc" placeholder="Acendente">
-                  <input type="text" name="frecuencia_desc" placeholder="Descendente">
+                  <input type="text" name="frecuencia_asc" placeholder="Acendente" value="<?php echo $row['frecuencia_asc'] ?>">
+                  <input type="text" name="frecuencia_desc" placeholder="Descendente" value="<?php echo $row['frecuencia_desc'] ?>">
                 </div>
 
                 <div class="inputContainer">
                   <label >Niveles de Señal y Tensión:</label>
-                      <input type="text" name="nivel_señal" placeholder="Niveles de señal">
-                      <input type="text" name="nivel_tension" placeholder="Niveles de Tensión">
+                      <input type="text" name="nivel_señal" placeholder="Niveles de señal" value="<?php echo $row['nivel_señal'] ?>">
+                      <input type="text" name="nivel_tension" placeholder="Niveles de Tensión" value="<?php echo $row['nivel_tension'] ?>">
 
                 </div>
 
@@ -64,11 +64,11 @@
                   <input type="radio" name="filtro" value="No">No
                       <br>
                       <label>Su ubicacion es:</label>
-                      <input type="text" name="ubicacion" placeholder="ubicaion del filtro">
+                      <input type="text" name="ubicacion" placeholder="ubicaion del filtro" value="<?php echo $row['ubicacion'] ?>">
                 </div>
 
                 <div class="boton">
-                    <input class="boton-subir" type="submit"  value="subir" name="subir">
+                    <input class="boton-subir" type="submit"  value="Actualizar" name="subir">
                 </div>
 
             </form>

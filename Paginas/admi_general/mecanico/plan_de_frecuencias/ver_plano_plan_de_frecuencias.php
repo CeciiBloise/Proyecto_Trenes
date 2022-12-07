@@ -31,7 +31,8 @@
 
     <body>
       <div class="mi-iframe">
-        <iframe src="planos_plan_de_frecuencias/<?php echo $row['plan_de_frecuencia']?>" type="application/pdf" width="100%" height="600px"></iframe>
+        <iframe src="planos_plan_de_frecuencias/PLAN DE FRECUENCIAS NUEVO AV-BZ CAD 2007-Presentación1.pdf" type="application/pdf" width="100%" height="600px"></iframe>
+        <!--<iframe src="planos_plan_de_frecuencias/</*?php echo $row['plan_de_frecuencia']*/?>" type="application/pdf" width="100%" height="600px"></iframe>-->
       </div>
     </body>
 </html>

@@ -79,13 +79,18 @@
                 <input type="text" placeholder="" name="buscar">
                 <input class="boton" type="submit" value="Buscar">
             </form>
+            
+            <div>
+                <button class="boton"><a href="ver_plano_plan_de_frecuencias.php"></a>Plano</button>
+            </div>
+
             <table class="content-table">
             <caption>PLAN DE FRECUENCIAS</caption>
                 <thead>     
                     <tr>
                         <th scope="row">Paso a Nivel</th>
                         <th colspan="2">Frecuencia</th>
-                        <th>Acciones</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -94,8 +99,8 @@
                     ?>
                     <tr>
                     <td scope="col"><?php echo $row['nombre_paso_nivel']?></td>
-                    <td nowrap><?php echo $row['asc']?></td>
-                    <td nowrap><?php echo $row['desc']?></td>
+                    <td nowrap><?php echo $row['frecuencia_asc']?></td>
+                    <td nowrap><?php echo $row['frecuencia_desc']?></td>
              
                     <td><a href="ver_mas_info.php?id=<?php echo $row['id_plan_de_frecuencia']?>">Mas Informacion</a></td>
                     </tr>
