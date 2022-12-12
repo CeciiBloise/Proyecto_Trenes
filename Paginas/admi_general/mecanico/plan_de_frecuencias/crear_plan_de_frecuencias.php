@@ -69,8 +69,8 @@
 
                 <div class="inputContainer">
                   <label>Filtro:</label>
-                  <input type="radio" name="filtro" value="Si" onclick="activarubicacion()">Si
-                  <input type="radio" name="filtro" value="No" onclick="activarubicacion()">No
+                  <input type="radio" name="filtro" value="Si" id="si" onclick="activarubicacion()">Si
+                  <input type="radio" name="filtro" value="No" onclick="desactivarubicacion()">No
                       <br>
                       <label>Su ubicacion es:</label>
                       <input type="text" name="ubicacion" id="ubicacion" placeholder="Ubicaion del filtro">
@@ -89,6 +89,15 @@
                     ubicacion.disabled = false;
                 }
               }
+
+              function desactivarubicacacion(){
+                if (ubicacion.disabled == true){
+                    ubicacion.disabled = false;
+                }else{
+                    ubicacion.disabled = true;
+                }
+              }
+            
               function activarsubir(){
                  if (subir.disabled == false){
                     subir.disabled = true;
