@@ -36,42 +36,67 @@
     </header>
     <body>
         <div class="form_carga">
+
             <form action="insertar_plan_de_frecuencias.php" method="POST" enctype="multipart/form-data" class="form">
                 <h1 class="titulo">Carga Plan de Frecuencias</h1>  
 
                 <div class="inputContainer">
                   <label>Paso a Nivel:</label>
-                  <input type="text" name="nombre_paso_nivel" placeholder="Paso a nivel">
+                  <input type="text" name="nombre_paso_nivel" placeholder="Paso a nivel" onclick="activarsubir()">
                 </div>
 
                 <div class="inputContainer">
                   <label>Frecuencia:</label>
                   <br>
-                  <input type="text" name="frecuencia_asc" placeholder="Acendente">
+                  <input type="text" name="frecuencia_asc" placeholder="Ascendente">
                   <input type="text" name="frecuencia_desc" placeholder="Descendente">
                 </div>
 
                 <div class="inputContainer">
-                  <label >Niveles de Señal y Tensión:</label>
-                      <input type="text" name="nivel_señal" placeholder="Niveles de señal">
-                      <input type="text" name="nivel_tension" placeholder="Niveles de Tensión">
+                  <label >Niveles de Señal:    </label>
+                  <br>
+                      <input type="text" name="señal_asc" placeholder="Ascendente">
+                      <input type="text" name="señal_desc" placeholder="Descendente">
+                </div>
+
+                <div class="inputContainer">
+                  <label >Niveles de Tensión:</label>
+                  <br>
+                      <input type="text" name="tension_asc" placeholder="Ascendente">
+                      <input type="text" name="tension_desc" placeholder="Descendente">
 
                 </div>
 
                 <div class="inputContainer">
                   <label>Filtro:</label>
-                  <input type="radio" name="filtro" value="Si">Si
-                  <input type="radio" name="filtro" value="No">No
+                  <input type="radio" name="filtro" value="Si" onclick="activarubicacion()">Si
+                  <input type="radio" name="filtro" value="No" onclick="activarubicacion()">No
                       <br>
                       <label>Su ubicacion es:</label>
-                      <input type="text" name="ubicacion" placeholder="ubicaion del filtro">
+                      <input type="text" name="ubicacion" id="ubicacion" placeholder="Ubicaion del filtro">
                 </div>
 
-                <div class="boton">
-                    <input class="boton-subir" type="submit"  value="subir" name="subir">
+                <div class="boton"> 
+                  <input class="boton-subir" type="submit" id="subir" value="subir" name="subir">
                 </div>
 
             </form>
+            <script type="text/javascript">
+              function activarubicacion(){
+                 if (ubicacion.disabled == false){
+                    ubicacion.disabled = true;
+                }else{
+                    ubicacion.disabled = false;
+                }
+              }
+              function activarsubir(){
+                 if (subir.disabled == false){
+                    subir.disabled = true;
+                }else{
+                    subir.disabled = false;
+                }
+              }
+            </script>
         </div>
     </body>
 </html>

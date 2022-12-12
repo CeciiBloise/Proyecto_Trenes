@@ -89,12 +89,26 @@
                     <tr>
                         <th scope="row">Paso a Nivel</th>
                         <th colspan="2">Frecuencia</th>
-                        <th colspan="2">Niveles de Señal y Tension</th>
+                        <th colspan="2">Niveles de Señal</th>
+                        <th colspan="2">Niveles de Tensión</th>
                         <th>Filtro</th>
                         <th>Ubicacion del filtro</th>
                         <th colspan="2"></th>
                     </tr>
+                    <tr class="filas">
+                        <th scope="row"></th>
+                        <th>Asc</th>
+                        <th>Desc</th>
+                        <th>Asc</th>
+                        <th>Desc</th>
+                        <th>Asc</th>
+                        <th>Desc</th>
+                        <th></th>
+                        <th></th>
+                        <th colspan="2"></th>
+                    </tr>
                 </thead>
+                
                 <tbody>
                     <?php
                          while($row=mysqli_fetch_array($query)){
@@ -103,8 +117,10 @@
                     <td scope="col"><?php echo $row['nombre_paso_nivel']?></td>
                     <td nowrap><?php echo $row['frecuencia_asc']?></td>
                     <td nowrap><?php echo $row['frecuencia_desc']?></td>
-                    <td nowrap><?php echo $row['nivel_señal']?></td>
-                    <td nowrap><?php echo $row['nivel_tension']?></td>
+                    <td nowrap><?php echo $row['señal_asc']?></td>
+                    <td nowrap><?php echo $row['señal_desc']?></td>
+                    <td nowrap><?php echo $row['tension_asc']?></td>
+                    <td nowrap><?php echo $row['tension_desc']?></td>
                     <td nowrap><?php echo $row['filtro']?></td>
                     <td nowrap><?php echo $row['ubicacion']?></td>
                     <td><a href="editar_mas_info.php?id=<?php echo $row['id_plan_de_frecuencia']?>">Editar</a></td>
