@@ -69,8 +69,8 @@
 
                 <div class="inputContainer">
                   <label>Filtro:</label>
-                  <input type="radio" name="filtro" value="Si" id="si" onclick="activarubicacion()">Si
-                  <input type="radio" name="filtro" value="No" onclick="desactivarubicacion()">No
+                  <input type="radio" name="filtro" value="Si" id="si">Si
+                  <input type="radio" name="filtro" value="No" id="no">No
                       <br>
                       <label>Su ubicacion es:</label>
                       <input type="text" name="ubicacion" id="ubicacion" placeholder="Ubicaion del filtro">
@@ -82,7 +82,22 @@
 
             </form>
             <script type="text/javascript">
-              function activarubicacion(){
+             // Accedo al botón
+              var ubicacion = document.getElementById('ubicacion');
+
+              // evento para el input radio del "si"
+              document.getElementById('si').addEventListener('click', function(e){
+                console.log('Vamos a habilitar el input text');
+                ubicacion.disabled = false;
+              });
+
+              // evento para el input radio del "no"
+              document.getElementById('no').addEventListener('click', function(e) {
+                console.log('Vamos a deshabilitar el input text');
+                ubicacion.disabled = true;
+              });
+
+              /*function activarubicacion(){
                  if (ubicacion.disabled == false){
                     ubicacion.disabled = true;
                 }else{
@@ -90,13 +105,13 @@
                 }
               }
 
-              function desactivarubicacacion(){
+              /*function desactivarubicacacion(){
                 if (ubicacion.disabled == true){
                     ubicacion.disabled = false;
                 }else{
                     ubicacion.disabled = true;
                 }
-              }
+              }*/
             
               function activarsubir(){
                  if (subir.disabled == false){

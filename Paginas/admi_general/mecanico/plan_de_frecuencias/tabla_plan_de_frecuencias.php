@@ -92,6 +92,12 @@
                         <th colspan="2">Frecuencia</th>
                         <th></th>
                     </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <th>Asc</th>
+                        <th>Desc</th>
+                        <th colspan="2"></th>
+                    </tr>
                 </thead>
                 <tbody>
                     <?php

@@ -92,7 +92,7 @@
                         <th colspan="2">Niveles de Señal</th>
                         <th colspan="2">Niveles de Tensión</th>
                         <th>Filtro</th>
-                        <th>Ubicacion del filtro</th>
+                        <th>Ubicacion del Filtro</th>
                         <th colspan="2"></th>
                     </tr>
                     <tr class="filas">

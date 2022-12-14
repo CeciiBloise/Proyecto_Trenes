@@ -36,8 +36,8 @@
     </header>
     <body>
         <div class="form_carga">
-            <form action="insertar_plan_de_frecuencias.php" method="POST" enctype="multipart/form-data" class="form">
-                <h1 class="titulo">Carga Plan de Frecuencias</h1>  
+            <form action="update_plan_de_frecuencias.php" method="POST" enctype="multipart/form-data" class="form">
+                <h1 class="titulo">Editar Plan de Frecuencias</h1>  
 
                 <div class="inputContainer">
                   <label>Paso a Nivel:</label>
@@ -52,23 +52,29 @@
                 </div>
 
                 <div class="inputContainer">
-                  <label >Niveles de Señal y Tensión:</label>
-                      <input type="text" name="nivel_señal" placeholder="Niveles de señal" value="<?php echo $row['nivel_señal'] ?>">
-                      <input type="text" name="nivel_tension" placeholder="Niveles de Tensión" value="<?php echo $row['nivel_tension'] ?>">
+                  <label >Niveles de Señal:</label>
+                      <input type="text" name="tension_asc" placeholder="Ascendente" value="<?php echo $row['señal_asc'] ?>">
+                      <input type="text" name="tension_desc" placeholder="Descendente" value="<?php echo $row['señal_desc'] ?>">
+                </div>
+
+                <div class="inputContainer">
+                  <label >Niveles de Tension:</label>
+                      <input type="text" name="tension_asc" placeholder="Ascendente" value="<?php echo $row['tension_asc'] ?>">
+                      <input type="text" name="tension_desc" placeholder="Descendente" value="<?php echo $row['tension_desc'] ?>">
 
                 </div>
 
                 <div class="inputContainer">
                   <label>Filtro:</label>
-                  <input type="radio" name="filtro" value="Si">Si
-                  <input type="radio" name="filtro" value="No">No
+                  <input type="radio" name="filtro" value="<?php echo $row['filtro'] ?>" id="si">Si
+                  <input type="radio" name="filtro" value="<?php echo $row['filtro'] ?>" id="no">No
                       <br>
                       <label>Su ubicacion es:</label>
                       <input type="text" name="ubicacion" placeholder="ubicaion del filtro" value="<?php echo $row['ubicacion'] ?>">
                 </div>
 
                 <div class="boton">
-                    <input class="boton-subir" type="submit"  value="Actualizar" name="subir">
+                    <input class="boton-subir" type="submit"  value="subir" name="actualizar">
                 </div>
 
             </form>

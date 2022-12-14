@@ -2,32 +2,19 @@
 include("conexion_plan_de_frecuencias.php");
 $conexion=conectar();
 
-date_default_timezone_set('america/argentina/buenos_aires');
-
 $id= $_POST['id_plan_de_frecuencia'];
 $paso_nivel= $_POST['nombre_paso_nivel'];
 $frecuencia_asc=$_POST['frecuencia_asc'];
 $frecuencia_desc=$_POST['frecuencia_desc'];
-$nivel_señal=$_POST['nivel_señal'];
-$nivel_tension=$_POST['nivel_tension'];
+$señal_asc=$_POST['señal_asc'];
+$señal_desc=$_POST['señal_desc'];
+$tension_asc=$_POST['tension_asc'];
+$tension_desc=$_POST['tension_desc'];
 $filtro=$_POST['filtro'];
 $ubicacion=$_POST['ubicacion'];
 
-/*$archivo= $_FILES['plan_de_frecuencia'];
 
-$nombre_plan=$archivo['name'];
-$type = $archivo['type'];
-$url_temporal=$archivo['tmp_name'];*
-
-
-if($nombre_plan != ''){
-    $destino="planos_plan_de_frecuencias/";
-    $plan_nombre=md5(date('d-m-Y H:m:s')).'_'.$nombre;
-    $plan=$plan_nombre.'.pdf';
-    $src=$destino.$plan;
-}*/
-
-$sql="INSERT INTO plan_de_frecuencias(nombre_paso_nivel,frecuencia_asc,frecuencia_desc,nivel_señal,nivel_tension,filtro,ubicacion) VALUES('$paso_nivel','$frecuencia_asc','$frecuencia_desc','$nivel_señal','$nivel_tension','$filtro','$ubicacion')";
+$sql="INSERT INTO plan_de_frecuencias(nombre_paso_nivel,frecuencia_asc,frecuencia_desc,señal_asc,señal_desc,tension_asc,tension_desc,filtro,ubicacion) VALUES('$paso_nivel','$frecuencia_asc','$frecuencia_desc','$señal_asc','$señal_desc','$tension_asc','$tension_desc','$filtro','$ubicacion')";
 
 $query=mysqli_query($conexion,$sql);
 
