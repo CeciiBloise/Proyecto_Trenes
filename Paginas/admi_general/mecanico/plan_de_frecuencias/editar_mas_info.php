@@ -1,13 +1,12 @@
 <?php
     include("conexion_plan_de_frecuencias.php");
     $conexion=conectar();
+    $id_=$_GET['id'];
 
-    $sql="SELECT * FROM plan_de_frecuencias";
+    $sql="SELECT * FROM plan_de_frecuencias WHERE id_plan_de_frecuencia='$id_'";
     $query= mysqli_query($conexion,$sql);
-
-    $row=mysqli_fetch_assoc($query);
-
-
+    /*$row=mysqli_fetch_assoc($query);*/
+    $row=mysqli_fetch_array($query);
 ?>
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->
@@ -53,12 +52,14 @@
 
                 <div class="inputContainer">
                   <label >Niveles de Señal:</label>
+                  <br>
                       <input type="text" name="tension_asc" placeholder="Ascendente" value="<?php echo $row['señal_asc'] ?>">
                       <input type="text" name="tension_desc" placeholder="Descendente" value="<?php echo $row['señal_desc'] ?>">
                 </div>
 
                 <div class="inputContainer">
                   <label >Niveles de Tension:</label>
+                  <br>
                       <input type="text" name="tension_asc" placeholder="Ascendente" value="<?php echo $row['tension_asc'] ?>">
                       <input type="text" name="tension_desc" placeholder="Descendente" value="<?php echo $row['tension_desc'] ?>">
 
@@ -74,10 +75,26 @@
                 </div>
 
                 <div class="boton">
-                    <input class="boton-subir" type="submit"  value="subir" name="actualizar">
+                    <input class="boton-subir" type="submit"  value="actualizar" name="subir">
                 </div>
 
             </form>
+            <script type="text/javascript">
+             // Accedo al botón
+              var ubicacion = document.getElementById('ubicacion');
+
+              // evento para el input radio del "si"
+              document.getElementById('si').addEventListener('click', function(e){
+                console.log('Vamos a habilitar el input text');
+                ubicacion.disabled = false;
+              });
+
+              // evento para el input radio del "no"
+              document.getElementById('no').addEventListener('click', function(e) {
+                console.log('Vamos a deshabilitar el input text');
+                ubicacion.disabled = true;
+              });
+            </script>
         </div>
     </body>
 </html>
