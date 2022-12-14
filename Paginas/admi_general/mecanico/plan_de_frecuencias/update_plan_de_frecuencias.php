@@ -2,7 +2,7 @@
 include("conexion_plan_de_frecuencias.php");
 $conexion=conectar();
 
-$id= $_POST['id_plan_de_frecuencia'];
+/*$id= $_POST['id_plan_de_frecuencia'];*/
 $paso_nivel= $_POST['nombre_paso_nivel'];
 $frecuencia_asc=$_POST['frecuencia_asc'];
 $frecuencia_desc=$_POST['frecuencia_desc'];

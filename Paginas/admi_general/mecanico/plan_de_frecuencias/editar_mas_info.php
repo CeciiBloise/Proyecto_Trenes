@@ -1,9 +1,9 @@
 <?php
     include("conexion_plan_de_frecuencias.php");
     $conexion=conectar();
-    $id_=$_GET['id'];
+    $id=$_GET['id'];
 
-    $sql="SELECT * FROM plan_de_frecuencias WHERE id_plan_de_frecuencia='$id_'";
+    $sql="SELECT * FROM plan_de_frecuencias WHERE id_plan_de_frecuencia='$id'";
     $query= mysqli_query($conexion,$sql);
     /*$row=mysqli_fetch_assoc($query);*/
     $row=mysqli_fetch_array($query);
