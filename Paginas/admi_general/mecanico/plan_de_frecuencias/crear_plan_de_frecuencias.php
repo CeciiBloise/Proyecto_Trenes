@@ -63,14 +63,13 @@
                   <label >Niveles de Tensión:</label>
                   <br>
                       <input type="text" name="tension_asc" placeholder="Ascendente">
-                      <input type="text" name="tension_desc" placeholder="Descendente">
-
+                      <input type="text" name="tension_desc" placeholder="Descendente"> 
                 </div>
 
                 <div class="inputContainer">
                   <label>Filtro:</label>
-                  <input type="radio" name="filtro" value="Si" id="si">Si
-                  <input type="radio" name="filtro" value="No" id="no">No
+                  <input type="radio" name="filtro" value="Si" id="si" >Si
+                  <input type="radio" name="filtro" value="No" id="no" >No
                       <br>
                       <label>Su ubicacion es:</label>
                       <input type="text" name="ubicacion" id="ubicacion" placeholder="Ubicaion del filtro">
@@ -83,7 +82,7 @@
             </form>
             <script type="text/javascript">
              // Accedo al botón
-              var ubicacion = document.getElementById('ubicacion');
+            /*  var ubicacion = document.getElementById('ubicacion');
 
               // evento para el input radio del "si"
               document.getElementById('si').addEventListener('click', function(e){
@@ -95,7 +94,7 @@
               document.getElementById('no').addEventListener('click', function(e) {
                 console.log('Vamos a deshabilitar el input text');
                 ubicacion.disabled = true;
-              });
+              });*/
 
               /*function activarubicacion(){
                  if (ubicacion.disabled == false){
@@ -113,13 +112,13 @@
                 }
               }*/
             
-              function activarsubir(){
+             /* function activarsubir(){
                  if (subir.disabled == false){
                     subir.disabled = true;
                 }else{
                     subir.disabled = false;
                 }
-              }
+              }*/
             </script>
         </div>
     </body>

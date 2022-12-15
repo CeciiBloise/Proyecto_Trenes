@@ -10,6 +10,15 @@ $señal_asc=$_POST['señal_asc'];
 $señal_desc=$_POST['señal_desc'];
 $tension_asc=$_POST['tension_asc'];
 $tension_desc=$_POST['tension_desc'];
+
+//Validacion de los radios button
+$filtro="";
+if(isset($_POST['filtro'])){
+  $filtro=$_POST['Si'];
+}else{
+  $filtro=$_POST['No'];
+}
+
 $filtro=$_POST['filtro'];
 $ubicacion=$_POST['ubicacion'];
 
@@ -19,9 +28,6 @@ $sql="INSERT INTO plan_de_frecuencias(nombre_paso_nivel,frecuencia_asc,frecuenci
 $query=mysqli_query($conexion,$sql);
 
 if($query){
-    if($plan_nombre != ''){
-        move_uploaded_file($url_temporal, $src);
-    }
     header("Location: crear_plan_de_frecuencias.php");
 }
 else{

@@ -1,11 +1,11 @@
 <?php
     include("conexion_plan_de_frecuencias.php");
     $conexion=conectar();
-    $id=$_GET['id'];
+    $id_plan=$_GET['id'];
 
-    $sql="SELECT * FROM plan_de_frecuencias WHERE id_plan_de_frecuencia='$id'";
+    $sql="SELECT * FROM plan_de_frecuencias WHERE id_plan_de_frecuencia='$id_plan'";
     $query= mysqli_query($conexion,$sql);
-    /*$row=mysqli_fetch_assoc($query);*/
+
     $row=mysqli_fetch_array($query);
 ?>
 <!DOCTYPE html> <!-- version html5 -->
@@ -79,22 +79,6 @@
                 </div>
 
             </form>
-            <script type="text/javascript">
-             // Accedo al botón
-              var ubicacion = document.getElementById('ubicacion');
-
-              // evento para el input radio del "si"
-              document.getElementById('si').addEventListener('click', function(e){
-                console.log('Vamos a habilitar el input text');
-                ubicacion.disabled = false;
-              });
-
-              // evento para el input radio del "no"
-              document.getElementById('no').addEventListener('click', function(e) {
-                console.log('Vamos a deshabilitar el input text');
-                ubicacion.disabled = true;
-              });
-            </script>
         </div>
     </body>
 </html>
