@@ -66,14 +66,14 @@
                       <input type="text" name="tension_desc" placeholder="Descendente"> 
                 </div>
 
-                <div class="inputContainer">
+               <!-- <div class="inputContainer">
                   <label>Filtro:</label>
-                  <input type="radio" name="filtro" value="Si" id="si" >Si
-                  <input type="radio" name="filtro" value="No" id="no" >No
+                  <input type="radio" name="filtro[]" value="Si" id="si" >Si
+                  <input type="radio" name="filtro[]" value="No" id="no" >No
                       <br>
                       <label>Su ubicacion es:</label>
                       <input type="text" name="ubicacion" id="ubicacion" placeholder="Ubicaion del filtro">
-                </div>
+                </div> -->
 
                 <div class="boton"> 
                   <input class="boton-subir" type="submit" id="subir" value="subir" name="subir">
