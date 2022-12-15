@@ -3,7 +3,7 @@
     $conexion=conectar();
     $id_plan=$_GET['id'];
 
-    $sql="SELECT * FROM plan_de_frecuencias WHERE id_plan_de_frecuencia='$id_plan'";
+    $sql="SELECT * FROM plan_de_frecuencias(nombre_paso_nivel,frecuencia_asc,frecuencia_desc,señal_asc,señal_desc,tension_asc,tension_desc) WHERE id_plan_de_frecuencia='$id_plan'";
     $query= mysqli_query($conexion,$sql);
 
     $row=mysqli_fetch_array($query);

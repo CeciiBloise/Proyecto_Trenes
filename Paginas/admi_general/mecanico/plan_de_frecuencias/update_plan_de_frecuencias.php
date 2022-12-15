@@ -13,7 +13,7 @@ $tension_desc=$_POST['tension_desc'];
 //$filtro=$_POST['filtro'];
 //$ubicacion=$_POST['ubicacion'];
 
-$sql="UPDATE plan_de_frecuencias SET nombre_paso_nivel='$paso_nivel',frecuencia_asc='$frecuencia_asc',frecuencia_desc='$frecuencia_desc',señal_asc='$señal_asc',señal_desc='$señal_desc',tension_asc='$tension_asc',tension_desc='$tension_desc' WHERE id_plan_de_frecuencia='$id'";
+$sql="UPDATE plan_de_frecuencias(nombre_paso_nivel,frecuencia_asc,frecuencia_desc,señal_asc,señal_desc,tension_asc,tension_desc) SET nombre_paso_nivel='$paso_nivel',frecuencia_asc='$frecuencia_asc',frecuencia_desc='$frecuencia_desc',señal_asc='$señal_asc',señal_desc='$señal_desc',tension_asc='$tension_asc',tension_desc='$tension_desc' WHERE id_plan_de_frecuencia='$id'";
 
 $query=mysqli_query($conexion,$sql);
 
