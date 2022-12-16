@@ -59,8 +59,8 @@
                 <input type="hidden" name="directorio">
                 <input class="boton-subir" type="submit"  value="crear">
                 </div>
-                <strong><?php echo $msg ?></strong>
             </form>
         </div>
+        <strong><?php echo $msg ?></strong>
     </body>
 </html>
