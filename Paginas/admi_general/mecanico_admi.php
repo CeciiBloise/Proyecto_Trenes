@@ -18,7 +18,7 @@
 
                         <li><a href="mecanico/planos/inicio_planos.php">Planos</a></li>
 
-                        <li><a href="mecanico/manuales/crear_carpeta_manuales.php">Manuales</a></li>
+                        <li><a href="mecanico/manuales/lista_de_carpetas.php">Manuales</a></li>
 
                         <li><a href="mecanico/plan_de_frecuencias/tabla_plan_de_frecuencias.php">Plan de Frecuencia</a></li>
 

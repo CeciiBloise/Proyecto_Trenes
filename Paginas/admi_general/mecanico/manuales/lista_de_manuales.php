@@ -37,7 +37,7 @@
     <header>
       <nav class="navMenu">
             <li><a href="../../mecanico_admi.php" >Inicio</a></li>
-            <li><a href="crear_manuales.php">Cargar Manual</a></li>
+            <li><a href="crear_carpeta_manuales.php">Crear Carpeta</a></li>
             <li><a href="../../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
