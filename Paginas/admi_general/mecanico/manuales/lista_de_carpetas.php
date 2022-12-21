@@ -17,8 +17,8 @@ while($elemento=readdir($directorio)){
     <head>
         <meta charset="utf-8" /> <!-- tipos de caracter -->
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-        <link rel="stylesheet" href="../../../../CSS/estilo_menu_horizontal.css"/>
-        <link rel="stylesheet" href="../../../../CSS/estilo_carga.css"/>
+        <!--<link rel="stylesheet" href="../../../../CSS/estilo_menu_horizontal.css"/>-->
+        <!--<link rel="stylesheet" href="../../../../CSS/estilo_carga.css"/>-->
 
         <title>Trenes Argentinos</title> <!-- titulo de la pagina -->
     

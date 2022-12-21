@@ -1,8 +1,8 @@
 <?php
 
-foreach($_FILE['manuales[]']['tmp_name'] as $key => $tmp_name)
+foreach($_FILE['manuales']['tmp_name'] as $tmp_name)
 {
-    $archivo=$_POST['manuales[]'];
+    $archivo=$_FILES['manuales'];
     $nombre_manuales=$archivo['name'][$key];
     $url_temporal=$archivo['tmp_name'][$key];
 
