@@ -1,4 +1,5 @@
 <?php
+
 foreach($_FILE['manuales[]']['tmp_name'] as $key => $tmp_name)
 {
     $archivo=$_POST['manuales[]'];
@@ -25,4 +26,9 @@ foreach($_FILE['manuales[]']['tmp_name'] as $key => $tmp_name)
     
     }
 }
+
+
+
+/*https://codigosdeprogramacion.com/2017/06/01/subir-multiples-archivos-o-imagenes-con-php/#:~:text=Para%20seleccionar%20m%C3%BAltiples%20archivos%20presionamos,action%20en%20el%20elemento%20form.*/
+
 ?>
