@@ -13,10 +13,14 @@ foreach($_FILES['manuales']['tmp_name'] as $key => $tmp_name){
         
         $destino = "manuales_pdf/"; //carpeta de almacenamiento
 
-        $directorio = $destino.$carpeta;
+        $directorio = $destino.$carpeta;//carpeta que contiene a los manuales
 
         if(!file_exists($directorio)){
-            mkdir($directorio, 0777);
+            mkdir($directorio, 0777);//crea el directorio
+
+            $sql="INSERT INTO manuales(carpeta) VALUES ('$directorio')";
+       
+            $query= mysqli_query($conexion,$sql);
         }
 
         $dir = opendir($directorio);

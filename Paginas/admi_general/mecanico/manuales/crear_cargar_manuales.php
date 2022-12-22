@@ -31,12 +31,14 @@
       <nav class="navMenu">
             <li><a href="../../mecanico_admi.php" >Inicio</a></li>
             <li><a href="lista_de_carpetas.php">Manuales</a></li>
+            <li><a href="tabla_de_manuales.php">Ver Manuales</a></li>
             <li><a href="../../../../logout.php" >Cerrar Sesion</a></li>
+
       </nav>
     </header>
     <body>
         <div class="form_carga">
-            <form action="insertar_carpeta.php" method="POST" enctype="multipart/form-data" class="form">
+            <form action="insertar_prueba.php" method="POST" enctype="multipart/form-data" class="form">
                 <h1 class="titulo">Carga de Manuales</h1>  
 
                 <div class="inputContainer">
@@ -50,8 +52,8 @@
                 </div>-->
                 
                 <div class="inputContainer">
-                  <label>Archivo</label> 
-                  <input type="file" name="manuales[]" multiple="" accept="application/*">
+                  <label>Manual</label> 
+                  <input type="file" name="manuales[]" id="manuales[]" multiple="">
                 </div>  
                 <div class="boton">
                     <input type="hidden" name="directorio">

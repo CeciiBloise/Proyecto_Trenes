@@ -31,7 +31,7 @@
 
     <body>
       <div class="mi-iframe">
-        <iframe src="manuales_pdf/<?php echo $row['manuales']?>" type="application/pdf" width="100%" height="600px"></iframe>
+        <iframe src="<?php echo $row['carpeta']?>" type="application/pdf" width="100%" height="600px"></iframe>
       </div>
     </body>
 </html>

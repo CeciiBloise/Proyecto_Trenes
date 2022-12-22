@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-12-2022 a las 15:18:41
+-- Tiempo de generación: 22-12-2022 a las 15:55:34
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -51,10 +51,29 @@ CREATE TABLE `carga_de_usuarios` (
 
 INSERT INTO `carga_de_usuarios` (`legajo`, `apellido`, `nombre`, `dni`, `fecha_de_nacimiento`, `direccion`, `celular`, `mail`, `puesto`, `habilitaciones`, `supervisor_cargo`, `fecha_de_ingreso_a_la_empresa`, `id_cargo`, `contraseña`, `imagen`) VALUES
 (1, '1', '1', 0, '0000-00-00', '1', 0, '1@1', '', '', '', '0000-00-00', 3, 3, ''),
-(2, '2', '2', 2, '2222-02-02', '2', 2, '2@2', '2', '2', '2', '0022-02-02', 2, 2, ''),
-(1212, '', '', 0, '0000-00-00', '', 0, '', '', '', '', '0000-00-00', 3, 123, ''),
-(12345, 'Perez', 'Fulanito1 ', 12345678, '1111-01-01', 'Avenida Siempreviva 742', 0, 'perez.fulanito@correo.com', 'Pasante', 'Habilitación de soldadura', 'Fulanito2', '2222-02-02', 1, 123, 'img_739a848eb6896d6c1e1a2da6396fd7cb.jpg'),
+(12345, 'Diaz', 'Fulanito1 ', 12345678, '1111-01-01', 'Avenida Siempreviva 742', 0, 'perez.fulanito@correo.com', 'Pasante', 'Habilitación de soldadura', 'Fulanito2', '2222-02-02', 1, 123, ''),
 (98765, 'Lopez', 'Fulanito2', 98745612, '2222-02-02', 'Avenida Siempreviva 742', 22222222, 'lopez.fulanito2@correo.com', 'Pasante', 'Carnet de conducir, trabajo en altura', 'Fulanito3', '3333-03-03', 2, 123, 'img_d3df744c0cf1501ef497b420ce01b76c.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `manuales`
+--
+
+CREATE TABLE `manuales` (
+  `id_manuales` int(11) NOT NULL,
+  `manuales` varchar(250) NOT NULL,
+  `carpeta` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `manuales`
+--
+
+INSERT INTO `manuales` (`id_manuales`, `manuales`, `carpeta`) VALUES
+(22, '', 'manuales_pdf/Carpeta 1'),
+(23, '', 'manuales_pdf/Carpeta 2'),
+(24, '', 'manuales_pdf/Carpeta 3');
 
 -- --------------------------------------------------------
 
@@ -156,8 +175,10 @@ CREATE TABLE `plan_de_frecuencias` (
   `nombre_paso_nivel` varchar(250) NOT NULL,
   `frecuencia_asc` varchar(250) NOT NULL,
   `frecuencia_desc` varchar(250) NOT NULL,
-  `nivel_señal` varchar(250) NOT NULL,
-  `nivel_tension` varchar(250) NOT NULL,
+  `señal_asc` varchar(250) NOT NULL,
+  `señal_desc` varchar(250) NOT NULL,
+  `tension_asc` varchar(250) NOT NULL,
+  `tension_desc` varchar(250) NOT NULL,
   `filtro` varchar(250) NOT NULL,
   `ubicacion` varchar(250) NOT NULL,
   `plan_de_frecuencia` varchar(250) NOT NULL
@@ -167,11 +188,11 @@ CREATE TABLE `plan_de_frecuencias` (
 -- Volcado de datos para la tabla `plan_de_frecuencias`
 --
 
-INSERT INTO `plan_de_frecuencias` (`id_plan_de_frecuencia`, `nombre_paso_nivel`, `frecuencia_asc`, `frecuencia_desc`, `nivel_señal`, `nivel_tension`, `filtro`, `ubicacion`, `plan_de_frecuencia`) VALUES
-(5, 'Quilmes', '', '', 'F', 'G', '', 'F', ''),
-(11, 'XXX', 'X', 'Y', 'A', 'B', 'Si', 'F', ''),
-(12, 'EEE', 'T', 'R', 'F', 'N', 'No', '', ''),
-(13, 'XXX', 'X', 'Y', 'A', 'B', 'Si', 'F', '');
+INSERT INTO `plan_de_frecuencias` (`id_plan_de_frecuencia`, `nombre_paso_nivel`, `frecuencia_asc`, `frecuencia_desc`, `señal_asc`, `señal_desc`, `tension_asc`, `tension_desc`, `filtro`, `ubicacion`, `plan_de_frecuencia`) VALUES
+(28, 'ter', 'ter', 'ter', 'ter', '', '', '', '', '', ''),
+(29, 'ertr', '', '', '', '', '', '', '', 'ter', ''),
+(30, 'rtytrytr', '', '', '', '', '', '', '', '', ''),
+(31, '', '', '', '', '', '', '', '', 'ewr', '');
 
 --
 -- Índices para tablas volcadas
@@ -183,6 +204,12 @@ INSERT INTO `plan_de_frecuencias` (`id_plan_de_frecuencia`, `nombre_paso_nivel`,
 ALTER TABLE `carga_de_usuarios`
   ADD PRIMARY KEY (`legajo`),
   ADD KEY `id_rol` (`id_cargo`);
+
+--
+-- Indices de la tabla `manuales`
+--
+ALTER TABLE `manuales`
+  ADD PRIMARY KEY (`id_manuales`);
 
 --
 -- Indices de la tabla `permisos`
@@ -225,6 +252,12 @@ ALTER TABLE `carga_de_usuarios`
   MODIFY `legajo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2147483648;
 
 --
+-- AUTO_INCREMENT de la tabla `manuales`
+--
+ALTER TABLE `manuales`
+  MODIFY `id_manuales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
 -- AUTO_INCREMENT de la tabla `permisos`
 --
 ALTER TABLE `permisos`
@@ -252,7 +285,7 @@ ALTER TABLE `planos_quilmes`
 -- AUTO_INCREMENT de la tabla `plan_de_frecuencias`
 --
 ALTER TABLE `plan_de_frecuencias`
-  MODIFY `id_plan_de_frecuencia` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_plan_de_frecuencia` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- Restricciones para tablas volcadas
