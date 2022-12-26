@@ -1,12 +1,21 @@
 <?php
-$listar=null;
-$directorio=opendir("manuales_pdf/");
+include("conexion_manuales.php");
+$conexion=conectar();
+
+
+$sql="SELECT * FROM manuales";
+$query= mysqli_query($conexion,$sql);
+
+$row=mysqli_fetch_array($query);
+
+$directorio=opendir($row['carpeta']);
+
 while($elemento=readdir($directorio)){
     if($elemento != '.' && $elemento != '..'){
-        if(is_dir("manuales_pdf/".$elemento)){
-            $listar .="<li><a href='manuales_pdf/$elemento' target='_parent'>$elemento/</a></li>";
+        if(is_dir($directorio.$elemento)){
+            $listar .="<li><a href='$directorio/$elemento' target='_parent'>$elemento</a></li>";
         }else{
-            $listar .="<li><a href='manuales_pdf/$elemento' target='_parent'>$elemento/</a></li>";   
+            $listar .="<li><a href='$directorio/$elemento' target='_parent'>$elemento</a></li>";   
         }
     }
 }
@@ -43,11 +52,37 @@ while($elemento=readdir($directorio)){
       </nav>
     </header>
     <body>
-            <h1>EQUIPOS</h1>
-            <nav>
-                <?php
-                echo $listar;
-                ?>
-            </nav>
+    <h1>Documentos</h1>
+    <?php echo $listar ?>
     </body>
+
 </html>
+
+<?php
+
+function salida_archivos($ruta){
+    if(file_exists($ruta) && is_dir($ruta)){
+
+        $resultado = scandir($ruta);
+
+        $archivos= array_diff($resultado, array('.','..'));
+
+        if(count($archivos)>0){
+            foreach($archivos as $archivos){ //el primero es el indice, el segundo es el valor
+                    if(is_file($ruta)){
+                        echo $archivos."</br>";
+                    }else if(is_dir("$ruta/$archivos")){
+                        salida_archivos("$ruta/$ruta");
+                    }
+            }
+        }else{
+            echo "sin archivos";
+        }
+    }else{
+        echo "El directorio no existe";
+    }
+}
+
+salida_archivos("")
+
+?>

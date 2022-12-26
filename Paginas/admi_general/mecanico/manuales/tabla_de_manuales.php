@@ -34,16 +34,16 @@ $row=mysqli_fetch_array($query);
     <table class="content-table">
         <tr>
             <th>Carpetas</th>
-            <th>Directorio</th>
         </tr>
+
     </table>
     <tbody>
     <?php
          while($row=mysqli_fetch_array($query)){ /*El assoc lo combierte en un arreglo asociativo*/
     ?>
     <tr>
-    <td><?php echo $row['nombre_carpeta']?></td>
-        <td><?php echo $row['carpeta']?></td>
+        <td><a href="<?php echo $row['carpeta']?>"><?php echo $row['carpeta']?></a></td>
+        <td><a href="obtencion_de_url_prueba.php?id=<?php echo $row['id_manuales']?>">Ver</a></td>
     </tr>
     <?php
        }                
@@ -51,3 +51,4 @@ $row=mysqli_fetch_array($query);
     </tbody>    
     </body>
 </html>
+
