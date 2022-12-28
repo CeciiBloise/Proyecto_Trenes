@@ -43,6 +43,8 @@ $row=mysqli_fetch_array($query);
     ?>
     <tr>
         <td><a href="<?php echo $row['carpeta']?>"><?php echo $row['carpeta']?></a></td>
+    </tr>
+    <tr>
         <td><a href="obtencion_de_url_prueba.php?id=<?php echo $row['id_manuales']?>">Ver</a></td>
     </tr>
     <?php

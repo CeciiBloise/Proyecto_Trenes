@@ -50,4 +50,4 @@ while($elemento=readdir($directorio)){
                 ?>
             </nav>
     </body>
-</html>
+</html> 
