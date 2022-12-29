@@ -1,3 +1,15 @@
+<?php
+    include("conexion_manuales.php");
+    $conexion=conectar();
+
+    $sql="SELECT * FROM manuales";
+    $query= mysqli_query($conexion,$sql);
+
+    $row=mysqli_fetch_array($query);
+
+
+?>
+
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->
 
@@ -19,14 +31,14 @@
     <header>
       <nav class="navMenu">
             <li><a href="../../mecanico_admi.php" >Inicio</a></li>
-            <li><a href="ver_contenido.php">Lista</a></li>
+            <li><a href="lista.php">Lista</a></li>
             <li><a href="../../../../logout.php" >Cerrar Sesion</a></li>
 
       </nav>
     </header>
     <body>
         <div class="form_carga">
-            <form action="creacion_carpeta_equipo.php" method="POST" enctype="multipart/form-data" class="form">
+            <form action="insertar_bd.php" method="POST" enctype="multipart/form-data" class="form">
                 <h1 class="titulo">Carga de Manuales</h1>  
 
                 <div class="inputContainer">

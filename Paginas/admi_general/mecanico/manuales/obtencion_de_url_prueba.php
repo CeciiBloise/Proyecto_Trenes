@@ -2,8 +2,9 @@
 include("conexion_manuales.php");
 $conexion=conectar();
 
+$id=$_GET['id'];
 
-$sql="SELECT * FROM manuales";
+$sql="SELECT * FROM manuales where id_manuales='$id'";
 $query= mysqli_query($conexion,$sql);
 
 $row=mysqli_fetch_array($query);

@@ -19,7 +19,7 @@ Cosas que le faltan para administrador general:
         //https://programacion.net/articulo/almacenar_y_recuperar_una_imagen_de_una_base_de_datos_mysql_mediante_php_1861
       - Agregar un ver que me muestre la ficha //Listo
 
-    - pestaña para subir y actualizar archivos
+    - pestaña para subir y actualizar archivos//Listo
       -//https://code.tutsplus.com/es/tutorials/how-to-upload-a-file-in-php-with-example--cms-31763
       - Mostrar el PDF //https://parzibyte.me/blog/2019/12/23/mostrar-pdf-navegador-php/
       - Hasta ahora logre que me funcione la parte de cargar un pdf, pero que se guarde en la base de datos no.
@@ -44,8 +44,8 @@ Menu horizontal: hacer que cubra el 100% de la pantalla //listo
 A la fecha 15/11/22
 Me falta:
 -Conectar el bucador con la base de datos
--Pensar como voy a ordenar y clasificar los archivos
- - Que se carguen los archivos desde un solo lugar y ahi se puedan elegir que como se va a clasificar  
+-Pensar como voy a ordenar y clasificar los archivos //Listo
+ - Que se carguen los archivos desde un solo lugar y ahi se puedan elegir que como se va a clasificar.//Liso
  - Que se carguen desde la misma seccion y se pueda crear carpetas
  -Gestro de archivos: pensar directorios
 https://es.stackoverflow.com/questions/42120/elegir-ruta-donde-subir-archivo-a-servidor-php
