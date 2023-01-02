@@ -104,7 +104,7 @@
           </div>
 
           <div class="inputContainer"> <!--la contraseña se la signo yo? -->
-            <label>contraseña:</label>
+            <label>Contraseña:</label>
             <input type="password" name="contraseña" placeholder="contraseña de maximo 6 caracteres">
           </div> 
 
