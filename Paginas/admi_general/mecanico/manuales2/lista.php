@@ -3,8 +3,8 @@
 include("conexion_manuales.php");
 $conexion=conectar();
 
-$sql="SELECT*FROM manuales";
-//$sql= "SELECT MIN(id_manuales) as id_manuales, carpeta FROM manuales GROUP BY carpeta";
+//$sql="SELECT*FROM manuales";
+$sql= "SELECT MIN(id_manuales) as id_manuales, carpeta FROM manuales GROUP BY carpeta";
 
 $query= mysqli_query($conexion,$sql);
 
@@ -31,6 +31,12 @@ $row=mysqli_fetch_array($query);
             <li><a href="../../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
+    <style>
+        .content-table{
+            position: absolute;
+            left: 5%;
+        }
+    </style>
     <body>
     <table class="content-table">
         <thead>
@@ -45,7 +51,7 @@ $row=mysqli_fetch_array($query);
 
             <td><?php echo $row['carpeta']?></td>
 
-            <td><a href="ver2.php?id=<?php echo $row['id_manuales']?>">Ver</a></td>
+            <td><a href="ver.php?id=<?php echo $row['id_manuales']?>">Ver</a></td>
             <td><a href="">Eliminar</a></td>
         
         </tr>

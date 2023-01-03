@@ -11,15 +11,15 @@ $query= mysqli_query($conexion,$sql);
 $row=mysqli_fetch_array($query);
 
 $carpeta=$row['carpeta'];
-$url=$row['url'];
+
 $directorio=opendir("pdf_manuales/".$carpeta);
 
 while($elemento=readdir($directorio)){
     if($elemento != '.' && $elemento != '..'){
         if(is_dir($directorio.$elemento)){
-            $listar .="<li><a href='$directorio./.$elemento' target='_parent'>$elemento</a></li>";
+            $listar .="<li><a href='$directorio./.$elemento' target='_parent'>$elemento</a></li><br/>";
         }else{
-            $listar .="<li><a href='$directorio./.$elemento' target='_parent'>$elemento</a></li>";   
+            $listar .="<li><a href='$directorio./.$elemento' target='_parent'>$elemento</a></li><br/>";   
         }
     }
 }
