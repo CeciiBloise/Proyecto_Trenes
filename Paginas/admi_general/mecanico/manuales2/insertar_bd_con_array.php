@@ -2,57 +2,26 @@
 
 /*https://es.stackoverflow.com/questions/163082/c%C3%B3mo-puedo-guardar-m%C3%BAltiples-archivos-con-un-mismo-id*/
 
+/*https://www.youtube.com/watch?v=bNeT6A2qmQg&t=704s*/
 include("conexion_manuales.php");
 
 $conexion=conectar();
 
-$manuales=$_FILES['manuales'];
-foreach($manuales['tmp_name'] as $key => $tmp_name){
-    if($manuales['name'][$key]){
+if(isset($_POST['subir'])){
 
-        $filename = $_FILES['manuales']['name'][$key];
-        $temporal = $_FILES['manuales']['tmp_name'][$key];
-
-        $carpeta=htmlspecialchars($_POST['carpeta']);
-        
-        $destino = "pdf_manuales/"; //carpeta de almacenamiento
-
-        $directorio = $destino.$carpeta;//carpeta que contiene a los manuales
-
-        if(!file_exists($directorio)){
-            mkdir($directorio, 0777);//crea el directorio
-
-            $sql="INSERT INTO manuales(carpeta,"; 
+    foreach($_FILES['manuales']['tmp_name'] as $key => $value){
+        if(file_exists($_FILES['manuales']['tmp_name'][$key])){
             
-            for ($i=0, $size = count($manuales); $i<$size;$i++){
-                $sql.=' manuales'.($i+1);
-                if ( $size >  $i+1 ){
-                    $sql .= ',';
-                }
+            if(move_uploaded_file($_FILES['manuales']['tmp_name'][$key],'pdf_manuales/'.$_FILES['manuales']['name'][$key])){
+                echo "el archivo se ha subido";
+                
+                $ruta="pdf_manuales/".$_FILES['manuales']['name'][$key];
+                $sql=$conexion->query("INSERT INTO manuales (url) VALUES ('$ruta')"); //guarda la ruta
             }
-            $sql .= ' ) VALUES (';
-            for ($i=0, $size = count($manuales); $i<$size;$i++){
-                $sql .= $carpeta.', '.$manuales[$i];
-                if ( $size >  $i+1 ){
-                    $sql .= ',';
-                }
-            }
-            $sql.= ')'; 
-
-            $query= mysqli_query($conexion,$sql);
         }
-
-        $dir = opendir($directorio);
-        $ruta = $directorio.'/'.$filename;
-
-        if(move_uploaded_file($temporal,$ruta)){
-            header("Location: carga_equipo.php");
-        } else{
-            echo "ocurrio un error";
-        }
-
-        closedir($dir);
     }
+
+
 }
 
 ?>
