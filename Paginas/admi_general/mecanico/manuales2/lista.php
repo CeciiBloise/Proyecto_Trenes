@@ -45,7 +45,7 @@ $row=mysqli_fetch_array($query);
 
             <td><?php echo $row['carpeta']?></td>
 
-            <td><a href="ver.php?id=<?php echo $row['id_manuales']?>">Ver</a></td>
+            <td><a href="ver2.php?id=<?php echo $row['id_manuales']?>">Ver</a></td>
             <td><a href="">Eliminar</a></td>
         
         </tr>
