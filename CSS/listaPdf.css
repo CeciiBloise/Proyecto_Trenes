@@ -17,8 +17,8 @@ ul a {
     padding: 1rem;
     
     position: absolute;
-    top: 15%;
-    left: 20%;
+    top: 10%;
+    left: 10%;
 }
 th, td{ 
     text-transform: uppercase;

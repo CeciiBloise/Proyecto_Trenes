@@ -1,4 +1,3 @@
-<iframe src="<?php echo $row['carpeta']?>" type="application/pdf" width="100%" height="600px"></iframe>
 <?php
 include("conexion_manuales.php");
 $conexion=conectar();
@@ -10,16 +9,18 @@ $query= mysqli_query($conexion,$sql);
 
 $row=mysqli_fetch_array($query);
 
+$listar=null;
 $carpeta=$row['carpeta'];
-
 $directorio=opendir("pdf_manuales/".$carpeta);
+$url="pdf_manuales/".$carpeta;
 
 while($elemento=readdir($directorio)){
     if($elemento != '.' && $elemento != '..'){
         if(is_dir($directorio.$elemento)){
-            $listar .="<li><a href='$directorio./.$elemento' target='_parent'>$elemento</a></li><br/>";
+            $listar .="<ul><a href='$url/$elemento' target='_parent'>$elemento</a></ul><br/>";
         }else{
-            $listar .="<li><a href='$directorio./.$elemento' target='_parent'>$elemento</a></li><br/>";   
+            //error_reporting(0);
+            $listar .="<ul><a href='$url/$elemento' target='_parent'>$elemento</a></ul><br/>";   
         }
     }
 }
@@ -29,17 +30,22 @@ while($elemento=readdir($directorio)){
     <head>
         <meta charset="utf-8" /> <!-- tipos de caracter -->
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        
         <!-- Estilos -->
-        <link rel="stylesheet" href="../../../../CSS/estilo_tablas.css"/>
+        <link rel="stylesheet" href="../../../../CSS/listaPdf.css"/>
+        <link rel="stylesheet" href="../../../../CSS/estilo_menu_horizontal.css"/>
         
         <title>Trenes Argentinos</title> <!-- titulo de la pagina -->
     </head>
 
+    <style>
+    
+    </style>
+
     <header>
       <nav class="navMenu">
       <li><a href="../../mecanico_admi.php" >Inicio</a></li>
-            <li><a href="carga_equipos.php">Manuales</a></li>
-            <li><a href="ver_contenido.php">Contenido</a></li>
+            <li><a href="carga_equipo.php">Manuales</a></li>
             <li><a href="../../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
@@ -47,13 +53,12 @@ while($elemento=readdir($directorio)){
     <table class="content-table">
         <thead>
             <tr>
-                <th>Eauipo</th>
+                <th><?php echo $row['carpeta'] ?></th>
             </tr>
         </thead>
         <tbody>
         <tr>
             <td><?php echo $listar?></td>
-            >
         </tr>
         </tbody>
         </table>   
