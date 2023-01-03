@@ -1,4 +1,5 @@
 <?php
+/*Me lista las carpetas*/
 
 include("conexion_manuales.php");
 $conexion=conectar();
