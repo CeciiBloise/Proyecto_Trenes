@@ -8,9 +8,9 @@ $sql="SELECT * FROM manuales where id_manuales='$id'";
 $query= mysqli_query($conexion,$sql);
 
 $row=mysqli_fetch_array($query);
-$carpeta=$row['carpeta'];
 
-$directorio=opendir("pdf_manuales/$carpeta");
+$carpeta=$row['carpeta'];
+$directorio=opendir("pdf_manuales/".$carpeta);
 
 while($elemento=readdir($directorio)){
     if($elemento != '.' && $elemento != '..'){
@@ -45,69 +45,14 @@ while($elemento=readdir($directorio)){
     <table class="content-table">
         <thead>
             <tr>
-                <th>Equipos</th>
-                <th colspan="2">Accion</th>
+                <th>Eauipo</th>
             </tr>
         </thead>
         <tbody>
         <tr>
             <td><?php echo $listar?></td>
-
-            <td><a href="ver.php?id=<?php echo $row['id_manuales']?>">Ver</a></td>
-            <td><a href="">Eliminar</a></td>
-        
         </tr>
         </tbody>
         </table>   
     </body>
 </html>
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php
-
-function salida_archivos($ruta){
-    if(file_exists($ruta) && is_dir($ruta)){
-
-        $resultado = scandir($ruta);
-
-        $archivos= array_diff($resultado, array('.','..'));
-
-        if(count($archivos)>0){
-            foreach($archivos as $archivos){ //el primero es el indice, el segundo es el valor
-                    if(is_file($ruta)){
-                        echo $archivos."</br>";
-                    }else if(is_dir("$ruta/$archivos")){
-                        salida_archivos("$ruta/$ruta");
-                    }
-            }
-        }else{
-            echo "sin archivos";
-        }
-    }else{
-        echo "El directorio no existe";
-    }
-}
-
-salida_archivos("")
-
-?>

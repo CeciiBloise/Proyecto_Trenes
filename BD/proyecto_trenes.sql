@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-12-2022 a las 15:55:34
+-- Tiempo de generación: 03-01-2023 a las 13:20:00
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -62,18 +62,27 @@ INSERT INTO `carga_de_usuarios` (`legajo`, `apellido`, `nombre`, `dni`, `fecha_d
 
 CREATE TABLE `manuales` (
   `id_manuales` int(11) NOT NULL,
+  `carpeta` varchar(250) NOT NULL,
   `manuales` varchar(250) NOT NULL,
-  `carpeta` varchar(250) NOT NULL
+  `url` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `manuales`
 --
 
-INSERT INTO `manuales` (`id_manuales`, `manuales`, `carpeta`) VALUES
-(22, '', 'manuales_pdf/Carpeta 1'),
-(23, '', 'manuales_pdf/Carpeta 2'),
-(24, '', 'manuales_pdf/Carpeta 3');
+INSERT INTO `manuales` (`id_manuales`, `carpeta`, `manuales`, `url`) VALUES
+(4, 'Carpeta 1', '', 'pdf_manuales/Carpeta 1/pdf GANADORES -c.pdf'),
+(5, 'Carpeta 1', '', 'pdf_manuales/Carpeta 1/(2)Examen Final_Programación I_Llamado Diciembre (1) - copia.pdf'),
+(6, 'Carpeta 2', '', 'pdf_manuales/Carpeta 2/Aula Virtual - Metodologías Ágiles - Scrum - copia.pdf'),
+(7, 'Carpeta 3', '', 'pdf_manuales/Carpeta 3/Aula Virtual - Metodologías Ágiles - Scrum - copia.pdf'),
+(8, 'Carpeta 3', '', 'pdf_manuales/Carpeta 3/Aula Virtual - Metodologías Ágiles - Scrum.pdf'),
+(9, 'Carpeta 3', '', 'pdf_manuales/Carpeta 3/Tutorial - Desarrollando una aplicación web con Python y Flask_v3.pdf'),
+(10, 'Carpeta 3', '', 'pdf_manuales/Carpeta 3/beginners_python_cheat_sheet_pcc_django_new.pdf'),
+(11, 'Carpeta 3', '', 'pdf_manuales/Carpeta 3/pdf GANADORES -c.pdf'),
+(12, 'Carpeta 10', '', 'pdf_manuales/Carpeta 10/pdf GANADORES -c.pdf'),
+(13, 'Carpeta 10', '', 'pdf_manuales/Carpeta 10/(2)Examen Final_Programación I_Llamado Diciembre (1) - copia.pdf'),
+(14, 'Carpeta 10', '', 'pdf_manuales/Carpeta 10/(2)Examen Final_Programación I_Llamado Diciembre (1).pdf');
 
 -- --------------------------------------------------------
 
@@ -255,7 +264,7 @@ ALTER TABLE `carga_de_usuarios`
 -- AUTO_INCREMENT de la tabla `manuales`
 --
 ALTER TABLE `manuales`
-  MODIFY `id_manuales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_manuales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos`

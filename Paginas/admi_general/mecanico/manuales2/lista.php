@@ -3,8 +3,9 @@
 include("conexion_manuales.php");
 $conexion=conectar();
 
+$sql="SELECT*FROM manuales";
+//$sql= "SELECT MIN(id_manuales) as id_manuales, carpeta FROM manuales GROUP BY carpeta";
 
-$sql="SELECT * FROM manuales";
 $query= mysqli_query($conexion,$sql);
 
 $row=mysqli_fetch_array($query);
@@ -26,8 +27,7 @@ $row=mysqli_fetch_array($query);
     <header>
       <nav class="navMenu">
       <li><a href="../../mecanico_admi.php" >Inicio</a></li>
-            <li><a href="carga_equipos.php">Manuales</a></li>
-            <li><a href="ver_contenido.php">Contenido</a></li>
+            <li><a href="carga_equipo.php">Manuales</a></li>
             <li><a href="../../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>

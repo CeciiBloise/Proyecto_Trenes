@@ -1,8 +1,6 @@
 <?php
 
-/*https://es.stackoverflow.com/questions/163082/c%C3%B3mo-puedo-guardar-m%C3%BAltiples-archivos-con-un-mismo-id*/
-
-/*https://www.youtube.com/watch?v=bNeT6A2qmQg&t=704s*/
+/*Mueve el archivo y guarda la url*/
 include("conexion_manuales.php");
 
 $conexion=conectar();
