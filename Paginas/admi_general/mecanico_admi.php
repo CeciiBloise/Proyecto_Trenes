@@ -22,7 +22,7 @@
 
                         <li><a href="mecanico/plan_de_frecuencias/tabla_plan_de_frecuencias.php">Plan de Frecuencia</a></li>
 
-                        <li><a href="">Registros</a></li>
+                        <li><a href="mecanico/registros/inicio_registros.php">Registros</a></li>
 
                         <li><a href="../../logout.php">Cerrar Sesion</a></li>
 
