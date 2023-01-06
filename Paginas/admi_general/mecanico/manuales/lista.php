@@ -43,7 +43,7 @@ $row=mysqli_fetch_array($query);
         <thead>
             <tr>
                 <th>Equipos</th>
-                <th colspan="2">Accion</th>
+                <th colspan="2">Acciones</th>
             </tr>
         </thead>
         <tbody>

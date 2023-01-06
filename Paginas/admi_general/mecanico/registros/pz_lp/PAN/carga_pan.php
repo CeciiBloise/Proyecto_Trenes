@@ -19,13 +19,25 @@
     </style>
     <header>
       <nav class="navMenu">
-        <li><a href="../../inicio_registros.php">Inicio registros</a></li>
+        <li><a href="../../inicio_registros.php">registros</a></li>
         <li><a href="../pz_lp.php">pz-lp</a></li>
         <li><a href="../../../../../../logout.php">cerrar sesion</a></li>
       </nav>
     </header>
 
     <body>
+
+    <div class="container">
+        <form action="index.php" method="post">
+            <select>
+                <option value="0">Seleccione:</option>
+                <?php foreach ($users as $user) { ?>
+                    <option value="<?= $user['Codigo'] ?>"><?= $user['Nombre'] . ' ' . $user['Apellido1'] ?></option>
+                <?php } ?>
+            </select>
+        </form>
+    </div>
+
         <div class="form_carga">
             <form action="insertar_bd2.php" method="POST" enctype="multipart/form-data" class="form">
                 <h1 class="titulo">Carga de Registros PAN</h1>  
@@ -33,6 +45,7 @@
                 <div class="inputContainer">
                   <label>Paso a Nivel:</label>
                   <select name="pan" id="pan">
+                    <option value="Gral.Otero">Gral. Otero</option>
                     <option value="pan">San Vicente</option>
                     <option value="pan">Bahia Blanca</option>
                     <option value="pan">Las Flores</option>

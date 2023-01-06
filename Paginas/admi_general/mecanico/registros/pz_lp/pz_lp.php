@@ -16,7 +16,7 @@
         <nav class="menuPrincipal">
             <li><a href="../inicio_registros.php">Volver al menu anterior</a></li>
            <li><a href="PAN/pan_pz_lp.php">Paso a Nivel</a></li>
-           <li><a href="PP/pp_pz_lp.php">Paso Peaton</a></li>
+           <li><a href="PP/pp_pz_lp.php">Paso Peatonal</a></li>
            <li><a href="../../../../../logout.php">cerrar sesion</a></li>
            
         </nav>

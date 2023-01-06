@@ -13,7 +13,7 @@
 
 <header>
     <nav class="navMenu">
-        <ol><a href="../../inicio_registros.php">Inicio registros</a></ol>
+        <ol><a href="../../inicio_registros.php">registros</a></ol>
         <ol><a href="../pz_lp.php">pz-lp</a></ol>
         <ol><a href="carga_pan.php">Carga de Registros PAN</a></ol>
         <ol><a href="../../../../../../logout.php">cerrar sesion</a></ol>
