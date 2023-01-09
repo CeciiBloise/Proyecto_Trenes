@@ -85,6 +85,8 @@
                 https://desarrolloweb.com/articulos/995.php 
                 https://www.jose-aguilar.com/blog/mostrar-y-ocultar-el-contenido-de-un-div-con-un-checkbox/
                 https://uniwebsidad.com/libros/javascript/capitulo-7/utilidades-basicas-para-formularios
+                https://baulcode.com/javascript/detectar-checkbox-marcados-javascript-y-jquery/
+
               */
               
               /* https://www.youtube.com/watch?v=qxj2CUZvOu4 */
