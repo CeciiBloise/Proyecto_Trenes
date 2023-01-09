@@ -21,25 +21,14 @@
       <nav class="navMenu">
         <li><a href="../../inicio_registros.php">registros</a></li>
         <li><a href="../pz_lp.php">pz-lp</a></li>
+        <li><a href="../carga_pan_pz_lp.php">cargar nuevo pan</a></li>
         <li><a href="../../../../../../logout.php">cerrar sesion</a></li>
       </nav>
     </header>
 
     <body>
-
-    <div class="container">
-        <form action="index.php" method="post">
-            <select>
-                <option value="0">Seleccione:</option>
-                <?php foreach ($users as $user) { ?>
-                    <option value="<?= $user['Codigo'] ?>"><?= $user['Nombre'] . ' ' . $user['Apellido1'] ?></option>
-                <?php } ?>
-            </select>
-        </form>
-    </div>
-
         <div class="form_carga">
-            <form action="insertar_bd2.php" method="POST" enctype="multipart/form-data" class="form">
+            <form action="insertar_bd_pz_lp.php" method="POST" enctype="multipart/form-data" class="form">
                 <h1 class="titulo">Carga de Registros PAN</h1>  
 
                 <div class="inputContainer">

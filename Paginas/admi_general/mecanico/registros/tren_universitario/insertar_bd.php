@@ -1,10 +1,6 @@
 <?php
-/*Tengo que hacer que se cree la carpeta pan y pp, que se cree dentro de ellas 
- la carpeta de años y que dentro de ellas se guarden los archivos*/
 
-/* https://www.baulphp.com/llenar-select-html-con-mysql-php-ejemplos/*/
-
-include("conexion_registros.php");
+include("../conexion_registros.php");
 
 $conexion=conectar();
 

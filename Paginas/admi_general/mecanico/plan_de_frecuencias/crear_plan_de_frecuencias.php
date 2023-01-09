@@ -66,14 +66,14 @@
                       <input type="text" name="tension_desc" placeholder="Descendente"> 
                 </div>
 
-               <!-- <div class="inputContainer">
+               <div class="inputContainer">
                   <label>Filtro:</label>
-                  <input type="radio" name="filtro[]" value="Si" id="si" >Si
-                  <input type="radio" name="filtro[]" value="No" id="no" >No
+                  <input type="radio" name="filtro[]" value="Si" id="si" checked="activarcaja()">Si
+                  <input type="radio" name="filtro[]" value="No" id="no">No
                       <br>
                       <label>Su ubicacion es:</label>
-                      <input type="text" name="ubicacion" id="ubicacion" placeholder="Ubicaion del filtro">
-                </div> -->
+                      <input type="text" name="ubicacion" id="ubicacion" placeholder="Ubicaion del filtro" disabled="">
+                </div>
 
                 <div class="boton"> 
                   <input class="boton-subir" type="submit" id="subir" value="subir" name="subir">
@@ -81,6 +81,19 @@
 
             </form>
             <script type="text/javascript">
+             /* https://desarrolloweb.com/faq/inhabilitar-input 
+                https://desarrolloweb.com/articulos/995.php 
+                https://www.jose-aguilar.com/blog/mostrar-y-ocultar-el-contenido-de-un-div-con-un-checkbox/
+                https://uniwebsidad.com/libros/javascript/capitulo-7/utilidades-basicas-para-formularios
+              */
+              
+              /* https://www.youtube.com/watch?v=qxj2CUZvOu4 */
+
+                function activarcaja(){
+                    document.getElementByID('ubicacion').disabled=false
+                }
+
+
              // Accedo al botón
             /*  var ubicacion = document.getElementById('ubicacion');
 

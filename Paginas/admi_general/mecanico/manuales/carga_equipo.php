@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="inputContainer">
-                  <label>Manual</label> 
+                  <label>Manual:</label> 
                   <input type="file" name="manuales[]" id="manuales[]" multiple="">
                 </div>  
 

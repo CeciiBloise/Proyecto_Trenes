@@ -1,0 +1,31 @@
+***TERMINAR ESTA SEMANA***
+
+*Arreglar PLAN DE REGISTROS:
+**boton de plano
+**error en la visualizacion de plano
+**agregar eso de si tiene o no filtro y su ubicacion y se guarde en la base de datos
+**agregar que se pueda editar la informacion
+
+*Arreglar MANUALES:
+**Que cuando liste no se repitan las carpetas
+**Que se elimine la carpeta del directorio
+**Que pueda  buscar por nombre de carpeta
+
+*Crear todo REGISTROS
+**crear los pan y los pp
+***crear carpetas dentro de los pan y los pp
+****Pensar como puedo cargar los registros desde un solo lugar 
+*****como visualizar los txt
+
+---------------------------------------------------------------------------------------------------
+
+***SEMANA QUE VIENE***
+
+*Crear CARTELES DE ADVERTENCIA
+**Se creo correctamente
+**Se produjo un error
+**Eror contraseña
+
+*Terminar REGISTROS
+
+*Arreglar la busqueda de todas las secciones 
