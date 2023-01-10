@@ -13,9 +13,7 @@ th, td{
     border-bottom: solid 1px #AEB6BF;
     border: solid 1px #AEB6BF;
 }
-tr:nth-child(odd){
-    background-color:#D6DBDF;
-}
+
 tr:hover td{
     background-color: #1EBBFA;
 }

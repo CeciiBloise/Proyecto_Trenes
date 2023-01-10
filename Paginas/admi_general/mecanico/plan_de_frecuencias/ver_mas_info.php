@@ -27,7 +27,7 @@
         <meta charset="utf-8" /> <!-- tipos de caracter -->
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
         <link rel="stylesheet" href="../../../../CSS/estilo_menu_horizontal.css"/>
-        <link rel="stylesheet" href="../../../../CSS/estilo_tablas.css"/>
+        <link rel="stylesheet" href="../../../../CSS/estilo_tabla_plan_de_frecuencias.css"/>
         <script src="https://kit.fontawesome.com/3de4daf040.js" crossorigin="anonymous"></script>
         <!-- Estilos -->
         <title>Trenes Argentinos</title> <!-- titulo de la pagina -->
@@ -38,16 +38,12 @@
             <li><a href="../../mecanico_admi.php" >Inicio</a></li>
             <li><a href="crear_plan_de_frecuencias.php">Carga Plan de Frecuencia</a></li>
             <li><a href="tabla_plan_de_frecuencias.php">Tabla Reducida</a></li>
+            <li><a href="ver_plano_plan_de_frecuencias.php">Plano</a></li>
             <li><a href="../../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
 
     <style>
-        /*ancho del menu*/
-        /*.navMenu{
-        width: 157rem;
-        }
-        /*Barra Buscador*/
         .buscador input[type=search]{
             width:300px;
             height:25px;
@@ -58,19 +54,7 @@
         .buscador{
             /*float:right;*/
             margin:7px;
-        }
-          
-        .boton{
-            background-color: #5D6D7E;
-            color: white;
-            /*float: right;*/
-            padding: 5px 10px;
-            margin-right: 16px;
-            font-size: 30px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
+        }  
     </style>
 
     <body>
@@ -80,9 +64,6 @@
                 <input type="text" placeholder="" name="buscar">
                 <input class="boton" type="submit" value="Buscar">
             </form>
-            <div>
-                <button class="boton"><a href="ver_plano_plan_de_frecuencias.php">Plano</a></button>
-            </div>
             <table class="content-table">
             <caption>PLAN DE FRECUENCIAS</caption>
                 <thead>     

@@ -1,10 +1,11 @@
 ***TERMINAR ESTA SEMANA***
 
 *Arreglar PLAN DE REGISTROS:
-**boton de plano
-**error en la visualizacion de plano
-**agregar eso de si tiene o no filtro y su ubicacion y se guarde en la base de datos
+>>boton de plano
+>>error en la visualizacion de plano
+**que se guarden las cosas del checkbox en la base de datos //https://youtu.be/XdTFmtGPO80 con ese video hice que andara lo de habilitar la ubicacion
 **agregar que se pueda editar la informacion
+**encabezado de la tabla 
 
 *Arreglar MANUALES:
 **Que cuando liste no se repitan las carpetas
@@ -29,3 +30,5 @@
 *Terminar REGISTROS
 
 *Arreglar la busqueda de todas las secciones 
+
+*Averiguar como se reinicia el auto incremental

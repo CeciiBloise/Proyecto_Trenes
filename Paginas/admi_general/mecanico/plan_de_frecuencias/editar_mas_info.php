@@ -1,9 +1,9 @@
 <?php
     include("conexion_plan_de_frecuencias.php");
     $conexion=conectar();
-    $id_plan=$_GET['id'];
+    $id=$_GET['id'];
 
-    $sql="SELECT * FROM plan_de_frecuencias(nombre_paso_nivel,frecuencia_asc,frecuencia_desc,señal_asc,señal_desc,tension_asc,tension_desc) WHERE id_plan_de_frecuencia='$id_plan'";
+    $sql="SELECT * FROM  plan_de_frecuencias WHERE id_plan_de_frecuencia='$id'";
     $query= mysqli_query($conexion,$sql);
 
     $row=mysqli_fetch_array($query);
@@ -65,14 +65,14 @@
 
                 </div>
 
-               <!-- <div class="inputContainer">
+               <div class="inputContainer">
                   <label>Filtro:</label>
-                  <input type="radio" name="filtro" value=" " id="si">Si
-                  <input type="radio" name="filtro" value=" " id="no">No
+                  <input type="checkbox" name="filtro[]" value="<?php echo $row['filtro']?>" id="si">Si
+                  <input type="checkbox" name="filtro[]" value="<?php echo $row['filtro']?>" id="no">No
                       <br>
                       <label>Su ubicacion es:</label>
-                      <input type="text" name="ubicacion" placeholder="ubicaion del filtro" value="<?/*php echo $row['ubicacion'] */?>">
-                </div>-->
+                      <input type="text" name="ubicacion" placeholder="ubicaion del filtro" value="<?php echo $row['ubicacion']?>">
+                </div>
 
                 <div class="boton">
                     <input class="boton-subir" type="submit"  value="actualizar" name="subir">

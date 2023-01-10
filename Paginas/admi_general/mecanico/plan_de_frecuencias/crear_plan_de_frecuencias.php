@@ -67,12 +67,21 @@
                 </div>
 
                <div class="inputContainer">
-                  <label>Filtro:</label>
-                  <input type="radio" name="filtro[]" value="Si" id="si" checked="activarcaja()">Si
-                  <input type="radio" name="filtro[]" value="No" id="no">No
+                  <script type="text/javascript">
+                    function activar(si){
+                    var ubicacion = document.getElementById("ubicacion");
+                    ubicacion.disabled = chksi.checked ? false : true;
+                    if(!ubicacion.disabled){
+                      ubicacion.focus();
+                    }
+                  }
+                  </script>
+                  <label for="chksi">Filtro:</label>
+                  <input type="checkbox" name="filtro[]" value="Si" id="chksi" onclick="activar(this)"/>Si
+                  <input type="checkbox" name="filtro[]" value="No" id="no" />No
                       <br>
                       <label>Su ubicacion es:</label>
-                      <input type="text" name="ubicacion" id="ubicacion" placeholder="Ubicaion del filtro" disabled="">
+                      <input type="text" name="ubicacion" id="ubicacion" placeholder="Ubicaion del filtro" disabled="disabled" />
                 </div>
 
                 <div class="boton"> 
@@ -80,61 +89,6 @@
                 </div>
 
             </form>
-            <script type="text/javascript">
-             /* https://desarrolloweb.com/faq/inhabilitar-input 
-                https://desarrolloweb.com/articulos/995.php 
-                https://www.jose-aguilar.com/blog/mostrar-y-ocultar-el-contenido-de-un-div-con-un-checkbox/
-                https://uniwebsidad.com/libros/javascript/capitulo-7/utilidades-basicas-para-formularios
-                https://baulcode.com/javascript/detectar-checkbox-marcados-javascript-y-jquery/
-
-              */
-              
-              /* https://www.youtube.com/watch?v=qxj2CUZvOu4 */
-
-                function activarcaja(){
-                    document.getElementByID('ubicacion').disabled=false
-                }
-
-
-             // Accedo al botón
-            /*  var ubicacion = document.getElementById('ubicacion');
-
-              // evento para el input radio del "si"
-              document.getElementById('si').addEventListener('click', function(e){
-                console.log('Vamos a habilitar el input text');
-                ubicacion.disabled = false;
-              });
-
-              // evento para el input radio del "no"
-              document.getElementById('no').addEventListener('click', function(e) {
-                console.log('Vamos a deshabilitar el input text');
-                ubicacion.disabled = true;
-              });*/
-
-              /*function activarubicacion(){
-                 if (ubicacion.disabled == false){
-                    ubicacion.disabled = true;
-                }else{
-                    ubicacion.disabled = false;
-                }
-              }
-
-              /*function desactivarubicacacion(){
-                if (ubicacion.disabled == true){
-                    ubicacion.disabled = false;
-                }else{
-                    ubicacion.disabled = true;
-                }
-              }*/
-            
-             /* function activarsubir(){
-                 if (subir.disabled == false){
-                    subir.disabled = true;
-                }else{
-                    subir.disabled = false;
-                }
-              }*/
-            </script>
         </div>
     </body>
 </html>

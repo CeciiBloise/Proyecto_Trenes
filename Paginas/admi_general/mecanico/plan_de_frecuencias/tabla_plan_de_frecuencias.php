@@ -27,7 +27,7 @@
         <meta charset="utf-8" /> <!-- tipos de caracter -->
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
         <link rel="stylesheet" href="../../../../CSS/estilo_menu_horizontal.css"/>
-        <link rel="stylesheet" href="../../../../CSS/estilo_tablas.css"/>
+        <link rel="stylesheet" href="../../../../CSS/estilo_tabla_plan_de_frecuencias.css"/>
         <script src="https://kit.fontawesome.com/3de4daf040.js" crossorigin="anonymous"></script>
         <!-- Estilos -->
         <title>Trenes Argentinos</title> <!-- titulo de la pagina -->
@@ -37,6 +37,7 @@
       <nav class="navMenu">
             <li><a href="../../mecanico_admi.php" >Inicio</a></li>
             <li><a href="crear_plan_de_frecuencias.php">Carga Plan de Frecuencia</a></li>
+            <li><a href="ver_plano_plan_de_frecuencias.php">plano</a></li>
             <li><a href="../../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
@@ -79,10 +80,6 @@
                 <input type="text" placeholder="" name="buscar">
                 <input class="boton" type="submit" value="Buscar">
             </form>
-            
-            <div>
-              <button class="boton"><a href="ver_plano_plan_de_frecuencias.php">Plano</a></button>
-            </div>
 
             <table class="content-table">
             <caption>PLAN DE FRECUENCIAS</caption>
