@@ -4,25 +4,28 @@ $conexion=conectar();
 
 $id=$_GET['id'];
 
+$sql="SELECT * FROM manuales where id_manuales='$id'";
+$query= mysqli_query($conexion,$sql);
+
+$row=mysqli_fetch_array($query);
 //elimina la carpeta de la base de datos
 $sql="DELETE FROM manuales WHERE id_manuales='$id'";
-$carpeta=['carpeta'];
-$query=mysqli_query($conexion,$sql);
+//$query=mysqli_query($conexion,$sql);
+// https://underc0de.org/foro/dudas-generales-121/(solucionado)-eliminar-carpeta-con-contenido-desde-php/
 
-function rmDir_rf($url)
-    {
-      foreach(glob($url) as $archivos_carpeta){             
-        if (is_dir($archivos_carpeta)){
-          rmDir_rf($archivos_carpeta);
-        } else {
-        unlink($archivos_carpeta);
-        }
-      }
-      rmdir($url);
-    }
-    /*if($query){*/
-        $url="pdf_manuales/".$carpeta;
-        rmDir_rf($url);
-        header("Location: lista.php");
-    /*}*/
+//Elimina la carpeta del servidor pero no se eliminan de la bd de datos
+$carpeta=$row['carpeta'];
+$mis_fotos = "pdf_manuales/".$carpeta;     
+
+foreach(glob($mis_fotos."/*.*") as $archivos_carpeta) 
+
+{ 
+ unlink($archivos_carpeta);
+ $sql="DELETE FROM manuales WHERE id_manuales='$id'";
+ $query= mysqli_query($conexion,$sql);   
+} 
+//rmdir($mis_fotos);
+header("Location: ver.php");    
+
 ?>
+

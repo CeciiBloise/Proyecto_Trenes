@@ -3,12 +3,12 @@
 *Arreglar PLAN DE REGISTROS:
 >>boton de plano
 >>error en la visualizacion de plano
-**que se guarden las cosas del checkbox en la base de datos //https://youtu.be/XdTFmtGPO80 con ese video hice que andara lo de habilitar la ubicacion
-**agregar que se pueda editar la informacion
->>encabezado de la tabla 
+>>que se guarden las cosas del checkbox en la base de datos //https://youtu.be/XdTFmtGPO80 con ese video hice que andara lo de habilitar la ubicacion
+**agregar que se pueda EDITAR la informacion //https://www.youtube.com/watch?v=tq37todyOWg&t=3s
+>>encabezado de la tabla  
 
 *Arreglar MANUALES:
-**Que cuando liste no se repitan las carpetas
+**Que cuando liste no se repitan las carpetas //https://didesweb.com/tutoriales-php/listar-un-directorio-con-php/
 **Que se elimine la carpeta del directorio
 **Que pueda  buscar por nombre de carpeta
 
