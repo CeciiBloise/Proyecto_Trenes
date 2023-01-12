@@ -1,4 +1,5 @@
 <?php
+/** ESTE ES EL QUE ANDA **/
 /*Crea la carpeta subiendo los archivos a esa que creo, y guarda la url en la base de datos los archivos*/
 /*https://www.youtube.com/watch?v=bNeT6A2qmQg&t=704s*/
 include("conexion_manuales.php");

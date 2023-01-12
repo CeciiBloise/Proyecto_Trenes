@@ -9,26 +9,30 @@
 
 *Arreglar MANUALES:
 **Que cuando liste no se repitan las carpetas //https://didesweb.com/tutoriales-php/listar-un-directorio-con-php/
-**Que se elimine la carpeta del directorio
+**Que se elimine la carpeta del directorio //Logre que se elimine la carpeta del servidor pero como la carpeta se repite me da error 
 **Que pueda  buscar por nombre de carpeta
 
-*Crear todo REGISTROS
+*Crear todo REGISTROS ### Pasa para la semana que viene
 **crear los pan y los pp
 ***crear carpetas dentro de los pan y los pp
 ****Pensar como puedo cargar los registros desde un solo lugar 
 *****como visualizar los txt
 
 ---------------------------------------------------------------------------------------------------
-
-***SEMANA QUE VIENE***
+***FIN DE SEMANA***
 
 *Crear CARTELES DE ADVERTENCIA
 **Se creo correctamente
 **Se produjo un error
-**Eror contraseña
+**Error contraseña
+---------------------------------------------------------------------------------------------------
+
+***SEMANA QUE VIENE***
 
 *Terminar REGISTROS
 
 *Arreglar la busqueda de todas las secciones 
 
 *Averiguar como se reinicia el auto incremental
+
+*Averiguar como agregar memoria a la base de datos

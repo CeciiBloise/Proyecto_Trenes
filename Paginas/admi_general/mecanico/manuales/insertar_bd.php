@@ -1,39 +1,28 @@
 <?php
+/*Crea la carpeta subiendo los archivos a esa que creo, y guarda la url en la base de datos los archivos*/
+/*https://www.youtube.com/watch?v=bNeT6A2qmQg&t=704s*/
 include("conexion_manuales.php");
 
 $conexion=conectar();
 
-$manuales=$_FILES['manuales'];
-foreach($manuales['tmp_name'] as $key => $tmp_name){
-    if($manuales['name'][$key]){
-
-        $filename = $_FILES['manuales']['name'][$key];
-        $temporal = $_FILES['manuales']['tmp_name'][$key];
-
-        $carpeta=htmlspecialchars($_POST['carpeta']);
-        
-        $destino = "pdf_manuales/"; //carpeta de almacenamiento
-
-        $directorio = $destino.$carpeta;//carpeta que contiene a los manuales
-
-        if(!file_exists($directorio)){
+if(isset($_POST['subir'])){
+    
+    
+    $carpeta=htmlspecialchars($_POST['carpeta']); 
+    $destino="pdf_manuales/";//carpeta de almacenamiento
+    $directorio=$destino.$carpeta;//carpeta que contiene los manuales
+    foreach($_FILES['manuales']['tmp_name'] as $key => $value){
             mkdir($directorio, 0777);//crea el directorio
-
-            $sql="INSERT INTO manuales(carpeta,manuales) VALUES ('$carpeta','$manuales')";
-       
-            $query= mysqli_query($conexion,$sql);
-        }
-
-        $dir = opendir($directorio);
-        $ruta = $directorio.'/'.$filename;
-
-        if(move_uploaded_file($temporal,$ruta)){
-            header("Location: carga_equipo.php");
-        } else{
-            echo "ocurrio un error";
-        }
-
-        closedir($dir);
+            $manuales=$_FILES['manuales']['tmp_name'];
+            if(file_exists($manuales[$key])){
+                if(move_uploaded_file($_FILES['manuales']['tmp_name'][$key],$directorio."/".$_FILES['manuales']['name'][$key])){
+                    $ruta=$directorio."/".$_FILES['manuales']['name'][$key];
+                    $sql=$conexion->query("INSERT INTO manuales VALUES ('$carpeta','$manuales','$ruta')"); //guarda la ruta
+                    header("Location: carga_equipo.php");
+                }else{
+                    echo "ocurrio un error";
+                }
+            }
     }
 }
 
