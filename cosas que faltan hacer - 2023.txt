@@ -21,6 +21,8 @@
 ---------------------------------------------------------------------------------------------------
 ***FIN DE SEMANA***
 
+https://parzibyte.me/blog/2018/07/10/trabajando-con-archivos-y-carpetas-en-php-crud/
+
 *Crear CARTELES DE ADVERTENCIA
 **Se creo correctamente
 **Se produjo un error
