@@ -53,7 +53,7 @@ $row=mysqli_fetch_array($query);
             <td><?php echo $row['carpeta']?></td>
 
             <td><a href="ver.php?id=<?php echo $row['id_manuales']?>">Ver</a></td>
-            <td><a href="eliminar.php?id=<?php echo $row['id_manuales']?>">Eliminar</a></td>
+            <td><a href="eliminar2.php?id=<?php echo $row['id_manuales']?>">Eliminar</a></td>
         
         </tr>
         <?php }?> 

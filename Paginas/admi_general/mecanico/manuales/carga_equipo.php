@@ -31,7 +31,7 @@
     <header>
       <nav class="navMenu">
             <li><a href="../../mecanico_admi.php" >Inicio</a></li>
-            <li><a href="listar2.php">Manuales</a></li>
+            <li><a href="lista.php">Manuales</a></li>
             <li><a href="../../../../logout.php" >Cerrar Sesion</a></li>
 
       </nav>
