@@ -32,6 +32,9 @@ https://parzibyte.me/blog/2018/07/10/trabajando-con-archivos-y-carpetas-en-php-c
 
 ***SEMANA QUE VIENE***
 
+// actualice phpmyadmin con: https://www.jsolucioncreativa.com/wordpress/phpmyadmin-en-xampp/ 
+
+
 *Terminar REGISTROS
 
 *Arreglar la busqueda de todas las secciones 

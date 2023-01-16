@@ -12,6 +12,8 @@
         background:  #F2F3F4;
         font-family: Arial;
       }
+
+      /** https://www.baulphp.com/llenar-select-html-con-mysql-php-ejemplos/ **/
     </style>
     <header>
       <nav class="navMenu">
