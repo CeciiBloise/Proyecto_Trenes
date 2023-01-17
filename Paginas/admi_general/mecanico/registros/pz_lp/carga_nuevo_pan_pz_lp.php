@@ -24,7 +24,7 @@
     </header>
     <body>
         <div class="form_carga">
-            <form action="insertar_bd_pan_pz_lp.php" method="POST" class="form">
+            <form action="insertar_bd_nuevo_pan_pz_lp.php" method="POST" class="form">
                 <h1 class="titulo">Cargar PAN Nuevo</h1>  
 
                 <div class="inputContainer">

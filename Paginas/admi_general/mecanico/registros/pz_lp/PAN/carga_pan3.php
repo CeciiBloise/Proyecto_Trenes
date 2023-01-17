@@ -1,5 +1,10 @@
 <?php
-/* En este anda las opciones tomadas del la base de datos solamente */
+include("../../conexion_registros.php");
+$conexion=conectar();
+
+$sql="SELECT*FROM registros_pz_lp";
+
+$query= mysqli_query($conexion,$sql);
 ?>
 
 <!DOCTYPE html> <!-- version html5 -->
@@ -24,7 +29,7 @@
       <nav class="navMenu">
         <li><a href="../../inicio_registros.php">registros</a></li>
         <li><a href="../pz_lp.php">pz-lp</a></li>
-        <li><a href="../carga_pan_pz_lp.php">cargar nuevo pan</a></li>
+        <li><a href="../carga_nuevo_pan_pz_lp.php">cargar nuevo pan</a></li>
         <li><a href="../../../../../../logout.php">cerrar sesion</a></li>
       </nav>
     </header>
@@ -36,23 +41,17 @@
 
                 <div class="inputContainer">
                   <label>Paso a Nivel:</label>
-                  <select>
+                  <select name="pan" id="pan">
                   <option value="0">Seleccione:</option>
-                    <?php
-                    include("../../conexion_registros.php");
-                    $conexion=conectar();
+                    <?php        
+                    foreach($query as $opcion){ 
+                    ?>
                     
-                    $sql="SELECT*FROM registros_pz_lp";
+                        <option value="<?php echo $opcion['pan_pz_lp']; ?>"> <?php echo $opcion['pan_pz_lp']; ?></option>
                     
-                    $query= mysqli_query($conexion,$sql);
-
-                    $row=mysqli_fetch_array($query);
-                    
-                    foreach($query as $opcion){?>
-                      <option value="<?php echo $opcion['pan_pz_lp'] ?>"> <?php echo $opcion['pan_pz_lp'] ?></option>
-                  <?php 
-                  }
-                  ?>
+                    <?php 
+                    }
+                    ?>
                   </select>
                 </div>
 
@@ -61,7 +60,7 @@
                   <?php
                     $cont = date('Y');
                   ?>
-                  <select id="sel1">
+                  <select name="año_pan" id="sel1">
                    <?php while ($cont >= 1950) { ?>
                    <option value="<?php echo($cont); ?>"><?php echo($cont); ?></option>
                    <?php $cont = ($cont-1); } ?>
@@ -71,7 +70,7 @@
 
                 <div class="inputContainer">
                   <label>Registro:</label> 
-                  <input type="file" name="manuales[]" id="manuales[]" multiple="">
+                  <input type="file" name="registros_pz_lp[]" id="registros_pz_lp[]" multiple="">
                 </div>  
 
                 <div class="boton">

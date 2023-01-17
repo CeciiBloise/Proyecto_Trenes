@@ -15,8 +15,8 @@
     <nav class="navMenu">
         <ol><a href="../../inicio_registros.php">registros</a></ol>
         <ol><a href="../pz_lp.php">pz-lp</a></ol>
-        <ol><a href="carga_pan2.php">Carga de Registros PAN</a></ol>
-        <ol><a href="../carga_pan_pz_lp.php">Cargar nuevo PAN</a></ol>
+        <ol><a href="carga_pan3.php">Carga de Registros PAN</a></ol>
+        <ol><a href="../carga_nuevo_pan_pz_lp.php">Cargar nuevo PAN</a></ol>
         <ol><a href="../../../../../../logout.php">cerrar sesion</a></ol>
     </nav>
 </header>

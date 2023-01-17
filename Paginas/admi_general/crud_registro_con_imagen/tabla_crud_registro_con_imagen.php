@@ -75,8 +75,8 @@
     <body>
 
         <div>
-            <form accion="buscar.php" method="POST" class="buscador">
-                <input type="text" placeholder="" name="buscar">
+            <form accion="buscar1.php" method="GET" class="buscador">
+                <input type="text" placeholder="" name="buscar" id="buscar" value="<?php echo $buscar; ?>">
                 <input class="boton" type="submit" value="Buscar">
             </form>
             <table class="content-table">

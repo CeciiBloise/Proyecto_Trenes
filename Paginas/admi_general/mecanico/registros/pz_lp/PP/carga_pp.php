@@ -31,7 +31,7 @@ $query=mysqli_query($conexion,$sql);
       <nav class="navMenu">
         <li><a href="../../inicio_registros.php">Inicio registros</a></li>
         <li><a href="../pz_lp.php">pz-lp</a></li>
-        <li><a href="../carga_pp_pz_lp.php">cargar nuevo pp</a></li>
+        <li><a href="../carga_nuevo_pp_pz_lp.php">cargar nuevo pp</a></li>
         <li><a href="../../../../../../logout.php">cerrar sesion</a></li>
       </nav>
     </header>
