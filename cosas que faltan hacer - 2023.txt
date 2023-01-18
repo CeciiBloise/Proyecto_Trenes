@@ -14,8 +14,10 @@
 **QUE PUEDA AGREGAR ARCHIVOS NUEVOS A LA CARPETA ?? 
 
 *Crear todo REGISTROS ### Pasa para la semana que viene
-**crear los pan y los pp
-***crear carpetas dentro de los pan y los pp
+>>crear los pan y los pp
+>>crear carpetas dentro de los pan y los pp
+**ver el contenido de las carpetas por año
+**eliminar las carpetas, todos los pan/pp o por año
 ****Pensar como puedo cargar los registros desde un solo lugar 
 *****como visualizar los txt
 

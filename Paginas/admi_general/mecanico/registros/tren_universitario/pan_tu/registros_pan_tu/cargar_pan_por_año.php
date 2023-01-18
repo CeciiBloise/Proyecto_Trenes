@@ -1,8 +1,8 @@
 <?php
-include("../../conexion_registros.php");
+include("../../../conexion_registros.php");
 $conexion=conectar();
 
-$sql="SELECT*FROM registros_pz_lp";
+$sql="SELECT*FROM registros_tu";
 
 $query= mysqli_query($conexion,$sql);
 ?>
@@ -13,8 +13,8 @@ $query= mysqli_query($conexion,$sql);
     <head>
         <meta charset="utf-8" /> <!-- tipos de caracter -->
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-        <link rel="stylesheet" href="../../../../../../CSS/estilo_menu_horizontal.css"/>
-        <link rel="stylesheet" href="../../../../../../CSS/estilo_registro.css"/>
+        <link rel="stylesheet" href="../../../../../../../CSS/estilo_menu_horizontal.css"/>
+        <link rel="stylesheet" href="../../../../../../../CSS/estilo_registro.css"/>
 
         <title>Trenes Argentinos</title> <!-- titulo de la pagina -->
     
@@ -27,27 +27,27 @@ $query= mysqli_query($conexion,$sql);
     </style>
     <header>
       <nav class="navMenu">
-        <li><a href="../../inicio_registros.php">registros</a></li>
-        <li><a href="../pz_lp.php">pz-lp</a></li>
-        <li><a href="../carga_nuevo_pan_pz_lp.php">cargar nuevo pan</a></li>
-        <li><a href="../../../../../../logout.php">cerrar sesion</a></li>
+        <li><a href="../../../inicio_registros.php">registros</a></li>
+        <li><a href="../../inicio_tu.php">tren universitario</a></li>
+        <li><a href="../cargar_nuevo_pan_tu.php">cargar nuevo pan</a></li>
+        <li><a href="../../../../../../../logout.php">cerrar sesion</a></li>
       </nav>
     </header>
 
     <body>
         <div class="form_carga">
-            <form action="insertar_bd_pz_lp.php" method="POST" enctype="multipart/form-data" class="form">
-                <h1 class="titulo">Carga de Registros PAN</h1>  
+            <form action="insertar_bd_pan_tu_por_año.php" method="POST" enctype="multipart/form-data" class="form">
+                <h1 class="titulo">Carga de Registros PAN - TU</h1>  
 
                 <div class="inputContainer">
                   <label>Paso a Nivel:</label>
-                  <select name="pan" id="pan">
+                  <select name="pan_tu_año" id="pan_tu_año">
                   <option value="0">Seleccione:</option>
                     <?php        
                     foreach($query as $opcion){ 
                     ?>
                     
-                        <option value="<?php echo $opcion['pan_pz_lp']; ?>"> <?php echo $opcion['pan_pz_lp']; ?></option>
+                        <option value="<?php echo $opcion['pan_nuevo_tu']?>"> <?php echo $opcion['pan_nuevo_tu']?></option>
                     
                     <?php 
                     }
@@ -60,7 +60,7 @@ $query= mysqli_query($conexion,$sql);
                   <?php
                     $cont = date('Y');
                   ?>
-                  <select name="año_pan" id="sel1">
+                  <select name="año_pan_tu" id="sel1">
                    <?php while ($cont >= 1950) { ?>
                    <option value="<?php echo($cont); ?>"><?php echo($cont); ?></option>
                    <?php $cont = ($cont-1); } ?>
@@ -70,7 +70,7 @@ $query= mysqli_query($conexion,$sql);
 
                 <div class="inputContainer">
                   <label>Registro:</label> 
-                  <input type="file" name="registros_pz_lp[]" id="registros_pz_lp[]" multiple="">
+                  <input type="file" name="registros_tu[]" id="registros_pz_lp[]" multiple="">
                 </div>  
 
                 <div class="boton">
