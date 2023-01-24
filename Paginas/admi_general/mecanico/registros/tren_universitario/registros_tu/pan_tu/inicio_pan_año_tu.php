@@ -4,12 +4,13 @@
 include("../../../conexion_registros.php");
 $conexion=conectar();
 
-$sql="SELECT*FROM registros_pan_tu";
+$id=$_GET['id'];
+
+$sql="SELECT*FROM registros_pan_tu where id_pan_tu='$id'";
 
 $query= mysqli_query($conexion,$sql);
 
 $row=mysqli_fetch_array($query);
-
 ?>
 
 <!DOCTYPE html> 
@@ -28,7 +29,7 @@ $row=mysqli_fetch_array($query);
       <nav class="navMenu">
           <li><a href="../../../inicio_registros.php" >Registros</a></li>
           <li><a href="inicio_pan_tu.php">PAN</a></li>
-          <li><a href="carga_registros_pan_año_tu">XX</a></li>
+          <li><a href="carga_registros_pan_año_tu.php">XX</a></li>
           <li><a href="../../../../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>

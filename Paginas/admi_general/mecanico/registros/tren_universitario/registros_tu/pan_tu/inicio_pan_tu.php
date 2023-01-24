@@ -26,9 +26,9 @@ $row=mysqli_fetch_array($query);
 
     <header>
       <nav class="navMenu">
-      <li><a href="../../inicio_registros.php" >Registros</a></li>
+      <li><a href="../../inicio_tu.php" >Registros</a></li>
             <li><a href="carga_pan_tu.php">Carga Nuevo PAN</a></li>
-            <li><a href="../../../../../../logout.php" >Cerrar Sesion</a></li>
+            <li><a href="../../../../../../logout.php">Cerrar Sesion</a></li>
       </nav>
     </header>
     <style>
@@ -38,11 +38,23 @@ $row=mysqli_fetch_array($query);
         }
     </style>
     <body>
-        <h1>Paso a Nivel</h1>
-        <?php while($row=mysqli_fetch_array($query)){ ?>
-            <nav>
-                <ol><a href="ver_pan_tu.php?id=<?php echo $row['id_pan_tu']?>"><?php echo $row['pan_tu']?></a></ol>
-            </nav>
-        <?php }?> 
+        <table class="content-table">
+            <caption>Resgistros Tren Universitario</caption>
+            <thead>
+                <tr>
+                    <th>Paso a Nivel</th>
+                    <th colspan="2"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <?php while($row=mysqli_fetch_array($query)){ ?>
+                        <td><?php echo $row['pan_tu']?></td>
+                        <td><a href="ver_pan_tu.php?id=<?php echo $row['id_pan_tu']?>">Ver</a></td>
+                        <td><a href="">Eliminar</a></td>
+                </tr>
+                <?php }?>
+            </tbody>
+        </table>
     </body>
 </html>

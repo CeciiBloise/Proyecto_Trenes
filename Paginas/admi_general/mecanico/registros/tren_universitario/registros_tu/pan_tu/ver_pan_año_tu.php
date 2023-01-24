@@ -5,7 +5,7 @@ $conexion=conectar();
 
 $id=$_GET['id'];
 
-$sql="SELECT * FROM registros_tu_pan where id_pan_tu='$id'";
+$sql="SELECT*FROM registros_tu_pan where id_pan_tu='$id'";
 $query= mysqli_query($conexion,$sql);
 
 $row=mysqli_fetch_array($query);
@@ -55,7 +55,7 @@ while($elemento=readdir($directorio)){
     <table class="content-table">
         <thead>
             <tr>
-                <th><?php echo $row['pan_tu'] ?></th>
+                <th><?php echo $row['pan_año_tu'] ?></th>
             </tr>
         </thead>
         <tbody>

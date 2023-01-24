@@ -2,7 +2,7 @@
 include("../../../conexion_registros.php");
 $conexion=conectar();
 
-$sql="SELECT pan_nuevo_tu FROM registros_tu WHERE pan_nuevo_tu is not null";
+$sql="SELECT*FROM registros_pan_tu";
 
 $query= mysqli_query($conexion,$sql);
 ?>
@@ -36,12 +36,12 @@ $query= mysqli_query($conexion,$sql);
 
     <body>
         <div class="form_carga">
-            <form action="insertar_bd_pan_tu_por_año.php" method="POST" enctype="multipart/form-data" class="form">
+            <form action="insertar_bd_pan_año_tu.php" method="POST" enctype="multipart/form-data" class="form">
                 <h1 class="titulo">Carga de Registros PAN - TU</h1>  
 
                 <div class="inputContainer">
                   <label>Paso a Nivel:</label>
-                  <select name="pan_tu" id="pan_tu_año">
+                  <select name="pan_tu">
                   <option value="0">Seleccione:</option>
                     <?php        
                     foreach($query as $opcion){ 

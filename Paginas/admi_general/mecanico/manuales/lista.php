@@ -56,7 +56,7 @@ $row=mysqli_fetch_array($query);
             <td><a href="eliminar.php?id=<?php echo $row['id_manuales']?>">Eliminar</a></td>
         
         </tr>
-        <?php }?> 
+        <?php }?>
         </tbody>
         </table>   
     </body>
