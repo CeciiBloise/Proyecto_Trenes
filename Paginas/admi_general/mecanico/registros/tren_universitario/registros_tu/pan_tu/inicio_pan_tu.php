@@ -4,7 +4,9 @@
 include("../../../conexion_registros.php");
 $conexion=conectar();
 
-$sql="SELECT*FROM registros_pan_tu";
+//$sql="SELECT*FROM registros_pan_tu";
+
+$sql="SELECT MIN(id_pan_tu) as id_pan_tu, pan_tu FROM registros_pan_tu GROUP BY pan_tu ";
 
 $query= mysqli_query($conexion,$sql);
 
@@ -35,23 +37,25 @@ $row=mysqli_fetch_array($query);
         .content-table{
             position: absolute;
             left: 5%;
+            table-layout: fixed;
+            width: 500px;
         }
     </style>
     <body>
         <table class="content-table">
-            <caption>Resgistros Tren Universitario</caption>
+            <caption width="100%">Resgistros - Tren Universitario</caption>
             <thead>
                 <tr>
-                    <th>Paso a Nivel</th>
-                    <th colspan="2"></th>
+                    <th  >Paso a Nivel</th>
+                    <th colspan="2" width="25%"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <?php while($row=mysqli_fetch_array($query)){ ?>
                         <td><?php echo $row['pan_tu']?></td>
-                        <td><a href="ver_pan_tu.php?id=<?php echo $row['id_pan_tu']?>">Ver</a></td>
-                        <td><a href="">Eliminar</a></td>
+                        <td><a href="inicio_pan_año_tu.php?id=<?php echo $row['id_pan_tu']?>">Ver</a></td>
+                        <td><a href="">X</a></td>
                 </tr>
                 <?php }?>
             </tbody>

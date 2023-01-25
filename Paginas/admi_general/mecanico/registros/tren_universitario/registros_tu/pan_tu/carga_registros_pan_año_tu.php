@@ -36,7 +36,7 @@ $query= mysqli_query($conexion,$sql);
 
     <body>
         <div class="form_carga">
-            <form action="insertar_bd_pan_año_tu.php" method="POST" enctype="multipart/form-data" class="form">
+            <form action="registros_pan_tu/insertar_bd_pan_año_tu.php" method="POST" enctype="multipart/form-data" class="form">
                 <h1 class="titulo">Carga de Registros PAN - TU</h1>  
 
                 <div class="inputContainer">

@@ -1,12 +1,12 @@
 <?php
-/*Me lista las carpetas*/
+/*Me lista las carpetas por año*/
 
 include("../../../conexion_registros.php");
 $conexion=conectar();
 
-$id=$_GET['id'];
+$sql="SELECT MIN(id_pan_tu) as id_pan_tu, pan_tu, pan_año_tu FROM registros_pan_tu GROUP BY pan_año_tu";
 
-$sql="SELECT*FROM registros_pan_tu where id_pan_tu='$id'";
+//$sql="SELECT*FROM registros_pan_tu";
 
 $query= mysqli_query($conexion,$sql);
 
@@ -29,22 +29,35 @@ $row=mysqli_fetch_array($query);
       <nav class="navMenu">
           <li><a href="../../../inicio_registros.php" >Registros</a></li>
           <li><a href="inicio_pan_tu.php">PAN</a></li>
-          <li><a href="carga_registros_pan_año_tu.php">XX</a></li>
-          <li><a href="../../../../../../logout.php" >Cerrar Sesion</a></li>
+          <li><a href="carga_registros_pan_año_tu.php">Cargar Registro</a></li>
+          <li><a href="../../../../../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
     <style>
         .content-table{
             position: absolute;
             left: 5%;
+            table-layout: fixed;
+            width: 500px;
         }
     </style>
     <body>
-        <h1></h1>
-        <?php while($row=mysqli_fetch_array($query)){ ?>
-            <nav>
-                <ol><a href="ver_pan_año_tu.php?id=<?php echo $row['id_pan_tu']?>"><?php echo $row['pan_año_tu']?></a></ol>
-            </nav>
-        <?php }?> 
+        <table class="content-table">
+            <caption>Tren Universitario - <?php echo $row['pan_tu'] ?></caption>
+            <thead>
+                <tr>
+                    <td colspan="3" width="15%"></td>
+                </tr>
+            </thead>     
+            <tbody>
+                <tr>
+                    <?php while($row=mysqli_fetch_array($query)){ ?>
+                        <td><?php echo $row['pan_año_tu']?></td>
+                        <td><a href="ver_pan_año_tu.php?id=<?php echo $row['id_pan_tu']?>">Ver</a></td>
+                        <td><a href="">Eliminar</a></td>
+                </tr>
+                <?php }?>
+            </tbody>
+        </table> 
     </body>
 </html>

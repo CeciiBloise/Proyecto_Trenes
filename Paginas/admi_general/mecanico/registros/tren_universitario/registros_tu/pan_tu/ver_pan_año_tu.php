@@ -1,11 +1,11 @@
 <?php
-/*Me lista el contenido de la carpeta*/
+/*Me lista el contenido de la carpetas por año*/
 include("../../../conexion_registros.php");
 $conexion=conectar();
 
 $id=$_GET['id'];
 
-$sql="SELECT*FROM registros_tu_pan where id_pan_tu='$id'";
+$sql="SELECT*FROM registros_pan_tu where id_pan_tu='$id'";
 $query= mysqli_query($conexion,$sql);
 
 $row=mysqli_fetch_array($query);
@@ -13,8 +13,8 @@ $row=mysqli_fetch_array($query);
 $listar=null;
 $carpeta_pan=$row['pan_tu'];
 $carpeta_año=$row['pan_año_tu'];
-$directorio=opendir("$carpeta_pan/$carpeta_año");
-$url="$carpeta_pan/$carpeta_año";
+$directorio=opendir("registros_pan_tu/$carpeta_pan/$carpeta_año");
+$url="registros_pan_tu/$carpeta_pan/$carpeta_año";
 
 while($elemento=readdir($directorio)){
     if($elemento != '.' && $elemento != '..'){
@@ -34,8 +34,8 @@ while($elemento=readdir($directorio)){
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
         
         <!-- Estilos -->
-        <link rel="stylesheet" href="../../../../CSS/listaPdf.css"/>
-        <link rel="stylesheet" href="../../../../CSS/estilo_menu_horizontal.css"/>
+        <link rel="stylesheet" href="../../../../../../../CSS/listaPdf.css"/>
+        <link rel="stylesheet" href="../../../../../../../CSS/estilo_menu_horizontal.css"/>
         
         <title>Trenes Argentinos</title> <!-- titulo de la pagina -->
     </head>
@@ -46,7 +46,7 @@ while($elemento=readdir($directorio)){
 
     <header>
       <nav class="navMenu">
-      <li><a href="" >Inicio</a></li>
+      <li><a href="inicio_pan_año_tu.php">volver atras</a></li>
             
             <li><a href="../../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
