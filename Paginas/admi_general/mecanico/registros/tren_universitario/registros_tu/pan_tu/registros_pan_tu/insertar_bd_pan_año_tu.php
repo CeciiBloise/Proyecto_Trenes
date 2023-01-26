@@ -29,7 +29,7 @@ if(isset($_POST['subir'])){
         
     }
     else{
-        echo " $carpeta ya existe";
+        echo "$carpeta_pan_tu ya existe";
     }
       
 
