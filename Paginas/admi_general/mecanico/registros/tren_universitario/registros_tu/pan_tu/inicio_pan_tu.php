@@ -43,7 +43,7 @@ $row=mysqli_fetch_array($query);
     </style>
     <body>
         <table class="content-table">
-            <caption width="100%">Resgistros - Tren Universitario</caption>
+            <caption width="100%">Registros - Tren Universitario</caption>
             <thead>
                 <tr>
                     <th  >Paso a Nivel</th>

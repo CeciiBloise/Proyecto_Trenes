@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-01-2023 a las 13:20:00
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 8.0.10
+-- Tiempo de generación: 26-01-2023 a las 13:00:59
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,7 +43,7 @@ CREATE TABLE `carga_de_usuarios` (
   `id_cargo` int(11) NOT NULL,
   `contraseña` int(6) NOT NULL,
   `imagen` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `carga_de_usuarios`
@@ -65,24 +65,17 @@ CREATE TABLE `manuales` (
   `carpeta` varchar(250) NOT NULL,
   `manuales` varchar(250) NOT NULL,
   `url` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `manuales`
 --
 
 INSERT INTO `manuales` (`id_manuales`, `carpeta`, `manuales`, `url`) VALUES
-(4, 'Carpeta 1', '', 'pdf_manuales/Carpeta 1/pdf GANADORES -c.pdf'),
-(5, 'Carpeta 1', '', 'pdf_manuales/Carpeta 1/(2)Examen Final_Programación I_Llamado Diciembre (1) - copia.pdf'),
-(6, 'Carpeta 2', '', 'pdf_manuales/Carpeta 2/Aula Virtual - Metodologías Ágiles - Scrum - copia.pdf'),
-(7, 'Carpeta 3', '', 'pdf_manuales/Carpeta 3/Aula Virtual - Metodologías Ágiles - Scrum - copia.pdf'),
-(8, 'Carpeta 3', '', 'pdf_manuales/Carpeta 3/Aula Virtual - Metodologías Ágiles - Scrum.pdf'),
-(9, 'Carpeta 3', '', 'pdf_manuales/Carpeta 3/Tutorial - Desarrollando una aplicación web con Python y Flask_v3.pdf'),
-(10, 'Carpeta 3', '', 'pdf_manuales/Carpeta 3/beginners_python_cheat_sheet_pcc_django_new.pdf'),
-(11, 'Carpeta 3', '', 'pdf_manuales/Carpeta 3/pdf GANADORES -c.pdf'),
-(12, 'Carpeta 10', '', 'pdf_manuales/Carpeta 10/pdf GANADORES -c.pdf'),
-(13, 'Carpeta 10', '', 'pdf_manuales/Carpeta 10/(2)Examen Final_Programación I_Llamado Diciembre (1) - copia.pdf'),
-(14, 'Carpeta 10', '', 'pdf_manuales/Carpeta 10/(2)Examen Final_Programación I_Llamado Diciembre (1).pdf');
+(15, 'Carpeta 1', '', ''),
+(17, 'Carpeta 2', '', ''),
+(18, 'Carpeta 3', '', ''),
+(19, 'Carpeta 4', '', '');
 
 -- --------------------------------------------------------
 
@@ -93,7 +86,7 @@ INSERT INTO `manuales` (`id_manuales`, `carpeta`, `manuales`, `url`) VALUES
 CREATE TABLE `permisos` (
   `id` int(11) NOT NULL,
   `descripcion` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `permisos`
@@ -117,7 +110,7 @@ CREATE TABLE `planos_bosques` (
   `categoria_bosques` varchar(250) NOT NULL,
   `fecha_bosques` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `plano_bosques` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `planos_bosques`
@@ -140,7 +133,7 @@ CREATE TABLE `planos_laplata` (
   `categoria_laPlata` varchar(250) NOT NULL,
   `fecha_laPlata` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `plano_laPlata` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `planos_laplata`
@@ -162,7 +155,7 @@ CREATE TABLE `planos_quilmes` (
   `categoria_quilmes` varchar(250) NOT NULL,
   `fecha_quilmes` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `plano_quilmes` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `planos_quilmes`
@@ -191,7 +184,7 @@ CREATE TABLE `plan_de_frecuencias` (
   `filtro` varchar(250) NOT NULL,
   `ubicacion` varchar(250) NOT NULL,
   `plan_de_frecuencia` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `plan_de_frecuencias`
@@ -202,6 +195,45 @@ INSERT INTO `plan_de_frecuencias` (`id_plan_de_frecuencia`, `nombre_paso_nivel`,
 (29, 'ertr', '', '', '', '', '', '', '', 'ter', ''),
 (30, 'rtytrytr', '', '', '', '', '', '', '', '', ''),
 (31, '', '', '', '', '', '', '', '', 'ewr', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `registros_pan_años_tu`
+--
+
+CREATE TABLE `registros_pan_años_tu` (
+  `id_pan_año_tu` int(11) NOT NULL,
+  `id_pan_tu` int(11) NOT NULL,
+  `pan_año_tu` varchar(250) NOT NULL,
+  `registros_pan_tu` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `registros_pan_tu`
+--
+
+CREATE TABLE `registros_pan_tu` (
+  `id_pan_tu` int(11) NOT NULL,
+  `pan_tu` varchar(250) NOT NULL,
+  `pan_año_tu` varchar(250) NOT NULL,
+  `registros_pan_tu` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `registros_pan_tu`
+--
+
+INSERT INTO `registros_pan_tu` (`id_pan_tu`, `pan_tu`, `pan_año_tu`, `registros_pan_tu`) VALUES
+(30, 'Diag 80', '', ''),
+(31, 'Calle 44', '', ''),
+(32, 'Calle 52', '', ''),
+(33, 'Diag 80', '2010', ''),
+(34, 'Calle 44', '', ''),
+(35, 'Calle 52', '', ''),
+(36, '', '2005', '');
 
 --
 -- Índices para tablas volcadas
@@ -251,6 +283,19 @@ ALTER TABLE `plan_de_frecuencias`
   ADD PRIMARY KEY (`id_plan_de_frecuencia`);
 
 --
+-- Indices de la tabla `registros_pan_años_tu`
+--
+ALTER TABLE `registros_pan_años_tu`
+  ADD PRIMARY KEY (`id_pan_año_tu`),
+  ADD KEY `id_pan_tu` (`id_pan_tu`);
+
+--
+-- Indices de la tabla `registros_pan_tu`
+--
+ALTER TABLE `registros_pan_tu`
+  ADD PRIMARY KEY (`id_pan_tu`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -264,7 +309,7 @@ ALTER TABLE `carga_de_usuarios`
 -- AUTO_INCREMENT de la tabla `manuales`
 --
 ALTER TABLE `manuales`
-  MODIFY `id_manuales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_manuales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos`
@@ -297,6 +342,18 @@ ALTER TABLE `plan_de_frecuencias`
   MODIFY `id_plan_de_frecuencia` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
+-- AUTO_INCREMENT de la tabla `registros_pan_años_tu`
+--
+ALTER TABLE `registros_pan_años_tu`
+  MODIFY `id_pan_año_tu` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `registros_pan_tu`
+--
+ALTER TABLE `registros_pan_tu`
+  MODIFY `id_pan_tu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+--
 -- Restricciones para tablas volcadas
 --
 
@@ -305,6 +362,12 @@ ALTER TABLE `plan_de_frecuencias`
 --
 ALTER TABLE `carga_de_usuarios`
   ADD CONSTRAINT `carga_de_usuarios_ibfk_1` FOREIGN KEY (`id_cargo`) REFERENCES `permisos` (`id`);
+
+--
+-- Filtros para la tabla `registros_pan_años_tu`
+--
+ALTER TABLE `registros_pan_años_tu`
+  ADD CONSTRAINT `registros_pan_años_tu_ibfk_1` FOREIGN KEY (`id_pan_tu`) REFERENCES `registros_pan_tu` (`id_pan_tu`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

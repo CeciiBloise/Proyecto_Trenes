@@ -23,7 +23,10 @@ if(isset($_POST['subir'])){
         }
         
         $sql=$conexion->query("INSERT INTO registros_pan_tu(pan_tu, pan_año_tu) VALUES ('$carpeta_pan_tu','$año_pan_tu')"); //guarda la ruta
+
+        
         header("Location: ../carga_registros_pan_año_tu.php");
+        
     }
     else{
         echo " $carpeta ya existe";

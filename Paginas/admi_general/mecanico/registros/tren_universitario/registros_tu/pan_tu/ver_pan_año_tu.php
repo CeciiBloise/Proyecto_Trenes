@@ -13,7 +13,7 @@ $row=mysqli_fetch_array($query);
 $listar=null;
 $carpeta_pan=$row['pan_tu'];
 $carpeta_año=$row['pan_año_tu'];
-$directorio=opendir("registros_pan_tu/$carpeta_pan/$carpeta_año");
+$directorio=opendir("registros_pan_tu/$carpeta_pan/$carpeta_año/");
 $url="registros_pan_tu/$carpeta_pan/$carpeta_año";
 
 while($elemento=readdir($directorio)){
