@@ -101,28 +101,13 @@ if(isset($_POST['buscar'])){
                         <th>Rol</th>
                         <th>Contraseña</th>
                         <th>Imagen de Usuario</th>
-                        <th colspan="3">Acciones</th>
+                        <th colspan="3"></th>
                         
                     </tr>
-
-                    <?php
-                    /*$buscar=$_POST['buscar'];
-
-                    $sql_read="SELECT * FROM carga_de_usuarios WHERE legajo LIKE '%$buscar%'";
-                    
-                    $sql_query= mysqli_query($conexion, $sql_read);
-                    
-/*https://www.campusmvp.es/recursos/post/Fundamentos-de-SQL-Consultas-SELECT-multi-tabla-JOIN.aspx */
-
-                ?>
-
                 </thead>
                 <tbody>
                     <?php
-                
-                
                            while($row=mysqli_fetch_array($query)){
-                   
                     ?>
                     <tr>
                     <td scope="col"><?php echo $row['legajo']?></td>
