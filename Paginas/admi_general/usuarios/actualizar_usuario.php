@@ -1,10 +1,10 @@
 <?php
-      include("conexion_crud_registro_con_imagen.php");
+      include("conexion_usuario.php");
       $conexion=conectar();
 
       $id=$_GET['id'];
 
-      $sql="SELECT * FROM carga_de_usuarios WHERE legajo='$id'";
+      $sql="SELECT * FROM usuarios WHERE legajo='$id'";
       $query=mysqli_query($conexion,$sql);
 
       $row=mysqli_fetch_array($query);
@@ -30,14 +30,14 @@
     <header>
       <nav class="navMenu">
             <li><a href="../../admi_general/Inicio.php" >Inicio</a></li>
-            <li><a href="tabla_crud_registro_con_imagen.php">Tabla personal</a></li>
+            <li><a href="tabla_crud_usuario.php">Tabla personal</a></li>
             <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
     
     <body>
     <div class="form_carga">
-        <form action="update_registro_con_imagen.php" method="POST" enctype="multipart/form-data" class="form">
+        <form action="update_usuario.php" method="POST" enctype="multipart/form-data" class="form">
           <h1 class="titulo">Ingrese los datos</h1>
 
           <div class="inputContainer">

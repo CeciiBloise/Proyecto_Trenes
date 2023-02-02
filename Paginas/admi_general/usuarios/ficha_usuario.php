@@ -1,10 +1,19 @@
 <?php
-      include("conexion_crud_registro_con_imagen.php");
+      include("conexion_usuario.php");
       $conexion=conectar();
+
+      //seguridad de session paginacion 
+      session_start();
+      error_reporting(0);
+      $varsesion=$_SESSION['legajo'];
+      if($varsesion== null || $varsesion=''){
+          echo "NO PUEDES INGRESAR, NO TIENES AUTORIZACION";
+          die();
+      }
 
       $id=$_GET['id'];
 
-      $sql="SELECT * FROM carga_de_usuarios WHERE legajo='$id'";
+      $sql="SELECT * FROM usuarios WHERE legajo='$id'";
       $query=mysqli_query($conexion,$sql);
 
       $row=mysqli_fetch_array($query);
@@ -23,15 +32,15 @@
     <header>
       <nav class="navMenu">
             <li><a href="../../admi_general/Inicio.php" >Inicio</a></li>
-            <li><a href="crear_registro_con_imagen.php">Registro</a></li>
-            <li><a href="tabla_crud_registro_con_imagen.php">Tabla personal</a></li>
+            <li><a href="crear_usuario.php">Registro</a></li>
+            <li><a href="tabla_crud_usuario.php">Tabla personal</a></li>
             <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
 
     <body>
     <div class="form_carga">
-        <form action="update.php" method="POST" class="form">
+        <form action="update_usuario.php" method="POST" class="form">
   
           <div class="inputContainer">  
             <img src="imagen_usuarios/<?php echo $row['imagen']?>" width="300" height="200" class="imagen"/>

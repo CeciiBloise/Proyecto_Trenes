@@ -1,5 +1,5 @@
 <?php
-include("conexion_crud_registro_con_imagen.php");
+include("conexion_usuario.php");
 $conexion=conectar();
 
 $legajo=$_POST['legajo'];
@@ -23,8 +23,6 @@ $type=$imagen['type'];
 $url_temporal=$imagen['tmp_name'];
 
 
-//$imagen_usuario='img_usuario.png';
-
 if($nombre_imagen != ''){
     $destino='imagen_usuarios/';
     $imagen_nombre='img_'.md5(date('d-m-Y H:m:s'));
@@ -32,20 +30,17 @@ if($nombre_imagen != ''){
     $src=$destino.$imagen_usuario;
 }
 
-$sql="INSERT INTO carga_de_usuarios VALUES('$legajo','$apellido','$nombre','$dni','$fecha_de_nacimiento','$direccion','$celular','$mail','$puesto','$habilitaciones','$supervisor','$fecha_de_ingreso','$rol','$contraseña','$imagen_usuario')";
+$sql="UPDATE usuarios SET apellido='$apellido',nombre='$nombre',dni='$dni',fecha_de_nacimiento='$fecha_de_nacimiento',direccion='$direccion',celular='$celular',mail='$mail',puesto='$puesto',habilitaciones='$habilitaciones',supervisor_cargo='$supervisor',fecha_de_ingreso_a_la_empresa='$fecha_de_ingreso',id_cargo='$rol',contraseña='$contraseña',imagen='$imagen_usuario' WHERE legajo='$legajo'";
 
-$query= mysqli_query($conexion,$sql);
+$query=mysqli_query($conexion,$sql);
 
 if($query){
     if($nombre_imagen != ''){
         move_uploaded_file($url_temporal, $src);
     
-    } 
-    header("Location: crear_registro_con_imagen.php");
-    
+    }
+        header("Location: tabla_usuario.php");
+}else{
+    echo "ERROR";
 }
-else{
-    echo "ERROR ESE USUARIO YA EXISTE";
-}
-
 ?>

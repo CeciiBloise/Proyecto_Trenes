@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="inputContainer">
-                  <label >Niveles de Señal:    </label>
+                  <label >Niveles de Señal:</label>
                   <br>
                       <input type="text" name="señal_asc" placeholder="Ascendente">
                       <input type="text" name="señal_desc" placeholder="Descendente">
