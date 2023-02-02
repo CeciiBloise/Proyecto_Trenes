@@ -56,6 +56,11 @@
           </div>
 
           <div class="inputContainer">
+            <label class="label">Alias:</label>
+            <input type="text" name="nombre" placeholder="Alias" class="input" value="<?php echo $row['alias'] ?>"> <!-- name tiene que llevar el mismo nombre del campo de la base de datos-->
+          </div>
+
+          <div class="inputContainer">
             <label class="label">D.N.I:</label>
             <input class="input" type="number" name="dni" placeholder="D.N.I sin puntos" value="<?php echo $row['dni'] ?>">
           </div>

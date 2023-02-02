@@ -56,6 +56,13 @@
 
           <div class="inputContainer">
             <label class="label">Nombres:</label>  <?php echo $row['nombre'] ?>
+          </div>
+
+          <div class="inputContainer">
+            <label class="label">Alias:</label>  <?php echo $row['alias'] ?>
+          </div>
+
+
           <div class="inputContainer">
             <label class="label">D.N.I:</label>  <?php echo $row['dni'] ?>
           </div>

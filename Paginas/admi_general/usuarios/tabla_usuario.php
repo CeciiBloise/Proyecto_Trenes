@@ -120,6 +120,7 @@
                                         <?php endif; ?>
                             </div>
                         </th>
+                        <th>Alias</th>
                         <th>D.N.I</th>
                         <th nowrap>Fecha de Nacimiento</th>
                         <th>Direccion</th>
@@ -143,6 +144,7 @@
                     <td scope="col"><?php echo $row['legajo']?></td>
                     <td nowrap><?php echo $row['apellido']?></td>
                     <td nowrap><?php echo $row['nombre']?></td>
+                    <td nowrap><?php echo $row['alias']?></td>
                     <td><?php echo $row['dni']?></td>
                     <td><?php echo date('d/m/Y', strtotime($row['fecha_de_nacimiento']))?></td>
                     <td nowrap><?php echo $row['direccion']?></td>

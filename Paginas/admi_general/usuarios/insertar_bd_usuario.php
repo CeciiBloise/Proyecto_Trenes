@@ -6,6 +6,7 @@ if(isset($_POST['subir'])){
     $legajo=$_POST['legajo'];
     $apellido=$_POST['apellido'];
     $nombre=$_POST['nombre'];
+    $alias=$_POST['alias'];
     $dni=$_POST['dni'];
     $fecha_de_nacimiento=$_POST['fecha_de_nacimiento'];
     $direccion=$_POST['direccion'];
@@ -32,7 +33,7 @@ if(isset($_POST['subir'])){
         $src=$destino.$imagen_usuario;
    
 
-    $sql="INSERT INTO usuarios VALUES('$legajo','$apellido','$nombre','$dni','$fecha_de_nacimiento','$direccion','$celular','$mail','$puesto','$habilitaciones','$supervisor','$fecha_de_ingreso','$rol','$contraseña','$imagen_usuario')";
+    $sql="INSERT INTO usuarios VALUES('$legajo','$apellido','$nombre','$alias','$dni','$fecha_de_nacimiento','$direccion','$celular','$mail','$puesto','$habilitaciones','$supervisor','$fecha_de_ingreso','$rol','$contraseña','$imagen_usuario')";
 
     $query= mysqli_query($conexion,$sql);
 
