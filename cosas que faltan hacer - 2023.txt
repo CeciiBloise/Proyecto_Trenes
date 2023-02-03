@@ -1,5 +1,15 @@
 ***TERMINAR ESTA SEMANA***
 
+****QUE FALTA****
+
+*validacion de secciones
+*actualizar usuarios, cartel de error para decirme que el usuario ya fue agregado
+*Cómo evitar inyecciones de base de datos?
+*Cómo evitar el acceso sin haberse logueado?
+*Buscar usuario
+>>> Carteles de alerta, falta en editar y eliminar
+---------------------------------------------------------------------------------------------------
+
 *Arreglar PLAN DE REGISTROS:
 >>boton de plano
 >>error en la visualizacion de plano
@@ -11,7 +21,6 @@
 >>Que cuando liste no se repitan las carpetas //https://didesweb.com/tutoriales-php/listar-un-directorio-con-php/
 >>Que se elimine la carpeta del directorio //https://underc0de.org/foro/dudas-generales-121/(solucionado)-eliminar-carpeta-con-contenido-desde-php/ use la solucion a este problema
 **Que pueda  buscar por nombre de carpeta
-**QUE PUEDA AGREGAR ARCHIVOS NUEVOS A LA CARPETA ?? 
 
 *Crear todo REGISTROS ### Pasa para la semana que viene
 >>crear los pan y los pp
@@ -43,4 +52,4 @@ https://parzibyte.me/blog/2018/07/10/trabajando-con-archivos-y-carpetas-en-php-c
 
 *Averiguar como se reinicia el auto incremental
 
-*Averiguar como agregar memoria a la base de datos
+---------------------------------------------------------------------------------------------------

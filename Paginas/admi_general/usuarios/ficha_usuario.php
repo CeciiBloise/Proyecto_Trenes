@@ -33,7 +33,7 @@
       <nav class="navMenu">
             <li><a href="../../admi_general/Inicio.php" >Inicio</a></li>
             <li><a href="crear_usuario.php">Registro</a></li>
-            <li><a href="tabla_crud_usuario.php">Tabla personal</a></li>
+            <li><a href="tabla_usuario.php">Tabla personal</a></li>
             <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>

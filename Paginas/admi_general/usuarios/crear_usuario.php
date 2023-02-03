@@ -26,12 +26,6 @@ if($varsesion== null || $varsesion=''){
       <link rel="stylesheet" href="../../../CSS/estilo_menu_horizontal.css"/>
       <link rel="stylesheet" href="../../../CSS/estilo_registro.css"/>
 
-      <!--- Bootstrap --->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
-
-
       <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
     </head>
     <style>
@@ -51,7 +45,7 @@ if($varsesion== null || $varsesion=''){
 
     <script>
       function confirmacion(){
-        var respuesta=confirm("Deseas enviar esta informacion?");
+        var respuesta=confirm("¿Deseas enviar esta informacion?");
         if(respuesta==true){
           return true;
         }
@@ -68,17 +62,17 @@ if($varsesion== null || $varsesion=''){
           <h1 class="titulo">INGRESE LOS DATOS</h1>
           <div class="inputContainer">
             <label>Legajo:</label>
-            <input type="number" name="legajo" placeholder="Legajo" style="width: 300px;">
+            <input type="number" name="legajo" placeholder="Legajo" style="width: 300px;" required>
           </div>
 
           <div class="inputContainer">
             <label>Apellidos:</label>
-            <input type="text" name="apellido" placeholder="Aprellido" style="width: 280px;">
+            <input type="text" name="apellido" placeholder="Aprellido" style="width: 280px;" required>
           </div>
 
           <div class="inputContainer">
             <label>Nombres:</label>
-            <input type="text" name="nombre" placeholder="Nombre" style="width: 283px;"> <!-- name tiene que llevar el mismo nombre del campo de la base de datos-->
+            <input type="text" name="nombre" placeholder="Nombre" style="width: 283px;" required> <!-- name tiene que llevar el mismo nombre del campo de la base de datos-->
           </div>
 
           <div class="inputContainer">
@@ -113,7 +107,7 @@ if($varsesion== null || $varsesion=''){
 
           <div class="inputContainer">
             <label>Puesto:</label>
-            <input type="text" name="puesto" placeholder="Puesto" style="width: 300px;">
+            <input type="text" name="puesto" placeholder="Puesto" style="width: 300px;" required>
           </div>
 
           <div class="inputContainer">
@@ -123,7 +117,7 @@ if($varsesion== null || $varsesion=''){
 
           <div class="inputContainer">
             <label>Supervisor a cargo del sector:</label>
-            <input type="text" name="supervisor_cargo" placeholder="Supervisor a cargo" style="width: 363px;">
+            <input type="text" name="supervisor_cargo" placeholder="Supervisor a cargo" style="width: 363px;" required>
           </div>
 
           <div class="inputContainer">
@@ -133,7 +127,7 @@ if($varsesion== null || $varsesion=''){
 
           <div class="inputContainer"> <!--cambiar esto a un selec -->
             <label>Rol:</label>
-            <select name="id_cargo" id="rol" style="width: 335px;">
+            <select name="id_cargo" id="rol" style="width: 335px;" required>
               <option value="0">Seleccione:</option>
               <option value="1">1- Administrador General</option>
               <option value="2">2- Administrador Personal</option>
@@ -143,7 +137,7 @@ if($varsesion== null || $varsesion=''){
 
           <div class="inputContainer"> <!--la contraseña se la signo yo? -->
             <label>Contraseña:</label>
-            <input type="password" name="contraseña" placeholder="contraseña de maximo 6 caracteres" style="width: 265px;">
+            <input type="password" name="contraseña" placeholder="contraseña de maximo 6 caracteres" style="width: 265px;" required>
           </div> 
 
           <div class="inputContainer">
