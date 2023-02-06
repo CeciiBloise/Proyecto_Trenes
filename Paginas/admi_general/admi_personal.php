@@ -1,3 +1,13 @@
+<?php
+    session_start();
+        include("conexion_usuario.php");
+        $conexion=conectar();
+        //seguridad de session 
+        $usuario=$_SESSION['legajo'];
+        if(!isset($usuario)){
+            header("location: ../../Index.html");
+        }
+?>
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->
 

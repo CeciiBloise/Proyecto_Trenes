@@ -1,14 +1,11 @@
 <?php
+    session_start();
     include("conexion_usuario.php");
     $conexion=conectar();
-
     //seguridad de session 
-    session_start();
-    error_reporting(0);
-    $varsesion=$_SESSION['legajo'];
-    if($varsesion== null || $varsesion=''){
-    echo "TU USUARIO NO TIENE ACCESO";
-    die();
+    $usuario=$_SESSION['legajo'];
+    if(!isset($usuario)){
+        header("location: ../../../Index.html");
     }
 
     $sql="SELECT * FROM usuarios";

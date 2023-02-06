@@ -1,13 +1,12 @@
 <?php
-//seguridad de session paginacion 
 session_start();
-error_reporting(0);
-$varsesion=$_SESSION['legajo'];
-if($varsesion== null || $varsesion=''){
-   //echo "NO PUEDES INGRESAR, NO TIENES AUTORIzACION";
-   header("location: ../../Index.html");
-   die();
-}
+    include("conexion_usuario.php");
+    $conexion=conectar();
+    //seguridad de session 
+    $usuario=$_SESSION['legajo'];
+    if(!isset($usuario)){
+        header("location: ../../Index.html");
+    }
 ?>
 
 <!DOCTYPE html> <!-- version html5 -->

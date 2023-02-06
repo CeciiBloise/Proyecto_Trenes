@@ -18,6 +18,17 @@
 
       $row=mysqli_fetch_array($query);
 ?>
+<?php
+session_start();
+include("conexion_usuario.php");
+$conexion=conectar();
+//seguridad de session 
+$usuario=$_SESSION['legajo'];
+if(!isset($usuario)){
+    header("location: ../../../Index.html");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>

@@ -1,19 +1,16 @@
 <?php
-//seguridad de session paginacion 
-session_start();
-error_reporting(0);
-$varsesion=$_SESSION['legajo'];
-if($varsesion== null || $varsesion=''){
-   echo "NO PUEDES INGRESAR, NO TIENES AUTORIZACION";
-   die();
-}   
-     include("conexion_usuario.php");
-     $conexion=conectar();
+  session_start();
+  include("conexion_usuario.php");
+  $conexion=conectar();
+  //seguridad de session 
+  $usuario=$_SESSION['legajo'];
+  if(!isset($usuario)){
+      header("location: ../../../Index.html");
+  }   
+  $sql="SELECT * FROM usuarios";
+  $query= mysqli_query($conexion,$sql);
 
-     $sql="SELECT * FROM usuarios";
-     $query= mysqli_query($conexion,$sql);
-
-     $row=mysqli_fetch_array($query);
+  $row=mysqli_fetch_array($query);
 ?>
 
 <!DOCTYPE html>
