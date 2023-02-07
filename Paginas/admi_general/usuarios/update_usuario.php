@@ -15,7 +15,7 @@ $puesto=$_POST['puesto'];
 $habilitaciones=$_POST['habilitaciones'];
 $supervisor=$_POST['supervisor_cargo'];
 $fecha_de_ingreso=$_POST['fecha_de_ingreso_a_la_empresa'];
-$rol=$_POST['id_cargo'];
+$permiso=$_POST['id_permiso'];
 $contraseña=$_POST['contraseña'];
 
 $imagen=$_FILES['imagen'];
@@ -30,7 +30,7 @@ $url_temporal=$imagen['tmp_name'];
     $imagen_usuario=$imagen_nombre.'.jpg';
     $src=$destino.$imagen_usuario;
 
-$sql="UPDATE usuarios SET apellido='$apellido',nombre='$nombre',alias='$alias',dni='$dni',fecha_de_nacimiento='$fecha_de_nacimiento',direccion='$direccion',celular='$celular',mail='$mail',puesto='$puesto',habilitaciones='$habilitaciones',supervisor_cargo='$supervisor',fecha_de_ingreso_a_la_empresa='$fecha_de_ingreso',id_cargo='$rol',contraseña='$contraseña',imagen='$imagen_usuario' WHERE legajo='$legajo'";
+$sql="UPDATE usuarios SET apellido='$apellido',nombre='$nombre',alias='$alias',dni='$dni',fecha_de_nacimiento='$fecha_de_nacimiento',direccion='$direccion',celular='$celular',mail='$mail',puesto='$puesto',habilitaciones='$habilitaciones',supervisor_cargo='$supervisor',fecha_de_ingreso_a_la_empresa='$fecha_de_ingreso',id_permiso='$permiso',contraseña='$contraseña',imagen='$imagen_usuario' WHERE legajo='$legajo'";
 
 $query=mysqli_query($conexion,$sql);
 

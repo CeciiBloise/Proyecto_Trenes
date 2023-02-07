@@ -1,12 +1,14 @@
 <?php
 include("conexion_usuario.php");
 $conexion=conectar();
-$legajo=$_GET['id'];
+$legajo = mysqli_real_escape_string($conexion, $_GET['id']);
 
-$sql="DELETE FROM usuarios  WHERE legajo='$legajo'";
+$sql="DELETE FROM usuarios WHERE legajo='$legajo'";
 $query=mysqli_query($conexion,$sql);
 
-    if($query){
-        header("Location: tabla_usuario.php");
-    }
+if ($query) {
+    header("Location: tabla_usuario.php");
+} else {
+    echo "Error al ejecutar la consulta: " . mysqli_error($conexion);
+}
 ?>

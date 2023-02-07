@@ -1,14 +1,15 @@
 <?php
-      include("conexion_usuario.php");
-      $conexion=conectar();
+include("conexion_usuario.php");
+$conexion=conectar();
 
-      $id=$_GET['id'];
+$id = $_GET['id'];
 
-      $sql="SELECT * FROM usuarios WHERE legajo='$id'";
-      $query=mysqli_query($conexion,$sql);
+$sql = "SELECT * FROM usuarios WHERE legajo='$id'";
+$query = mysqli_query($conexion, $sql);
 
-      $row=mysqli_fetch_array($query);
+$row = mysqli_fetch_array($query);
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -29,44 +30,25 @@
 
     <header>
       <nav class="navMenu">
-            <li><a href="../../admi_general/Inicio.php" >Inicio</a></li>
+            <li><a href="../admi_personal.php" >Inicio</a></li>
             <li><a href="tabla_usuario.php">Tabla personal</a></li>
             <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
-
+    
     <script>
-        function confirmacion(){
-        var respuesta=confirm("¿Estas seguro que quieres actualizar?");
+      //Alerta actualizar
+      function confirmacionActualizar(){
+        var respuesta=confirm("¿Estas seguro que deseas actualizar este usuario?");
         if(respuesta==true){
           return true;
-          $user = $_POST['legajo'];
-       
-        if(!empty($user)) {
-              comprobar($user);
         }
-        
-        function comprobar($b) {
-              $con = mysql_connect('localhost','root', 'root');
-              mysql_select_db('masajes', $con);
-        
-              $sql = mysql_query("SELECT * FROM usuarios WHERE nombre = '".$b."'",$con);
-              
-              $contar = mysql_num_rows($sql);
-              
-              if($contar == 0){
-                    echo "<span style='font-weight:bold;color:green;'>Disponible.</span>";
-              }else{
-                    echo "<span style='font-weight:bold;color:red;'>El nombre de usuario ya existe.</span>";
-              }
-        }     
-          }
-          else{
-            return false;
-          }
+        else{
+          return false;
         }
+      }
     </script>
-    
+
     <body>
     <div class="form_carga">
         <form action="update_usuario.php" method="POST" enctype="multipart/form-data" class="form">
@@ -138,11 +120,11 @@
           </div>
 
           <div class="inputContainer">
-            <label class="label">Rol:</label>
+            <label class="label">Permiso:</label>
             <select>
-                <option <?php echo $row['id_cargo']=== '1' ? "selected=selected": ""?> value="1">1- Administrador General</option>
-                <option <?php echo $row['id_cargo']=== '2' ? "selected=selected": ""?> value="2">2- Administrador Personal</option>
-                <option <?php echo $row['id_cargo']=== '3' ? "selected=selected": ""?> value="3">3- Mecanico</option>
+                <option <?php echo $row['id_permiso']=== '1' ? "selected=selected": ""?> value="1">1- Administrador General</option>
+                <option <?php echo $row['id_permiso']=== '2' ? "selected=selected": ""?> value="2">2- Administrador Personal</option>
+                <option <?php echo $row['id_permiso']=== '3' ? "selected=selected": ""?> value="3">3- Mecanico</option>
             </select>
           </div>
 
@@ -157,7 +139,7 @@
           </div>
 
           <div class="boton">
-            <input class="boton-subir" type="submit" name="subir" value="Actualizar"/>
+            <input onclick="return confirmacionActualizar()" class="boton-subir" type="submit" name="subir" value="Actualizar"/>
           </div>
         </form>
       </div>

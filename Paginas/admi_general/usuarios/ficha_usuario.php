@@ -6,7 +6,7 @@
       session_start();
       error_reporting(0);
       $varsesion=$_SESSION['legajo'];
-      if($varsesion== null || $varsesion=''){
+      if ($varsesion == null || $varsesion == ''){
           echo "NO PUEDES INGRESAR, NO TIENES AUTORIZACION";
           die();
       }
@@ -24,7 +24,7 @@ include("conexion_usuario.php");
 $conexion=conectar();
 //seguridad de session 
 $usuario=$_SESSION['legajo'];
-if(!isset($usuario)){
+if (!isset($_SESSION['legajo'])){
     header("location: ../../../Index.html");
 }
 ?>
@@ -50,68 +50,73 @@ if(!isset($usuario)){
     </header>
 
     <body>
-    <div class="form_carga">
-        <form action="update_usuario.php" method="POST" class="form">
-  
-          <div class="inputContainer">  
-            <img src="imagen_usuarios/<?php echo $row['imagen']?>" width="300" height="200" class="imagen"/>
-          </div>
-          
-          <div class="inputContainer">
-            <label class="label">Legajo:</label>  <?php echo $row['legajo'] ?>
-          </div>
+      <div class="form_carga">
+          <form action="#" method="POST" class="form">
+    
+            <div class="inputContainer">  
+              <?php 
+                $imagen = "imagen_usuarios/".$row['imagen'];
+                if(file_exists($imagen)) {
+                  echo '<img src="'.$imagen.'" width="300" height="200" class="imagen"/>';
+                } else {
+                  echo '<p>La imagen no existe.</p>';
+                }
+              ?>
+            </div>
+            
+            <div class="inputContainer">
+              <label class="label">Legajo:</label>  <?php echo $row['legajo'] ?>
+            </div>
 
-          <div class="inputContainer">
-            <label class="label">Apellidos:</label>  <?php echo $row['apellido'] ?>
-          </div>
+            <div class="inputContainer">
+              <label class="label">Apellidos:</label>  <?php echo $row['apellido'] ?>
+            </div>
 
-          <div class="inputContainer">
-            <label class="label">Nombres:</label>  <?php echo $row['nombre'] ?>
-          </div>
+            <div class="inputContainer">
+              <label class="label">Nombres:</label>  <?php echo $row['nombre'] ?>
+            </div>
 
-          <div class="inputContainer">
-            <label class="label">Alias:</label>  <?php echo $row['alias'] ?>
-          </div>
+            <div class="inputContainer">
+              <label class="label">Alias:</label>  <?php echo $row['alias'] ?>
+            </div>
 
 
-          <div class="inputContainer">
-            <label class="label">D.N.I:</label>  <?php echo $row['dni'] ?>
-          </div>
+            <div class="inputContainer">
+              <label class="label">D.N.I:</label>  <?php echo $row['dni'] ?>
+            </div>
 
-          <div class="inputContainer">
-            <label class="label">Fecha de nacimiento:</label>  <?php echo $row['fecha_de_nacimiento'] ?>
-          </div>
+            <div class="inputContainer">
+              <label class="label">Fecha de nacimiento:</label>  <?php echo $row['fecha_de_nacimiento'] ?>
+            </div>
 
-          <div class="inputContainer">
-            <label class="label">Direccion:</label>  <?php echo $row['direccion'] ?>
-          </div>
+            <div class="inputContainer">
+              <label class="label">Direccion:</label>  <?php echo $row['direccion'] ?>
+            </div>
 
-          <div class="inputContainer">
-            <label class="label">Celular:</label>  <?php echo $row['celular'] ?>
-          </div>
+            <div class="inputContainer">
+              <label class="label">Celular:</label>  <?php echo $row['celular'] ?>
+            </div>
 
-          <div class="inputContainer">
-            <label class="label">Correo Electronico:</label>  <?php echo $row['mail'] ?>
-          </div>
+            <div class="inputContainer">
+              <label class="label">Correo Electronico:</label>  <?php echo $row['mail'] ?>
+            </div>
 
-          <div class="inputContainer">
-            <label class="label">Puesto:</label>  <?php echo $row['puesto'] ?>
-          </div>
+            <div class="inputContainer">
+              <label class="label">Puesto:</label>  <?php echo $row['puesto'] ?>
+            </div>
 
-          <div class="inputContainer">
-            <label class="label">Habilitaciones:</label>  <?php echo $row['habilitaciones'] ?>
-          </div>
+            <div class="inputContainer">
+              <label class="label">Habilitaciones:</label>  <?php echo $row['habilitaciones'] ?>
+            </div>
 
-          <div class="inputContainer">
-            <label class="label">Supervisor a cargo del sector:</label>  <?php echo $row['supervisor_cargo'] ?>
-          </div>
+            <div class="inputContainer">
+              <label class="label">Supervisor a cargo del sector:</label>  <?php echo $row['supervisor_cargo'] ?>
+            </div>
 
-          <div class="inputContainer">
-            <label class="label">Fecha de ingreso a la empresa</label>  <?php echo $row['fecha_de_ingreso_a_la_empresa'] ?>
-          </div>
-
-          
-        </form>
+            <div class="inputContainer">
+              <label class="label">Fecha de ingreso a la empresa</label>  <?php echo $row['fecha_de_ingreso_a_la_empresa'] ?>
+            </div>
+          </form>
       </div>
     </body>
 </html>

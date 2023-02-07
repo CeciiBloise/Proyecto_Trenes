@@ -16,7 +16,7 @@ if(isset($_POST['subir'])){
     $habilitaciones=$_POST['habilitaciones'];
     $supervisor=$_POST['supervisor_cargo'];
     $fecha_de_ingreso=$_POST['fecha_de_ingreso_a_la_empresa'];
-    $rol=$_POST['id_cargo'];
+    $permiso=$_POST['id_permiso'];
     $contraseña=$_POST['contraseña'];
 
     $imagen=$_FILES['imagen'];

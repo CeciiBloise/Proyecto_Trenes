@@ -2,15 +2,16 @@
   session_start();
   include("conexion_usuario.php");
   $conexion=conectar();
-  //seguridad de session 
-  $usuario=$_SESSION['legajo'];
-  if(!isset($usuario)){
-      header("location: ../../../Index.html");
-  }   
-  $sql="SELECT * FROM usuarios";
-  $query= mysqli_query($conexion,$sql);
 
-  $row=mysqli_fetch_array($query);
+  //Validacion de session 
+  if (!isset($_SESSION['legajo'])) {
+    header("location: ../../../Index.html");
+    exit;
+  }
+
+  $legajo = $_SESSION['legajo'];
+  $sql = "SELECT * FROM usuarios";
+  $query = mysqli_query($conexion, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -23,8 +24,9 @@
       <link rel="stylesheet" href="../../../CSS/estilo_menu_horizontal.css"/>
       <link rel="stylesheet" href="../../../CSS/estilo_registro.css"/>
 
-      <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
+      <title>Trenes Argentinos</title> <!-- titulo de la pagina -->
     </head>
+
     <style>
       body{
         background:  #F2F3F4;
@@ -41,20 +43,18 @@
     </header>
 
     <script>
-      function confirmacion(){
-        var respuesta=confirm("¿Deseas enviar esta informacion?");
-        if(respuesta==true){
-          return true;
-        }
-        else{
-          return false;
-        }
+      function confirmacion() {
+      if (confirm("¿Está seguro de que desea enviar esta información? Esta acción es irreversible.")) {
+        return true;
+      } else {
+        return false;
       }
-    </script>
+    }
+</script>
     
     <body>
       <div class="form_carga">
-        <form action="insertar_bd_usuario.php" method="POST" enctype="multipart/form-data" class="form" >
+        <form action="insertar_bd_usuario.php" method="POST" enctype="multipart/form-data" class="form" onsubmit="return confirmacion()">
 
           <h1 class="titulo">INGRESE LOS DATOS</h1>
           <div class="inputContainer">
@@ -123,8 +123,8 @@
           </div> 
 
           <div class="inputContainer"> <!--cambiar esto a un selec -->
-            <label>Rol:</label>
-            <select name="id_cargo" id="rol" style="width: 335px;" required>
+            <label>Permiso:</label>
+            <select name="id_permiso" id="rol" style="width: 335px;" required>
               <option value="0">Seleccione:</option>
               <option value="1">1- Administrador General</option>
               <option value="2">2- Administrador Personal</option>
@@ -139,11 +139,11 @@
 
           <div class="inputContainer">
             <label>Foto del usuario</label> <!-- falta esto -->
-            <input type="file" name="imagen" accept="imagen/*">
+            <input type="file" name="imagen" accept="image/png, .jpeg, .jpg, image/gif">
           </div>
 
           <div class="boton">
-            <input class="boton-subir" type="submit"  value="subir" name="subir" onclick="return confirmacion()">
+            <input class="boton-subir" type="submit"  value="Registrar" name="subir" onclick="return confirmacion()">
           </div>
         </form>
       </div>
