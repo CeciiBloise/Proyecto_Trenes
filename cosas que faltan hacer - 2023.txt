@@ -5,7 +5,7 @@
 *validacion de secciones
 *actualizar usuarios, cartel de error para decirme que el usuario ya fue agregado
 *Cómo evitar inyecciones de base de datos?
-*Cómo evitar el acceso sin haberse logueado?
+>>Cómo evitar el acceso sin haberse logueado?
 *Buscar usuario
 >>> Carteles de alerta, falta en editar y eliminar
 ---------------------------------------------------------------------------------------------------

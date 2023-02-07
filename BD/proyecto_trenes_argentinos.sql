@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-01-2023 a las 13:00:59
+-- Tiempo de generación: 07-02-2023 a las 02:19:43
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.1.12
 
@@ -18,41 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `proyecto_trenes`
+-- Base de datos: `proyecto_trenes_argentinos`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `carga_de_usuarios`
---
-
-CREATE TABLE `carga_de_usuarios` (
-  `legajo` int(6) NOT NULL,
-  `apellido` text NOT NULL,
-  `nombre` text NOT NULL,
-  `dni` int(8) NOT NULL,
-  `fecha_de_nacimiento` date NOT NULL,
-  `direccion` varchar(250) NOT NULL,
-  `celular` int(20) NOT NULL,
-  `mail` varchar(250) NOT NULL,
-  `puesto` varchar(250) NOT NULL,
-  `habilitaciones` varchar(400) NOT NULL,
-  `supervisor_cargo` varchar(250) NOT NULL,
-  `fecha_de_ingreso_a_la_empresa` date NOT NULL,
-  `id_cargo` int(11) NOT NULL,
-  `contraseña` int(6) NOT NULL,
-  `imagen` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `carga_de_usuarios`
---
-
-INSERT INTO `carga_de_usuarios` (`legajo`, `apellido`, `nombre`, `dni`, `fecha_de_nacimiento`, `direccion`, `celular`, `mail`, `puesto`, `habilitaciones`, `supervisor_cargo`, `fecha_de_ingreso_a_la_empresa`, `id_cargo`, `contraseña`, `imagen`) VALUES
-(1, '1', '1', 0, '0000-00-00', '1', 0, '1@1', '', '', '', '0000-00-00', 3, 3, ''),
-(12345, 'Diaz', 'Fulanito1 ', 12345678, '1111-01-01', 'Avenida Siempreviva 742', 0, 'perez.fulanito@correo.com', 'Pasante', 'Habilitación de soldadura', 'Fulanito2', '2222-02-02', 1, 123, ''),
-(98765, 'Lopez', 'Fulanito2', 98745612, '2222-02-02', 'Avenida Siempreviva 742', 22222222, 'lopez.fulanito2@correo.com', 'Pasante', 'Carnet de conducir, trabajo en altura', 'Fulanito3', '3333-03-03', 2, 123, 'img_d3df744c0cf1501ef497b420ce01b76c.jpg');
 
 -- --------------------------------------------------------
 
@@ -235,16 +202,43 @@ INSERT INTO `registros_pan_tu` (`id_pan_tu`, `pan_tu`, `pan_año_tu`, `registros
 (35, 'Calle 52', '', ''),
 (36, '', '2005', '');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `legajo` int(6) NOT NULL,
+  `apellido` text NOT NULL,
+  `nombre` text NOT NULL,
+  `alias` varchar(250) NOT NULL,
+  `dni` int(8) NOT NULL,
+  `fecha_de_nacimiento` date NOT NULL,
+  `direccion` varchar(250) NOT NULL,
+  `celular` int(20) NOT NULL,
+  `mail` varchar(250) NOT NULL,
+  `puesto` varchar(250) NOT NULL,
+  `habilitaciones` varchar(400) NOT NULL,
+  `supervisor_cargo` varchar(250) NOT NULL,
+  `fecha_de_ingreso_a_la_empresa` date NOT NULL,
+  `id_cargo` int(11) NOT NULL,
+  `contraseña` int(6) NOT NULL,
+  `imagen` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`legajo`, `apellido`, `nombre`, `alias`, `dni`, `fecha_de_nacimiento`, `direccion`, `celular`, `mail`, `puesto`, `habilitaciones`, `supervisor_cargo`, `fecha_de_ingreso_a_la_empresa`, `id_cargo`, `contraseña`, `imagen`) VALUES
+(1, '1', '1', '', 0, '0000-00-00', '', 0, '', '', '', '', '0000-00-00', 1, 1, ''),
+(2, '2', '2', '', 0, '0000-00-00', '', 0, '', '2', '', '2', '0000-00-00', 1, 2, 'img_90cae92a93bc0baf0d6c9017e82df24a.jpg'),
+(13, 'Bloise', 'Claudio', '', 0, '0000-00-00', '', 0, '', 'Pasante', '', 'Walter Ramirez', '0000-00-00', 1, 12, 'img_962be8ad2d290300cb80076818075518.jpg');
+
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `carga_de_usuarios`
---
-ALTER TABLE `carga_de_usuarios`
-  ADD PRIMARY KEY (`legajo`),
-  ADD KEY `id_rol` (`id_cargo`);
 
 --
 -- Indices de la tabla `manuales`
@@ -296,14 +290,15 @@ ALTER TABLE `registros_pan_tu`
   ADD PRIMARY KEY (`id_pan_tu`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- Indices de la tabla `usuarios`
 --
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`legajo`),
+  ADD KEY `id_rol` (`id_cargo`);
 
 --
--- AUTO_INCREMENT de la tabla `carga_de_usuarios`
+-- AUTO_INCREMENT de las tablas volcadas
 --
-ALTER TABLE `carga_de_usuarios`
-  MODIFY `legajo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2147483648;
 
 --
 -- AUTO_INCREMENT de la tabla `manuales`
@@ -354,20 +349,26 @@ ALTER TABLE `registros_pan_tu`
   MODIFY `id_pan_tu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
--- Restricciones para tablas volcadas
+-- AUTO_INCREMENT de la tabla `usuarios`
 --
+ALTER TABLE `usuarios`
+  MODIFY `legajo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2147483648;
 
 --
--- Filtros para la tabla `carga_de_usuarios`
+-- Restricciones para tablas volcadas
 --
-ALTER TABLE `carga_de_usuarios`
-  ADD CONSTRAINT `carga_de_usuarios_ibfk_1` FOREIGN KEY (`id_cargo`) REFERENCES `permisos` (`id`);
 
 --
 -- Filtros para la tabla `registros_pan_años_tu`
 --
 ALTER TABLE `registros_pan_años_tu`
   ADD CONSTRAINT `registros_pan_años_tu_ibfk_1` FOREIGN KEY (`id_pan_tu`) REFERENCES `registros_pan_tu` (`id_pan_tu`);
+
+--
+-- Filtros para la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id_cargo`) REFERENCES `permisos` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
