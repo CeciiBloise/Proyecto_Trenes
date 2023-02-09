@@ -1,15 +1,8 @@
 <?php
+/*Esto anda */
 include("conexion_usuario.php");
-$conexion=conectar();
-
-$id = $_GET['id'];
-
-$sql = "SELECT * FROM usuarios WHERE legajo='$id'";
-$query = mysqli_query($conexion, $sql);
-
-$row = mysqli_fetch_array($query);
-?>
-
+$conexion=conectar(); 
+?> 
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -18,7 +11,7 @@ $row = mysqli_fetch_array($query);
       <link rel="stylesheet" href="../../../CSS/estilo_menu_horizontal.css"/>
       <link rel="stylesheet" href="../../../CSS/estilo_registro.css"/>
       
-      <title>Estacion Quilmes</title> <!-- titulo de la pagina -->
+      <title>Trenes Argentinos</title> <!-- titulo de la pagina -->
     </head>
 
     <style>
@@ -30,30 +23,24 @@ $row = mysqli_fetch_array($query);
 
     <header>
       <nav class="navMenu">
-            <li><a href="../admi_personal.php" >Inicio</a></li>
+            <li><a href="../../admi_general/Inicio.php" >Inicio</a></li>
             <li><a href="tabla_usuario.php">Tabla personal</a></li>
             <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
     
-    <script>
-      //Alerta actualizar
-      function confirmacionActualizar(){
-        var respuesta=confirm("¿Estas seguro que deseas actualizar este usuario?");
-        if(respuesta==true){
-          return true;
-        }
-        else{
-          return false;
-        }
-      }
-    </script>
-
     <body>
     <div class="form_carga">
         <form action="update_usuario.php" method="POST" enctype="multipart/form-data" class="form">
-          <h1 class="titulo">Ingrese los datos</h1>
-
+          
+         <h1 class="titulo">Editar Datos</h1>
+         <?php
+            $sql="SELECT*FROM usuarios WHERE id_usuario = ".$_REQUEST['id'];
+            $query = mysqli_query($conexion, $sql);
+            $row = mysqli_fetch_assoc($query);
+          ?>
+          <input type="hidden" name="id" value="<?php echo $row['id_usuario'] ?>" > 
+         
           <div class="inputContainer">
             <label class="label">Legajo:</label>
             <input class="input" type="number" name="legajo" placeholder="Legajo" value="<?php echo $row['legajo'] ?>" style="width: 300px;">
@@ -120,11 +107,24 @@ $row = mysqli_fetch_array($query);
           </div>
 
           <div class="inputContainer">
-            <label class="label">Permiso:</label>
-            <select>
-                <option <?php echo $row['id_permiso']=== '1' ? "selected=selected": ""?> value="1">1- Administrador General</option>
-                <option <?php echo $row['id_permiso']=== '2' ? "selected=selected": ""?> value="2">2- Administrador Personal</option>
-                <option <?php echo $row['id_permiso']=== '3' ? "selected=selected": ""?> value="3">3- Mecanico</option>
+            <label class="label">Permiso</label>
+            
+            <select name="roles" id="rol" style="width: 298px;">
+            <option selected disabled>--- Seleccionar Permiso ---</option>
+            <?php
+              $sql2= "SELECT * FROM roles WHERE id_rol=".$row['id_rol']."";
+              $query2= mysqli_query($conexion, $sql2);
+              $row2= mysqli_fetch_assoc($query2);
+              
+              echo "<option selected value='".$row2['id_rol']."'>".$row2['nombre_rol']."</option>";
+              
+              $sql3="SELECT*FROM roles";
+              $query3= mysqli_query($conexion, $sql3);
+              while($row3 = mysqli_fetch_array($query3)){
+                echo "<option value='".$row3['id_rol']."'>".$row3['nombre_rol']."</option>";
+              
+              }
+            ?>
             </select>
           </div>
 
@@ -139,7 +139,7 @@ $row = mysqli_fetch_array($query);
           </div>
 
           <div class="boton">
-            <input onclick="return confirmacionActualizar()" class="boton-subir" type="submit" name="subir" value="Actualizar"/>
+            <input class="boton-subir" type="submit" name="subir" value="Actualizar"/>
           </div>
         </form>
       </div>

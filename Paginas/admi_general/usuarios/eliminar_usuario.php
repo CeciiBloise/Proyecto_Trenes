@@ -3,7 +3,7 @@ include("conexion_usuario.php");
 $conexion=conectar();
 $legajo = mysqli_real_escape_string($conexion, $_GET['id']);
 
-$sql="DELETE FROM usuarios WHERE legajo='$legajo'";
+$sql="DELETE FROM usuarios WHERE id_usuario='$legajo'";
 $query=mysqli_query($conexion,$sql);
 
 if ($query) {

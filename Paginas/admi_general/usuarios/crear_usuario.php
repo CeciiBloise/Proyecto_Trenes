@@ -10,8 +10,7 @@
   }
 
   $legajo = $_SESSION['legajo'];
-  $sql = "SELECT * FROM usuarios";
-  $query = mysqli_query($conexion, $sql);
+  
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +43,7 @@
 
     <script>
       function confirmacion() {
-      if (confirm("¿Está seguro de que desea enviar esta información? Esta acción es irreversible.")) {
+      if (confirm("¿Está seguro de que desea enviar esta información?")) {
         return true;
       } else {
         return false;
@@ -64,7 +63,7 @@
 
           <div class="inputContainer">
             <label>Apellidos:</label>
-            <input type="text" name="apellido" placeholder="Aprellido" style="width: 280px;" required>
+            <input type="text" name="apellido" placeholder="Apellido" style="width: 280px;" required>
           </div>
 
           <div class="inputContainer">
@@ -124,11 +123,16 @@
 
           <div class="inputContainer"> <!--cambiar esto a un selec -->
             <label>Permiso:</label>
-            <select name="id_permiso" id="rol" style="width: 335px;" required>
-              <option value="0">Seleccione:</option>
-              <option value="1">1- Administrador General</option>
-              <option value="2">2- Administrador Personal</option>
-              <option value="3">3- Mecanico</option>
+            <select name="roles_id" id="rol" style="width: 298px;" required>
+            <option selected disabled>--- Seleccionar Permiso ---</option>
+            <?php
+            $sql="SELECT*FROM roles";
+            $query = mysqli_query($conexion, $sql);
+
+            while($row=mysqli_fetch_assoc($query)){
+              echo "<option value='".$row['id_rol']."'>".$row['nombre_rol']."</option>";
+            }
+            ?>
             </select>
             </div>
 

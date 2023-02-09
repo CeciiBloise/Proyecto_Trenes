@@ -11,22 +11,15 @@
           die();
       }
 
-      $id=$_GET['id'];
+      $id = mysqli_real_escape_string($conexion, $_GET['id']);
 
-      $sql="SELECT * FROM usuarios WHERE legajo='$id'";
+      $sql = "SELECT usuarios.legajo, usuarios.apellido, usuarios.nombre, usuarios.alias, usuarios.dni, usuarios.fecha_de_nacimiento, usuarios.direccion, usuarios.celular, usuarios.mail, usuarios.puesto, usuarios.habilitaciones, usuarios.supervisor_cargo, usuarios.fecha_de_ingreso_a_la_empresa, roles.id_rol, usuarios.contraseña, usuarios.imagen
+      FROM usuarios
+      INNER JOIN roles ON usuarios.id_rol=roles.id_rol
+      WHERE id_usuario='$id'";
       $query=mysqli_query($conexion,$sql);
 
       $row=mysqli_fetch_array($query);
-?>
-<?php
-session_start();
-include("conexion_usuario.php");
-$conexion=conectar();
-//seguridad de session 
-$usuario=$_SESSION['legajo'];
-if (!isset($_SESSION['legajo'])){
-    header("location: ../../../Index.html");
-}
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +52,7 @@ if (!isset($_SESSION['legajo'])){
                 if(file_exists($imagen)) {
                   echo '<img src="'.$imagen.'" width="300" height="200" class="imagen"/>';
                 } else {
-                  echo '<p>La imagen no existe.</p>';
+                  echo '<img src="imagen_usuarios/sin_foto/sin_foto.png" width="300" height="200" class="imagen"/>';
                 }
               ?>
             </div>

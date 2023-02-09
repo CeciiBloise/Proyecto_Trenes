@@ -1,12 +1,12 @@
 ***TERMINAR ESTA SEMANA***
 
 ****QUE FALTA****
-
-*validacion de secciones
+*arreglar la conexion del login con las tablas relacionadas
+>>validacion de secciones
 *actualizar usuarios, cartel de error para decirme que el usuario ya fue agregado
-*Cómo evitar inyecciones de base de datos?
+>>>Cómo evitar inyecciones de base de datos?
 >>>Cómo evitar el acceso sin haberse logueado?
-*Buscar usuario, falta que me genere la tabla
+*Buscar usuario, falta que me genere la tabla 
 >>>Carteles de alerta editar
 ---------------------------------------------------------------------------------------------------
 

@@ -1,12 +1,17 @@
 <?php
     session_start();
-        include("usuarios/conexion_usuario.php");
-        $conexion=conectar();
-        //seguridad de session 
-        $usuario=$_SESSION['legajo'];
-        if(!isset($usuario)){
-            header("location: ../../Index.html");
-        }
+    include("usuarios/conexion_usuario.php");
+    $conexion=conectar();
+  
+    //Validacion de session 
+    if (!isset($_SESSION['legajo'])) {
+      header("location: ../../../Index.html");
+      exit;
+    }
+
+    $legajo = $_SESSION['legajo'];
+    $sql = "SELECT * FROM usuarios";
+    $query = mysqli_query($conexion, $sql);
 ?>
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->

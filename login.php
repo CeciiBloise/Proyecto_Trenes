@@ -19,8 +19,8 @@
 </html>
 <?php
 /*** VALIDACION DE USUARIO ***/
-/* https://www.baulphp.com/niveles-de-usuarios-php-y-mysql-ejemplo-completo/ */
-
+/**ESTO ANDAAAAAAAAA */
+session_start();
 include("Paginas/admi_general/usuarios/conexion_usuario.php");
 $conexion=conectar();
 
@@ -30,28 +30,46 @@ if(!$conexion){
 }
 
 //variables que van a recibir valor por teclado para la validacion
-$usuario = $_POST["legajo"];
-$contraseña = $_POST["contraseñaa"];
+if(isset($_POST['submit'])){
+    $usuario=$_POST['legajo'];
+    $contraseña=$_POST['contraseña'];
+}
 
-session_start();
-$_SESSION["legajo"]=$usuario;
-
-//Consulta que le va hacer al SQL, selecciona todo de la tabla login
+//Consulta que le va hacer al SQL, selecciona todo de la tabla usuario
 //y buscara coincidencia entre el usuario y la contrasena ingresados con la tabla del SQL
-$query =mysqli_query($conexion, "SELECT * FROM usuarios WHERE legajo = '".$usuario."' and contraseña ='".$contraseña."'" );
+$sql ="SELECT*FROM usuarios 
+WHERE legajo='$usuario' AND contraseña='$contraseña'";
+$query=mysqli_query($conexion, $sql);
 
-//Una vez encontra la coincidencia nos da como resultado una fila, un numero
-//$nro = mysqli_num_rows($query);
-$nro = mysqli_fetch_array($query); 
+if(mysqli_num_rows($query) == 1)
+{
+    // Obtener el rol del usuario
+    $user = mysqli_fetch_assoc($query);
+    $rol_id = $user['id_rol'];
+    $sql2 = "SELECT nombre_rol FROM roles WHERE id_rol='$rol_id'";
+    $result = mysqli_query($conexion, $sql2);
+    $rol = mysqli_fetch_assoc($result)['nombre_rol'];
 
-//Permite el ingreso o la redirecciona al login
-
-error_reporting(0);
-switch ($nro['id_cargo']) {
-    
-    case null:
-        //header("Location: Index.html");
-        ?>
+    // Iniciar sesión y almacenar el rol en la sesión
+    $_SESSION['legajo'] = $usuario;
+    $_SESSION['id_rol'] = $role;
+    // Redirigir al usuario a la página correspondiente al rol
+    switch ($rol) {
+        case 'admi_general':
+          header("Location: Paginas/admi_general/admi_personal.php");
+          break;
+        case 'admi_personal':
+          header("Location: Paginas\admi_personal\inicio_admi_personal.php");
+          break;
+        case 'mecanico':
+          header("Location: Paginas\mecanico\mecanico.php");
+          break;
+        default:
+          header("Location: index.html");
+      }
+    } else {
+      // Mostrar un mensaje de error si el usuario o la contraseña son incorrectos
+      ?>
         <body class="p-3 m-0 border-0 bd-example">
        <div class="alert alert-danger d-flex align-items-center" role="alert"> 
         <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Peligro:">
@@ -63,21 +81,4 @@ switch ($nro['id_cargo']) {
        </div> 
         </body>
         <?php
-        break;
-    case 1:
-        header("Location: Paginas/admi_general/admi_personal.php");
-        //echo "BIENVENIDO" .$usuario;
-        break;
-    case 2:
-       header("Location: Paginas\admi_personal\inicio_admi_personal.php");
-        //echo "BIENVENIDO" .$usuario;
-        break;
-    case 3:
-        header("Location: Paginas\mecanico\mecanico.php");
-        //echo "BIENVENIDO" .$usuario;
-        break;
-}
-
-mysqli_free_result($query);
-mysqli_close($conexion);
-?>
+    }

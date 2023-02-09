@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("conexion_usuario.php");
+    include("usuarios/conexion_usuario.php");
     $conexion=conectar();
     //seguridad de session 
     $usuario=$_SESSION['legajo'];
