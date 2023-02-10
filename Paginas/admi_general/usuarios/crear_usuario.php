@@ -68,12 +68,12 @@
 
           <div class="inputContainer">
             <label>Nombres:</label>
-            <input type="text" name="nombre" placeholder="Nombre" style="width: 283px;" required> <!-- name tiene que llevar el mismo nombre del campo de la base de datos-->
+            <input type="text" name="nombre" placeholder="Nombre" style="width: 283px;" required> 
           </div>
 
           <div class="inputContainer">
             <label>Alias:</label>
-            <input type="text" name="alias" placeholder="Alias" style="width: 315px;"> <!-- name tiene que llevar el mismo nombre del campo de la base de datos-->
+            <input type="text" name="alias" placeholder="Alias" style="width: 315px;"> 
           </div>
 
           <div class="inputContainer">

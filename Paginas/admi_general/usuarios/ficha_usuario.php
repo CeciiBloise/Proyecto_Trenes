@@ -30,13 +30,13 @@
       <link rel="stylesheet" href="../../../CSS/estilo_menu_horizontal.css"/>
       <link rel="stylesheet" href="../../../CSS/estilo_ficha.css"/>
 
-      <title>Estacion Quilmes</title> <!-- titulo de la pagina -->
+      <title>Trenes Argentinos</title> <!-- titulo de la pagina -->
     </head>
 
     <header>
       <nav class="navMenu">
             <li><a href="../../admi_general/Inicio.php" >Inicio</a></li>
-            <li><a href="crear_usuario.php">Registro</a></li>
+            <li><a href="crear_usuario.php">Registro de usuario</a></li>
             <li><a href="tabla_usuario.php">Tabla personal</a></li>
             <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>

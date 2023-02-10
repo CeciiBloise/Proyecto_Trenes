@@ -28,6 +28,16 @@ $conexion=conectar();
             <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
+
+    <script>
+      function confirmacion() {
+      if (confirm("¿Está seguro de que desea editar esta información?")) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+</script>
     
     <body>
     <div class="form_carga">
@@ -48,17 +58,17 @@ $conexion=conectar();
 
           <div class="inputContainer">
             <label class="label">Apellidos:</label>
-            <input type="text" name="apellido" placeholder="Aprellido" class="input" value="<?php echo $row['apellido'] ?>" style="width: 280px;">
+            <input type="text" name="apellido" placeholder="Aprellido" class="input" value="<?php echo $row['apellido'] ?>" style="width: 280px;" required>
           </div>
 
           <div class="inputContainer">
             <label class="label">Nombres:</label>
-            <input type="text" name="nombre" placeholder="Nombre" class="input" value="<?php echo $row['nombre'] ?>" style="width: 283px;"> <!-- name tiene que llevar el mismo nombre del campo de la base de datos-->
+            <input type="text" name="nombre" placeholder="Nombre" class="input" value="<?php echo $row['nombre'] ?>" style="width: 283px;" required> 
           </div>
 
           <div class="inputContainer">
             <label class="label">Alias:</label>
-            <input type="text" name="alias" placeholder="Alias" class="input" value="<?php echo $row['alias'] ?>" style="width: 315px;"> <!-- name tiene que llevar el mismo nombre del campo de la base de datos-->
+            <input type="text" name="alias" placeholder="Alias" class="input" value="<?php echo $row['alias'] ?>" style="width: 315px;">
           </div>
 
           <div class="inputContainer">
@@ -88,7 +98,7 @@ $conexion=conectar();
 
           <div class="inputContainer">
             <label class="label">Puesto:</label>
-            <input class="input" type="text" name="puesto" placeholder="Puesto" value="<?php echo $row['puesto'] ?>" style="width: 300px;">
+            <input class="input" type="text" name="puesto" placeholder="Puesto" value="<?php echo $row['puesto'] ?>" style="width: 300px;" required>
           </div>
 
           <div class="inputContainer">
@@ -98,7 +108,7 @@ $conexion=conectar();
 
           <div class="inputContainer">
             <label class="label">Supervisor a cargo del sector:</label>
-            <input class="input" type="text" name="supervisor_cargo" placeholder="Supervisor a cargo" value="<?php echo $row['supervisor_cargo'] ?>" style="width: 363px;">
+            <input class="input" type="text" name="supervisor_cargo" placeholder="Supervisor a cargo" value="<?php echo $row['supervisor_cargo'] ?>" style="width: 363px;" required>
           </div>
 
           <div class="inputContainer">
@@ -109,7 +119,7 @@ $conexion=conectar();
           <div class="inputContainer">
             <label class="label">Permiso</label>
             
-            <select name="roles" id="rol" style="width: 298px;">
+            <select name="roles" id="rol" style="width: 298px;" required>
             <option selected disabled>--- Seleccionar Permiso ---</option>
             <?php
               $sql2= "SELECT * FROM roles WHERE id_rol=".$row['id_rol']."";
@@ -130,7 +140,7 @@ $conexion=conectar();
 
           <div class="inputContainer">
             <label class="label"> Contraseña:</label>
-            <input class="input" type="password" name="contraseña" value="<?php echo $row['contraseña'] ?>" style="width: 267px;">
+            <input class="input" type="password" name="contraseña" value="<?php echo $row['contraseña'] ?>" style="width: 267px;"required>
           </div>
 
           <div class="inputContainer">
@@ -139,7 +149,7 @@ $conexion=conectar();
           </div>
 
           <div class="boton">
-            <input class="boton-subir" type="submit" name="subir" value="Actualizar"/>
+            <input class="boton-subir" type="submit" name="subir" value="Actualizar" onclick="return confirmacion()" />
           </div>
         </form>
       </div>

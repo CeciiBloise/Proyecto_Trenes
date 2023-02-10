@@ -41,17 +41,9 @@
         <link rel="stylesheet" href="../../../CSS/estilo_tablas.css"/>
         <script src="https://kit.fontawesome.com/3de4daf040.js" crossorigin="anonymous"></script>
         <!-- Estilos -->
-        <title> Estacion Quilmes</title> <!-- titulo de la pagina -->
+        <title> Trenes Argentinos </title> <!-- titulo de la pagina -->
     </head>
-
-    <header>
-      <nav class="navMenu">
-            <li><a href="../../admi_general/Inicio.php" >Inicio</a></li>
-            <li><a href="crear_usuario.php">Registro de usuario</a></li>
-            <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
-      </nav>
-    </header>
-
+    
     <script>
         //Alerta eliminar
         function confirmacionEliminar(){
@@ -68,7 +60,8 @@
     <style>
         /*ancho del menu*/
         .navMenu{
-        width: 157rem;
+        width: 160rem; /*Aca hay un error, deberia el menu ajustarse junto con la tabla */
+        
         }
         /*Barra Buscador*/
         .buscador input[type=search]{
@@ -96,16 +89,36 @@
         }
     </style>
 
+    <header>
+      <nav class="navMenu">
+            <li><a href="../../admi_general/Inicio.php" >Inicio</a></li>
+            <li><a href="crear_usuario.php">Registro de usuario</a></li>
+            <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
+      </nav>
+    </header>
+
     <body>
 
         <div>
-        <form action="buscar.php" method="post" class="buscador">
-            <input type="text" name="buscar">
+        <form action="tabla_usuario.php" method="POST" class="buscador">
+            <input type="text" id="buscar" name="buscar" value="<?php echo isset($_POST['buscar']) ? htmlspecialchars($_POST['buscar'], ENT_QUOTES) : ''; ?>" >    
             <input class="boton" type="submit" value="Buscar">
         </form>
 
+        <?php
+        if (isset($_POST['buscar'])) {
+            $search_term = mysqli_real_escape_string($conexion, $_POST['buscar']);
+            $sql = "SELECT * FROM usuarios 
+            INNER JOIN roles ON usuarios.id_rol=roles.id_rol
+            WHERE legajo LIKE '%" . $search_term . "%'
+            OR apellido LIKE '%" . $search_term . "%'
+            OR nombre LIKE '%" . $search_term . "%'
+            OR alias LIKE '%" . $search_term . "%'";
+            $query = mysqli_query($conexion, $sql);
+        }
+        ?>
             <table class="content-table">
-            <caption>TABLA DE PERSONAL</caption>
+            <caption><a href="tabla_usuario.php" style="color:black; text-decoration: none;" >TABLA DE PERSONAL</a></caption>
                 <thead>     
                     <tr>
                         <th scope="row">Legajo</th>
