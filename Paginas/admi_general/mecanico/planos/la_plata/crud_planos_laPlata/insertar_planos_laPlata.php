@@ -1,14 +1,14 @@
 <?php
 include("conexion_planos_laPlata.php");
 $conexion=conectar();
+if (!$conexion) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
-date_default_timezone_set('america/argentina/buenos_aires');
+$nombre=mysqli_real_escape_string($conexion,$_POST['nombre_laPlata']);
+$descripcion=mysqli_real_escape_string($conexion,$_POST['descripcion_laPlata']);
+$categoria=mysqli_real_escape_string($conexion,$_POST['categoria_laPlata']);
 
-$id= $_POST['id_plano_laPlta'];
-$nombre= $_POST['nombre_laPlata'];
-$descripcion= $_POST['descripcion_laPlata'];
-$categoria= $_POST['categoria_laPlata'];
-$fecha=$_POST['fecha_laPlata'];
 $archivo= $_FILES['plano_laPlata'];
 $nombre_plano=$archivo['name'];
 $type = $archivo['type'];
@@ -17,12 +17,12 @@ $url_temporal=$archivo['tmp_name'];
 
 if($nombre_plano != ''){
     $destino="planos_laPlata/";
-    $plano_nombre=md5(date('d-m-Y H:m:s')).'_'.$nombre;
+    $plano_nombre=md5(date('d-m-Y H:m:s')).'_'.$nombre.$categoria;
     $plano=$plano_nombre.'.pdf';
     $src=$destino.$plano;
 }
 
-$sql="INSERT INTO planos_laPlata(nombre_laPlata,descripcion_laPlata,categoria_laPlata,fecha_laPlata,plano_laPlata) VALUES('$nombre','$descripcion','$categoria','$fecha','$plano')";
+$sql="INSERT INTO planos_laPlata(nombre_laPlata,descripcion_laPlata,categoria_laPlata,plano_laPlata) VALUES('$nombre','$descripcion','$categoria','$plano')";
 
 $query=mysqli_query($conexion,$sql);
 

@@ -43,13 +43,13 @@
 
     <script>
       function confirmacion() {
-      if (confirm("¿Está seguro de que desea enviar esta información?")) {
-        return true;
-      } else {
-        return false;
+        if (confirm("¿Está seguro de que desea enviar esta información?")) {
+          return true;
+        } else {
+          return false;
+        }
       }
-    }
-</script>
+    </script>
     
     <body>
       <div class="form_carga">

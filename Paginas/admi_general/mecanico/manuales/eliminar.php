@@ -3,9 +3,9 @@
 include("conexion_manuales.php");
 $conexion=conectar();
 
-$id=$_GET['id'];
+$id_manuales=mysqli_real_escape_string($conexion, $_GET['id']);
 
-$sql="SELECT * FROM manuales WHERE id_manuales=$id";
+$sql="SELECT * FROM manuales WHERE id_manuales=$id_manuales";
 
 $query= mysqli_query($conexion,$sql);
 
@@ -19,7 +19,12 @@ foreach(glob("$eliminar_carpeta/*") as $archivos_carpeta){
 	unlink($archivos_carpeta);   
 }
 rmdir($eliminar_carpeta);
-$sql="DELETE FROM manuales  WHERE id_manuales='$id'";
+$sql="DELETE FROM manuales  WHERE id_manuales='$id_manuales'";
 $query=mysqli_query($conexion,$sql);
-header("Location: lista.php");
+
+if($query){
+	header("Location: lista.php");
+} else {
+	echo "Error al ejecutar la consulta: " . mysqli_error($conexion);
+}
 ?>

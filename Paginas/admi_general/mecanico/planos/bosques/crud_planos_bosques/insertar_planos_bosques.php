@@ -1,15 +1,14 @@
 <?php
 include("conexion_planos_bosques.php");
 $conexion=conectar();
+if (!$conexion) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
-date_default_timezone_set('america/argentina/buenos_aires');
+$nombre=mysqli_real_escape_string($conexion, $_POST['nombre_bosques']);
+$descripcion=mysqli_real_escape_string($conexion, $_POST['descripcion_bosques']);
+$categoria= mysqli_real_escape_string($conexion, $_POST['categoria_bosques']);
 
-$id= $_POST['id_plano_bosques'];
-$nombre= $_POST['nombre_bosques'];
-$descripcion= $_POST['descripcion_bosques'];
-$categoria= $_POST['categoria_bosques'];
-$fecha=$_POST['fecha_bosques'];
-$fecha_carga=date('d-m-Y H:m:s');
 $archivo= $_FILES['plano_bosques'];
 $nombre_plano=$archivo['name'];
 $type = $archivo['type'];
@@ -18,12 +17,12 @@ $url_temporal=$archivo['tmp_name'];
 
 if($nombre_plano != ''){
     $destino="planos_bosques/";
-    $plano_nombre=md5(date('d-m-Y H:m:s')).'_'.$nombre;
+    $plano_nombre=md5(date('d-m-Y H:m:s')).'_'.$nombre.$categoria;
     $plano=$plano_nombre.'.pdf';
     $src=$destino.$plano;
 }
 
-$sql="INSERT INTO planos_bosques(nombre_bosques,descripcion_bosques,categoria_bosques,fecha_bosques,plano_bosques) VALUES('$nombre','$descripcion','$categoria','$fecha','$plano')";
+$sql="INSERT INTO planos_bosques(nombre_bosques,descripcion_bosques,categoria_bosques,plano_bosques) VALUES('$nombre','$descripcion','$categoria','$plano')";
 
 $query=mysqli_query($conexion,$sql);
 

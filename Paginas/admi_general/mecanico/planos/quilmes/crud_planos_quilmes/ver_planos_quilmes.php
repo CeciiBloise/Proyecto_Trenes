@@ -1,15 +1,22 @@
 <?php
-    include("conexion_planos_quilmes.php");
+ session_start();
+ include("conexion_planos_quilmes.php");
+ $conexion=conectar();
 
-    $conexion=conectar();
+ //Validacion de session 
+ if (!isset($_SESSION['legajo'])) {
+   header("location: ../../../Index.html");
+   exit;
+ }
 
+ $legajo = $_SESSION['legajo'];
 
-      $id=$_GET['id'];
+  $id = mysqli_real_escape_string($conexion, $_GET['id']);
 
-      $sql="SELECT * FROM planos_quilmes WHERE id_plano_quilmes='$id'";
-      $query=mysqli_query($conexion,$sql);
+  $sql="SELECT * FROM planos_quilmes WHERE id_plano_quilmes='$id'";
+  $query=mysqli_query($conexion,$sql);
 
-      $row=mysqli_fetch_array($query);
+  $row=mysqli_fetch_array($query);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -20,41 +27,7 @@
 
       <title>Trenes Argentinos</title> <!-- titulo de la pagina -->
     </head>
-    <style>
-      /*TENGO QUE HACER EL PDF RESPONSIVE
-
-      https://www.sessionstudio.com.ar/blog/2018/08/25/como-hacer-un-iframe-responsivo/
-
-      /* CSS general 
-.mi-iframe {
-  width: 100px;
-  height: 50px;
-}
-
-/* CSS pantallas de 320px o superior 
-@media (min-width: 320px) {
-
-  .mi-iframe {
-    width: 200px;
-    height: 150px;
-  } 
-
-}
-
-/* CSS pantalla 768px o superior 
-@media (min-width: 768px) {
-
-  .mi-iframe {
-    width: 500px;
-    height: 350px;
-  } 
-
-}
-
-      
-      */ 
-    </style>
-
+  
     <header>
       <nav class="navMenu">
             <li><a href="../../inicio_planos.php" >Planos</a></li>
@@ -65,7 +38,7 @@
 
     <body>
       <div class="mi-iframe">
-        <iframe src="planos_quilmes/<?php echo $row['plano_quilmes']?>" type="application/pdf" width="100%" height="600px"></iframe>
+        <iframe src="planos_quilmes/<?php echo $row['plano_quilmes']?>" type="application/pdf" width="100%" height="1000px"></iframe>
       </div>
     </body>
 </html>

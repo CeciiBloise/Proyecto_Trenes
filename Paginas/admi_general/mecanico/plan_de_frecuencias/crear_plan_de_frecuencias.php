@@ -1,11 +1,12 @@
 <?php
-    include("conexion_plan_de_frecuencias.php");
-    $conexion=conectar();
+  session_start();
+  include("conexion_plan_de_frecuencias.php");
+  $conexion=conectar();
 
-    $sql="SELECT * FROM plan_de_frecuencias";
-    $query= mysqli_query($conexion,$sql);
+  $sql="SELECT * FROM plan_de_frecuencias";
+  $query= mysqli_query($conexion,$sql);
 
-    $row=mysqli_fetch_assoc($query);
+  $row=mysqli_fetch_assoc($query);
 
 
 ?>

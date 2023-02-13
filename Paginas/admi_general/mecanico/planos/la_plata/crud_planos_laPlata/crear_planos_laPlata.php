@@ -1,13 +1,14 @@
 <?php
-    include("conexion_planos_laPlata.php");
-    $conexion=conectar();
+  session_start();
+  include("conexion_planos_laPlata.php");
+  $conexion=conectar();
 
-    $sql="SELECT * FROM planos_laplata";
-    $query= mysqli_query($conexion,$sql);
-
-    $row=mysqli_fetch_assoc($query);
-
-
+  //Validacion de session 
+ if (!isset($_SESSION['legajo'])) {
+  header("location: ../../../Index.html");
+  exit;
+}
+$legajo = $_SESSION['legajo'];
 ?>
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->
@@ -34,34 +35,41 @@
             <li><a href="../../../../../../login.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
+
+    <script>
+      function confirmacion() {
+        if (confirm("¿Está seguro de que desea cargar este plano?")) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+
     <body>
         <div class="form_carga">
             <form action="insertar_planos_laPlata.php" method="POST" enctype="multipart/form-data" class="form">
-                <h1 class="titulo">Carga de planos La Plata</h1>  
+                <h1 class="titulo">Carga de planos <br>La Plata</h1>  
 
                 <div class="inputContainer">
                   <label>Nombre del archivo:</label>
-                  <input type="text" name="nombre_laPlata" placeholder="Nombre">
+                  <input type="text" name="nombre_laPlata" placeholder="Nombre" style="width: 225px;" required>
                 </div>
 
                 <div class="inputContainer">
                   <label>Descripcion:</label>
-                  <input type="text" name="descripcion_laPlata" placeholder="Breve descripcion">
+                  <input type="text" name="descripcion_laPlata" placeholder="Breve descripcion" style="width: 282px;">
                 </div>   
                 <div class="inputContainer">
                   <label>Categoria:</label>
-                  <input type="text" name="categoria_laPlata" placeholder="Categoria">
-                </div>
-                <div class="inputContainer">
-                  <label>Fecha:</label>
-                  <input type="date" name="fecha_laPlata">
+                  <input type="text" name="categoria_laPlata" placeholder="Categoria" style="width: 300px;" required>
                 </div>
                 <div class="inputContainer">
                   <label>Archivo</label> 
-                  <input type="file" name="plano_laPlata" accept="application/*">
+                  <input type="file" name="plano_laPlata" accept="application/*" required>
                 </div>     
                 <div class="boton">
-                    <input class="boton-subir" type="submit"  value="subir" name="subir">
+                    <input class="boton-subir" type="submit"  value="subir" name="subir" onclick="return confirmacion()">
                 </div>
             </form>
         </div>

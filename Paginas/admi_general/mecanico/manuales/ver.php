@@ -1,9 +1,18 @@
 <?php
 /*Me lista el contenido de la carpeta*/
+session_start();
 include("conexion_manuales.php");
 $conexion=conectar();
 
-$id=$_GET['id'];
+//Validacion de session 
+if (!isset($_SESSION['legajo'])) {
+    header("location: ../../../Index.html");
+    exit;
+  }
+
+$legajo = $_SESSION['legajo'];
+
+$id = mysqli_real_escape_string($conexion, $_GET['id']);
 
 $sql="SELECT * FROM manuales where id_manuales='$id'";
 $query= mysqli_query($conexion,$sql);

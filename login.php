@@ -56,13 +56,13 @@ if(mysqli_num_rows($query) == 1)
     // Redirigir al usuario a la página correspondiente al rol
     switch ($rol) {
         case 'Administrador General':
-          header("Location: Paginas/admi_general/admi_personal.php");
+          header("Location: Paginas/admi_general/Inicio.php");
           break;
         case 'Administrador Personal':
-          header("Location: Paginas\admi_personal\inicio_admi_personal.php");
+          header("Location: Paginas/admi_personal/inicio_personal.php");
           break;
         case 'Mecanico':
-          header("Location: Paginas\mecanico\mecanico.php");
+          header("Location: Paginas/mecanico/mecanico.php");
           break;
         default:
           header("Location: index.html");

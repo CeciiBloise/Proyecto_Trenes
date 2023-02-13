@@ -1,13 +1,15 @@
 <?php
-    include("conexion_manuales.php");
-    $conexion=conectar();
+  session_start();
+  include("conexion_manuales.php");
+  $conexion=conectar();
 
-    $sql="SELECT * FROM manuales";
-    $query= mysqli_query($conexion,$sql);
-
-    $row=mysqli_fetch_array($query);
-
-
+  //Validacion de session 
+  if (!isset($_SESSION['legajo'])) {
+    header("location: ../../../Index.html");
+    exit;
+  }
+  $legajo = $_SESSION['legajo'];
+ 
 ?>
 
 <!DOCTYPE html> <!-- version html5 -->
@@ -36,6 +38,17 @@
 
       </nav>
     </header>
+
+    <script>
+      function confirmacion() {
+        if (confirm("¿Está seguro de que desea cargar este manual?")) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+
     <body>
         <div class="form_carga">
             <form action="insertar_bd.php" method="POST" enctype="multipart/form-data" class="form">
@@ -43,17 +56,17 @@
 
                 <div class="inputContainer">
                   <label>Nombre del Equipo:</label>
-                  <input type="text" name="carpeta">
+                  <input type="text" name="carpeta" style="width: 235px;" required>
                 </div>
 
                 <div class="inputContainer">
                   <label>Manual:</label> 
-                  <input type="file" name="manuales[]" id="manuales[]" multiple="">
+                  <input type="file" name="manuales[]" id="manuales[]" multiple="" required>
                 </div>  
 
                 <div class="boton">
                     <input type="hidden" name="directorio">
-                    <input class="boton-subir" type="submit"  value="subir" name="subir">
+                    <input class="boton-subir" type="submit"  value="subir" name="subir"onclick="return confirmacion()">
                 </div>
             </form>
           </div>

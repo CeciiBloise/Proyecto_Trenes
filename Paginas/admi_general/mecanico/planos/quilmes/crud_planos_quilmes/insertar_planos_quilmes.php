@@ -1,14 +1,13 @@
 <?php
 include("conexion_planos_quilmes.php");
 $conexion=conectar();
+if (!$conexion) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
-date_default_timezone_set('america/argentina/buenos_aires');
-
-$id= $_POST['id_plano_quilmes'];
-$nombre= $_POST['nombre_quilmes'];
-$descripcion= $_POST['descripcion_quilmes'];
-$categoria= $_POST['categoria_quilmes'];
-$fecha=$_POST['fecha_quilmes'];
+$nombre=mysqli_real_escape_string($conexion, $_POST['nombre_quilmes']);
+$descripcion= mysqli_real_escape_string($conexion,$_POST['descripcion_quilmes']);
+$categoria= mysqli_real_escape_string($conexion,$_POST['categoria_quilmes']);
 
 $archivo= $_FILES['plano_quilmes'];
 $nombre_plano=$archivo['name'];
@@ -18,12 +17,12 @@ $url_temporal=$archivo['tmp_name'];
 
 if($nombre_plano != ''){
     $destino="planos_quilmes/";
-    $plano_nombre=md5(date('d-m-Y H:m:s')).'_'.$nombre;
+    $plano_nombre=md5(date('d-m-Y H:m:s')).'_'.$nombre.$categoria;
     $plano=$plano_nombre.'.pdf';
     $src=$destino.$plano;
 }
 
-$sql="INSERT INTO planos_quilmes(nombre_quilmes,descripcion_quilmes,categoria_quilmes,fecha_quilmes,plano_quilmes) VALUES('$nombre','$descripcion','$categoria','$fecha','$plano')";
+$sql="INSERT INTO planos_quilmes(nombre_quilmes,descripcion_quilmes,categoria_quilmes,plano_quilmes) VALUES('$nombre','$descripcion','$categoria','$plano')";
 
 $query=mysqli_query($conexion,$sql);
 

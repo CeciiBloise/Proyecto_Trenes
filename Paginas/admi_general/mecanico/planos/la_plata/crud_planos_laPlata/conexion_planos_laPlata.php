@@ -5,8 +5,9 @@ function conectar(){
     $dbpass = "";
     $dbname = "proyecto_trenes_argentinos"; //nombre de la base de datos
     $conexion = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-    mysqli_select_db($conexion, $dbname);
-
+    if (!$conexion) {
+        die("Conexión fallida: " . mysqli_connect_error());
+    }
    return $conexion;
 }
 ?>

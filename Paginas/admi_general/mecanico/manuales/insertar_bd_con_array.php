@@ -1,9 +1,10 @@
 <?php
-
 /*Mueve el archivo y guarda la url*/
 include("conexion_manuales.php");
-
 $conexion=conectar();
+if (!$conexion) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
 if(isset($_POST['subir'])){
     foreach($_FILES['manuales']['tmp_name'] as $key => $value){

@@ -1,6 +1,6 @@
 <?php
       session_start();
-      include("conexion_usuario.php");
+      include("../admi_general/usuarios/conexion_usuario.php");
       $conexion=conectar();
     
       //Validacion de session 
@@ -27,17 +27,16 @@
     <head>
       <meta charset="utf-8" /> <!-- tipos de caracter -->
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-      <link rel="stylesheet" href="../../../CSS/estilo_menu_horizontal.css"/>
-      <link rel="stylesheet" href="../../../CSS/estilo_ficha.css"/>
+      <link rel="stylesheet" href="../../CSS/estilo_menu_horizontal.css"/>
+      <link rel="stylesheet" href="../../CSS/estilo_ficha.css"/>
 
       <title>Trenes Argentinos</title> <!-- titulo de la pagina -->
     </head>
 
     <header>
       <nav class="navMenu">
-            <li><a href="../../admi_general/Inicio.php" >Inicio</a></li>
-            <li><a href="crear_usuario.php">Registro de usuario</a></li>
-            <li><a href="tabla_usuario.php">Tabla personal</a></li>
+            <li><a href="inicio_personal.php">Inicio</a></li>
+            <li><a href="personal_tabla_usuarios.php">Tabla personal</a></li>
             <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
@@ -52,7 +51,7 @@
                 if(file_exists($imagen)) {
                   echo '<img src="'.$imagen.'" width="300" height="200" class="imagen"/>';
                 } else {
-                  echo '<img src="imagen_usuarios/sin_foto/sin_foto.png" width="300" height="200" class="imagen"/>';
+                  echo '<img src="../admi_general/usuarios/imagen_usuarios/sin_foto/sin_foto.png" width="300" height="200" class="imagen"/>';
                 }
               ?>
             </div>

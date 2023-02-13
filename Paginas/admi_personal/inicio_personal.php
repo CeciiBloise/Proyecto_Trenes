@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("usuarios/conexion_usuario.php");
+    include("../admi_general/usuarios/conexion_usuario.php");
     $conexion=conectar();
   
     //Validacion de session 
@@ -27,11 +27,10 @@
     <body>
       
                <nav class="menuPrincipal">
-                        <li><a href="Inicio.php">Volver al inicio</a></li>
-
-                        <li><a href="usuarios/crear_usuarios_perosonal.php">Registar usuario</a></li>
                         
-                        <li><a href="usuarios/tabla_usuario.php">Tabla de personal</a></li>
+                        <li><a href="personal_tabla_usuarios.php">Tabla de personal</a></li>
+                        
+                        <li><a href="../mecanico/inicio_mecanico.php">Mecanico</a></li>
                         
                         <li><a href="../../logout.php">Cerrar Sesion</a></li>
                     </ul>

@@ -1,13 +1,15 @@
 <?php
+    session_start();
     include("conexion_planos_bosques.php");
     $conexion=conectar();
-
-    $sql="SELECT * FROM planos_bosques";
-    $query= mysqli_query($conexion,$sql);
-
-    $row=mysqli_fetch_assoc($query);
-
-
+   
+    //Validacion de session 
+    if (!isset($_SESSION['legajo'])) {
+      header("location: ../../../Index.html");
+      exit;
+    }
+   
+    $legajo = $_SESSION['legajo'];
 ?>
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->
@@ -34,6 +36,17 @@
             <li><a href="../../../../../../login.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
+
+    <script>
+      function confirmacion() {
+        if (confirm("¿Está seguro de que desea cargar este plano?")) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+
     <body>
         <div class="form_carga">
             <form action="insertar_planos_bosques.php" method="POST" enctype="multipart/form-data" class="form">
@@ -41,27 +54,23 @@
 
                 <div class="inputContainer">
                   <label>Nombre del archivo:</label>
-                  <input type="text" name="nombre_bosques" placeholder="Nombre">
+                  <input type="text" name="nombre_bosques" placeholder="Nombre" style="width: 225px;" required>
                 </div>
 
                 <div class="inputContainer">
                   <label>Descripcion:</label>
-                  <input type="text" name="descripcion_bosques" placeholder="Breve descripcion">
+                  <input type="text" name="descripcion_bosques" placeholder="Breve descripcion" style="width: 282px;">
                 </div>   
                 <div class="inputContainer">
                   <label>Categoria:</label>
-                  <input type="text" name="categoria_bosques" placeholder="Categoria">
-                </div>
-                <div class="inputContainer">
-                  <label>Fecha:</label>
-                  <input type="date" name="fecha_bosques" placeholder="Categoria">
+                  <input type="text" name="categoria_bosques" placeholder="Categoria" style="width: 300px;" required>
                 </div>
                 <div class="inputContainer">
                   <label>Archivo</label> 
-                  <input type="file" name="plano_bosques" accept="application/*">
+                  <input type="file" name="plano_bosques" accept="application/*" required>
                 </div>     
                 <div class="boton">
-                    <input class="boton-subir" type="submit"  value="subir" name="subir">
+                    <input class="boton-subir" type="submit"  value="subir" name="subir" onclick="return confirmacion()">
                 </div>
             </form>
         </div>

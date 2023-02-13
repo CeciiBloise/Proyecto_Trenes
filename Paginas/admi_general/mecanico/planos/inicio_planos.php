@@ -1,3 +1,16 @@
+<?php
+ session_start();
+ include("../../../admi_general/usuarios/conexion_usuario.php");
+ $conexion=conectar();
+
+ //Validacion de session 
+ if (!isset($_SESSION['legajo'])) {
+   header("location: ../../../Index.html");
+   exit;
+ }
+
+ $legajo = $_SESSION['legajo'];
+?>
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->
 

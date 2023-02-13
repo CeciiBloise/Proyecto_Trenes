@@ -1,7 +1,15 @@
 <?php
 /*Esto anda */
+session_start();
 include("conexion_usuario.php");
 $conexion=conectar(); 
+//Validacion de session 
+if (!isset($_SESSION['legajo'])) {
+  header("location: ../../../Index.html");
+  exit;
+}
+
+$legajo = $_SESSION['legajo'];
 ?> 
 <!DOCTYPE html>
 <html lang="es">
