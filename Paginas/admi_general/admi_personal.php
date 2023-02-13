@@ -29,7 +29,7 @@
                <nav class="menuPrincipal">
                         <li><a href="Inicio.php">Volver al inicio</a></li>
 
-                        <li><a href="usuarios/crear_usuarios_perosonal.php">Registar usuario</a></li>
+                        <li><a href="usuarios/crear_usuario.php">Registrar personal</a></li>
                         
                         <li><a href="usuarios/tabla_usuario.php">Tabla de personal</a></li>
                         

@@ -30,21 +30,36 @@ if(isset($_POST['subir'])){
 
     //$imagen_usuario='img_usuario.png';
 
-        $destino='imagen_usuarios/';
-        $imagen_nombre='img_'.md5(date('d-m-Y H:m:s'));
-        $imagen_usuario=$imagen_nombre.'.jpg';
-        $src=$destino.$imagen_usuario;
+    $destino='imagen_usuarios/';
+    $imagen_nombre='img_'.md5(date('d-m-Y H:m:s'));
+    $imagen_usuario=$imagen_nombre.'.jpg';
+    $src=$destino.$imagen_usuario;
+
+    $sql1="SELECT * FROM usuarios WHERE legajo = '$legajo'";
+    $resultado = mysqli_query($conexion, $sql1);
+
+    if(mysqli_num_rows($resultado) == 0){
     
         $sql="INSERT INTO usuarios (legajo, apellido,nombre,alias,dni,fecha_de_nacimiento,direccion,celular,mail,puesto,habilitaciones,supervisor_cargo, fecha_de_ingreso_a_la_empresa, id_rol,contraseña,imagen) 
         VALUES('$legajo','$apellido','$nombre','$alias','$dni','$fecha_de_nacimiento','$direccion','$celular','$mail','$puesto','$habilitaciones','$supervisor','$fecha_de_ingreso','$rol','$contraseña','$imagen_usuario')";
-    
-    $query=mysqli_query($conexion,$sql);
-        if ($query) {
+        $query=mysqli_query($conexion,$sql);
+        
+        if($query){
             move_uploaded_file($url_temporal, $src);
-        }
             header("Location: crear_usuario.php");
-}
-else{
-    echo "ERROR ESE USUARIO YA EXISTE";
+        }else{
+            echo "ERROR";
+        }
+    }
+    else{
+?>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <div class="alert alert-danger" role="alert">
+            El legajo que desea cargar ya existe.  
+            Si quieres registrar un nuevo legajo haz <a href="crear_usuario.php" class="alert-link">click aquí</a>.
+            Si quere acceder a uno ya existente revise la <a href="tabla_usuario.php" class="alert-link">tabla de personal</a>.
+        </div>
+<?php
+    }
 }
 ?>

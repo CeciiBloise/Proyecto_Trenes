@@ -105,7 +105,7 @@
                     <td nowrap><?php echo $row['frecuencia_asc']?></td>
                     <td nowrap><?php echo $row['frecuencia_desc']?></td>
              
-                    <td><a href="ver_mas_info.php?id=<?php echo $row['id_plan_de_frecuencia']?>">Mas Informacion</a></td>
+                    <td><a href="ver_mas_info.php?id=<?php echo $row['id_plan_de_frecuencia']?>">Mas Información</a></td>
                     </tr>
                     <?php
                          }

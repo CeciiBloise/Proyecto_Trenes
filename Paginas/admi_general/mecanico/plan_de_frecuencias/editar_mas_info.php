@@ -1,21 +1,14 @@
 <?php
   session_start();
-    include("conexion_plan_de_frecuencias.php");
-    $conexion=conectar();
-    //Validacion de session 
-    if (!isset($_SESSION['legajo'])) {
-    header("location: ../../../Index.html");
+  include("conexion_plan_de_frecuencias.php");
+  $conexion=conectar();
+    
+  //Validacion de session 
+  if (!isset($_SESSION['legajo'])) {
+    header("location: ../../../../Index.html ");
     exit;
-}
-
-$legajo = $_SESSION['legajo'];
-
-    $id=$_GET['id'];
-
-    $sql="SELECT * FROM  plan_de_frecuencias WHERE id_plan_de_frecuencia='$id'";
-    $query= mysqli_query($conexion,$sql);
-
-    $row=mysqli_fetch_array($query);
+  }
+  $legajo = $_SESSION['legajo'];
 ?>
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->
@@ -62,6 +55,8 @@ $legajo = $_SESSION['legajo'];
                   $query = mysqli_query($conexion, $sql);
                   $row = mysqli_fetch_assoc($query);
                 ?>
+                <input type="hidden" name="id" value="<?php echo $row['id_plan_de_frecuencia'] ?>" >
+                
                 <div class="inputContainer">
                   <label>Paso a Nivel:</label>
                   <input type="text" name="nombre_paso_nivel" placeholder="Paso a nivel" value="<?php echo $row['nombre_paso_nivel'] ?>" style="width: 268px;" required>
@@ -77,8 +72,8 @@ $legajo = $_SESSION['legajo'];
                 <div class="inputContainer">
                   <label >Niveles de Señal:</label>
                   <br>
-                      <input type="text" name="tension_asc" placeholder="Ascendente" value="<?php echo $row['señal_asc'] ?>" required>
-                      <input type="text" name="tension_desc" placeholder="Descendente" value="<?php echo $row['señal_desc'] ?>" required>
+                      <input type="text" name="señal_asc" placeholder="Ascendente" value="<?php echo $row['señal_asc'] ?>" required>
+                      <input type="text" name="señal_desc" placeholder="Descendente" value="<?php echo $row['señal_desc'] ?>" required>
                 </div>
 
                 <div class="inputContainer">
@@ -89,17 +84,42 @@ $legajo = $_SESSION['legajo'];
 
                 </div>
 
-               <div class="inputContainer">
+                <div class="inputContainer">
+
+                <?php
+                  $filtro=$row['filtro'];
+                  $ubicacion=$row['ubicacion'];
+                ?>
+
                   <label>Filtro:</label>
-                  <input type="checkbox" name="filtro[]" value="<?php echo $row['filtro']?>" id="si">Si
-                  <input type="checkbox" name="filtro[]" value="<?php echo $row['filtro']?>" id="no">No
-                      <br>
-                      <label>Su ubicacion es:</label>
-                      <input type="text" name="ubicacion" placeholder="ubicaion del filtro" value="<?php echo $row['ubicacion']?>" style="width: 242px;">
+                  <input type="checkbox" name="filtro" value="Si" id="si" <?php if($filtro == "Si") echo "checked"; ?> onclick="showUbicacion(); toggleCheckbox(this)">Si
+                  <input type="checkbox" name="filtro" value="No" id="no" <?php if($filtro == "No") echo "checked"; ?> onclick="hideUbicacion(); toggleCheckbox(this)">No
+                  <br>
+                  <label id="labelUbicacion" style="display: <?php if($filtro == "Si") echo "block"; else echo "none"; ?>;"><br>Su ubicación es:</label>
+                  <input type="text" name="ubicacion" id="inputUbicacion" value="<?php echo $ubicacion; ?>" placeholder="ubicación del filtro" style="display: <?php if($filtro == "Si") echo "block"; else echo "none"; ?>; width: 372px;">
                 </div>
 
+                <script type="text/javascript">
+                  function showUbicacion() {
+                    document.getElementById("labelUbicacion").style.display = "block";
+                    document.getElementById("inputUbicacion").style.display = "block";
+                  }
+                  
+                  function hideUbicacion() {
+                    document.getElementById("labelUbicacion").style.display = "none";
+                    document.getElementById("inputUbicacion").style.display = "none";
+                  }
+                  function toggleCheckbox(checkbox) {
+                    if (checkbox.id === "si") {
+                      document.getElementById("no").checked = false;
+                    } else {
+                      document.getElementById("si").checked = false;
+                    }
+                  }
+                </script>
+
                 <div class="boton">
-                    <input class="boton-subir" type="submit"  value="actualizar" name="subir"  onclick="return confirmacion()">
+                    <input class="boton-subir" type="submit" name="subir" value="Actualizar"  onclick="return confirmacion()">
                 </div>
 
             </form>

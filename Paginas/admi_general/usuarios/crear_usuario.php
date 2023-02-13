@@ -53,7 +53,7 @@
     
     <body>
       <div class="form_carga">
-        <form action="insertar_bd_usuario.php" method="POST" enctype="multipart/form-data" class="form" onsubmit="return confirmacion()">
+        <form action="insertar_bd_usuario.php" method="POST" enctype="multipart/form-data" class="form">
 
           <h1 class="titulo">INGRESE LOS DATOS</h1>
           <div class="inputContainer">
@@ -124,7 +124,7 @@
           <div class="inputContainer"> <!--cambiar esto a un selec -->
             <label>Permiso:</label>
             <select name="roles_id" id="rol" style="width: 298px;" required>
-            <option selected disabled>--- Seleccionar Permiso ---</option>
+            <option value='' >--- Seleccionar Permiso ---</option>
             <?php
             $sql="SELECT*FROM roles";
             $query = mysqli_query($conexion, $sql);
@@ -137,8 +137,8 @@
             </div>
 
           <div class="inputContainer"> <!--la contraseña se la signo yo? -->
-            <label>Contraseña:</label>
-            <input type="password" name="contraseña" placeholder="contraseña de maximo 6 caracteres" style="width: 265px;" required>
+            <label>Asignar Contraseña:</label>
+            <input type="password" name="contraseña" placeholder="contraseña de maximo 6 caracteres" style="width: 202px;" required>
           </div> 
 
           <div class="inputContainer">

@@ -43,47 +43,58 @@
 
                 <div class="inputContainer">
                   <label>Paso a Nivel:</label>
-                  <input type="text" name="nombre_paso_nivel" placeholder="Paso a nivel" onclick="activarsubir()">
+                  <input type="text" name="nombre_paso_nivel" placeholder="Paso a nivel" style="width: 268px;" required>
                 </div>
 
                 <div class="inputContainer">
                   <label>Frecuencia:</label>
                   <br>
-                  <input type="text" name="frecuencia_asc" placeholder="Ascendente">
-                  <input type="text" name="frecuencia_desc" placeholder="Descendente">
+                  <input type="text" name="frecuencia_asc" placeholder="Ascendente" required>
+                  <input type="text" name="frecuencia_desc" placeholder="Descendente" required>
                 </div>
 
                 <div class="inputContainer">
                   <label >Niveles de Señal:</label>
                   <br>
-                      <input type="text" name="señal_asc" placeholder="Ascendente">
-                      <input type="text" name="señal_desc" placeholder="Descendente">
+                      <input type="text" name="señal_asc" placeholder="Ascendente" required>
+                      <input type="text" name="señal_desc" placeholder="Descendente" required>
                 </div>
 
                 <div class="inputContainer">
                   <label >Niveles de Tensión:</label>
                   <br>
-                      <input type="text" name="tension_asc" placeholder="Ascendente">
-                      <input type="text" name="tension_desc" placeholder="Descendente"> 
+                      <input type="text" name="tension_asc" placeholder="Ascendente" required>
+                      <input type="text" name="tension_desc" placeholder="Descendente" required> 
                 </div>
 
-               <div class="inputContainer">
-                  <script type="text/javascript">
-                    function activar(si){
-                    var ubicacion = document.getElementById("ubicacion");
-                    ubicacion.disabled = chksi.checked ? false : true;
-                    if(!ubicacion.disabled){
-                      ubicacion.focus();
+                <div class="inputContainer">
+                  <label>Filtro:</label>
+                  <input type="checkbox" name="filtro" value="Si" id="si" onclick="showUbicacion(); toggleCheckbox(this)" >Si
+                  <input type="checkbox" name="filtro" value="No" id="no" onclick="hideUbicacion(); toggleCheckbox(this)" >No
+                  <br>
+                  <label id="labelUbicacion" style="display: none;"><br>Su ubicación es:</label>
+                  <input type="text" name="ubicacion" id="inputUbicacion" placeholder="ubicación del filtro" style="display: none; width: 372px;">
+                </div>
+                
+                <!-- La función showUbicacion muestra el campo y la función hideUbicacion lo oculta -->
+                <script type="text/javascript">
+                  function showUbicacion() {
+                    document.getElementById("labelUbicacion").style.display = "block";
+                    document.getElementById("inputUbicacion").style.display = "block";
+                  }
+                  
+                  function hideUbicacion() {
+                    document.getElementById("labelUbicacion").style.display = "none";
+                    document.getElementById("inputUbicacion").style.display = "none";
+                  }
+                  function toggleCheckbox(checkbox) {
+                    if (checkbox.id === "si") {
+                      document.getElementById("no").checked = false;
+                    } else {
+                      document.getElementById("si").checked = false;
                     }
                   }
-                  </script>
-                  <label for="chksi">Filtro:</label>
-                  <input type="checkbox" name="filtro[]" value="Si" id="chksi" onclick="activar(this)"/>Si
-                  <input type="checkbox" name="filtro[]" value="No" id="no" />No
-                      <br>
-                      <label>Su ubicacion es:</label>
-                      <input type="text" name="ubicacion" id="ubicacion" placeholder="Ubicaion del filtro" disabled="disabled" />
-                </div>
+                </script>
 
                 <div class="boton"> 
                   <input class="boton-subir" type="submit" id="subir" value="subir" name="subir">

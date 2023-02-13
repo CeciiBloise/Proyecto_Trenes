@@ -11,6 +11,7 @@
     }
 
     $legajo = $_SESSION['legajo'];
+
     $sql = "SELECT * FROM usuarios
     INNER JOIN roles ON usuarios.id_rol=roles.id_rol";
 
@@ -24,6 +25,7 @@
         $where= " where 1=1";
         $order=" ORDER BY ".$columna." ".$tipo;
         $sql="SELECT * FROM usuarios
+        INNER JOIN roles ON usuarios.id_rol=roles.id_rol
         $where
         $order
         ;
