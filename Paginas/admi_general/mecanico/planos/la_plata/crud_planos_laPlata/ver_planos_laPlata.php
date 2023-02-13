@@ -1,15 +1,15 @@
 <?php
-  session_start();
-  include("conexion_planos_laPlata.php");
-  $conexion=conectar();
-   
-  //Validacion de session 
-  if (!isset($_SESSION['legajo'])) {
-    header("location: ../../../Index.html");
-    exit;
-  }
-   
-  $legajo = $_SESSION['legajo'];
+    session_start();
+    include("conexion_planos_laPlata.php");
+    $conexion=conectar();
+
+    //Validacion de session 
+    if (!isset($_SESSION['legajo'])) {
+        header("location: ../../../../../../Index.html");
+        exit;
+      }
+  
+    $legajo = $_SESSION['legajo'];
    
   $id = mysqli_real_escape_string($conexion, $_GET['id']);
   $sql="SELECT * FROM planos_laPLata WHERE id_plano_laPlata='$id'";

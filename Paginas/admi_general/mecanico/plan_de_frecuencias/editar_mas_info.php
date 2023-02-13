@@ -2,12 +2,13 @@
   session_start();
   include("conexion_plan_de_frecuencias.php");
   $conexion=conectar();
-    
+
   //Validacion de session 
   if (!isset($_SESSION['legajo'])) {
-    header("location: ../../../../Index.html ");
-    exit;
+      header("location: ../../../../Index.html");
+      exit;
   }
+
   $legajo = $_SESSION['legajo'];
 ?>
 <!DOCTYPE html> <!-- version html5 -->

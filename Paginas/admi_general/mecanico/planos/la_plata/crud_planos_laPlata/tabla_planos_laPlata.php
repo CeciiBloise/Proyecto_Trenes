@@ -5,7 +5,7 @@
 
     //Validacion de session 
     if (!isset($_SESSION['legajo'])) {
-        header("location: ../../../Index.html");
+        header("location: ../../../../../../Index.html");
         exit;
       }
   
@@ -59,7 +59,7 @@
       <nav class="navMenu">
             <li><a href="../../inicio_planos.php" >Planos</a></li>
             <li><a href="crear_planos_laPlata.php">Cargar Planos</a></li>
-            <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
+            <li><a href="../../../../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
 
@@ -115,7 +115,7 @@
             ?>
 
             <table class="content-table">
-            <caption><a href="tabla_planos_quilmes.php" style="color:black; text-decoration: none;" >TABLA DE PLANOS LA PLATA</a></caption>
+            <caption><a href="tabla_planos_laPlata.php" style="color:black; text-decoration: none;" >TABLA DE PLANOS LA PLATA</a></caption>
                 <thead>     
                     <tr>
                         <th scope="row">Nombre

@@ -5,13 +5,11 @@
   
     //Validacion de session 
     if (!isset($_SESSION['legajo'])) {
-      header("location: ../../../Index.html");
+      header("location: ../../Index.html");
       exit;
     }
 
     $legajo = $_SESSION['legajo'];
-    $sql = "SELECT * FROM usuarios";
-    $query = mysqli_query($conexion, $sql);
 ?>
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->
@@ -27,11 +25,12 @@
     <body>
       
                <nav class="menuPrincipal">
-                        <li><a href="Inicio.php">Volver al inicio</a></li>
-
+                        
                         <li><a href="usuarios/crear_usuario.php">Registrar personal</a></li>
                         
                         <li><a href="usuarios/tabla_usuario.php">Tabla de personal</a></li>
+
+                        <li><a href="Inicio.php">Volver al inicio</a></li>
                         
                         <li><a href="../../logout.php">Cerrar Sesion</a></li>
                     </ul>

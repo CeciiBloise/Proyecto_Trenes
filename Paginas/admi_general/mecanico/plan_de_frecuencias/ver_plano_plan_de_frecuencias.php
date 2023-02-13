@@ -1,5 +1,15 @@
 <?php
+session_start();
+include("conexion_plan_de_frecuencias.php");
+$conexion=conectar();
 
+//Validacion de session 
+if (!isset($_SESSION['legajo'])) {
+    header("location: ../../../../Index.html");
+    exit;
+}
+
+$legajo = $_SESSION['legajo'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,7 +31,7 @@
 
     <body>
       <div class="mi-iframe">
-        <iframe src="planos_plan_de_frecuencias/PLAN DE FRECUENCIAS NUEVO AV-BZ CAD 2007-Presentación1.pdf" type="application/pdf" width="100%" height="600px"></iframe>
+        <iframe src="planos_plan_de_frecuencias/PLAN DE FRECUENCIAS NUEVO AV-BZ CAD 2007-Presentación1.pdf" type="application/pdf" width="100%" height="1000px"></iframe>
       </div>
     </body>
 </html>

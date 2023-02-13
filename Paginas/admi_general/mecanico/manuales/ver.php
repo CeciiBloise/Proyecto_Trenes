@@ -6,7 +6,7 @@ $conexion=conectar();
 
 //Validacion de session 
 if (!isset($_SESSION['legajo'])) {
-    header("location: ../../../Index.html");
+    header("location: ../../../../Index.html");
     exit;
   }
 

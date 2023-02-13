@@ -1,3 +1,16 @@
+<?php
+session_start();
+ include("conexion_registros.php");
+ $conexion=conectar();
+
+ //Validacion de session 
+ if (!isset($_SESSION['legajo'])) {
+   header("location:  ../../../../Index.html");
+   exit;
+ }
+
+ $legajo = $_SESSION['legajo'];
+ ?>
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->
 
@@ -15,12 +28,14 @@
     <body>
         
             <nav class="menuPrincipal">
+                
+                <li><a href="">Tren Universitario</a></li>
+                <li><a href="">Plaza - La Plata</a></li>
+                <li><a href="">Berazategui - Florencio Varela </a></li>
+                <li><a href="">Bosques - Villa Elisa</a></li>
                 <li><a href="../../mecanico_admi.php">Volver al menu anterior</a></li>
-                <li><a href="tren_universitario/inicio_tu.php">Tren Universitario</a></li>
-                <li><a href="../registros/pz_lp/pz_lp.php">Plaza - La Plata</a></li>
-                <li><a href="ty_ve.php">Berazategui - Florencio Varela </a></li>
-                <li><a href="bz_bq.php">Bosques - Villa Elisa</a></li>
                 <li><a href="../../../../logout.php">Cerrar Sesion</a></li>
+                
             </nav>
          
     </body>

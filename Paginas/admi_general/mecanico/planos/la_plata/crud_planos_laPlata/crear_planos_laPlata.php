@@ -1,14 +1,15 @@
 <?php
-  session_start();
-  include("conexion_planos_laPlata.php");
-  $conexion=conectar();
+    session_start();
+    include("conexion_planos_laPlata.php");
+    $conexion=conectar();
 
-  //Validacion de session 
- if (!isset($_SESSION['legajo'])) {
-  header("location: ../../../Index.html");
-  exit;
-}
-$legajo = $_SESSION['legajo'];
+    //Validacion de session 
+    if (!isset($_SESSION['legajo'])) {
+        header("location: ../../../../../../Index.html");
+        exit;
+      }
+  
+    $legajo = $_SESSION['legajo'];
 ?>
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->
@@ -32,7 +33,7 @@ $legajo = $_SESSION['legajo'];
       <nav class="navMenu">
             <li><a href="../../inicio_planos.php" >Planos</a></li>
             <li><a href="tabla_planos_laPlata.php">Tabla de archivos</a></li>
-            <li><a href="../../../../../../login.php" >Cerrar Sesion</a></li>
+            <li><a href="../../../../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
 

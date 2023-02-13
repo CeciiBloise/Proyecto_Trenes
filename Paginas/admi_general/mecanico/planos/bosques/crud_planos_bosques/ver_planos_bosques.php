@@ -1,13 +1,14 @@
 <?php
   session_start();
   include("conexion_planos_bosques.php");
-
   $conexion=conectar();
+ 
   //Validacion de session 
   if (!isset($_SESSION['legajo'])) {
-    header("location: ../../../Index.html");
+    header("location: ../../../../../Index.html");
     exit;
   }
+   
   $legajo = $_SESSION['legajo'];
 
   $id = mysqli_real_escape_string($conexion, $_GET['id']);

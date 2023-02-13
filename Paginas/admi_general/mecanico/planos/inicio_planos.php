@@ -5,7 +5,7 @@
 
  //Validacion de session 
  if (!isset($_SESSION['legajo'])) {
-   header("location: ../../../Index.html");
+   header("location: ../../../../Index.html");
    exit;
  }
 
@@ -27,13 +27,13 @@
 
                 <nav class="menuPrincipal">
 
-                        <li><a href="../../mecanico_admi.php">Volver al menu anterior</a></li>
-
                         <li><a href="quilmes/crud_planos_quilmes/tabla_planos_quilmes.php">Quilmes</a></li>
 
                         <li><a href="bosques/crud_planos_bosques/tabla_planos_bosques.php">Bosques</a></li>
 
                         <li><a href="la_plata/crud_planos_laPlata/tabla_planos_laPlata.php">La Plata</a></li>
+
+                        <li><a href="../../mecanico_admi.php">Volver al menu anterior</a></li>
 
                         <li><a href="../../../../logout.php">Cerrar Sesion</a></li>
 

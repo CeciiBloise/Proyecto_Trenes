@@ -35,7 +35,7 @@
 
     <header>
       <nav class="navMenu">
-            <li><a href="../../admi_general/Inicio.php" >Inicio</a></li>
+            <li><a href="../admi_personal.php" >Inicio</a></li>
             <li><a href="tabla_usuario.php">Tabla de Personal</a></li>
             <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>

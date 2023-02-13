@@ -1,12 +1,15 @@
 <?php
-    session_start();
-    include("usuarios/conexion_usuario.php");
-    $conexion=conectar();
-    //seguridad de session 
-    $usuario=$_SESSION['legajo'];
-    if(!isset($usuario)){
-        header("location: ../../Index.html");
-    }
+   session_start();
+   include("usuarios/conexion_usuario.php");
+   $conexion=conectar();
+ 
+   //Validacion de session 
+   if (!isset($_SESSION['legajo'])) {
+     header("location: ../../Index.html");
+     exit;
+   }
+
+   $legajo = $_SESSION['legajo'];
 ?>
 <!DOCTYPE html> <!-- version html5 -->
 <html lang="es"> <!-- tipo de lenguaje -->
@@ -23,8 +26,6 @@
     <body>
 
                 <nav class="menuPrincipal">
-                    
-                        <li><a href="Inicio.php">Volver al inicio</a></li>
 
                         <li><a href="mecanico/planos/inicio_planos.php">Planos</a></li>
 
@@ -33,6 +34,8 @@
                         <li><a href="mecanico/plan_de_frecuencias/tabla_plan_de_frecuencias.php">Plan de Frecuencia</a></li>
 
                         <li><a href="mecanico/registros/inicio_registros.php">Registros</a></li>
+
+                        <li><a href="Inicio.php">Volver al inicio</a></li>
 
                         <li><a href="../../logout.php">Cerrar Sesion</a></li>
 

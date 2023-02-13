@@ -5,7 +5,7 @@
 
  //Validacion de session 
  if (!isset($_SESSION['legajo'])) {
-   header("location: ../../../Index.html");
+   header("location: ../../../../../../Index.html");
    exit;
  }
 
@@ -33,7 +33,7 @@
       <nav class="navMenu">
             <li><a href="../../inicio_planos.php" >Planos</a></li>
             <li><a href="tabla_planos_quilmes.php">Tabla de archivos</a></li>
-            <li><a href="../../../../../../login.php" >Cerrar Sesion</a></li>
+            <li><a href="../../../../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
 

@@ -93,7 +93,7 @@
 
     <header>
       <nav class="navMenu">
-            <li><a href="../Inicio.php" >Inicio</a></li>
+            <li><a href="../admi_personal.php" >Inicio</a></li>
             <li><a href="crear_usuario.php">Registro de usuario</a></li>
             <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
       </nav>

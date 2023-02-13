@@ -1,15 +1,15 @@
 <?php
-    session_start();
-    include("conexion_planos_quilmes.php");
-    $conexion=conectar();
+ session_start();
+ include("conexion_planos_quilmes.php");
+ $conexion=conectar();
 
-    //Validacion de session 
-    if (!isset($_SESSION['legajo'])) {
-        header("location: ../../../Index.html");
-        exit;
-      }
-  
-    $legajo = $_SESSION['legajo'];
+ //Validacion de session 
+ if (!isset($_SESSION['legajo'])) {
+   header("location: ../../../../../../Index.html");
+   exit;
+ }
+
+ $legajo = $_SESSION['legajo'];
 
     $sql="SELECT * FROM planos_quilmes";
     $query= mysqli_query($conexion,$sql);
@@ -59,7 +59,7 @@
       <nav class="navMenu">
             <li><a href="../../inicio_planos.php" >Planos</a></li>
             <li><a href="crear_planos_quilmes.php">Cargar Planos</a></li>
-            <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
+            <li><a href="../../../../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
 

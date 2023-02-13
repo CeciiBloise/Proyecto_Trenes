@@ -1,12 +1,15 @@
 <?php
-session_start();
+    session_start();
     include("usuarios/conexion_usuario.php");
     $conexion=conectar();
-    //seguridad de session 
-    $usuario=$_SESSION['legajo'];
-    if(!isset($usuario)){
-        header("location: ../../Index.html");
+  
+    //Validacion de session 
+    if (!isset($_SESSION['legajo'])) {
+      header("location: ../../Index.html");
+      exit;
     }
+
+    $legajo = $_SESSION['legajo'];
 ?>
 
 <!DOCTYPE html> <!-- version html5 -->

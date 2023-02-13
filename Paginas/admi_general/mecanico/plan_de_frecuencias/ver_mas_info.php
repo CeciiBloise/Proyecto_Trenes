@@ -1,14 +1,14 @@
 <?php
-     session_start();
-     include("conexion_plan_de_frecuencias.php");
-     $conexion=conectar();
+    session_start();
+    include("conexion_plan_de_frecuencias.php");
+    $conexion=conectar();
 
     //Validacion de session 
     if (!isset($_SESSION['legajo'])) {
         header("location: ../../../../Index.html");
         exit;
-      }
-  
+    }
+
     $legajo = $_SESSION['legajo'];
     
     $sql="SELECT * FROM plan_de_frecuencias";
@@ -58,7 +58,7 @@
     <header>
       <nav class="navMenu">
             <li><a href="../../mecanico_admi.php" >Inicio</a></li>
-            <li><a href="crear_plan_de_frecuencias.php">Carga Plan de Frecuencia</a></li>
+            <li><a href="crear_plan_de_frecuencias.php">Cargar Plan de Frecuencia</a></li>
             <li><a href="tabla_plan_de_frecuencias.php">Tabla Reducida</a></li>
             <li><a href="ver_plano_plan_de_frecuencias.php">Plano</a></li>
             <li><a href="../../../../logout.php" >Cerrar Sesion</a></li>
