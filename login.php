@@ -62,7 +62,7 @@ if(mysqli_num_rows($query) == 1)
           header("Location: Paginas/admi_personal/inicio_personal.php");
           break;
         case 'Mecanico':
-          header("Location: Paginas/mecanico/mecanico.php");
+          header("Location: Paginas/mecanico/inicio_mecanico.php");
           break;
         default:
           header("Location: index.html");
