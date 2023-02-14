@@ -36,8 +36,8 @@
         <meta charset="utf-8" /> <!-- tipos de caracter -->
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
         <!-- Estilos -->
-        <link rel="stylesheet" href="../../../../../../CSS/estilo_menu_horizontal.css"/>
-        <link rel="stylesheet" href="../../../../../../CSS/estilo_tablas.css"/>
+        <link rel="stylesheet" href="../../../../../CSS/estilo_menu_horizontal.css"/>
+        <link rel="stylesheet" href="../../../../../CSS/estilo_tablas.css"/>
         <script src="https://kit.fontawesome.com/3de4daf040.js" crossorigin="anonymous"></script>
         
         <title>Trenes Argentinos</title> <!-- titulo de la pagina -->
@@ -58,9 +58,9 @@
 
     <header>
       <nav class="navMenu">
-            <li><a href="../../inicio_planos.php" >Planos</a></li>
+            <li><a href="../inicio_planos.php" >inicio</a></li>
             <li><a href="crear_planos_bosques.php">Cargar Planos</a></li>
-            <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
+            <li><a href="../../../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
 

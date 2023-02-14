@@ -5,7 +5,7 @@
 
     //Validacion de session 
     if (!isset($_SESSION['legajo'])) {
-        header("location: ../../../../../../Index.html");
+        header("location: ../../../../../Index.html");
         exit;
       }
   
@@ -22,16 +22,16 @@
     <head>
       <meta charset="utf-8" /> <!-- tipos de caracter -->
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-      <link rel="stylesheet" href="../../../../../../CSS/estilo_menu_horizontal.css"/>
+      <link rel="stylesheet" href="../../../../../CSS/estilo_menu_horizontal.css"/>
 
       <title>Estacion Quilmes</title> <!-- titulo de la pagina -->
     </head>
 
     <header>
       <nav class="navMenu">
-            <li><a href="../../inicio_planos.php" >Planos</a></li>
+            <li><a href="../inicio_planos.php" >inicio</a></li>
             <li><a href="tabla_planos_laPlata.php">Tabla planos</a></li>
-            <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
+            <li><a href="../../../../../logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
 
