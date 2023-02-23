@@ -21,7 +21,7 @@
 /*** VALIDACION DE USUARIO ***/
 /**ESTO ANDAAAAAAAAA */
 session_start();
-include("Paginas/admi_general/usuarios/conexion_usuario.php");
+include("conexion.php");
 $conexion=conectar();
 
 //Condicional por si no hay conexion que muestre el error
@@ -56,16 +56,16 @@ if(mysqli_num_rows($query) == 1)
     // Redirigir al usuario a la página correspondiente al rol
     switch ($rol) {
         case 'Administrador General':
-          header("Location: Paginas/admi_general/Inicio.php");
+          header("Location: ../Paginas/admi_general/Inicio.php");
           break;
         case 'Administrador Personal':
-          header("Location: Paginas/admi_personal/inicio_personal.php");
+          header("Location: ../Paginas/admi_personal/inicio_personal.php");
           break;
         case 'Mecanico':
-          header("Location: Paginas/mecanico/inicio_mecanico.php");
+          header("Location: ../Paginas/mecanico/inicio_mecanico.php");
           break;
         default:
-          header("Location: index.html");
+          header("Location: ../index.html");
       }
     } else {
       // Mostrar un mensaje de error si el usuario o la contraseña son incorrectos

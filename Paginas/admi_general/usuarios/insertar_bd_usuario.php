@@ -1,6 +1,6 @@
 <?php
 /*anda, tengo que ponerle algo que me diga que el legajo esta repetido*/
-include("conexion_usuario.php");
+include("../../../conexion_y_sesion/conexion.php");
 $conexion=conectar();
 if (!$conexion) {
     die("Connection failed: " . mysqli_connect_error());

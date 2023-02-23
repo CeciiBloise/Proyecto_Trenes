@@ -1,12 +1,12 @@
 <?php
 /*ANDA*/
     session_start();
-    include("conexion_usuario.php");
+    include("../../../conexion_y_sesion/conexion.php");
     $conexion=conectar();
   
     //Validacion de session 
     if (!isset($_SESSION['legajo'])) {
-      header("location: ../../../Index.html");
+      header("location: ../../../index.html");
       exit;
     }
 
@@ -95,7 +95,7 @@
       <nav class="navMenu">
             <li><a href="../admi_personal.php" >Inicio</a></li>
             <li><a href="crear_usuario.php">Registro de usuario</a></li>
-            <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
+            <li><a href="../../../conexion_y_sesion/logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-02-2023 a las 02:19:43
+-- Tiempo de generación: 14-02-2023 a las 02:03:56
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.1.12
 
@@ -24,6 +24,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `asignacion_roles`
+--
+
+CREATE TABLE `asignacion_roles` (
+  `id_asignacion` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_rol` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `manuales`
 --
 
@@ -33,36 +45,6 @@ CREATE TABLE `manuales` (
   `manuales` varchar(250) NOT NULL,
   `url` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `manuales`
---
-
-INSERT INTO `manuales` (`id_manuales`, `carpeta`, `manuales`, `url`) VALUES
-(15, 'Carpeta 1', '', ''),
-(17, 'Carpeta 2', '', ''),
-(18, 'Carpeta 3', '', ''),
-(19, 'Carpeta 4', '', '');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `permisos`
---
-
-CREATE TABLE `permisos` (
-  `id` int(11) NOT NULL,
-  `descripcion` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `permisos`
---
-
-INSERT INTO `permisos` (`id`, `descripcion`) VALUES
-(1, 'admi_general'),
-(2, 'admi_personal'),
-(3, 'mecanico');
 
 -- --------------------------------------------------------
 
@@ -75,17 +57,8 @@ CREATE TABLE `planos_bosques` (
   `nombre_bosques` varchar(250) NOT NULL,
   `descripcion_bosques` varchar(250) NOT NULL,
   `categoria_bosques` varchar(250) NOT NULL,
-  `fecha_bosques` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `plano_bosques` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `planos_bosques`
---
-
-INSERT INTO `planos_bosques` (`id_plano_bosques`, `nombre_bosques`, `descripcion_bosques`, `categoria_bosques`, `fecha_bosques`, `plano_bosques`) VALUES
-(1, 'prueba1', 'Acá iría una breve descripción del contenido del archivo', 'Categoría 1', '2022-12-06 03:00:00', '60a8c415119ed804d03aa788fa206cad_prueba1.pdf'),
-(2, 'prueba1', 'Acá iría una breve descripción del contenido del archivo', 'Categoría 1', '2022-12-06 03:00:00', '9cf021e439c597ad7a796b400911a299_prueba1.pdf');
 
 -- --------------------------------------------------------
 
@@ -102,13 +75,6 @@ CREATE TABLE `planos_laplata` (
   `plano_laPlata` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `planos_laplata`
---
-
-INSERT INTO `planos_laplata` (`id_plano_laPlata`, `nombre_laPlata`, `descripcion_laPlata`, `categoria_laPlata`, `fecha_laPlata`, `plano_laPlata`) VALUES
-(2, 'prueba1', 'Esto es una prueba de funcionamiento', 'Categoria1', '2022-12-06 03:00:00', 'e747e314ccff595124b158948bbb1bb6_prueba1.pdf');
-
 -- --------------------------------------------------------
 
 --
@@ -123,15 +89,6 @@ CREATE TABLE `planos_quilmes` (
   `fecha_quilmes` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `plano_quilmes` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `planos_quilmes`
---
-
-INSERT INTO `planos_quilmes` (`id_plano_quilmes`, `nombre_quilmes`, `descripcion_quilmes`, `categoria_quilmes`, `fecha_quilmes`, `plano_quilmes`) VALUES
-(1, 'prueba1', 'Aca iria una breve descripcion de lo que contiene el plano', 'Categoria1', '2022-12-06 03:00:00', 'bace176a1329d21e130eab9d2501186a_prueba1.pdf'),
-(2, 'prueba1', 'Aqui va una breve descripcion de lo que tiene el archivo', 'Categoria1', '2022-12-07 03:00:00', '9ec0d5d4f156aeeab85e67c3b693e371_prueba1.pdf'),
-(4, 'prueba2', 'Aqui va una breve descripcion de lo que tiene el archivo', 'Categoria2', '2022-12-07 03:00:00', 'b113c450c57b28e539b72985c2110179_prueba2.pdf');
 
 -- --------------------------------------------------------
 
@@ -152,16 +109,6 @@ CREATE TABLE `plan_de_frecuencias` (
   `ubicacion` varchar(250) NOT NULL,
   `plan_de_frecuencia` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `plan_de_frecuencias`
---
-
-INSERT INTO `plan_de_frecuencias` (`id_plan_de_frecuencia`, `nombre_paso_nivel`, `frecuencia_asc`, `frecuencia_desc`, `señal_asc`, `señal_desc`, `tension_asc`, `tension_desc`, `filtro`, `ubicacion`, `plan_de_frecuencia`) VALUES
-(28, 'ter', 'ter', 'ter', 'ter', '', '', '', '', '', ''),
-(29, 'ertr', '', '', '', '', '', '', '', 'ter', ''),
-(30, 'rtytrytr', '', '', '', '', '', '', '', '', ''),
-(31, '', '', '', '', '', '', '', '', 'ewr', '');
 
 -- --------------------------------------------------------
 
@@ -205,10 +152,31 @@ INSERT INTO `registros_pan_tu` (`id_pan_tu`, `pan_tu`, `pan_año_tu`, `registros
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `roles`
+--
+
+CREATE TABLE `roles` (
+  `id_rol` int(11) NOT NULL,
+  `nombre_rol` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `roles`
+--
+
+INSERT INTO `roles` (`id_rol`, `nombre_rol`) VALUES
+(1, 'Administrador General'),
+(2, 'Administrador Personal'),
+(3, 'Mecanico');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuarios`
 --
 
 CREATE TABLE `usuarios` (
+  `id_usuario` int(11) NOT NULL,
   `legajo` int(6) NOT NULL,
   `apellido` text NOT NULL,
   `nombre` text NOT NULL,
@@ -222,7 +190,7 @@ CREATE TABLE `usuarios` (
   `habilitaciones` varchar(400) NOT NULL,
   `supervisor_cargo` varchar(250) NOT NULL,
   `fecha_de_ingreso_a_la_empresa` date NOT NULL,
-  `id_cargo` int(11) NOT NULL,
+  `id_rol` int(11) NOT NULL,
   `contraseña` int(6) NOT NULL,
   `imagen` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -231,26 +199,26 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`legajo`, `apellido`, `nombre`, `alias`, `dni`, `fecha_de_nacimiento`, `direccion`, `celular`, `mail`, `puesto`, `habilitaciones`, `supervisor_cargo`, `fecha_de_ingreso_a_la_empresa`, `id_cargo`, `contraseña`, `imagen`) VALUES
-(1, '1', '1', '', 0, '0000-00-00', '', 0, '', '', '', '', '0000-00-00', 1, 1, ''),
-(2, '2', '2', '', 0, '0000-00-00', '', 0, '', '2', '', '2', '0000-00-00', 1, 2, 'img_90cae92a93bc0baf0d6c9017e82df24a.jpg'),
-(13, 'Bloise', 'Claudio', '', 0, '0000-00-00', '', 0, '', 'Pasante', '', 'Walter Ramirez', '0000-00-00', 1, 12, 'img_962be8ad2d290300cb80076818075518.jpg');
+INSERT INTO `usuarios` (`id_usuario`, `legajo`, `apellido`, `nombre`, `alias`, `dni`, `fecha_de_nacimiento`, `direccion`, `celular`, `mail`, `puesto`, `habilitaciones`, `supervisor_cargo`, `fecha_de_ingreso_a_la_empresa`, `id_rol`, `contraseña`, `imagen`) VALUES
+(18, 29023, 'Bloise', 'María Cecilia', 'Ceci', 38325405, '1994-08-14', 'San Martín', 2147483647, 'cecilia.bloise@trenesargentinos.gob.ar', 'Pasante', '', 'Walter Ramirez', '2022-09-01', 1, 123, 'img_8409e85c6045225e74be0786af0d39c1.jpg');
 
 --
 -- Índices para tablas volcadas
 --
 
 --
+-- Indices de la tabla `asignacion_roles`
+--
+ALTER TABLE `asignacion_roles`
+  ADD PRIMARY KEY (`id_asignacion`),
+  ADD KEY `id_rol` (`id_rol`),
+  ADD KEY `id_usuario` (`id_usuario`);
+
+--
 -- Indices de la tabla `manuales`
 --
 ALTER TABLE `manuales`
   ADD PRIMARY KEY (`id_manuales`);
-
---
--- Indices de la tabla `permisos`
---
-ALTER TABLE `permisos`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `planos_bosques`
@@ -290,11 +258,17 @@ ALTER TABLE `registros_pan_tu`
   ADD PRIMARY KEY (`id_pan_tu`);
 
 --
+-- Indices de la tabla `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id_rol`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`legajo`),
-  ADD KEY `id_rol` (`id_cargo`);
+  ADD PRIMARY KEY (`id_usuario`),
+  ADD KEY `id_rol` (`id_rol`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -307,16 +281,10 @@ ALTER TABLE `manuales`
   MODIFY `id_manuales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT de la tabla `permisos`
---
-ALTER TABLE `permisos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT de la tabla `planos_bosques`
 --
 ALTER TABLE `planos_bosques`
-  MODIFY `id_plano_bosques` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_plano_bosques` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `planos_laplata`
@@ -328,13 +296,13 @@ ALTER TABLE `planos_laplata`
 -- AUTO_INCREMENT de la tabla `planos_quilmes`
 --
 ALTER TABLE `planos_quilmes`
-  MODIFY `id_plano_quilmes` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_plano_quilmes` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `plan_de_frecuencias`
 --
 ALTER TABLE `plan_de_frecuencias`
-  MODIFY `id_plan_de_frecuencia` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_plan_de_frecuencia` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `registros_pan_años_tu`
@@ -349,10 +317,16 @@ ALTER TABLE `registros_pan_tu`
   MODIFY `id_pan_tu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
+-- AUTO_INCREMENT de la tabla `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `legajo` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2147483648;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- Restricciones para tablas volcadas
@@ -368,7 +342,7 @@ ALTER TABLE `registros_pan_años_tu`
 -- Filtros para la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id_cargo`) REFERENCES `permisos` (`id`);
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `roles` (`id_rol`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

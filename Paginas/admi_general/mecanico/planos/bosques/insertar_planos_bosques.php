@@ -1,5 +1,5 @@
 <?php
-include("conexion_planos_bosques.php");
+include("../../../../../conexion_y_sesion/conexion.php");
 $conexion=conectar();
 if (!$conexion) {
     die("Connection failed: " . mysqli_connect_error());

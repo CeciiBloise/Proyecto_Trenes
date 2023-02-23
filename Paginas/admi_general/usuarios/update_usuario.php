@@ -1,6 +1,6 @@
 <?php
 /*esto andaaaa*/
-include("conexion_usuario.php");
+include("../../../conexion_y_sesion/conexion.php");
 $conexion=conectar();
 
 if(isset($_POST['subir'])){

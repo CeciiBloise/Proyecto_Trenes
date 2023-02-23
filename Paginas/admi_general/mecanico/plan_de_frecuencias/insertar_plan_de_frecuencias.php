@@ -1,5 +1,5 @@
 <?php
-include("conexion_plan_de_frecuencias.php");
+include("../../../../conexion_y_sesion/conexion.php");
 $conexion=conectar();
 
 $paso_nivel= mysqli_real_escape_string($conexion, $_POST['nombre_paso_nivel']);

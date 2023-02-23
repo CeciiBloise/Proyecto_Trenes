@@ -1,11 +1,11 @@
 <?php
     session_start();
-    include("conexion_plan_de_frecuencias.php");
+    include("../../../conexion_y_sesion/conexion.php");
     $conexion=conectar();
 
     //Validacion de session 
     if (!isset($_SESSION['legajo'])) {
-        header("location: ../../../Index.html");
+        header("location: ../../../index.html");
         exit;
     }
 
@@ -60,7 +60,7 @@
             <li><a href="../inicio_mecanico.php" >Inicio</a></li>
             <li><a href="tabla_plan_de_frecuencias.php">Tabla Reducida</a></li>
             <li><a href="ver_plano_plan_de_frecuencias.php">Plano</a></li>
-            <li><a href="../../../logout.php" >Cerrar Sesion</a></li>
+            <li><a href="../../../conexion_y_sesion/logout.php" >Cerrar Sesion</a></li>
       </nav>
     </header>
 

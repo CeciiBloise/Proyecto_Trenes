@@ -1,6 +1,6 @@
 <?php
 /*Mueve el archivo y guarda la url*/
-include("conexion_manuales.php");
+include("../../../../conexion_y_sesion/conexion.php");
 $conexion=conectar();
 if (!$conexion) {
     die("Connection failed: " . mysqli_connect_error());

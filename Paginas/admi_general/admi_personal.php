@@ -1,11 +1,11 @@
 <?php
     session_start();
-    include("usuarios/conexion_usuario.php");
+    include("../../conexion_y_sesion/conexion.php");
     $conexion=conectar();
   
     //Validacion de session 
     if (!isset($_SESSION['legajo'])) {
-      header("location: ../../Index.html");
+      header("location: ../../index.html");
       exit;
     }
 
@@ -32,7 +32,7 @@
 
                         <li><a href="Inicio.php">Volver al inicio</a></li>
                         
-                        <li><a href="../../logout.php">Cerrar Sesion</a></li>
+                        <li><a href="../../conexion_y_sesion/logout.php">Cerrar Sesion</a></li>
                     </ul>
                 </nav>
           

@@ -1,5 +1,5 @@
 <?php
-include("conexion_usuario.php");
+include("../../../conexion_y_sesion/conexion.php");
 $conexion=conectar();
 $legajo = mysqli_real_escape_string($conexion, $_GET['id']);
 

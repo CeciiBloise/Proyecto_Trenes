@@ -1,5 +1,5 @@
 <?php
-include("conexion_plan_de_frecuencias.php");
+include("../../../../conexion_y_sesion/conexion.php");
 $conexion=conectar();
 
 $id_plan=$_GET['id'];

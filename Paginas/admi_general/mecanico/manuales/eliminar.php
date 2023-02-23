@@ -1,6 +1,6 @@
 <?php
 /*ESTE ANDA*/
-include("conexion_manuales.php");
+include("../../../../conexion_y_sesion/conexion.php");
 $conexion=conectar();
 
 $id_manuales=mysqli_real_escape_string($conexion, $_GET['id']);

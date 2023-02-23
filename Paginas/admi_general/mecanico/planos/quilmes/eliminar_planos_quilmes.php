@@ -1,5 +1,5 @@
 <?php
-include("conexion_planos_quilmes.php");
+include("../../../../../conexion_y_sesion/conexion.php");
 $conexion=conectar();
 $id_plano=mysqli_real_escape_string($conexion, $_GET['id']);
 
