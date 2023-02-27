@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-02-2023 a las 02:03:56
+-- Tiempo de generación: 27-02-2023 a las 14:33:52
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.1.12
 
@@ -200,7 +200,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `legajo`, `apellido`, `nombre`, `alias`, `dni`, `fecha_de_nacimiento`, `direccion`, `celular`, `mail`, `puesto`, `habilitaciones`, `supervisor_cargo`, `fecha_de_ingreso_a_la_empresa`, `id_rol`, `contraseña`, `imagen`) VALUES
-(18, 29023, 'Bloise', 'María Cecilia', 'Ceci', 38325405, '1994-08-14', 'San Martín', 2147483647, 'cecilia.bloise@trenesargentinos.gob.ar', 'Pasante', '', 'Walter Ramirez', '2022-09-01', 1, 123, 'img_8409e85c6045225e74be0786af0d39c1.jpg');
+(18, 29023, 'Bloise', 'María Cecilia', 'Ceci', 38325405, '1994-08-14', 'San Martín', 2147483647, 'cecilia.bloise@trenesargentinos.gob.ar', 'Pasante', '', 'Walter Ramirez', '2022-09-01', 1, 123, 'img_8409e85c6045225e74be0786af0d39c1.jpg'),
+(30, 105, 'B', 'B', '', 38325405, '0000-00-00', '', 0, '', 'B', '', 'B', '0000-00-00', 2, 123, 'img_711f92b0616f5c2c0188c5e5ced12eb2.jpg'),
+(31, 58, 'Feeb', 'Gg', '', 38325405, '0000-00-00', '', 0, '', 'Ghh', '', 'Jajajaja ', '0000-00-00', 2, 1234, 'img_efb53e4092d781ba9c6ef84b3eacc514.jpg');
 
 --
 -- Índices para tablas volcadas
@@ -302,7 +304,7 @@ ALTER TABLE `planos_quilmes`
 -- AUTO_INCREMENT de la tabla `plan_de_frecuencias`
 --
 ALTER TABLE `plan_de_frecuencias`
-  MODIFY `id_plan_de_frecuencia` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_plan_de_frecuencia` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `registros_pan_años_tu`
@@ -326,7 +328,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- Restricciones para tablas volcadas
