@@ -83,7 +83,7 @@
 
           <div class="inputContainer">
             <label>Fecha de nacimiento:</label>
-            <input type="date" name="fecha_de_nacimiento" placeholder="Fecha de nacimiento" style="width: 197px;">
+            <input type="date" name="fecha_de_nacimiento" placeholder="Fecha de nacimiento" style="width: 195px;">
           </div>
 
           <div class="inputContainer">
@@ -118,7 +118,7 @@
 
           <div class="inputContainer">
             <label>Fecha de ingreso a la empresa:</label>
-            <input type="date" name="fecha_de_ingreso_a_la_empresa" placeholder="Fecha de ingreso" style="width: 123px;">
+            <input type="date" name="fecha_de_ingreso_a_la_empresa" placeholder="Fecha de ingreso" style="width: 122px;">
           </div> 
 
           <div class="inputContainer"> <!--cambiar esto a un selec -->
